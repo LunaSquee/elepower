@@ -1,10 +1,13 @@
 # Elepower
 ![](screenshot.png)
+
 A new *powerful* modpack for [Minetest](http://minetest.net) 5.0.0+!
 
 **I do not recommend using this modpack with technic, as this modpack aims to become an all new technology mod. However, compatibility might be added at a later date.**
 
 **Depends on [fluid_lib](https://github.com/sirrobzeroone/fluid_lib)!**
+
+**NB!** This repository follows the [fork by sirrobzeroone](https://github.com/sirrobzeroone/elepower) but not guaranteed to be 100% feature parity. Evert is the original developer of this mod and continues to work on it on and off again since August 2023.
 
 ## Features
 
