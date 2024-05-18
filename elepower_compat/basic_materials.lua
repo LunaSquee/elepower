@@ -27,21 +27,20 @@ if minetest.get_modpath("basic_materials") == nil then
 	minetest.register_alias("homedecor:empty_spool",      "basic_materials:empty_spool")
 
 	minetest.register_craftitem(":basic_materials:plastic_sheet", {
-		    description = "Plastic Sheet",
-		    inventory_image = "elepower_bm_plastic_sheet.png",
+		description = "Plastic Sheet",
+		inventory_image = "elepower_bm_plastic_sheet.png",
 	})
-	
+
 	minetest.register_craftitem(":basic_materials:plastic_strip", {
 		description = "Plastic Strips",
 		groups = { strip = 1 },
 		inventory_image = "elepower_bm_strip.png^[colorize:#ffffff:200",
 	})
-	
+
 	minetest.register_craftitem(":basic_materials:empty_spool", {
 		description = "Empty wire spool",
 		inventory_image = "elepower_bm_empty_spool.png"
 	})
-
 
 	minetest.register_craft( {
 		output = "basic_materials:plastic_strip 9",
@@ -49,7 +48,7 @@ if minetest.get_modpath("basic_materials") == nil then
 			{ "basic_materials:plastic_sheet", "basic_materials:plastic_sheet", "basic_materials:plastic_sheet" }
 		},
 	})
-	
+
 	minetest.register_craft( {
 		output = "basic_materials:empty_spool 3",
 		recipe = {
@@ -73,33 +72,33 @@ if minetest.get_modpath("basic_materials") == nil then
 	})
 
 	minetest.register_craft({
-		    type = "cooking",
-		    output = "basic_materials:paraffin",
-		    recipe = "basic_materials:oil_extract",
+		type = "cooking",
+		output = "basic_materials:paraffin",
+		recipe = "basic_materials:oil_extract",
 	})
 
 	minetest.register_craft({
-		    type = "cooking",
-		    output = "basic_materials:plastic_sheet",
-		    recipe = "basic_materials:paraffin",
+		type = "cooking",
+		output = "basic_materials:plastic_sheet",
+		recipe = "basic_materials:paraffin",
 	})
 
 	minetest.register_craft({
-		    type = "fuel",
-		    recipe = "basic_materials:oil_extract",
-		    burntime = 30,
+		type = "fuel",
+		recipe = "basic_materials:oil_extract",
+		burntime = 30,
 	})
 
 	minetest.register_craft({
-		    type = "fuel",
-		    recipe = "basic_materials:paraffin",
-		    burntime = 30,
+		type = "fuel",
+		recipe = "basic_materials:paraffin",
+		burntime = 30,
 	})
 
 	minetest.register_craft({
-		    type = "fuel",
-		    recipe = "basic_materials:plastic_sheet",
-		    burntime = 30,
+		type = "fuel",
+		recipe = "basic_materials:plastic_sheet",
+		burntime = 30,
 	})
 
 	----------
@@ -121,8 +120,8 @@ if minetest.get_modpath("basic_materials") == nil then
 			"basic_materials:empty_spool",
 		},
 	})
-	
-		minetest.register_craftitem(":basic_materials:silver_wire", {
+
+	minetest.register_craftitem(":basic_materials:silver_wire", {
 		description = "Silver Wire",
 		inventory_image = "elepower_bm_silver_wire.png",
 		groups = {copper = 1, wire = 1, component = 1}
@@ -137,13 +136,13 @@ if minetest.get_modpath("basic_materials") == nil then
 			"basic_materials:empty_spool",
 		},
 	})
-	
+
 	---------------------
 	-- Heating Element --
-	---------------------	
+	---------------------
 	minetest.register_craftitem(":basic_materials:heating_element", {
-	description = "Heating element",
-	inventory_image = "elepower_bm_heating_element.png",
+		description = "Heating element",
+		inventory_image = "elepower_bm_heating_element.png",
 	})
 
 	minetest.register_craft( {
@@ -195,19 +194,19 @@ if minetest.get_modpath("basic_materials") == nil then
 	-----------
 	-- STEEL --
 	-----------
-	
+
 	minetest.register_craftitem(":basic_materials:steel_strip", {
 		description = "Steel Strip",
 		groups = { strip = 1 },
 		inventory_image = "elepower_bm_strip.png^[multiply:#ffffff"
 	})
-	
+
 	minetest.register_craftitem(":basic_materials:steel_wire", {
 		description = "Spool of steel wire",
 		groups = { wire = 1 },
 		inventory_image = "elepower_bm_steel_wire.png"
 	})
-	
+
 	minetest.register_craft( {
 		output = "basic_materials:steel_wire 2",
 		type = "shapeless",
@@ -225,20 +224,18 @@ if minetest.get_modpath("basic_materials") == nil then
 			{ epi.steel_ingot, "", "" },
 		},
 	})
-	
 else
-	minetest.clear_craft({output = "basic_materials:brass_ingot"})	
-	
-	local steel_strip_def = table.copy(minetest.registered_items["basic_materials:steel_strip"])	
+	minetest.clear_craft({output = "basic_materials:brass_ingot"})
+
+	local steel_strip_def = table.copy(minetest.registered_items["basic_materials:steel_strip"])
 	steel_strip_def.inventory_image = "elepower_bm_strip.png^[multiply:#ffffff"
 	minetest.register_craftitem(":basic_materials:steel_strip", steel_strip_def)
-	
-	local copper_strip_def = table.copy(minetest.registered_items["basic_materials:copper_strip"])	
+
+	local copper_strip_def = table.copy(minetest.registered_items["basic_materials:copper_strip"])
 	copper_strip_def.inventory_image = "elepower_bm_strip.png^[multiply:#fcb15f"
 	minetest.register_craftitem(":basic_materials:copper_strip", copper_strip_def)
-	
-	local plastic_strip_def = table.copy(minetest.registered_items["basic_materials:plastic_strip"])	
+
+	local plastic_strip_def = table.copy(minetest.registered_items["basic_materials:plastic_strip"])
 	plastic_strip_def.inventory_image = "elepower_bm_strip.png^[colorize:#ffffff:200"
 	minetest.register_craftitem(":basic_materials:plastic_strip", plastic_strip_def)
-	
 end

@@ -178,7 +178,7 @@ for mat, ingot in pairs(ingot_map) do
 			elepm.register_craft({
 				type   = "grind",
 				recipe = { plate.item },
-				output = dust.item.." 2",
+				output = dust.item,
 				time   = 6,
 			})
 		end
