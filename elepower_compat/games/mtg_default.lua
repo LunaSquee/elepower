@@ -3,7 +3,8 @@ if minetest.get_modpath("default") ~= nil then
   -------------
   -- General --
   -------------
-  ele.external.tools.enable_iron_lead_tools    = true   -- split in two
+  ele.external.tools.enable_iron_tools         = true
+  ele.external.tools.enable_lead_tools         = true
   ele.external.armor.enable_iron_armor         = true
   ele.external.armor.enable_carbon_fiber_armor = true
 
@@ -51,6 +52,8 @@ if minetest.get_modpath("default") ~= nil then
   ele.external.ing.gold_ingot    = "default:gold_ingot"
   ele.external.ing.tin_ingot     = "default:tin_ingot"
   ele.external.ing.bronze_ingot  = "default:bronze_ingot"
+  ele.external.ing.iron_ingot    = "" -- not supported by game
+  ele.external.ing.iron_block    = "" -- not supported by game
   ele.external.ing.steel_ingot   = "default:steel_ingot"
   ele.external.ing.steel_block   = "default:steelblock"
   ele.external.ing.diamond_block = "default:diamondblock"

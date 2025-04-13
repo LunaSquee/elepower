@@ -5,10 +5,10 @@ local eps = ele.external.sounds
 -------------------------------------------------
 -- Ingredients or node item references in code --
 -------------------------------------------------
-ele.external.ing.silver_ingot  = "moreores:silver_ingot"
+local ingot = "moreores:silver_ingot"
+ele.external.ing.silver_ingot = ingot
 
 if core.get_modpath("moreores") == nil then
-  local ingot = "moreores:silver_ingot"
   core.register_craftitem(":moreores:silver_ingot", {
     description = "Silver Ingot",
     inventory_image = "elepower_silver_ingot.png",
@@ -58,11 +58,6 @@ if core.get_modpath("moreores") == nil then
       { "moreores:silver_block" },
     }
   })
-
-  core.register_alias("elepower_dynamics:silver_block", "moreores:silver_block")
-  core.register_alias("elepower_dynamics:silver_ingot", ingot)
-  core.register_alias("elepower_dynamics:silver_lump", "moreores:silver_lump")
-  core.register_alias("elepower_dynamics:stone_with_silver", "moreores:mineral_silver")
 
   if core.get_modpath("mcl_core") == nil then
     ele.worldgen.ore.silver = {
@@ -114,3 +109,8 @@ if core.get_modpath("moreores") == nil then
     }
   end
 end
+
+core.register_alias("elepower_dynamics:silver_block", "moreores:silver_block")
+core.register_alias("elepower_dynamics:silver_ingot", ingot)
+core.register_alias("elepower_dynamics:silver_lump", "moreores:silver_lump")
+core.register_alias("elepower_dynamics:stone_with_silver", "moreores:mineral_silver")

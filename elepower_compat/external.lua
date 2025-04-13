@@ -54,7 +54,8 @@ ele.external.graphic = {}
 -------------
 -- General --
 -------------
-ele.external.tools.enable_iron_lead_tools    = false   -- split in two
+ele.external.tools.enable_iron_tools         = true
+ele.external.tools.enable_lead_tools         = true
 ele.external.armor.enable_iron_armor         = false
 ele.external.armor.enable_carbon_fiber_armor = false
 
@@ -98,6 +99,8 @@ ele.external.ing.silver_ingot  = ""
 ele.external.ing.gold_ingot    = ""
 ele.external.ing.tin_ingot     = ""
 ele.external.ing.bronze_ingot  = ""
+ele.external.ing.iron_ingot    = ""
+ele.external.ing.iron_block    = ""
 ele.external.ing.steel_ingot   = ""
 ele.external.ing.steel_block   = ""
 ele.external.ing.diamond_block = ""

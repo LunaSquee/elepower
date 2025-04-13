@@ -165,9 +165,9 @@ if minetest.get_modpath("basic_materials") == nil then
 	minetest.register_craft({
 		output = "basic_materials:motor 3",
 		recipe = {
-			{epi.steel_ingot, "elepower_dynamics:wound_copper_coil", epi.steel_ingot},
+			{"elepower_dynamics:steel_ingot", "elepower_dynamics:wound_copper_coil", "elepower_dynamics:steel_ingot"},
 			{"basic_materials:copper_wire", "elepower_dynamics:wound_copper_coil", "basic_materials:copper_wire"},
-			{epi.steel_ingot, "elepower_dynamics:capacitor", epi.steel_ingot},
+			{"elepower_dynamics:steel_ingot", "elepower_dynamics:capacitor", "elepower_dynamics:steel_ingot"},
 		}
 	})
 
@@ -211,7 +211,7 @@ if minetest.get_modpath("basic_materials") == nil then
 		output = "basic_materials:steel_wire 2",
 		type = "shapeless",
 		recipe = {
-			epi.steel_ingot,
+			"elepower_dynamics:steel_ingot",
 			"basic_materials:empty_spool",
 			"basic_materials:empty_spool",
 		},
@@ -220,8 +220,8 @@ if minetest.get_modpath("basic_materials") == nil then
 	minetest.register_craft( {
 		output = "basic_materials:steel_strip 12",
 		recipe = {
-			{ "", epi.steel_ingot, "" },
-			{ epi.steel_ingot, "", "" },
+			{ "", "elepower_dynamics:steel_ingot", "" },
+			{ "elepower_dynamics:steel_ingot", "", "" },
 		},
 	})
 else

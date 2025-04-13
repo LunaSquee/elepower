@@ -105,33 +105,33 @@ function ele.formspec.get_crafter_formspec(craft_type, power, percent, pos,
 
     -- adjust tooltip and layout depending on if we have 1/2/3 input slots
     if input_size == 1 then
-        formspec_inout_icon_tooltip = "image[1.7,2.45;0.5,0.5;" ..
+        formspec_inout_icon_tooltip = "image[3.25,3.25;0.5,0.5;" ..
                                           icon_def_slot_1 .. "]" ..
-                                          "tooltip[1.5,2.0;1,1;" .. mat_inputs_1 ..
+                                          "tooltip[3,3;1,1;" .. mat_inputs_1 ..
                                           ";#30434c;#0399c6]" -- "tooltip[1.5,2.0;1,1;"..minetest.colorize("#0399c6",mat_inputs).."]"
 
     elseif input_size == 2 then
-        formspec_inout_icon_tooltip = "image[1.2,2.45;0.5,0.5;" ..
+        formspec_inout_icon_tooltip = "image[2.25,3.25;0.5,0.5;" ..
                                           icon_def_slot_1 .. "]" ..
-                                          "tooltip[1.0,2.0;1,1;" .. mat_inputs_1 ..
+                                          "tooltip[2,3;1,1;" .. mat_inputs_1 ..
                                           ";#30434c;#0399c6]" ..
-                                          "image[2.2,2.45;0.5,0.5;" ..
+                                          "image[3.45,3.25;0.5,0.5;" ..
                                           icon_def_slot_2 .. "]" ..
-                                          "tooltip[2.0,2.0;1,1;" .. mat_inputs_2 ..
+                                          "tooltip[3.25,3;1,1;" .. mat_inputs_2 ..
                                           ";#30434c;#0399c6]"
 
     else
-        formspec_inout_icon_tooltip = "image[1.2,2.45;0.5,0.5;" ..
+        formspec_inout_icon_tooltip = "image[2.25,3.25;0.5,0.5;" ..
                                           icon_def_slot_1 .. "]" ..
-                                          "tooltip[1.0,2.0;1,1;" .. mat_inputs_1 ..
+                                          "tooltip[2,3;1,1;" .. mat_inputs_1 ..
                                           ";#30434c;#0399c6]" ..
-                                          "image[2.2,2.45;0.5,0.5;" ..
+                                          "image[3.45,3.25;0.5,0.5;" ..
                                           icon_def_slot_2 .. "]" ..
-                                          "tooltip[2.0,2.0;1,1;" .. mat_inputs_2 ..
+                                          "tooltip[3.25,3;1,1;" .. mat_inputs_2 ..
                                           ";#30434c;#0399c6]" ..
-                                          "image[3.2,2.45;0.5,0.5;" ..
+                                          "image[4.7,3.25;0.5,0.5;" ..
                                           icon_def_slot_3 .. "]" ..
-                                          "tooltip[3.0,2.0;1,1;" .. mat_inputs_3 ..
+                                          "tooltip[4.5,3;1,1;" .. mat_inputs_3 ..
                                           ";#30434c;#0399c6]"
     end
     -- End add icons tooltips for in slots
@@ -139,11 +139,11 @@ function ele.formspec.get_crafter_formspec(craft_type, power, percent, pos,
     local gui_name = "gui_furnace_arrow"
     if craftstats.gui_name then gui_name = craftstats.gui_name end
 
-    local bar = "image[4,1.5;1,1;" .. gui_name .. "_bg.png^[transformR270]"
+    local bar = "image[6.125,2.125;1,1;" .. gui_name .. "_bg.png^[transformR270]"
 
     if percent ~= nil then
         bar =
-            "image[4,1.5;1,1;" .. gui_name .. "_bg.png^[lowpart:" .. (percent) ..
+            "image[6.125,2.125;1,1;" .. gui_name .. "_bg.png^[lowpart:" .. (percent) ..
                 ":" .. gui_name .. "_fg.png^[transformR270]"
     end
 
@@ -157,7 +157,7 @@ function ele.formspec.get_crafter_formspec(craft_type, power, percent, pos,
         end
     end
 
-    local y = 1.5
+    local y = 2.125
     local x = 3
 
     if in_height == 2 then
@@ -170,13 +170,13 @@ function ele.formspec.get_crafter_formspec(craft_type, power, percent, pos,
 
     return "formspec_version[6]" .. "size[11.75,10.45]" ..
                ele.formspec.power_meter_v2(power) ..
-               ele.formspec.state_switcher(10.25, 0.375, state) ..
+               ele.formspec.state_switcher(10.45, 0.375, state) ..
                epr.get_itemslot_bg(x, y, in_width, in_height) ..
                "list[context;src;" .. x .. "," .. y .. ";" .. in_width .. "," .. in_height .. ";]" ..
                bar ..
                formspec_inout_icon_tooltip ..
-               epr.get_itemslot_bg(5, 1, 2, 2) ..
-               "list[context;dst;5,1;2,2;]" ..
+               epr.get_itemslot_bg(7.875, 1.5, 2, 2) ..
+               "list[context;dst;7.875,1.5;2,2;]" ..
                epr.gui_player_inv() ..
                "listring[current_player;main]" ..
                "listring[context;src]" ..

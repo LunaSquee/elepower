@@ -102,8 +102,6 @@ globals = {
                     "conduit_dirt_with_dry_grass",
                     "conduit_stone_block",
                     "conduit_stone_block_desert",
-                    "gui_hotbar_size",
-                    "gui_hotbar_before_inventory",
                 }
             },
             "worldgen",

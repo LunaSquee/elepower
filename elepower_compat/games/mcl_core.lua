@@ -3,14 +3,15 @@ if minetest.get_modpath("mcl_core") ~= nil then
   -------------
   -- General --
   -------------
-  ele.external.tools.enable_iron_lead_tools    = true   -- split in two
-  ele.external.armor.enable_iron_armor         = true
+  ele.external.tools.enable_iron_tools         = false
+  ele.external.tools.enable_lead_tools         = true
+  ele.external.armor.enable_iron_armor         = false
   ele.external.armor.enable_carbon_fiber_armor = true
 
-  ele.external.conduit_dirt_with_grass      = true
+  ele.external.conduit_dirt_with_grass      = false
   ele.external.conduit_dirt_with_dry_grass  = false
-  ele.external.conduit_stone_block          = true
-  ele.external.conduit_stone_block_desert   = true
+  ele.external.conduit_stone_block          = false
+  ele.external.conduit_stone_block_desert   = false
 
   ----------------
   -- References --
@@ -53,8 +54,10 @@ if minetest.get_modpath("mcl_core") ~= nil then
   ele.external.ing.gold_ingot    = "mcl_core:gold_ingot"
   ele.external.ing.tin_ingot     = "" --- !!!!!!! NOT A THING
   ele.external.ing.bronze_ingot  = "" --- !!!!!!! NOT A THING
-  ele.external.ing.steel_ingot   = "mcl_core:iron_ingot"
-  ele.external.ing.steel_block   = "mcl_core:ironblock"
+  ele.external.ing.iron_ingot    = "mcl_core:iron_ingot"
+  ele.external.ing.iron_block    = "mcl_core:ironblock"
+  ele.external.ing.steel_ingot   = "" -- not supported by game
+  ele.external.ing.steel_block   = "" -- not supported by game
   ele.external.ing.diamond_block = "mcl_core:diamondblock"
   ele.external.ing.mese          = "mesecons_torch:redstoneblock"
   ele.external.ing.mese_crystal  = "mesecons:redstone"

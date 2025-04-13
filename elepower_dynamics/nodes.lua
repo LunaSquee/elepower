@@ -3,6 +3,7 @@
 -- shorten table ref
 local epg = ele.external.graphic
 local eps = ele.external.sounds
+local epi = ele.external.ing
 
 ---------------
 -- Overrides --
@@ -112,3 +113,13 @@ minetest.register_node("elepower_dynamics:zinc_block", {
 	groups = {cracky = 1, level = 3},
 	sounds = eps.node_sound_metal,
 })
+
+if epi.steel_ingot == "" then
+	minetest.register_node("elepower_dynamics:steel_block", {
+		description = "Steel Block",
+		tiles = {"elepower_steel_block.png"},
+		is_ground_content = false,
+		groups = {cracky = 1, level = 3},
+		sounds = eps.node_sound_metal,
+	})
+end
