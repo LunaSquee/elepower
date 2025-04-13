@@ -1,5 +1,5 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref 
 
@@ -31,11 +31,13 @@ ele.helpers.register_liquid("lithium", {
 	groups            = {lithium = 1, liquid = 3},
 })
 
-bucket.register_liquid("elepower_dynamics:etching_acid_source", "elepower_dynamics:etching_acid_flowing",
-		"elepower_dynamics:bucket_etching_acid",   "#410800", "Etching Acid Bucket")
+if minetest.get_modpath("bucket_compat") ~= nil then
+	fluid_lib.register_liquid("elepower_dynamics:etching_acid_source", "elepower_dynamics:etching_acid_flowing",
+			"elepower_dynamics:bucket_etching_acid",   "#410800", "Etching Acid Bucket")
 
-bucket.register_liquid("elepower_dynamics:lithium_source", "elepower_dynamics:lithium_flowing",
-		"elepower_dynamics:bucket_lithium",   "#e5e3c4", "Liquid Lithium Bucket")
+	fluid_lib.register_liquid("elepower_dynamics:lithium_source", "elepower_dynamics:lithium_flowing",
+			"elepower_dynamics:bucket_lithium",   "#e5e3c4", "Liquid Lithium Bucket")
+end
 
 -----------
 -- Gases --

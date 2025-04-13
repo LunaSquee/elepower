@@ -1,6 +1,6 @@
 
 -- Solar helmet
-armor:register_armor("elepower_solar:helmet", {
+armor:register_armor("elepower_solar:helmet_solar", {
 	description = "Solar Helmet",
 	inventory_image = "elepower_armor_inv_helmet_solar.png",
 	texture = "elepower_armor_helmet_solar.png",
@@ -10,3 +10,6 @@ armor:register_armor("elepower_solar:helmet", {
 	armor_groups = {fleshy=9},
 	damage_groups = {cracky=3, snappy=2, choppy=3, crumbly=2, level=1},
 })
+
+-- _solar was added later due to 3d_armor logging a warning
+core.register_alias("elepower_solar:helmet", "elepower_solar:helmet_solar")

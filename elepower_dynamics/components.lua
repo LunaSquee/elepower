@@ -6,7 +6,6 @@ local list_def = {
 	{material = "gold",       description = "Gold",       color = "#ffff47", dust = true, plate = true, gear = true},
 	{material = "steel",      description = "Steel",      color = "#ffffff", dust = true, plate = true, gear = true},
 	{material = "tin",        description = "Tin",        color = "#c1c1c1", dust = true, plate = true, gear = true},
-	{material = "mithril",    description = "Mithril",    color = "#8686df", dust = true, plate = true, gear = true},
 	{material = "silver",     description = "Silver",     color = "#d7e2e8", dust = true, plate = true, gear = true},
 	{material = "lead",       description = "Lead",       color = "#374559", dust = true, plate = true, gear = true},
 	{material = "iron",       description = "Iron",       color = "#dddddd", dust = true, plate = true, gear = true},
@@ -52,11 +51,11 @@ function elepd.register_dust(mat, data)
 	local mod      = minetest.get_current_modname()
 	local itemname = mod..":"..mat.."_dust"
 	local image = "elepower_dust.png^[multiply:" .. data.color
-	
+
 	if mat == "mese" then
 		image = "elepower_dust.png^[colorize:" .. data.color.."^[multiply:" .. data.color
 	end
-	
+
 	data.item = itemname
 	elepd.registered_dusts[mat] = data
 
@@ -65,8 +64,6 @@ function elepd.register_dust(mat, data)
 	if data.force_description then
 		description = data.description
 	end
-
-	
 
 	minetest.register_craftitem(itemname, {
 		description     = description,

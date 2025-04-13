@@ -11,7 +11,7 @@
 ---------------------------------------------------
 --            Additional Information             --
 --------------------------------------------------- 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epi = ele.external.ing
 local epr = ele.external.ref
@@ -347,7 +347,7 @@ eletome.ai.nodes["getting_started"]    = {how_use_1 = "This is a getting started
 													"container[0.875,3.75]"..													
 													"item_image_button[0.375,0.25;1,1;"..epi.copper_ingot..";"..epi.copper_ingot..";]"..
 													"hypertext[0.375,0.9;1,1;num;<style size=12><right><b>04</b></right></style>]"..
-													"item_image_button[1.5,0.25;1,1;moreores:silver_ingot;moreores:silver_ingot;]"..
+													"item_image_button[1.5,0.25;1,1;"..ele.external.ing.silver_ingot..";"..ele.external.ing.silver_ingot..";]"..
 													"hypertext[1.5,0.9;1,1;num;<style size=12><right><b>02</b></right></style>]"..
 													"image[2.625,0.375;0.75,0.75;elepower_tome_icon_alloying.png]"..
 													"tooltip[2.625,0.375;0.75,0.75;Alloying;#30434c;#f9f9f9]"..
@@ -507,7 +507,7 @@ eletome.ai.nodes["upgrading_machines"] = { how_use_1 = "Some machines can be upg
 														"tooltip[1.5,0.375;0.75,0.75;Crafting;#30434c;#f9f9f9]"..
 														"item_image_button[2.375,0.25;1,1;basic_materials:empty_spool;basic_materials:empty_spool;]"..
 														"hypertext[2.375,0.9;1,1;num;<style size=12><right><b>16</b></right></style>]"..
-														"item_image_button[3.5,0.25;1,1;moreores:silver_ingot;moreores:silver_ingot;]"..
+														"item_image_button[3.5,0.25;1,1;"..ele.external.ing.silver_ingot..";"..ele.external.ing.silver_ingot..";]"..
 														"hypertext[3.5,0.9;1,1;num;<style size=12><right><b>08</b></right></style>]"..
 														"image[4.625,0.375;0.75,0.75;elepower_tome_icon_crafting.png]"..
 														"tooltip[4.625,0.375;0.75,0.75;Crafting;#30434c;#f9f9f9]"..

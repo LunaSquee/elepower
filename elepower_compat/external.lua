@@ -1,4 +1,4 @@
------------------------------------------------------------- 
+------------------------------------------------------------
 --              ___ _                                     --
 --             | __| |___ _ __  _____ __ _____ _ _        --
 --             | _|| / -_) '_ \/ _ \ V  V / -_) '_|       --
@@ -27,19 +27,19 @@ ele.external.graphic = {}
 -----------
 -- Index --
 -----------
---- settings to update............line 34
---- elepower_papi.................line 171
---- elepower_dynamics.............line 192
---- elepower_machines.............line 315
---- elepower_tools................line 576
---- elepower_farming..............line 627
---- elepower_solar................line 732
---- elepower_thermal..............line 768
---- elepower_mining...............line 801
---- elepower_nuclear..............line 829
---- elepower_wireless.............line 917
---- elepower_lighting.............line 991
---- elepower_tome.................line 1048
+--- settings to update............line 44
+--- elepower_papi.................line 184
+--- elepower_dynamics.............line 209
+--- elepower_machines.............line 331
+--- elepower_tools................line 589
+--- elepower_farming..............line 644
+--- elepower_solar................line 748
+--- elepower_thermal..............line 784
+--- elepower_mining...............line 818
+--- elepower_nuclear..............line 845
+--- elepower_wireless.............line 933
+--- elepower_lighting.............line 1008
+--- elepower_tome.................line 1065
 
 ------------------------------------------------------------
 --         _   _ _   ___      _   _   _                   --
@@ -48,30 +48,32 @@ ele.external.graphic = {}
 --      /_/ \_\_|_| |___/\___|\__|\__|_|_||_\__, /__/     --
 --                                          |___/         --
 ------------------------------------------------------------
---     Update these refs to new values/names to remove    -- 
+--     Update these refs to new values/names to remove    --
 --               elepower reliance on default             --
 ------------------------------------------------------------
 -------------
 -- General --
 -------------
-ele.external.tools.enable_iron_lead_tools    = true   -- split in two
-ele.external.armor.enable_iron_armor         = true
-ele.external.armor.enable_carbon_fiber_armor = true
+ele.external.tools.enable_iron_lead_tools    = false   -- split in two
+ele.external.armor.enable_iron_armor         = false
+ele.external.armor.enable_carbon_fiber_armor = false
 
-ele.external.conduit_dirt_with_grass      = true
-ele.external.conduit_dirt_with_dry_grass  = true
-ele.external.conduit_stone_block          = true
-ele.external.conduit_stone_block_desert   = true
+ele.external.conduit_dirt_with_grass      = false
+ele.external.conduit_dirt_with_dry_grass  = false
+ele.external.conduit_stone_block          = false
+ele.external.conduit_stone_block_desert   = false
 
 ----------------
--- References -- 
+-- References --
 ----------------
-ele.external.ref.gui_bg        = default.gui_bg
-ele.external.ref.gui_bg_img    = default.gui_bg_img
-ele.external.ref.gui_slots     = default.gui_slots
-ele.external.ref.get_hotbar_bg = default.get_hotbar_bg
-ele.external.ref.water_source  = "default:water_source"  -- convert to ing
-ele.external.ref.stone         = "default:stone"         -- convert to ing
+ele.external.ref.gui_bg          = ""
+ele.external.ref.gui_bg_img      = ""
+ele.external.ref.gui_slots       = ""
+ele.external.ref.get_hotbar_bg   = ""
+ele.external.ref.get_itemslot_bg = ""
+ele.external.ref.gui_player_inv  = ""
+ele.external.ref.water_source    = "" -- convert to ing
+ele.external.ref.stone           = "" -- convert to ing
 
 -------------------------------------------------
 -- Ingredients or node item references in code --
@@ -85,98 +87,93 @@ ele.external.ing.group_color_black  = "group:color_black"
 ele.external.ing.group_color_violet = "group:color_violet"
 ele.external.ing.group_wood         = "group:wood"
 
-ele.external.ing.dirt          = "default:dirt"       -- only used by conduit_dirt_with_grass/dry_grass
-ele.external.ing.wheat         = "farming:wheat"      -- only used by conduit_dirt_with_dry_grass
-ele.external.ing.glass         = "default:glass"
-ele.external.ing.seed_wheat    = "farming:seed_wheat" -- essential to acidic compound
-ele.external.ing.iron_lump     = "default:iron_lump"
-ele.external.ing.coal_lump     = "default:coal_lump"
-ele.external.ing.copper_ingot  = "default:copper_ingot"
-ele.external.ing.silver_ingot  = "moreores:silver_ingot"
-ele.external.ing.gold_ingot    = "default:gold_ingot"
-ele.external.ing.tin_ingot     = "default:tin_ingot"
-ele.external.ing.bronze_ingot  = "default:bronze_ingot"
-ele.external.ing.steel_ingot   = "default:steel_ingot"
-ele.external.ing.mithril_ingot = "moreores:mithril_ingot"
-ele.external.ing.steel_block   = "default:steelblock"
-ele.external.ing.diamond_block = "default:diamondblock"
-ele.external.ing.mese          = "default:mese"
-ele.external.ing.mese_crystal  = "default:mese_crystal"
-ele.external.ing.mese_crystal_fragment = "default:mese_crystal_fragment"
-ele.external.ing.mese_lamp     = "default:meselamp"
-ele.external.ing.flour         = "farming:flour"
-ele.external.ing.sand          = "default:sand"
-ele.external.ing.desert_sand   = "default:desert_sand"
-ele.external.ing.cobble        = "default:cobble"
-ele.external.ing.gravel        = "default:gravel"
-ele.external.ing.brick         = "default:brick" 
-ele.external.ing.flint         = "default:flint"
-ele.external.ing.clay_brick    = "default:clay_brick"
-ele.external.ing.obsidian      = "default:obsidian"
-ele.external.ing.lava_source   = "default:lava_source"
-ele.external.ing.hoe_steel     = "farming:hoe_steel"
-ele.external.ing.axe_steel     = "default:axe_steel"
-ele.external.ing.tree          = "default:tree"
-ele.external.ing.leaves        = "default:leaves"
-ele.external.ing.apple         = "default:apple"
-ele.external.ing.jungle_tree   = "default:jungletree"
-ele.external.ing.jungle_leaves = "default:jungleleaves"
-ele.external.ing.pine_tree     = "default:pine_tree"
-ele.external.ing.pine_needles  = "default:pine_needles"
-ele.external.ing.acacia_tree   = "default:acacia_tree"
-ele.external.ing.acacia_leaves = "default:acacia_leaves"
-ele.external.ing.aspen_tree    = "default:aspen_tree"
-ele.external.ing.aspen_leaves  = "default:aspen_leaves"
-ele.external.ing.slab_wood     = "stairs:slab_wood"
-ele.external.ing.stick         = "default:stick"
-ele.external.ing.paper         = "default:paper"             -- elepower_lighting decorative shades only 
-ele.external.ing.farming_soil  = "farming:soil"
-ele.external.ing.farming_soil_wet = "farming:soil_wet"
-ele.external.ing.slab_glass    = "stairs:slab_glass"
-ele.external.ing.dye_red       = "dye:red"
-ele.external.ing.dye_green     = "dye:green"
-ele.external.ing.dye_blue      = "dye:blue"
-ele.external.ing.furnace       = "default:furnace"
-ele.external.ing.obsidian_glass = "default:obsidian_glass"
-ele.external.ing.slab_stone_block = "stairs:slab_stone_block"
-ele.external.ing.blueberry_bush_leaves = "default:blueberry_bush_leaves"
-ele.external.ing.slab_desert_stone_block = "stairs:slab_desert_stone_block"
+ele.external.ing.dirt          = "" -- only used by conduit_dirt_with_grass/dry_grass
+ele.external.ing.wheat         = "" -- only used by conduit_dirt_with_dry_grass
+ele.external.ing.glass         = ""
+ele.external.ing.seed_wheat    = "" -- essential to acidic compound
+ele.external.ing.iron_lump     = ""
+ele.external.ing.coal_lump     = ""
+ele.external.ing.copper_ingot  = ""
+ele.external.ing.silver_ingot  = ""
+ele.external.ing.gold_ingot    = ""
+ele.external.ing.tin_ingot     = ""
+ele.external.ing.bronze_ingot  = ""
+ele.external.ing.steel_ingot   = ""
+ele.external.ing.steel_block   = ""
+ele.external.ing.diamond_block = ""
+ele.external.ing.mese          = ""
+ele.external.ing.mese_crystal  = ""
+ele.external.ing.mese_crystal_fragment = ""
+ele.external.ing.mese_lamp     = ""
+ele.external.ing.flour         = ""
+ele.external.ing.sand          = ""
+ele.external.ing.desert_sand   = ""
+ele.external.ing.cobble        = ""
+ele.external.ing.gravel        = ""
+ele.external.ing.brick         = ""
+ele.external.ing.flint         = ""
+ele.external.ing.clay_brick    = ""
+ele.external.ing.obsidian      = ""
+ele.external.ing.lava_source   = ""
+ele.external.ing.hoe_steel     = ""
+ele.external.ing.axe_steel     = ""
+ele.external.ing.tree          = ""
+ele.external.ing.leaves        = ""
+ele.external.ing.apple         = ""
+ele.external.ing.jungle_tree   = ""
+ele.external.ing.jungle_leaves = ""
+ele.external.ing.pine_tree     = ""
+ele.external.ing.pine_needles  = ""
+ele.external.ing.acacia_tree   = ""
+ele.external.ing.acacia_leaves = ""
+ele.external.ing.aspen_tree    = ""
+ele.external.ing.aspen_leaves  = ""
+ele.external.ing.slab_wood     = ""
+ele.external.ing.stick         = ""
+ele.external.ing.paper         = "" -- elepower_lighting decorative shades only
+ele.external.ing.farming_soil  = ""
+ele.external.ing.farming_soil_wet = ""
+ele.external.ing.slab_glass    = ""
+ele.external.ing.dye_red       = ""
+ele.external.ing.dye_green     = ""
+ele.external.ing.dye_blue      = ""
+ele.external.ing.furnace       = ""
+ele.external.ing.obsidian_glass = ""
+ele.external.ing.slab_stone_block = ""
+ele.external.ing.blueberry_bush_leaves = ""
+ele.external.ing.slab_desert_stone_block = ""
 
 ------------
 -- Sounds --
 ------------
-ele.external.sounds.node_sound_stone = default.node_sound_stone_defaults()
-ele.external.sounds.node_sound_water = default.node_sound_water_defaults()
-ele.external.sounds.node_sound_stone = default.node_sound_stone_defaults()
-ele.external.sounds.node_sound_wood  = default.node_sound_wood_defaults()
-ele.external.sounds.node_sound_glass = default.node_sound_glass_defaults()
-ele.external.sounds.node_sound_metal = default.node_sound_metal_defaults()
-ele.external.sounds.tool_breaks      = "default_tool_breaks"
-ele.external.sounds.dig_crumbly      = "default_dig_crumbly"
-ele.external.sounds.node_sound_dirt_c = default.node_sound_dirt_defaults(
-										{
-											footstep = {name = "default_grass_footstep", gain = 0.25}
-										})
+ele.external.sounds.node_sound_stone = ""
+ele.external.sounds.node_sound_water = ""
+ele.external.sounds.node_sound_stone = ""
+ele.external.sounds.node_sound_wood  = ""
+ele.external.sounds.node_sound_glass = ""
+ele.external.sounds.node_sound_metal = ""
+ele.external.sounds.tool_breaks      = ""
+ele.external.sounds.dig_crumbly      = ""
+ele.external.sounds.node_sound_dirt_c = ""
+
 ---------------------
 -- Graphics/Images --
 ---------------------
-ele.external.graphic.water               = "default_water.png"
-ele.external.graphic.grass               = "default_grass.png"
-ele.external.graphic.dirt                = "default_dirt.png"
-ele.external.graphic.grass_side          = "default_grass_side.png"
-ele.external.graphic.grass_dry           = "default_dry_grass.png"
-ele.external.graphic.grass_side_dry      = "default_dry_grass_side.png"
-ele.external.graphic.stone_block         = "default_stone_block.png"
-ele.external.graphic.desert_stone_block  = "default_desert_stone_block.png"
-ele.external.graphic.stone               = "default_stone.png"
-ele.external.graphic.wood                = "default_wood.png"
-ele.external.graphic.obsidian_glass      = "default_obsidian_glass.png"
-ele.external.graphic.furnace_fire_bg     = "default_furnace_fire_bg.png"
-ele.external.graphic.furnace_fire_fg     = "default_furnace_fire_fg.png"
-ele.external.graphic.gui_furnace_arrow_bg = "gui_furnace_arrow_bg.png"
-ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
-
-
+ele.external.graphic.water               = ""
+ele.external.graphic.grass               = ""
+ele.external.graphic.dirt                = ""
+ele.external.graphic.grass_side          = ""
+ele.external.graphic.grass_dry           = ""
+ele.external.graphic.grass_side_dry      = ""
+ele.external.graphic.stone_block         = ""
+ele.external.graphic.desert_stone_block  = ""
+ele.external.graphic.stone               = ""
+ele.external.graphic.wood                = ""
+ele.external.graphic.obsidian_glass      = ""
+ele.external.graphic.furnace_fire_bg     = ""
+ele.external.graphic.furnace_fire_fg     = ""
+ele.external.graphic.gui_furnace_arrow_bg = ""
+ele.external.graphic.gui_furnace_arrow_fg = ""
 
 ------------------------------------------------------------
 --  ___ _                                ___           _  --
@@ -260,7 +257,6 @@ ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
 -- uses ing.tin_ingot
 -- uses ing.bronze_ingot
 -- uses ing.steel_ingot
--- uses ing.mithril_ingot
 -- uses ing.mese_crystal
 -- uses ing.mese_crystal_fragment
 -- uses ing.mese_lamp
@@ -332,7 +328,7 @@ ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
 --           | |\/| / _` / _| ' \| | ' \/ -_|_-<          --
 --           |_|  |_\__,_\__|_||_|_|_||_\___/__/          --
 ------------------------------------------------------------
---   Other mods nodes/items used by elepower_machines     -- 
+--   Other mods nodes/items used by elepower_machines     --
 ------------------------------------------------------------
 ---------------
 -- craft.lua --
@@ -584,13 +580,13 @@ ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
 -- uses ref.get_hotbar_bg
 
 ---------------------------------------------------------------
---  ___ _                                _____         _     --  
+--  ___ _                                _____         _     --
 -- | __| |___ _ __  _____ __ _____ _ _  |_   _|__  ___| |___ --
 -- | _|| / -_) '_ \/ _ \ V  V / -_) '_|   | |/ _ \/ _ \ (_-< --
 -- |___|_\___| .__/\___/\_/\_/\___|_|     |_|\___/\___/_/__/ --
 --           |_|                                             --
 ---------------------------------------------------------------
---      Other mods nodes/items used by elepower_tools        -- 
+--      Other mods nodes/items used by elepower_tools        --
 ---------------------------------------------------------------
 ---------------
 -- armor.lua --
@@ -645,7 +641,7 @@ ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
 --           |_|\__,_|_| |_|_|_|_|_||_\__, |              --
 --                                    |___/               --
 ------------------------------------------------------------
---    Other mods nodes/items used by elepower_farming     -- 
+--    Other mods nodes/items used by elepower_farming     --
 ------------------------------------------------------------
 ------------------
 -- crafting.lua --
@@ -749,8 +745,8 @@ ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
 --                \__ \/ _ \ / _` | '_|                   --
 --                |___/\___/_\__,_|_|                     --
 ------------------------------------------------------------
---      Other mods nodes/items used by elepower_solar     -- 
-------------------------------------------------------------  
+--      Other mods nodes/items used by elepower_solar     --
+------------------------------------------------------------
 ------------------
 -- crafting.lua --
 ------------------
@@ -785,8 +781,8 @@ ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
 --              | | | ' \/ -_) '_| '  \/ _` | |           --
 --              |_| |_||_\___|_| |_|_|_\__,_|_|           --
 ------------------------------------------------------------
---    Other mods nodes/items used by elepower_thermal     -- 
------------------------------------------------------------- 
+--    Other mods nodes/items used by elepower_thermal     --
+------------------------------------------------------------
 ------------------
 -- crafting.lua --
 ------------------
@@ -814,13 +810,13 @@ ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
 --         | _|| / -_) '_ \/ _ \ V  V / -_) '_|           --
 --         |___|_\___| .__/\___/\_/\_/\___|_|             --
 --              __  _|_|      _                           --
- --            |  \/  (_)_ _ (_)_ _  __ _                 --  
---             | |\/| | | ' \| | ' \/ _` |                --  
---             |_|  |_|_|_||_|_|_||_\__, |                --  
+ --            |  \/  (_)_ _ (_)_ _  __ _                 --
+--             | |\/| | | ' \| | ' \/ _` |                --
+--             |_|  |_|_|_||_|_|_||_\__, |                --
 --                                  |___/                 --
 ------------------------------------------------------------
---     Other mods nodes/items used by elepower_mining     -- 
------------------------------------------------------------- 
+--     Other mods nodes/items used by elepower_mining     --
+------------------------------------------------------------
 ------------------
 -- crafting.lua --
 ------------------
@@ -846,7 +842,7 @@ ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
 --             | .` | || / _| / -_) _` | '_|              --
 --             |_|\_|\_,_\__|_\___\__,_|_|                --
 ------------------------------------------------------------
---     Other mods nodes/items used by elepower_nuclear    -- 
+--     Other mods nodes/items used by elepower_nuclear    --
 ------------------------------------------------------------
 ------------------
 -- crafting.lua --
@@ -932,9 +928,9 @@ ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
 --             __      |_|         _                      --
 --             \ \    / (_)_ _ ___| |___ ______           --
 --              \ \/\/ /| | '_/ -_) / -_|_-<_-<           --
---               \_/\_/ |_|_| \___|_\___/__/__/           --                       
+--               \_/\_/ |_|_| \___|_\___/__/__/           --
 ------------------------------------------------------------
---    Other mods nodes/items used by elepower_wireless    -- 
+--    Other mods nodes/items used by elepower_wireless    --
 ------------------------------------------------------------
 ------------------
 -- crafting.lua --
@@ -1009,7 +1005,7 @@ ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
 --             |____|_\__, |_||_\__|_|_||_\__, |          --
 --                    |___/               |___/           --
 ------------------------------------------------------------
---    Other mods nodes/items used by elepower_lighting    -- 
+--    Other mods nodes/items used by elepower_lighting    --
 ------------------------------------------------------------
 --------------------
 -- i_crafting.lua --
@@ -1063,10 +1059,10 @@ ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
 --                     |_|                                --
 --                    _____                               --
 --                   |_   _|__ _ __  ___                  --
---                     | |/ _ \ '  \/ -_)                 --   
+--                     | |/ _ \ '  \/ -_)                 --
 --                     |_|\___/_|_|_\___|                 --
 ------------------------------------------------------------
---      Other mods nodes/items used by elepower_tome      -- 
+--      Other mods nodes/items used by elepower_tome      --
 ------------------------------------------------------------
 -----------------------------------
 -- i_eletome_additional_info.lua --

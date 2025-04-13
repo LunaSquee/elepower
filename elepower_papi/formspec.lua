@@ -1,5 +1,5 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epg = ele.external.graphic
 
@@ -33,7 +33,7 @@ function ele.formspec.create_bar(x, y, metric, color, small)
 	if not metric or type(metric) ~= "number" or metric < 0 then metric = 0 end
 
 	local width = 1
-	local gauge = "image[0,0;1,2.8;elepower_gui_gauge.png]"
+	local gauge = "image["..x..","..y..";1,2.8;elepower_gui_gauge.png]"
 
 	-- Smaller width bar
 	if small then
@@ -60,6 +60,25 @@ function ele.formspec.power_meter(capacitor)
 	return ele.formspec.create_bar(0, 0, pw_percent, "#00a1ff") .. 
 		"image[0.2,2.45;0.5,0.5;elepower_gui_icon_power_stored.png]"..
 		"tooltip[0,0;1,2.9;"..
+		minetest.colorize("#c60303", "Energy Storage\n")..
+		minetest.colorize("#0399c6", ele.capacity_text(capacitor.capacity, capacitor.storage))..
+		minetest.colorize("#565656", "\nPower Used / Generated: " .. usage .. " " .. ele.unit) .. "]"
+end
+
+function ele.formspec.power_meter_v2(capacitor)
+	if not capacitor then
+		capacitor = { capacity = 8000, storage = 0, usage = 0 }
+	end
+
+	local pw_percent = math.floor(100 * capacitor.storage / capacitor.capacity)
+	local usage = capacitor.usage
+	if not usage then
+		usage = 0
+	end
+
+	return ele.formspec.create_bar(0.375, 0.375, pw_percent, "#00a1ff") ..
+		"image[0.625,3.25;0.5,0.5;elepower_gui_icon_power_stored.png]"..
+		"tooltip[0.375,0.375;1,2.9;"..
 		minetest.colorize("#c60303", "Energy Storage\n")..
 		minetest.colorize("#0399c6", ele.capacity_text(capacitor.capacity, capacitor.storage))..
 		minetest.colorize("#565656", "\nPower Used / Generated: " .. usage .. " " .. ele.unit) .. "]"

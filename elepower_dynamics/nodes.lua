@@ -1,7 +1,7 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
-local epg = ele.external.graphic 
+local epg = ele.external.graphic
 local eps = ele.external.sounds
 
 ---------------

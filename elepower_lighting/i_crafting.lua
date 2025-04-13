@@ -11,7 +11,7 @@
 ------------------------------------------------------
 --                Crafting Recipes                  --
 ------------------------------------------------------
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epi = ele.external.ing
 

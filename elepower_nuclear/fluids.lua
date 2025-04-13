@@ -152,14 +152,14 @@ ele.helpers.register_liquid("corium", {
 	groups            = {corium = 3, radioactive = 1, liquid = 3, igniter = 1},
 })
 
-if minetest.get_modpath("bucket") ~= nil then
-	bucket.register_liquid("elepower_nuclear:coolant_source", "elepower_nuclear:hot_coolant_flowing",
+if minetest.get_modpath("bucket_compat") ~= nil then
+	fluid_lib.register_liquid("elepower_nuclear:coolant_source", "elepower_nuclear:hot_coolant_flowing",
 		"elepower_nuclear:bucket_coolant", "#2497ff", "Coolant (Cold)")
 
-	bucket.register_liquid("elepower_nuclear:hot_coolant_source", "elepower_nuclear:hot_coolant_flowing",
+	fluid_lib.register_liquid("elepower_nuclear:hot_coolant_source", "elepower_nuclear:hot_coolant_flowing",
 		"elepower_nuclear:bucket_hot_coolant", "#88649e", "Coolant (Hot)")
 
-	bucket.register_liquid("elepower_nuclear:heavy_water_source", "elepower_nuclear:heavy_water_flowing",
+	fluid_lib.register_liquid("elepower_nuclear:heavy_water_source", "elepower_nuclear:heavy_water_flowing",
 		"elepower_nuclear:bucket_heavy_water", "#0d4579", "Heavy Water Bucket")
 
 	fluid_tanks.register_tank(":elepower_dynamics:portable_tank", {
@@ -169,7 +169,6 @@ if minetest.get_modpath("bucket") ~= nil then
 		tiles       = {
 			"elepower_tank_base.png", "elepower_tank_side.png", "elepower_tank_base.png^elepower_power_port.png",
 		}
-		
 	})
 end
 
