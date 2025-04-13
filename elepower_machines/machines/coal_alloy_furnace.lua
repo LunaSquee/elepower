@@ -5,26 +5,35 @@ local epr = ele.external.ref
 local epg = ele.external.graphic
 
 local function get_formspec(fuel_percent, item_percent)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		"list[context;src;2,0.5;2,1;]"..
-		"list[context;fuel;2.5,2.5;1,1;]"..
-		"image[2.5,1.5;1,1;"..epg.furnace_fire_bg.."^[lowpart:"..
-		(100-fuel_percent)..":"..epg.furnace_fire_fg.."]"..
-		"image[4,1.5;1,1;"..epg.gui_furnace_arrow_bg.."^[lowpart:"..
-		(item_percent)..":"..epg.gui_furnace_arrow_fg.."^[transformR270]"..
-		"list[context;dst;5,0.96;2,2;]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
+	local bx, by, mx = ele.formspec.padded_box(11.75, 10.45)
+
+	local pad_start = by + 0.25
+	local input_x = bx + 2.25
+	local fuel_x = bx + 2.875
+	local fuel_y = pad_start + 1.25
+	local fuel_slot = fuel_y + 1.25
+	local output_x = mx - 4
+	local output_y = fuel_y - 0.625
+	local arrow_x = fuel_x + input_x - 0.25
+
+	return "formspec_version[6]size[11.75,10.45]" ..
+		epr.get_itemslot_bg(input_x, pad_start, 2, 1) ..
+		"list[context;src;"..input_x..","..pad_start..";2,1;]"..
+		epr.get_itemslot_bg(fuel_x, fuel_slot, 1, 1) ..
+		"list[context;fuel;"..fuel_x..","..fuel_slot..";1,1;]"..
+		"image["..fuel_x..","..fuel_y..";1,1;"..epg.furnace_fire_bg.."^[lowpart:"..
+		fuel_percent..":"..epg.furnace_fire_fg.."]"..
+		"image["..arrow_x..","..fuel_y..";1,1;"..epg.gui_furnace_arrow_bg.."^[lowpart:"..
+		item_percent..":"..epg.gui_furnace_arrow_fg.."^[transformR270]"..
+		epr.get_itemslot_bg(output_x, output_y, 2, 2) ..
+		"list[context;dst;"..output_x..","..output_y..";2,2;]"..
+		epr.gui_player_inv() ..
 		"listring[context;dst]"..
 		"listring[current_player;main]"..
 		"listring[context;src]"..
 		"listring[current_player;main]"..
 		"listring[context;fuel]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 local function can_dig(pos, player)
@@ -171,12 +180,12 @@ local function alloy_furnace_timer(pos, elapsed)
 
 	if fuel_totaltime ~= 0 then
 		active = "Active"
-		local fuel_percent = math.floor(fuel_time / fuel_totaltime * 100)
+		local fuel_percent = 100 - math.floor(fuel_time / fuel_totaltime * 100)
 		formspec = get_formspec(fuel_percent, item_percent)
 		ele.helpers.swap_node(pos, "elepower_machines:coal_alloy_furnace_active")
 		result = true
 	else
-		formspec = get_formspec(100, 0)
+		formspec = get_formspec(0, 0)
 		ele.helpers.swap_node(pos, "elepower_machines:coal_alloy_furnace")
 		minetest.get_node_timer(pos):stop()
 	end
@@ -226,7 +235,7 @@ ele.register_base_device("elepower_machines:coal_alloy_furnace", {
 		inv:set_size("dst", 4)
 		inv:set_size("fuel", 1)
 
-		meta:set_string("formspec", get_formspec(100, 0))
+		meta:set_string("formspec", get_formspec(0, 0))
 	end,
 	allow_metadata_inventory_put = allow_metadata_inventory_put,
 	allow_metadata_inventory_take = allow_metadata_inventory_take,

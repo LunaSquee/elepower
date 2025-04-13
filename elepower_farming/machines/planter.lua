@@ -1,6 +1,7 @@
 
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
+local epr = ele.external.ref
 local eps = ele.external.sounds
 local epi = ele.external.ing
 
@@ -57,27 +58,35 @@ local ranges = {
 }
 
 local function get_formspec(timer, power, state)
+	local layout_w, layout_h = ele.formspec.get_list_size(3, 3)
+	local src_w, src_h = ele.formspec.get_list_size(8, 2)
+	local layout_x = ele.formspec.center_in_box(11.75, 12.45, layout_w, layout_h)
+	local layout = ele.formspec.slot_grid(layout_x, 0.375, 3, 3)
+	local bx, by, mx = ele.formspec.padded_box(11.75, 12.45)
+
 	local layout_tt = "Item placed here\n  will be planted\nout in a 3x3 area"
 	local layout_bi = "elepower_planter_layout.png"
-	return "size[8,10]"..
-		ele.formspec.power_meter(power)..
-		ele.formspec.state_switcher(7, 0, state)..
-		ele.formspec.create_bar(1, 0, 100 - timer, "#00ff11", true)..
-		"list[context;layout;2.5,0;3,3;]"..
-		"image[2.5,0;1,1;"..layout_bi.."]"..
-		"image[3.5,0;1,1;"..layout_bi.."]"..
-		"image[4.5,0;1,1;"..layout_bi.."]"..
-		"image[2.5,1;1,1;"..layout_bi.."]"..
-		"image[3.5,1;1,1;"..layout_bi.."]"..
-		"image[4.5,1;1,1;"..layout_bi.."]"..
-		"image[2.5,2;1,1;"..layout_bi.."]"..
-		"image[3.5,2;1,1;"..layout_bi.."]"..
-		"image[4.5,2;1,1;"..layout_bi.."]"..
-		"tooltip[2.5,0;4.5,2;"..layout_tt..";"..eletome.tooltip_color.."]"..
-		"list[context;src;0,3.5;8,2;]"..
-		"tooltip[0,3.5;8,2;    Place stacks of items\n     here to keep planter\nsupplied with items to plant;"..eletome.tooltip_color.."]"..
-		"list[current_player;main;0,5.75;8,1;]"..
-		"list[current_player;main;0,7;8,3;8]"..
+
+	return "formspec_version[6]size[11.75,12.45]" ..
+		ele.formspec.power_meter_v2(power)..
+		ele.formspec.state_switcher(mx - 1, by, state)..
+		ele.formspec.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true)..
+		"image["..layout[1][1]..";1,1;"..layout_bi.."]"..
+		"image["..layout[1][2]..";1,1;"..layout_bi.."]"..
+		"image["..layout[1][3]..";1,1;"..layout_bi.."]"..
+		"image["..layout[2][1]..";1,1;"..layout_bi.."]"..
+		"image["..layout[2][2]..";1,1;"..layout_bi.."]"..
+		"image["..layout[2][3]..";1,1;"..layout_bi.."]"..
+		"image["..layout[3][1]..";1,1;"..layout_bi.."]"..
+		"image["..layout[3][2]..";1,1;"..layout_bi.."]"..
+		"image["..layout[3][3]..";1,1;"..layout_bi.."]"..
+		epr.get_itemslot_bg(layout_x, 0.375, 3, 3) ..
+		"list[context;layout;"..layout_x..","..by..";3,3;]"..
+		"tooltip["..layout_x..","..by..";"..layout_w..","..layout_h..";"..layout_tt..";"..eletome.tooltip_color.."]"..
+		epr.get_itemslot_bg(1, 4.25, 8, 2) ..
+		"list[context;src;1,4.25;8,2;]"..
+		"tooltip[1,4.25;"..src_w..","..src_h..";    Place stacks of items\n     here to keep planter\nsupplied with items to plant;"..eletome.tooltip_color.."]"..
+		epr.gui_player_inv(nil, 7) ..
 		"listring[current_player;main]"..
 		"listring[context;src]"..
 		"listring[current_player;main]"

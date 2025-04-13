@@ -13,6 +13,61 @@ ele.formspec.gui_switcher_icons = {
 	"mesecons_wire_off.png^elepower_gui_mese_mask.png^\\[makealpha\\:255,0,0",
 }
 
+-- Distance between slots is 0.25
+function ele.formspec.get_list_width(slot_count)
+	return ((slot_count - 1) * 0.25) + slot_count
+end
+
+function ele.formspec.get_list_size(slots_x, slots_y)
+	local in_box_w = ele.formspec.get_list_width(slots_x)
+	local in_box_h = ele.formspec.get_list_width(slots_y)
+
+	return in_box_w, in_box_h
+end
+
+function ele.formspec.center_in_box(out_box_w, out_box_h, in_box_w, in_box_h)
+	local x = out_box_w / 2 - (in_box_w / 2)
+	local y = out_box_h / 2 - (in_box_h / 2)
+	return x, y
+end
+
+function ele.formspec.center_list_in_box(out_box_w, out_box_h, list_x, list_y)
+	local in_box_w, in_box_h = ele.formspec.get_list_size(list_x, list_y)
+	local x = out_box_w / 2 - (in_box_w / 2)
+	local y = out_box_h / 2 - (in_box_h / 2)
+	return x, y, in_box_w, in_box_h
+end
+
+function ele.formspec.padded_box(width, height, padding)
+	width = width or 11.75
+	height = height or 10.45
+	padding = padding or 0.375
+
+	local start_x = padding
+	local start_y = padding
+	local max_x = width - start_x
+	local max_y = height - start_y
+
+	return start_x, start_y, max_x, max_y
+end
+
+function ele.formspec.slot_grid(start_x, start_y, width, height)
+	local rows = {}
+
+	for x = 1, width do
+		for y = 1, height do
+			if rows[x] == nil then
+				rows[x] = {}
+			end
+			rows[x][y] =
+				(start_x + (x - 1) * 0.25 + x) - 1 .. "," ..
+				(start_y + (y - 1) * 0.25 + y) - 1
+		end
+	end
+
+	return rows
+end
+
 function ele.formspec.state_switcher(x, y, state)
 	if not state then state = 0 end
 	local icon = ele.formspec.gui_switcher_icons[state]

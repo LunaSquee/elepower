@@ -84,20 +84,19 @@ local function harvest(pos, harvested, fdir)
 end
 
 local function get_formspec(timer, power, sludge, state)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.state_switcher(7, 2.5, state)..
-		ele.formspec.power_meter(power)..
-		ele.formspec.fluid_bar(7, 0, sludge)..
-		ele.formspec.create_bar(1, 0, 100 - timer, "#00ff11", true)..
-		"list[context;dst;1.5,0;5,3;]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
+	local bx, by, mx = ele.formspec.padded_box(11.75, 10.45)
+	local context_x = ele.formspec.center_list_in_box(11.75, 10.45, 5, 3)
+
+	return "formspec_version[6]size[11.75,10.45]" ..
+		ele.formspec.state_switcher(mx - 1, by + 3, state)..
+		ele.formspec.power_meter_v2(power)..
+		ele.formspec.fluid_bar(mx - 1, by, sludge)..
+		ele.formspec.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true)..
+		epr.get_itemslot_bg(context_x, by, 5, 3) ..
+		"list[context;dst;"..context_x..","..by..";5,3;]"..
+		epr.gui_player_inv() ..
 		"listring[context;dst]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 local function on_timer(pos, elapsed)

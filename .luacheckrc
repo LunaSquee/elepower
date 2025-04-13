@@ -83,7 +83,12 @@ read_globals = {
             "cleanse_node_description",
             "buffer_to_string",
             "comma_value",
-            "cleanse_node_name"
+            "cleanse_node_name",
+            "get_empty_bucket",
+            "get_liquid_list",
+            "get_flowing_for_source",
+            "get_bucket_for_source",
+            "get_source_for_bucket"
         },
     },
 }

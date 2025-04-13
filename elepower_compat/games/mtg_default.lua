@@ -21,9 +21,10 @@ if minetest.get_modpath("default") ~= nil then
   ele.external.ref.gui_slots       = default.gui_slots
   ele.external.ref.get_hotbar_bg   = default.get_hotbar_bg
   ele.external.ref.get_itemslot_bg = function() return "" end
-  ele.external.ref.gui_player_inv  = function(x, y)
-                x = x or 0.375
+  ele.external.ref.gui_player_inv  = function(center_on, y)
                 y = y or 5
+                center_on = center_on or 11.75
+                local x = center_on / 2 - ((7 * 0.25) + 8) / 2
                 return "list[current_player;main;"..x..","..y..";8,1;]" ..
                        "list[current_player;main;"..x..","..(y + 1.375)..";8,3;8]"
   end

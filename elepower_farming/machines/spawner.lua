@@ -94,21 +94,18 @@ local function spawn(pos, mob)
 end
 
 local function get_formspec(timer, power, state)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		ele.formspec.state_switcher(7, 0, state)..
-		ele.formspec.create_bar(1, 0, 100 - timer, "#00ff11", true)..
+	local bx, by, mx = ele.formspec.padded_box(11.75, 10.45)
+	return "formspec_version[6]size[11.75,10.45]" ..
+		ele.formspec.power_meter_v2(power)..
+		ele.formspec.state_switcher(mx - 1, by, state)..
+		ele.formspec.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true)..
+		epr.get_itemslot_bg(3.5, 1.5, 1, 1)..
 		"list[context;src;3.5,1.5;1,1;]"..
 		"image[3.5,1.5;1,1;elefarming_egg_silhouette.png]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
+		epr.gui_player_inv()..
 		"listring[current_player;main]"..
 		"listring[context;src]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 local function on_timer(pos, elapsed)

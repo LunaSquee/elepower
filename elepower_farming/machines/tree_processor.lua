@@ -26,22 +26,21 @@ local tree_fluid_recipes = {
 }
 
 local function get_formspec(timer, power, fluid_buffer, water_buffer, output_buffer, state)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		ele.formspec.create_bar(1, 0, 100 - timer, "#00ff11", true)..
-		ele.formspec.fluid_bar(2, 0, fluid_buffer)..
-		ele.formspec.fluid_bar(3, 0, water_buffer)..
-		ele.formspec.fluid_bar(7, 0, output_buffer)..
-		ele.formspec.state_switcher(7, 2.5, state)..
-		"list[context;dst;5,1;1,1;]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
+	local bx, by, mx = ele.formspec.padded_box(11.75, 10.45)
+	local slot_x = mx - 4.5
+	local slot_y = by + 1
+	return "formspec_version[6]size[11.75,10.45]" ..
+		ele.formspec.power_meter_v2(power)..
+		ele.formspec.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true)..
+		ele.formspec.fluid_bar(bx + 1.75, by, fluid_buffer)..
+		ele.formspec.fluid_bar(bx + 3, by, water_buffer)..
+		ele.formspec.fluid_bar(mx - 1, by, output_buffer)..
+		ele.formspec.state_switcher(mx - 1, by + 3, state)..
+		epr.get_itemslot_bg(slot_x, slot_y, 1, 1) ..
+		"list[context;dst;"..slot_x..","..slot_y..";1,1;]"..
+		epr.gui_player_inv() ..
 		"listring[context;dst]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 local function on_timer(pos, elapsed)

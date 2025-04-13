@@ -168,9 +168,9 @@ function ele.formspec.get_crafter_formspec(craft_type, power, percent, pos,
 
     if in_width >= 2 then x = 2 end
 
-    return "formspec_version[6]" .. "size[11.75,10.45]" ..
+    return "formspec_version[6]size[11.75,10.45]" ..
                ele.formspec.power_meter_v2(power) ..
-               ele.formspec.state_switcher(10.45, 0.375, state) ..
+               ele.formspec.state_switcher(10.4, 0.375, state) ..
                epr.get_itemslot_bg(x, y, in_width, in_height) ..
                "list[context;src;" .. x .. "," .. y .. ";" .. in_width .. "," .. in_height .. ";]" ..
                bar ..
@@ -186,7 +186,7 @@ function ele.formspec.get_crafter_formspec(craft_type, power, percent, pos,
 end
 
 -- Don't duplicate function for every single crafter node
-function crafter_timer(pos, elapsed)
+local function crafter_timer(pos, elapsed)
     local refresh = false
     local meta = minetest.get_meta(pos)
     local inv = meta:get_inventory()

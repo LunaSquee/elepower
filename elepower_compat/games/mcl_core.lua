@@ -21,9 +21,10 @@ if minetest.get_modpath("mcl_core") ~= nil then
   ele.external.ref.gui_slots       = ""
   ele.external.ref.get_hotbar_bg   = function () return "" end
   ele.external.ref.get_itemslot_bg = mcl_formspec.get_itemslot_bg_v4
-  ele.external.ref.gui_player_inv  = function(x, y)
-                x = x or 0.375
+  ele.external.ref.gui_player_inv  = function(center_on, y)
                 y = y or 5
+                center_on = center_on or 11.75
+                local x = center_on / 2 - ((8 * 0.25) + 9) / 2
                 return mcl_formspec.get_itemslot_bg_v4(x, y, 9, 3)..
                        "list[current_player;main;"..x..","..y..";9,3;9]" ..
                        mcl_formspec.get_itemslot_bg_v4(x, y + 4, 9, 1)..
@@ -52,8 +53,8 @@ if minetest.get_modpath("mcl_core") ~= nil then
   ele.external.ing.coal_lump     = "mcl_core:coal_lump"
   ele.external.ing.copper_ingot  = "mcl_copper:copper_ingot"
   ele.external.ing.gold_ingot    = "mcl_core:gold_ingot"
-  ele.external.ing.tin_ingot     = "" --- !!!!!!! NOT A THING
-  ele.external.ing.bronze_ingot  = "" --- !!!!!!! NOT A THING
+  ele.external.ing.tin_ingot     = "" --- not supported by game
+  ele.external.ing.bronze_ingot  = "" --- not supported by game
   ele.external.ing.iron_ingot    = "mcl_core:iron_ingot"
   ele.external.ing.iron_block    = "mcl_core:ironblock"
   ele.external.ing.steel_ingot   = "" -- not supported by game
