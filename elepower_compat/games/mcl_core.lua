@@ -134,7 +134,7 @@ if minetest.get_modpath("mcl_core") ~= nil then
   ele.external.graphic.furnace_fire_bg     = "default_furnace_fire_bg.png"
   ele.external.graphic.furnace_fire_fg     = "default_furnace_fire_fg.png"
   ele.external.graphic.gui_furnace_arrow_bg = "gui_furnace_arrow_bg.png"
-  ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png",
+  ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
   ele.external.graphic.gui_mesecons_on     = ""
   ele.external.graphic.gui_mesecons_off    = ""
 end

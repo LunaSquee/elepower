@@ -6,12 +6,15 @@ local efs = ele.formspec
 
 local function get_formspec_default(power)
 	local start, bx, by, mx = efs.begin(11.75, 10.45)
+	local slot_in_x = bx + efs.move(2.5)
+	local slot_out_x = mx - efs.move(3)
+	local slot_y = by + 0.5
 	return start..
 		efs.power_meter_v2(power) ..
-		efs.image(2, 0.5, 1, 1, epg.gui_furnace_arrow_fg.."^[transformR180") ..
-		efs.list("context", "src", 2, 1.5, 1, 1) ..
-		efs.image(5, 0.5, 1, 1, epg.gui_furnace_arrow_fg) ..
-		efs.list("context", "dst", 5, 1.5, 1, 1) ..
+		efs.image(slot_in_x, slot_y, 1, 1, epg.gui_furnace_arrow_fg.."^[transformR180") ..
+		efs.list("context", "src", slot_in_x, slot_y + 1.25, 1, 1) ..
+		efs.image(slot_out_x, slot_y, 1, 1, epg.gui_furnace_arrow_fg) ..
+		efs.list("context", "dst", slot_out_x, slot_y + 1.25, 1, 1) ..
 		epr.gui_player_inv() ..
 		"listring[current_player;main]"..
 		"listring[context;src]"..

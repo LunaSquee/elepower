@@ -1,19 +1,19 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
-local epi = ele.external.ing
+local efs = ele.formspec
 
 local c_air = minetest.get_content_id("air")
 
 local function get_formspec(power, fluid, state, level)
+	local start, bx, by, mx = efs.begin(11.75, 10.45)
     if not level then level = 0 end
-    return "size[8,8.5]" .. epr.gui_bg .. epr.gui_bg_img .. epr.gui_slots ..
-               ele.formspec.state_switcher(7, 2.5, state) ..
-               ele.formspec.power_meter(power) ..
-               ele.formspec.fluid_bar(7, 0, fluid) .. "label[1,0;Pump level: " ..
-               level .. "]" .. "list[current_player;main;0,4.25;8,1;]" ..
-               "list[current_player;main;0,5.5;8,3;8]" ..
-               epr.get_hotbar_bg(0, 4.25)
+    return start..
+               efs.state_switcher(mx - 1, by + 3, state) ..
+               efs.power_meter_v2(power) ..
+               efs.fluid_bar(mx - 1, by, fluid) ..
+               efs.label(bx + 1.25, by + 0.125, "Pump level: " .. level) ..
+               epr.gui_player_inv()
 end
 
 -- Dig a node in a certain radius on the same Y level

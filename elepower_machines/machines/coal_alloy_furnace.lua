@@ -2,7 +2,6 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
-local epg = ele.external.graphic
 local efs = ele.formspec
 
 local function get_formspec(fuel_percent, item_percent)

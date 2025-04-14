@@ -2,6 +2,7 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 local structures = {}
 local ores = {}
@@ -99,25 +100,22 @@ local function get_mining_results(drills)
 end
 
 local function get_formspec(timer, power, buffer, state)
+	local start, bx, by, mx = efs.begin(11.75, 10.45)
+	local list_x = efs.center_list_in_box(11.75, 10.45, 5, 3)
 	if not timer then
 		timer = 0
 	end
 
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		ele.formspec.state_switcher(0, 2.5, state)..
-		ele.formspec.fluid_bar(7, 0, buffer)..
-		ele.formspec.create_bar(1, 0, 100 - timer, "#00ff11", true)..
-		"list[context;dst;1.5,0;5,3;]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
+	return start..
+		efs.power_meter_v2(power) ..
+		efs.state_switcher(mx - 1, by + 3, state) ..
+		efs.fluid_bar(mx - 1, by, buffer) ..
+		efs.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true) ..
+		efs.list("context", "dst", list_x, by, 5, 3) ..
+		epr.gui_player_inv() ..
 		"listring[current_player;main]"..
 		"listring[context;dst]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 local function on_timer(pos, elapsed)

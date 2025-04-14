@@ -2,18 +2,15 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 local function get_formspec(power, percent, buffer, state)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		ele.formspec.state_switcher(3.5, 1.5, state)..
-		ele.formspec.fluid_bar(7, 0, buffer)..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
-		epr.get_hotbar_bg(0, 4.25)
+	local start, _, by, mx, _, center_x = efs.begin(11.75, 10.45)
+	return start..
+		efs.power_meter_v2(power)..
+		efs.state_switcher(center_x, by + 1.25, state)..
+		efs.fluid_bar(mx - 1, by, buffer)..
+		epr.gui_player_inv()
 end
 
 ele.register_fluid_generator("elepower_machines:steam_turbine", {

@@ -1,11 +1,10 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
-local epg = ele.external.graphic
 local efs = ele.formspec
 
 local function get_formspec(timer, biomass_buffer, output_buffer)
-	local start, bx, by, mx = efs.begin(11.75, 5)
+	local start, bx, by, mx = efs.begin(11.75, 10.45)
     local context_x = bx + 2.5
     local arrow_x = mx - 3.5
     local arrow_y = by + 1.25

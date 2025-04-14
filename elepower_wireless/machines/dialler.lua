@@ -2,12 +2,16 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 local function escape_comma(str)
 	return str:gsub(",","\\,")
 end
 
 local function get_formspec(power, player, transmitters, receivers)
+	local start, bx, by, mx, _, center_x = efs.begin(11.75, 10.45)
+	local width = efs.get_list_width(8)
+	local offset = efs.move(3)
 	local list_tr  = {}
 	local tr_selct = nil
 	local list_re  = {}
@@ -39,19 +43,14 @@ local function get_formspec(power, player, transmitters, receivers)
 	local re_spc = ""
 	if re_selct then re_spc = ";" .. re_selct end
 
-	return "size[8,10.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		"textlist[1,0;6.8,2.5;transmitter;" .. table.concat(list_tr, ",") .. tr_spc .. "]"..
-		"textlist[1,3;6.8,2.5;receiver;" .. table.concat(list_re, ",") .. re_spc .. "]"..
-		"button[6,5.75;2,0.25;refresh;Refresh]"..
-		"label[0,5.75;Owned by " .. player .. "]"..
-		"list[current_player;main;0,6.25;8,1;]"..
-		"list[current_player;main;0,7.5;8,3;8]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 6.25)
+	return start..
+		efs.power_meter_v2(power)..
+		efs.textlist(center_x - offset, by, width, 1.5, "transmitter", table.concat(list_tr, ",") .. tr_spc) ..
+		efs.textlist(center_x - offset, by + 1.75, width, 1.5, "receiver", table.concat(list_re, ",") .. re_spc) ..
+		efs.button(mx - 2, by + 3.5, 2, 0.5, "refresh", "Refresh") ..
+		efs.label(bx, by + 3.75, "Owned by " .. player) ..
+		epr.gui_player_inv()..
+		"listring[current_player;main]"
 end
 
 local function get_is_active_node(meta, pos)

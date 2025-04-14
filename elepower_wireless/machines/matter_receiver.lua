@@ -2,22 +2,19 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 elewi.loaded_receivers = {}
 
 local function get_formspec(power, name, player)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		depr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		"field[1.5,0.5;5,1;name;Receiver Name;".. name .."]"..
+	local start, bx, by = efs.begin(11.75, 10.45)
+	return start..
+		efs.power_meter_v2(power)..
+		efs.field(bx + 1.25, by + 0.25, 5, 0.5, "name", "Receiver Name", name) ..
+		efs.label(bx, by + 3.75, "Owned by " .. player) ..
+		epr.gui_player_inv()..
 		"field_close_on_enter[name;false]"..
-		"label[0,3.75;Owned by " .. player .. "]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 local function matter_receiver_timer(pos)
