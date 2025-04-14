@@ -2,6 +2,7 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 local myname = "elepower_nuclear:fission_controller"
 
@@ -29,33 +30,34 @@ local function check(pos)
 	}
 end
 
-local function get_controller_formspec(meta)
+local function get_controller_formspec(meta, y, x_min, x_max, btn_min, btn_max, btn_center)
 	local ctrls    = {}
 	local rods     = 4
+	local gutter   = 0.25
+	local stops    = ((x_max - x_min) + gutter) / (rods - 1) - gutter - 0.125
 	local selected = meta:get_int("selected")
 
 	for i = 1, rods do
 		local setting = meta:get_int("c" .. i)
-		local xoffset = ((i / rods) * 4) + 3.75
+		local xoffset = x_min + (stops * (i - 1)) + gutter
 		local sel     = ""
 
 		if i == selected then
 			sel = " <- "
 		end
 
-		local fspc = ("label[%f,0;%s]"):format(xoffset - 1.25, setting .. " %" .. sel)
-
-		fspc = fspc .. ele.formspec.create_bar(xoffset - 1, 0.5, 100 - setting, "#252625", true)
+		local fspc = efs.label(xoffset, y, setting .. " %" .. sel)
+		fspc = fspc .. efs.create_bar(xoffset, y + 0.25, 100 - setting, "#252625", true)
 
 		table.insert(ctrls, fspc)
 	end
 
 	return table.concat( ctrls, "" )..
-		"button[1,3.2;1.5,0.5;next;Next]"..
-		"button[2.5,3.2;1.5,0.5;prev;Previous]"..
-		"button[4.25,3.2;1.5,0.5;stop;SCRAM]"..
-		"button[6,3.2;1.5,0.5;up;Raise]"..
-		"button[7.5,3.2;1.5,0.5;down;Lower]"..
+		efs.button(btn_min, y + 3.5, 1.5, 0.5, "next", "Next")..
+		efs.button(btn_min + 1.75, y + 3.5, 1.5, 0.5, "prev", "Previous")..
+		efs.button(btn_center - 0.25, y + 3.5, 1.5, 0.5, "stop", "SCRAM")..
+		efs.button(btn_max - 1.5, y + 3.5, 1.5, 0.5, "up", "Raise")..
+		efs.button(btn_max - 3.25, y + 3.5, 1.5, 0.5, "down", "Lower")..
 		"tooltip[next;Select the next control rod]"..
 		"tooltip[prev;Select the previous control rod]"..
 		"tooltip[stop;Drops all the rods into the reactor core, instantly stopping it]"..
@@ -64,16 +66,17 @@ local function get_controller_formspec(meta)
 end
 
 local function get_formspec(pos, power, station, station_meta)
-	local width = 8
-	local fspec = "list[context;card;1,0;1,1;]"
 	local metas = check(pos)
+	local width = metas and 12.75 or 11.75
+	local start, bx, by, mx, _, center_x = efs.begin(width, 10.45)
+	local fspec = efs.list("context", "card", center_x, by, 1, 1)
 
 	--local comps = station_meta:get_string("components")
 	--local seeitems = comps:match("elepower_wireless:upgrade_item_transfer") ~= nil
 
 	if metas then
-		fspec = "list[context;card;2,0;1,1;]"
-		width = 10
+		fspec = efs.list("context", "card", bx + 2.25, by, 1, 1)
+		width = 12.75
 
 		-- Reactor Core
 
@@ -93,14 +96,21 @@ local function get_formspec(pos, power, station, station_meta)
 		end
 
 		fspec = fspec..
-			ele.formspec.create_bar(1, 0, power, "#ff0000", true)..
-			ele.formspec.create_bar(1.5, 0, heat, "#ffdd11", true)..
-			"tooltip[1,0;0.25,2.5;Power: "..power.."%]"..
-			"tooltip[1.5,0;0.25,2.5;Heat: "..heat.."%]"..
-			"label[1,3.75;".. status .."]"
+			efs.create_bar(bx + 1.25, by, power, "#ff0000", true)..
+			efs.create_bar(bx + 1.75, by, heat, "#ffdd11", true)..
+			efs.tooltip(bx + 1.25, by, 0.25, 2.9, "Power: "..power.."%") ..
+			efs.tooltip(bx + 1.75, by, 0.25, 2.9, "Heat: "..heat.."%") ..
+			efs.label(bx + 1.25, by + 4.25, status)
 
 		-- Rods
-		fspec = fspec .. get_controller_formspec(metas.control_meta)
+		fspec = fspec .. get_controller_formspec(
+			metas.control_meta,
+			by,
+			bx + 3.5,
+			mx - 3,
+			bx + 1.25,
+			mx - 1.25,
+			center_x )
 
 		-- Coolant port
 
@@ -108,8 +118,8 @@ local function get_formspec(pos, power, station, station_meta)
 		local hot  = fluid_lib.get_buffer_data(metas.coolant, "hot")
 
 		fspec = fspec ..
-			ele.formspec.fluid_bar(8, 0, cool)..
-			ele.formspec.fluid_bar(9, 0, hot)
+			ele.formspec.fluid_bar(mx - 1, by, hot)..
+			ele.formspec.fluid_bar(mx - 2.25, by, cool)
 
 		--if seeitems then
 		--	fspec = fspec ..
@@ -117,19 +127,13 @@ local function get_formspec(pos, power, station, station_meta)
 		--end
 	end
 
-	local centered = (width - 8) / 2
-	return "size["..width..",8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		"list[current_player;main;"..centered..",4.25;8,1;]"..
-		"list[current_player;main;"..centered..",5.5;8,3;8]"..
+	return start..
+		efs.power_meter_v2(power)..
+		epr.gui_player_inv(width) ..
 		fspec..
 		"listring[current_player;main]"..
 		"listring[context;card]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(centered, 4.25)
+		"listring[current_player;main]"
 end
 
 local function on_receive_fields(pos, fields, sender, station, station_meta)

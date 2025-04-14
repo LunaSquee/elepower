@@ -2,22 +2,19 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
-local epg = ele.external.graphic 
+local epg = ele.external.graphic
+local efs = ele.formspec
 
 local function get_formspec(heat, cold, water, steam)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.fluid_bar(0, 0, heat)..
-		ele.formspec.fluid_bar(1, 0, cold)..
-		"image[3.5,1;1,1;"..epg.gui_furnace_arrow_bg.."^[transformR270]"..
-		ele.formspec.fluid_bar(6, 0, water)..
-		ele.formspec.fluid_bar(7, 0, steam)..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+	local start, bx, by, mx, _, center_x = efs.begin(11.75, 10.45)
+	return start..
+		efs.fluid_bar(bx, by, heat)..
+		efs.fluid_bar(bx + 1.25, by, cold)..
+		efs.image(center_x, by + 1.25, 1, 1, epg.gui_furnace_arrow_bg.."^[transformR270]")..
+		efs.fluid_bar(mx - 1, by, water)..
+		efs.fluid_bar(mx - 2.25, by, steam)..
+		epr.gui_player_inv() ..
+		"listring[current_player;main]"
 end
 
 local heat_recipes = {
