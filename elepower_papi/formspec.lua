@@ -2,45 +2,22 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epg = ele.external.graphic
+local epr = ele.external.ref
 
 -- Formspec helpers
 
 ele.formspec = {}
+ele.formspec.version = 6
 ele.formspec.gui_switcher_icons = {
 	[0] = "elepower_gui_check.png",
 	"elepower_gui_cancel.png",
-	"mesecons_wire_on.png^elepower_gui_mese_mask.png^\\[makealpha\\:255,0,0",
-	"mesecons_wire_off.png^elepower_gui_mese_mask.png^\\[makealpha\\:255,0,0",
+	epg.gui_mesecons_on,
+	epg.gui_mesecons_off,
 }
 
--- Distance between slots is 0.25
-function ele.formspec.get_list_width(slot_count)
-	return ((slot_count - 1) * 0.25) + slot_count
-end
-
-function ele.formspec.get_list_size(slots_x, slots_y)
-	local in_box_w = ele.formspec.get_list_width(slots_x)
-	local in_box_h = ele.formspec.get_list_width(slots_y)
-
-	return in_box_w, in_box_h
-end
-
-function ele.formspec.center_in_box(out_box_w, out_box_h, in_box_w, in_box_h)
-	local x = out_box_w / 2 - (in_box_w / 2)
-	local y = out_box_h / 2 - (in_box_h / 2)
-	return x, y
-end
-
-function ele.formspec.center_list_in_box(out_box_w, out_box_h, list_x, list_y)
-	local in_box_w, in_box_h = ele.formspec.get_list_size(list_x, list_y)
-	local x = out_box_w / 2 - (in_box_w / 2)
-	local y = out_box_h / 2 - (in_box_h / 2)
-	return x, y, in_box_w, in_box_h
-end
-
-function ele.formspec.padded_box(width, height, padding)
-	width = width or 11.75
-	height = height or 10.45
+-- Return the formspec version and size text, along with the inside
+-- boundary of the formspec (padded box)
+function ele.formspec.begin(width, height, padding)
 	padding = padding or 0.375
 
 	local start_x = padding
@@ -48,9 +25,50 @@ function ele.formspec.padded_box(width, height, padding)
 	local max_x = width - start_x
 	local max_y = height - start_y
 
-	return start_x, start_y, max_x, max_y
+	return "formspec_version["..ele.formspec.version.."]size["..width..","..height.."]",
+		   start_x, start_y, max_x, max_y
 end
 
+-- Get the absolute width of a list by slot count
+-- Distance between slots is 0.25
+function ele.formspec.get_list_width(slot_count)
+	return ((slot_count - 1) * 0.25) + slot_count
+end
+
+-- Move by n steps, leaving a padding of 0.25 in between each step.
+-- Minimum steps is 1, 0.5 is half a slot anyways.
+-- Similar to get_list_width except that "1" also includes padding for
+-- the first slot.
+function ele.formspec.move(steps)
+	if steps < 1 then return steps end
+	return (math.max(steps - 1, 1) * 0.25) + steps
+end
+
+-- Get the absolute size (width, height) of a list
+function ele.formspec.get_list_size(slots_x, slots_y)
+	local in_box_w = ele.formspec.get_list_width(slots_x)
+	local in_box_h = ele.formspec.get_list_width(slots_y)
+
+	return in_box_w, in_box_h
+end
+
+-- Center a box in another box
+-- Return x, y coordinates of the top-left position of the inner box
+function ele.formspec.center_in_box(out_box_w, out_box_h, in_box_w, in_box_h)
+	local x = out_box_w / 2 - (in_box_w / 2)
+	local y = out_box_h / 2 - (in_box_h / 2)
+	return x, y
+end
+
+-- Center a list within a bounding box
+function ele.formspec.center_list_in_box(out_box_w, out_box_h, list_x, list_y)
+	local in_box_w, in_box_h = ele.formspec.get_list_size(list_x, list_y)
+	local x = out_box_w / 2 - (in_box_w / 2)
+	local y = out_box_h / 2 - (in_box_h / 2)
+	return x, y, in_box_w, in_box_h
+end
+
+-- Generate a grid of x,y positions to add textures to slots
 function ele.formspec.slot_grid(start_x, start_y, width, height)
 	local rows = {}
 
@@ -66,6 +84,39 @@ function ele.formspec.slot_grid(start_x, start_y, width, height)
 	end
 
 	return rows
+end
+
+function ele.formspec.image(x, y, w, h, image)
+	w = w or 1
+	h = h or 1
+	image = image or ""
+	return "image["..x..","..y..";"..w..","..h..";"..image.."]"
+end
+
+-- List with game-specifc item slot background
+function ele.formspec.list(list_type, name, x, y, w, h)
+	return epr.get_itemslot_bg(x, y, w, h) ..
+		   "list["..list_type..";"..name..";"..x..","..y..";"..w..","..h..";]"
+end
+
+-- Furnace fire graphic
+-- Not rotated
+function ele.formspec.fuel(x, y, fuel_percent, graphic_bg, graphic_fg)
+	graphic_bg = graphic_bg or epg.furnace_fire_bg
+	graphic_fg = graphic_fg or epg.furnace_fire_fg
+	local lowpart = "^[lowpart:"..fuel_percent..":"..graphic_fg
+	local graphic = fuel_percent ~= nil and graphic_bg..lowpart or graphic_bg
+	return "image["..x..","..y..";1,1;"..graphic.."]"
+end
+
+-- Progress arrow graphic
+-- Rotated
+function ele.formspect.progress(x, y, item_percent, graphic_bg, graphic_fg)
+	graphic_bg = graphic_bg or epg.gui_furnace_arrow_bg
+	graphic_fg = graphic_fg or epg.gui_furnace_arrow_fg
+	local lowpart = "^[lowpart:"..item_percent..":"..graphic_fg.."^[transformR270"
+	local graphic = item_percent ~= nil and graphic_bg..lowpart or graphic_bg
+	return "image["..x..","..y..";1,1;"..graphic.."]"
 end
 
 function ele.formspec.state_switcher(x, y, state)

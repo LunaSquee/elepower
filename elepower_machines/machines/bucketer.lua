@@ -1,29 +1,27 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 local function get_formspec(mode, buffer, state)
-	local bx, by, mx = ele.formspec.padded_box(11.75, 10.45)
+	local start, bx, by, mx = efs.begin(11.75, 10.45)
 	local btn_x = mx - 4.25
+    local rot = "^\\[transformR90"
 
     if not mode then mode = 0 end
-
-    local rot = "^\\[transformR90"
     if mode == 1 then rot = "^\\[transformR270" end
 
-    return "formspec_version[6]size[11.75,10.45]" ..
-               ele.formspec.state_switcher(bx, by, state) ..
-               ele.formspec.fluid_bar(mx - 1, 1, buffer) ..
-               epr.get_itemslot_bg(4, 1, 1, 1) ..
-               "list[context;src;4,1;1,1;]" ..
-               epr.get_itemslot_bg(4, 2.25, 1, 1) ..
-               "list[context;dst;4,2.25;1,1;]" ..
-               "image_button["..btn_x..",1;1,1;gui_furnace_arrow_bg.png" .. rot ..
-               ";flip;]" .. "tooltip[flip;Toggle Extract/Insert]" ..
-               epr.gui_player_inv() ..
-               "listring[current_player;main]" .. "listring[context;src]" ..
-               "listring[current_player;main]" .. "listring[context;dst]" ..
-               "listring[current_player;main]"
+    return start ..
+            efs.state_switcher(bx, by, state) ..
+            efs.fluid_bar(mx - 1, 1, buffer) ..
+            efs.list("context", "src", 4, 1, 1, 1) ..
+            efs.list("context", "dst", 4, 2.25, 1, 1) ..
+            "image_button["..btn_x..",1;1,1;gui_furnace_arrow_bg.png" .. rot ..
+            ";flip;]" .. "tooltip[flip;Toggle Extract/Insert]" ..
+            epr.gui_player_inv() ..
+            "listring[current_player;main]" .. "listring[context;src]" ..
+            "listring[current_player;main]" .. "listring[context;dst]" ..
+            "listring[current_player;main]"
 end
 
 local function on_timer(pos, elapsed)

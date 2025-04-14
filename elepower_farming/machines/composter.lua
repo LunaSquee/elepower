@@ -2,20 +2,18 @@
 -- shorten table ref
 local epr = ele.external.ref
 local epg = ele.external.graphic
+local efs = ele.formspec
 
 local function get_formspec(timer, biomass_buffer, output_buffer)
-	local bx, by, mx = ele.formspec.padded_box(11.75, 5)
+	local start, bx, by, mx = efs.begin(11.75, 5)
     local context_x = bx + 2.5
     local arrow_x = mx - 3.5
     local arrow_y = by + 1.25
-    return "formspec_version[6]size[11.75,10.45]" ..
-               ele.formspec.fluid_bar(bx, by + 0.375, biomass_buffer) ..
-               ele.formspec.fluid_bar(mx - 1, by + 0.375, output_buffer) ..
-               epr.get_itemslot_bg(context_x, by, 3, 3) ..
-               "list[context;src;"..context_x..","..by..";3,3;]" ..
-               "image["..arrow_x..","..arrow_y..";1,1;" ..
-               epg.gui_furnace_arrow_bg .. "^[lowpart:" .. (timer) .. ":" ..
-               epg.gui_furnace_arrow_fg .. "^[transformR270]" ..
+    return start..
+               efs.fluid_bar(bx, by + 0.375, biomass_buffer) ..
+               efs.fluid_bar(mx - 1, by + 0.375, output_buffer) ..
+               efs.list("context", "src", context_x, by, 3, 3) ..
+               efs.progress(arrow_x, arrow_y, timer) ..
                epr.gui_player_inv() ..
                "listring[current_player;main]" ..
                "listring[context;src]" ..

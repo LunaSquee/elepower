@@ -2,6 +2,7 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 -- How many seconds there are between runs
 local HARVESTER_TICK  = 10
@@ -84,16 +85,15 @@ local function harvest(pos, harvested, fdir)
 end
 
 local function get_formspec(timer, power, sludge, state)
-	local bx, by, mx = ele.formspec.padded_box(11.75, 10.45)
-	local context_x = ele.formspec.center_list_in_box(11.75, 10.45, 5, 3)
+	local start, bx, by, mx = efs.begin(11.75, 10.45)
+	local context_x = efs.center_list_in_box(11.75, 10.45, 5, 3)
 
-	return "formspec_version[6]size[11.75,10.45]" ..
-		ele.formspec.state_switcher(mx - 1, by + 3, state)..
-		ele.formspec.power_meter_v2(power)..
-		ele.formspec.fluid_bar(mx - 1, by, sludge)..
-		ele.formspec.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true)..
-		epr.get_itemslot_bg(context_x, by, 5, 3) ..
-		"list[context;dst;"..context_x..","..by..";5,3;]"..
+	return start..
+		efs.state_switcher(mx - 1, by + 3, state)..
+		efs.power_meter_v2(power)..
+		efs.fluid_bar(mx - 1, by, sludge)..
+		efs.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true)..
+		efs.list("context", "dst", context_x, by, 5, 3) ..
 		epr.gui_player_inv() ..
 		"listring[context;dst]"..
 		"listring[current_player;main]"

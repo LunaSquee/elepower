@@ -2,6 +2,7 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 local tree_fluid_recipes = {
 	["elepower_farming:tree_sap_source"] = {
@@ -26,18 +27,17 @@ local tree_fluid_recipes = {
 }
 
 local function get_formspec(timer, power, fluid_buffer, water_buffer, output_buffer, state)
-	local bx, by, mx = ele.formspec.padded_box(11.75, 10.45)
+	local start, bx, by, mx = efs.begin(11.75, 10.45)
 	local slot_x = mx - 4.5
 	local slot_y = by + 1
-	return "formspec_version[6]size[11.75,10.45]" ..
-		ele.formspec.power_meter_v2(power)..
-		ele.formspec.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true)..
-		ele.formspec.fluid_bar(bx + 1.75, by, fluid_buffer)..
-		ele.formspec.fluid_bar(bx + 3, by, water_buffer)..
-		ele.formspec.fluid_bar(mx - 1, by, output_buffer)..
-		ele.formspec.state_switcher(mx - 1, by + 3, state)..
-		epr.get_itemslot_bg(slot_x, slot_y, 1, 1) ..
-		"list[context;dst;"..slot_x..","..slot_y..";1,1;]"..
+	return start..
+		efs.power_meter_v2(power) ..
+		efs.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true) ..
+		efs.fluid_bar(bx + 1.75, by, fluid_buffer) ..
+		efs.fluid_bar(bx + 3, by, water_buffer) ..
+		efs.fluid_bar(mx - 1, by, output_buffer) ..
+		efs.state_switcher(mx - 1, by + 3, state) ..
+		efs.list("context", "dst", slot_x, slot_y, 1, 1) ..
 		epr.gui_player_inv() ..
 		"listring[context;dst]"..
 		"listring[current_player;main]"

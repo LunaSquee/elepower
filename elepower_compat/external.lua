@@ -177,6 +177,8 @@ ele.external.graphic.furnace_fire_bg     = ""
 ele.external.graphic.furnace_fire_fg     = ""
 ele.external.graphic.gui_furnace_arrow_bg = ""
 ele.external.graphic.gui_furnace_arrow_fg = ""
+ele.external.graphic.gui_mesecons_on     = ""
+ele.external.graphic.gui_mesecons_off    = ""
 
 ------------------------------------------------------------
 --  ___ _                                ___           _  --

@@ -2,6 +2,7 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 -- How many seconds there are between runs
 local SPAWNER_TICK = 10
@@ -94,13 +95,12 @@ local function spawn(pos, mob)
 end
 
 local function get_formspec(timer, power, state)
-	local bx, by, mx = ele.formspec.padded_box(11.75, 10.45)
-	return "formspec_version[6]size[11.75,10.45]" ..
-		ele.formspec.power_meter_v2(power)..
-		ele.formspec.state_switcher(mx - 1, by, state)..
-		ele.formspec.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true)..
-		epr.get_itemslot_bg(3.5, 1.5, 1, 1)..
-		"list[context;src;3.5,1.5;1,1;]"..
+	local start, bx, by, mx = efs.begin(11.75, 10.45)
+	return start..
+		efs.power_meter_v2(power) ..
+		efs.state_switcher(mx - 1, by, state) ..
+		efs.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true) ..
+		efs.list("context", "src", 3.5, 1.5, 1, 1) ..
 		"image[3.5,1.5;1,1;elefarming_egg_silhouette.png]"..
 		epr.gui_player_inv()..
 		"listring[current_player;main]"..

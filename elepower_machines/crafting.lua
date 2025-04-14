@@ -111,16 +111,23 @@ local grinding_recipes = {
     {recipe = {epi.sand .. " 4"}, output = "basic_materials:silicon"},
     {recipe = {epi.cobble}, output = epi.gravel .. " 4"},
     {recipe = {epi.gravel}, output = epi.sand .. " 4"},
+    {
+        recipe = {"elepower_dynamics:graphite_ingot"},
+        output = "elepower_dynamics:graphite_rod 3"
+    },
     {recipe = {epi.mese}, output = epi.mese_crystal .. " 9"},
-    {recipe = {epi.mese_crystal}, output = epi.mese_crystal_fragment .. " 9"},
     {
         recipe = {epi.mese_crystal_fragment},
         output = "elepower_dynamics:mese_dust"
-    }, {
-        recipe = {"elepower_dynamics:graphite_ingot"},
-        output = "elepower_dynamics:graphite_rod 3"
     }
 }
+
+-- Prevent duping in games without a discrete mese fragment
+if epi.mese_crystal ~= epi.mese_crystal_fragment then
+    table.insert(grinding_recipes, {
+        recipe = { epi.mese_crystal }, output = epi.mese_crystal_fragment .. " 9"
+    })
+end
 
 -- Register grind recipes
 for _, i in pairs(grinding_recipes) do
@@ -204,16 +211,6 @@ local compressor_recipes = {
         time = 20
     }, {
         recipe = {
-            epi.mese_crystal_fragment .. " 4", epi.mese_crystal_fragment .. " 4"
-        },
-        output = epi.mese_crystal,
-        time = 2
-    }, {
-        recipe = {epi.mese_crystal .. " 4", epi.mese_crystal .. " 4"},
-        output = epi.mese,
-        time = 2
-    }, {
-        recipe = {
             "elepower_dynamics:coal_dust 2", "elepower_dynamics:coal_dust 2"
         },
         output = "elepower_dynamics:carbon_fiber",
@@ -227,6 +224,23 @@ local compressor_recipes = {
         time = 2
     }
 }
+
+-- Prevent duping in games without a discrete mese fragment
+if epi.mese_crystal ~= epi.mese_crystal_fragment then
+    table.insert(compressor_recipes, {
+        recipe = {
+            epi.mese_crystal_fragment .. " 4", epi.mese_crystal_fragment .. " 4"
+        },
+        output = epi.mese_crystal,
+        time = 2
+    })
+
+    table.insert(compressor_recipes, {
+        recipe = {epi.mese_crystal .. " 4", epi.mese_crystal .. " 4"},
+        output = epi.mese,
+        time = 2
+    })
+end
 
 -- Register compressor recipes
 for _, i in pairs(compressor_recipes) do

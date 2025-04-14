@@ -3,10 +3,12 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 -- Specialized formspec for crafters
 function ele.formspec.get_crafter_formspec(craft_type, power, percent, pos,
                                            machine_name, state)
+    local start, bx, by, mx = efs.begin(11.75, 10.45)
     local craftstats = elepm.craft.types[craft_type]
     local craft_reg_path = elepm.craft[craft_type]
     local input_size = craftstats.inputs
@@ -168,15 +170,13 @@ function ele.formspec.get_crafter_formspec(craft_type, power, percent, pos,
 
     if in_width >= 2 then x = 2 end
 
-    return "formspec_version[6]size[11.75,10.45]" ..
-               ele.formspec.power_meter_v2(power) ..
-               ele.formspec.state_switcher(10.4, 0.375, state) ..
-               epr.get_itemslot_bg(x, y, in_width, in_height) ..
-               "list[context;src;" .. x .. "," .. y .. ";" .. in_width .. "," .. in_height .. ";]" ..
+    return start ..
+               efs.power_meter_v2(power) ..
+               efs.state_switcher(mx - 1, by, state) ..
+               efs.list("context", "src", x, y, in_width, in_height) ..
                bar ..
                formspec_inout_icon_tooltip ..
-               epr.get_itemslot_bg(7.875, 1.5, 2, 2) ..
-               "list[context;dst;7.875,1.5;2,2;]" ..
+               efs.list("context", "dst", 7.875, 1.5, 2, 2) ..
                epr.gui_player_inv() ..
                "listring[current_player;main]" ..
                "listring[context;src]" ..

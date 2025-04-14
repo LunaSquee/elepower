@@ -3,20 +3,17 @@
 -- shorten table ref
 local epr = ele.external.ref
 local epg = ele.external.graphic
+local efs = ele.formspec
 
 local function get_formspec_default(power, percent, buffer, state)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		ele.formspec.state_switcher(7, 2.5, state)..
-		ele.formspec.fluid_bar(7, 0, buffer)..
-		"image[3.5,1.5;1,1;"..epg.furnace_fire_bg.."^[lowpart:"..
-		(percent)..":"..epg.furnace_fire_fg.."]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
-		epr.get_hotbar_bg(0, 4.25)
+	local start, bx, by, mx = efs.begin(11.75, 10.45)
+	local cx, cy = efs.center_in_box(11.75, 5, 1, 1)
+	return start..
+		efs.power_meter_v2(power) ..
+		efs.state_switcher(mx - 1, by + 3, state) ..
+		efs.fluid_bar(mx - 1, by, buffer) ..
+		efs.fuel(cx, cy, percent) ..
+		epr.gui_player_inv()
 end
 
 -- A generator that creates power using a fuel

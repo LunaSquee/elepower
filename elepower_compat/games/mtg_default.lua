@@ -133,4 +133,6 @@ if minetest.get_modpath("default") ~= nil then
   ele.external.graphic.furnace_fire_fg     = "default_furnace_fire_fg.png"
   ele.external.graphic.gui_furnace_arrow_bg = "gui_furnace_arrow_bg.png"
   ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
+  ele.external.graphic.gui_mesecons_on     = "mesecons_wire_on.png^elepower_gui_mese_mask.png^\\[makealpha\\:255,0,0"
+  ele.external.graphic.gui_mesecons_off    = "mesecons_wire_off.png^elepower_gui_mese_mask.png^\\[makealpha\\:255,0,0"
 end

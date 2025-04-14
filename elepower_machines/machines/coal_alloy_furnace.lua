@@ -3,9 +3,10 @@
 -- shorten table ref
 local epr = ele.external.ref
 local epg = ele.external.graphic
+local efs = ele.formspec
 
 local function get_formspec(fuel_percent, item_percent)
-	local bx, by, mx = ele.formspec.padded_box(11.75, 10.45)
+	local start, bx, by, mx = efs.begin(11.75, 10.45)
 
 	local pad_start = by + 0.25
 	local input_x = bx + 2.25
@@ -16,17 +17,12 @@ local function get_formspec(fuel_percent, item_percent)
 	local output_y = fuel_y - 0.625
 	local arrow_x = fuel_x + input_x - 0.25
 
-	return "formspec_version[6]size[11.75,10.45]" ..
-		epr.get_itemslot_bg(input_x, pad_start, 2, 1) ..
-		"list[context;src;"..input_x..","..pad_start..";2,1;]"..
-		epr.get_itemslot_bg(fuel_x, fuel_slot, 1, 1) ..
-		"list[context;fuel;"..fuel_x..","..fuel_slot..";1,1;]"..
-		"image["..fuel_x..","..fuel_y..";1,1;"..epg.furnace_fire_bg.."^[lowpart:"..
-		fuel_percent..":"..epg.furnace_fire_fg.."]"..
-		"image["..arrow_x..","..fuel_y..";1,1;"..epg.gui_furnace_arrow_bg.."^[lowpart:"..
-		item_percent..":"..epg.gui_furnace_arrow_fg.."^[transformR270]"..
-		epr.get_itemslot_bg(output_x, output_y, 2, 2) ..
-		"list[context;dst;"..output_x..","..output_y..";2,2;]"..
+	return start ..
+		efs.list("context", "src", input_x, pad_start, 2, 1) ..
+		efs.list("context", "fuel", fuel_x, fuel_slot, 1, 1) ..
+		efs.fuel(fuel_x, fuel_y, fuel_percent) ..
+		efs.progress(arrow_x, fuel_y, item_percent) ..
+		efs.list("context", "dst", output_x, output_y, 2, 2) ..
 		epr.gui_player_inv() ..
 		"listring[context;dst]"..
 		"listring[current_player;main]"..
