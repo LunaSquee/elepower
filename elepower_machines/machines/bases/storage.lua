@@ -10,7 +10,7 @@ local function get_formspec_default(power)
 	local slot_out_x = mx - efs.move(3)
 	local slot_y = by + 0.5
 	return start..
-		efs.power_meter_v2(power) ..
+		efs.power_meter(power) ..
 		efs.image(slot_in_x, slot_y, 1, 1, epg.gui_furnace_arrow_fg.."^[transformR180") ..
 		efs.list("context", "src", slot_in_x, slot_y + 1.25, 1, 1) ..
 		efs.image(slot_out_x, slot_y, 1, 1, epg.gui_furnace_arrow_fg) ..

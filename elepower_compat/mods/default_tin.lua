@@ -1,6 +1,6 @@
 local epg = ele.external.graphic
 local eps = ele.external.sounds
-local epi = ele.external.epi
+local epi = ele.external.ing
 local ingot = "elepower_dynamics:tin_ingot"
 
 if epi.tin_ingot == "" then

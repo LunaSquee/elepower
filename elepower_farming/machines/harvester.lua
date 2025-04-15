@@ -90,7 +90,7 @@ local function get_formspec(timer, power, sludge, state)
 
 	return start..
 		efs.state_switcher(mx - 1, by + 3, state)..
-		efs.power_meter_v2(power)..
+		efs.power_meter(power)..
 		efs.fluid_bar(mx - 1, by, sludge)..
 		efs.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true)..
 		efs.list("context", "dst", context_x, by, 5, 3) ..

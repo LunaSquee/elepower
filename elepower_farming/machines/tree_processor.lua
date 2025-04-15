@@ -32,7 +32,7 @@ local function get_formspec(timer, power, fluid_buffer, water_buffer, output_buf
 	local slot_x = mx - 4.5
 	local slot_y = by + 1
 	return start..
-		efs.power_meter_v2(power) ..
+		efs.power_meter(power) ..
 		efs.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true) ..
 		efs.fluid_bar(bx + 1.75, by, fluid_buffer) ..
 		efs.fluid_bar(bx + 3, by, water_buffer) ..

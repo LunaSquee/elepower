@@ -128,7 +128,7 @@ local function get_formspec(pos, power, station, station_meta)
 	end
 
 	return start..
-		efs.power_meter_v2(power)..
+		efs.power_meter(power)..
 		epr.gui_player_inv(width) ..
 		fspec..
 		"listring[current_player;main]"..

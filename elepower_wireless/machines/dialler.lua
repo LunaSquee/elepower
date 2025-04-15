@@ -44,7 +44,7 @@ local function get_formspec(power, player, transmitters, receivers)
 	if re_selct then re_spc = ";" .. re_selct end
 
 	return start..
-		efs.power_meter_v2(power)..
+		efs.power_meter(power)..
 		efs.textlist(center_x - offset, by, width, 1.5, "transmitter", table.concat(list_tr, ",") .. tr_spc) ..
 		efs.textlist(center_x - offset, by + 1.75, width, 1.5, "receiver", table.concat(list_re, ",") .. re_spc) ..
 		efs.button(mx - 2, by + 3.5, 2, 0.5, "refresh", "Refresh") ..

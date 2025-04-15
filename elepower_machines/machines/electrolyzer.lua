@@ -37,7 +37,7 @@ local function get_formspec(time, power, input, out1, out2, state)
 	local move_two = 2.5
 
 	return start..
-		efs.power_meter_v2(power)..
+		efs.power_meter(power)..
 
 		efs.fluid_bar(bx + 1.25, by, input)..
 		efs.image(bx + 1.5, by + 2.9, 0.5, 0.5, "elepower_gui_icon_fluid_electrolyzer_in.png") ..

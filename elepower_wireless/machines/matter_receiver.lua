@@ -9,7 +9,7 @@ elewi.loaded_receivers = {}
 local function get_formspec(power, name, player)
 	local start, bx, by = efs.begin(11.75, 10.45)
 	return start..
-		efs.power_meter_v2(power)..
+		efs.power_meter(power)..
 		efs.field(bx + 1.25, by + 0.25, 5, 0.5, "name", "Receiver Name", name) ..
 		efs.label(bx, by + 3.75, "Owned by " .. player) ..
 		epr.gui_player_inv()..

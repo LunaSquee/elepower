@@ -11,22 +11,26 @@
 ------------------------------------------------------
 --                   Functions                      --
 ------------------------------------------------------
+local efs = ele.formspec
+
 -------------------------------------------
 --          Floodlight Formspec          --
 -------------------------------------------
 local function get_formspec_flood(power,tilt,rotate)
+	local start, bx, by, mx, _, center_x = efs.begin(11.75, 4.75)
 	local rotate  = rotate or 0
 	local tilt    = tilt or 0
 	local per_rot = (math.abs(rotate)/45)*100
 	local percent = (math.abs(tilt)/20)*100
 
-	local final ="size[8,3]"..
-	             ele.formspec.power_meter(power)..
-				 -- rotate
+	local tilt_x = center_x + 3.05
 
-				 "image[3.5,0.25;2.8,1;elepower_gui_barbg.png^[transformR90]"..
-				 "image[4.43,2.4;0.5,0.5;elepower_lighting_flood_arrow_icon.png^[transformR90]"..
-				 "tooltip[3.5,1.45;2.25,0.4;"..rotate.." Degrees;#30434c;#f9f9f9]"..
+	local final =start..
+	             efs.power_meter(power)..
+				 -- rotate
+				 efs.image(center_x, by, 2.8, 1, "elepower_gui_barbg.png^[transformR90") ..
+				 efs.image(center_x + 1.15, by + 1.85, 0.5, 0.5, "elepower_lighting_flood_arrow_icon.png^[transformR90") ..
+				 efs.tooltip(center_x, by, 2.8, 1, rotate.." Degrees", "#30434c", "#f9f9f9") ..
 				 --"button[5.15,1.45;0.75,0.75;rot;+]"..
 				 --"tooltip[5.15,1.45;0.75,0.75;+1 Degrees;#30434c;#f9f9f9]"..				 
 				 --"button[4.35,1.45;0.75,0.75;rot;0]"..
@@ -36,14 +40,14 @@ local function get_formspec_flood(power,tilt,rotate)
 				 --"image[3.5,0.25;2.8,1;elepower_lighting_flood_tilt_gauge.png^[transformR90]"..
 
 				 "scrollbaroptions[min=-45;max=45;smallstep=1;largestep=5;arrows=show]"..
-				 "scrollbar[3.5,1.45;2.25,0.45;horizontal;rot;"..rotate.."]"..
+				 "scrollbar["..center_x..","..(by + 1.25)..";2.8,0.45;horizontal;rot;"..rotate.."]"..
 
 				 "scrollbaroptions[min=-20;max=20;smallstep=1;largestep=5;arrows=show]"..
-				 "scrollbar[7.25,0;0.4,2.4;vertical;tilt;"..(tilt).."]"..
+				 "scrollbar["..(tilt_x + 1.25)..","..by..";0.45,2.8;vertical;tilt;"..(tilt).."]"..
 				 -- tilt
-				 "image[6.25,0;1,2.8;elepower_gui_barbg.png]"..
-				 "image[6.5,2.45;0.5,0.5;elepower_lighting_flood_arrow_icon.png]"..
-				 "tooltip[7.25,0;1,2.6;"..(tilt).." Degrees;#30434c;#f9f9f9]"
+				 efs.image(tilt_x, by, 1, 2.8, "elepower_gui_barbg.png") ..
+				 efs.image(tilt_x + 0.25, by + 2.9, 0.5, 0.5, "elepower_lighting_flood_arrow_icon.png") ..
+				 efs.tooltip(tilt_x, by, 1, 2.8, tilt.." Degrees", "#30434c", "#f9f9f9")
 				 --"button[7.25,0.05;0.75,0.75;tilt;+]"..
 				 --"tooltip[7.25,0.05;0.75,0.75;+1 Degrees;#30434c;#f9f9f9]"..
 				 --"button[7.25,.9;0.75,0.75;tilt;0]"..
@@ -52,22 +56,22 @@ local function get_formspec_flood(power,tilt,rotate)
 				 --"tooltip[7.25,1.75;0.75,0.75;-1 Degrees;#30434c;#f9f9f9]"
 	
 	if rotate > 0 then
-		final = final.."image[4.62,0.25;1.4,1;elepower_gui_barbg.png^[lowpart:"..per_rot..":elepower_gui_bar.png^[transformR270]"
+		final = final..efs.image(center_x + 1.4, by, 1.4, 1, "elepower_gui_barbg.png^[lowpart:"..per_rot..":elepower_gui_bar.png^[transformR270")
 		
 	elseif rotate < 0 then
-		final = final.."image[3.5,0.25;1.4,1;elepower_gui_barbg.png^[lowpart:"..per_rot..":elepower_gui_bar.png^[transformR90]"
+		final = final..efs.image(center_x, by, 1.4, 1, "elepower_gui_barbg.png^[lowpart:"..per_rot..":elepower_gui_bar.png^[transformR90")
 	end
 	
 	if tilt < 0 then
-		final = final.."image[6.25,0;1,1.4;elepower_gui_barbg.png^[lowpart:"..percent..":elepower_gui_bar.png]"
+		final = final..efs.image(tilt_x, by, 1, 1.4, "elepower_gui_barbg.png^[lowpart:"..percent..":elepower_gui_bar.png")
 		
 	elseif tilt > 0 then
-		final = final.."image[6.25,1.22;1,1.4;elepower_gui_barbg.png^[lowpart:"..percent..":elepower_gui_bar.png^[transformR180]"
+		final = final..efs.image(tilt_x, by + 1.4, 1, 1.4, "elepower_gui_barbg.png^[lowpart:"..percent..":elepower_gui_bar.png^[transformR180")
 		
 	end
 	
-	final = final.."image[3.5,0.25;2.8,1;elepower_lighting_flood_rotate_gauge.png^[transformR90]"
-	final = final.."image[6.25,0;1,2.8;elepower_lighting_flood_tilt_gauge.png]"
+	final = final..efs.image(center_x, by, 2.8, 1, "elepower_lighting_flood_rotate_gauge.png^[transformR90")
+	final = final..efs.image(tilt_x, by, 1, 2.8, "elepower_lighting_flood_tilt_gauge.png")
 	
 	return final
 end
@@ -609,6 +613,7 @@ elepower_lighting.colors = {{"#ff0500", "Red"},
 						   }
 
 local function get_formspec_panel_color(power,color_mode,color_sync)	
+	local start, bx, by, mx, _, center_x = efs.begin(11.75, 4.75)
 	local color_m = color_mode
 	local color_s = color_sync
 	
@@ -619,16 +624,14 @@ local function get_formspec_panel_color(power,color_mode,color_sync)
 		color_m = color_m:gsub("^%l", string.upper)
 	end
 	
-	local final ="size[8,3]"..
-	             "container[0,0.1]"..
-				  ele.formspec.power_meter(power)..
-				 "container_end[]"..
-				 "label[1,-0.05;Current Selection: "..color_m.."]"..
-				 "checkbox[6,-0.25;sync;Synchronize;"..color_s.."]"..
-				 "image_button[1,0.4;2,0.75;elepower_lighting_gui_rainbow_button.png;r_color;Rainbow;false;true;elepower_lighting_gui_rainbow_button.png^[opacity:127]"..
-				 "image_button[1,1.1;2,0.75;elepower_lighting_gui_strobe_button.png;r_color;Strobe;false;true;elepower_lighting_gui_strobe_button.png^[opacity:127]"..
-				 "image_button[1,1.8;2,0.75;elepower_lighting_gui_blue_button.png;r_color;Blues;false;true;elepower_lighting_gui_blue_button.png^[opacity:127]"..
-				 "image_button[1,2.5;2,0.75;elepower_lighting_gui_red_button.png;r_color;Reds;false;true;elepower_lighting_gui_red_button.png^[opacity:127]"
+	local final = start..
+				  efs.power_meter(power)..
+					efs.label(bx + 1.25, by, "Current Selection: "..color_m) ..
+					efs.checkbox(mx - 2, by, "sync", "Synchronize", color_s) ..
+				 "image_button["..(bx + 1.25)..","..(by + 0.25)..";2,0.75;elepower_lighting_gui_rainbow_button.png;r_color;Rainbow;false;true;elepower_lighting_gui_rainbow_button.png^[opacity:127]"..
+				 "image_button["..(bx + 1.25)..","..(by + 1.25)..";2,0.75;elepower_lighting_gui_strobe_button.png;r_color;Strobe;false;true;elepower_lighting_gui_strobe_button.png^[opacity:127]"..
+				 "image_button["..(bx + 1.25)..","..(by + 2.25)..";2,0.75;elepower_lighting_gui_blue_button.png;r_color;Blues;false;true;elepower_lighting_gui_blue_button.png^[opacity:127]"..
+				 "image_button["..(bx + 1.25)..","..(by + 3.25)..";2,0.75;elepower_lighting_gui_red_button.png;r_color;Reds;false;true;elepower_lighting_gui_red_button.png^[opacity:127]"
 		
 		for k,def in pairs(elepower_lighting.colors) do			
 			
@@ -639,20 +642,20 @@ local function get_formspec_panel_color(power,color_mode,color_sync)
 							  
 			final = final.."style[f_color;font_size=0;textcolor="..def[1].."]"
 			if k <= 8 then
-				final = final.."image_button["..(3.0+((k-1)*0.6))..",0.4;0.75,0.75;"..image_end
-				final = final.."tooltip["..(3.0+((k-1)*0.6))..",0.4;0.55,0.65;"..def[2]..";#30434c;#f9f9f9]"
+				final = final.."image_button["..(bx+3.5+((k-1)*0.975))..","..(by + 0.25)..";0.75,0.75;"..image_end
+				final = final.."tooltip["..(bx+3.5+((k-1)*0.975))..","..(by + 1)..";0.75,0.75;"..def[2]..";#30434c;#f9f9f9]"
 
 			elseif k > 8 and k < 17 then
-				final = final.."image_button["..(3.0+((k-9)*0.6))..",1.1;0.75,0.75;"..image_end
-				final = final.."tooltip["..(3.0+((k-9)*0.6))..",1.1;0.55,0.65;"..def[2]..";#30434c;#f9f9f9]"
+				final = final.."image_button["..(bx+3.5+((k-9)*0.975))..","..(by + 1.25)..";0.75,0.75;"..image_end
+				final = final.."tooltip["..(bx+3.5+((k-9)*0.975))..","..(by + 2)..";0.75,0.75;"..def[2]..";#30434c;#f9f9f9]"
 				
 			elseif k > 16 and k < 25 then 
-				final = final.."image_button["..(3.0+((k-17)*0.6))..",1.8;0.75,0.75;"..image_end
-				final = final.."tooltip["..(3.0+((k-17)*0.6))..",1.8;0.55,0.65;"..def[2]..";#30434c;#f9f9f9]"				
+				final = final.."image_button["..(bx+3.5+((k-17)*0.975))..","..(by + 2.25)..";0.75,0.75;"..image_end
+				final = final.."tooltip["..(bx+3.5+((k-17)*0.975))..","..(by + 3)..";0.75,0.75;"..def[2]..";#30434c;#f9f9f9]"				
 				
 			else
-				final = final.."image_button["..(3.0+((k-25)*0.6))..",2.5;0.75,0.75;"..image_end
-				final = final.."tooltip["..(3.0+((k-25)*0.6))..",2.5;0.55,0.65;"..def[2]..";#30434c;#f9f9f9]"
+				final = final.."image_button["..(bx+3.5+((k-25)*0.975))..","..(by + 3.25)..";0.75,0.75;"..image_end
+				final = final.."tooltip["..(bx+3.5+((k-25)*0.975))..","..(by + 4)..";0.75,0.75;"..def[2]..";#30434c;#f9f9f9]"
 			end
 			
 		end

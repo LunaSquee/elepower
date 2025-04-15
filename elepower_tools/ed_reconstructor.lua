@@ -6,7 +6,7 @@ local efs = ele.formspec
 local function get_formspec(power, state)
 	local start, _, by, mx, _, center_x = efs.begin(11.75, 10.45)
 	return start..
-		efs.power_meter_v2(power) ..
+		efs.power_meter(power) ..
 		efs.list("context", "tool", center_x, by + 1.25, 1, 1) ..
 		efs.state_switcher(mx - 1, by, state) ..
 		epr.gui_player_inv()..

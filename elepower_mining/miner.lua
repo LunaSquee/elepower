@@ -108,7 +108,7 @@ local function get_formspec(timer, power, buffer, state)
 	end
 
 	return start..
-		efs.power_meter_v2(power) ..
+		efs.power_meter(power) ..
 		efs.state_switcher(mx - 1, by + 3, state) ..
 		efs.fluid_bar(mx - 1, by, buffer) ..
 		efs.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true) ..

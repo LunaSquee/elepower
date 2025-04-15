@@ -9,7 +9,7 @@ local function get_formspec_default(power, percent, buffer, state)
 	local start, bx, by, mx = efs.begin(11.75, 10.45)
 	local cx, cy = efs.center_in_box(11.75, 5, 1, 1)
 	return start..
-		efs.power_meter_v2(power) ..
+		efs.power_meter(power) ..
 		efs.state_switcher(mx - 1, by + 3, state) ..
 		efs.fluid_bar(mx - 1, by, buffer) ..
 		efs.fuel(cx, cy, percent) ..

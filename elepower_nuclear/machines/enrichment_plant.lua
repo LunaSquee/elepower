@@ -10,7 +10,7 @@ local function get_formspec(craft_type, power, progress, pos)
 	local start, _, by, mx, _, center_x = efs.begin(11.75, 10.45)
 	if not progress then progress = 0 end
 	return start..
-		efs.power_meter_v2(power)..
+		efs.power_meter(power)..
 		efs.list("context", "src", center_x - 1.25, by + 1.25, 1, 1) ..
 		efs.fuel(center_x, by + 1.25, progress, "elenuclear_gui_icon_bg.png", "elenuclear_gui_icon_fg.png") ..
 		efs.list("context", "dst", center_x + 2.25, by + 0.675, 2, 2) ..

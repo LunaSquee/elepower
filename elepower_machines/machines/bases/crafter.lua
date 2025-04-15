@@ -171,7 +171,7 @@ function ele.formspec.get_crafter_formspec(craft_type, power, percent, pos,
     if in_width >= 2 then x = 2 end
 
     return start ..
-               efs.power_meter_v2(power) ..
+               efs.power_meter(power) ..
                efs.state_switcher(mx - 1, by, state) ..
                efs.list("context", "src", x, y, in_width, in_height) ..
                bar ..

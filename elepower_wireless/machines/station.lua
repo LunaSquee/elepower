@@ -37,7 +37,7 @@ end
 local function get_formspec(power)
 	local start, _, by, _, _, center_x = efs.begin(11.75, 10.45)
 	return start..
-		efs.power_meter_v2(power) ..
+		efs.power_meter(power) ..
 		efs.list("context", "card", center_x, by + 1.25, 1, 1) ..
 		epr.gui_player_inv()..
 		"listring[current_player;main]"..

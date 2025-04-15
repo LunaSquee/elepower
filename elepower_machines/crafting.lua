@@ -106,7 +106,6 @@ end
 -- Other recipes
 
 local grinding_recipes = {
-    {recipe = {epi.wheat}, output = epi.flour .. " 2", time = 4},
     {recipe = {epi.desert_sand .. " 4"}, output = "basic_materials:silicon"},
     {recipe = {epi.sand .. " 4"}, output = "basic_materials:silicon"},
     {recipe = {epi.cobble}, output = epi.gravel .. " 4"},
@@ -121,6 +120,12 @@ local grinding_recipes = {
         output = "elepower_dynamics:mese_dust"
     }
 }
+
+if epi.flour ~= "" then
+    table.insert(grinding_recipes, {
+        recipe = { epi.wheat }, output = epi.flour .. " 2", time = 4
+    })
+end
 
 -- Prevent duping in games without a discrete mese fragment
 if epi.mese_crystal ~= epi.mese_crystal_fragment then

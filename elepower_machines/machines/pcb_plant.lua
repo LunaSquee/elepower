@@ -13,7 +13,7 @@ local function get_formspec(power, input, state, active, percent)
 	end
 
 	return start..
-		efs.power_meter_v2(power) ..
+		efs.power_meter(power) ..
 		efs.state_switcher(mx - 1, by, state) ..
 		efs.fluid_bar(bx + 1.25, by, input) ..
 		efs.progress(center_x, by + 1.25, percent) ..

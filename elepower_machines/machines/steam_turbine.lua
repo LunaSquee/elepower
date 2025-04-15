@@ -7,7 +7,7 @@ local efs = ele.formspec
 local function get_formspec(power, percent, buffer, state)
 	local start, _, by, mx, _, center_x = efs.begin(11.75, 10.45)
 	return start..
-		efs.power_meter_v2(power)..
+		efs.power_meter(power)..
 		efs.state_switcher(center_x, by + 1.25, state)..
 		efs.fluid_bar(mx - 1, by, buffer)..
 		epr.gui_player_inv()

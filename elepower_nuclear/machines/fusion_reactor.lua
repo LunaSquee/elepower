@@ -117,7 +117,7 @@ local function controller_formspec(in1, in2, out, power, time, state)
 	local start, bx, by, mx, _, center_x = efs.begin(11.75, 4.75)
 
 	return start ..
-		efs.power_meter_v2(power) ..
+		efs.power_meter(power) ..
 		efs.fluid_bar(bx + 1.25, by, in1) ..
 		efs.fluid_bar(bx + 2.5, by, in2) ..
 		efs.progress(center_x, by + 1.25, time) ..

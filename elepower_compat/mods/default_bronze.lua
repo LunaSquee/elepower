@@ -1,5 +1,5 @@
 local eps = ele.external.sounds
-local epi = ele.external.epi
+local epi = ele.external.ing
 local ingot = "elepower_dynamics:bronze_ingot"
 
 if epi.bronze_ingot == "" then

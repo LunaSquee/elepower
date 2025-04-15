@@ -8,7 +8,7 @@ local function get_formspec_default(power, percent, state)
 	local start, _, by, mx, _, center_x = efs.begin(11.75, 10.45)
 	if not percent then percent = 0 end
 	return start..
-		efs.power_meter_v2(power)..
+		efs.power_meter(power)..
 		efs.state_switcher(mx - 1, by, state)..
 		efs.fuel(center_x, by + 1.25, percent, "elepower_gui_icon_elepower_bg.png", "elepower_gui_icon_elepower.png") ..
 		epr.gui_player_inv()

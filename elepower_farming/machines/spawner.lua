@@ -97,7 +97,7 @@ end
 local function get_formspec(timer, power, state)
 	local start, bx, by, mx = efs.begin(11.75, 10.45)
 	return start..
-		efs.power_meter_v2(power) ..
+		efs.power_meter(power) ..
 		efs.state_switcher(mx - 1, by, state) ..
 		efs.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true) ..
 		efs.list("context", "src", 3.5, 1.5, 1, 1) ..

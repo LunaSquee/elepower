@@ -69,7 +69,7 @@ local function get_formspec(timer, power, state)
 	local layout_bi = "elepower_planter_layout.png"
 
 	return start..
-		efs.power_meter_v2(power)..
+		efs.power_meter(power)..
 		efs.state_switcher(mx - 1, by, state)..
 		efs.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true)..
 		"image["..layout[1][1]..";1,1;"..layout_bi.."]"..

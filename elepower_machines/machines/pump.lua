@@ -11,7 +11,7 @@ local function get_formspec(power, fluid, state, level)
     if not level then level = 0 end
     return start..
                efs.state_switcher(mx - 1, by + 3, state) ..
-               efs.power_meter_v2(power) ..
+               efs.power_meter(power) ..
                efs.fluid_bar(mx - 1, by, fluid) ..
                efs.label(bx + 1.25, by + 0.125, "Pump level: " .. level) ..
                epr.gui_player_inv()

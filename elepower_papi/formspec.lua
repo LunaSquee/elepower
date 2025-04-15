@@ -112,6 +112,11 @@ function ele.formspec.field(x, y, w, h, name, label, value)
                ";" .. label .. ";" .. value .. "]"
 end
 
+function ele.formspec.checkbox(x, y, name, text, value)
+    return "checkbox[" .. x .. "," .. y .. ";" .. name .. ";" .. text .. ";" ..
+               (value or "") .. "]"
+end
+
 function ele.formspec.button(x, y, w, h, name, text)
     w = w or 1
     h = h or 1
@@ -124,7 +129,7 @@ function ele.formspec.tooltip(x, y, w, h, text, bgcolor, fgcolor)
     h = h or 1
     text = text or ""
     -- bgcolor and fgcolor are optional
-    color = bgcolor ~= nil and (";" .. bgcolor .. ";" .. (fgcolor or "")) or ""
+    local color = bgcolor ~= nil and (";" .. bgcolor .. ";" .. (fgcolor or "")) or ""
     return "tooltip[" .. x .. "," .. y .. ";" .. w .. "," .. h .. ";" .. text ..
                color .. "]"
 end
@@ -196,29 +201,7 @@ function ele.formspec.create_bar(x, y, metric, color, small)
                                   color) .. gauge
 end
 
--- @deprecated
 function ele.formspec.power_meter(capacitor)
-    if not capacitor then
-        capacitor = {capacity = 8000, storage = 0, usage = 0}
-    end
-
-    local pw_percent = math.floor(100 * capacitor.storage / capacitor.capacity)
-    local usage = capacitor.usage
-    if not usage then usage = 0 end
-
-    return ele.formspec.create_bar(0, 0, pw_percent, "#00a1ff") ..
-               "image[0.2,2.45;0.5,0.5;elepower_gui_icon_power_stored.png]" ..
-               "tooltip[0,0;1,2.9;" ..
-               minetest.colorize("#c60303", "Energy Storage\n") ..
-               minetest.colorize("#0399c6",
-                                 ele.capacity_text(capacitor.capacity,
-                                                   capacitor.storage)) ..
-               minetest.colorize("#565656",
-                                 "\nPower Used / Generated: " .. usage .. " " ..
-                                     ele.unit) .. "]"
-end
-
-function ele.formspec.power_meter_v2(capacitor)
     if not capacitor then
         capacitor = {capacity = 8000, storage = 0, usage = 0}
     end

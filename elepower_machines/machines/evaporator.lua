@@ -8,7 +8,7 @@ local function get_formspec(power, input, output, state)
 	local start, bx, by, mx, _, center_x = efs.begin(11.75, 10.45)
 
 	return start..
-		efs.power_meter_v2(power)..
+		efs.power_meter(power)..
 		efs.state_switcher(center_x, by, state)..
 		efs.fluid_bar(bx + 1.25, by, input)..
 		efs.fluid_bar(mx - 1, by, output)..

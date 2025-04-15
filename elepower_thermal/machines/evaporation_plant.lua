@@ -273,6 +273,8 @@ minetest.register_node("elepower_thermal:evaporator_controller", {
 			drainable = true,
 		},
 	},
+	_mcl_blast_resistance = 4,
+	_mcl_hardness = 4,
 	on_construct = function (pos)
 		local meta = minetest.get_meta(pos)
 		meta:set_string("Thermal Evaporation Plant\nPunch to form structure")
@@ -300,6 +302,8 @@ minetest.register_node("elepower_thermal:evaporator_output", {
 		ele_evaporator_node = 1,
 	},
 	fluid_buffers = {},
+	_mcl_blast_resistance = 4,
+	_mcl_hardness = 4,
 	node_io_can_put_liquid = function (pos, node, side)
 		return false
 	end,
@@ -360,6 +364,8 @@ minetest.register_node("elepower_thermal:evaporator_input", {
 		ele_evaporator_node = 1,
 	},
 	fluid_buffers = {},
+	_mcl_blast_resistance = 4,
+	_mcl_hardness = 4,
 	node_io_can_put_liquid = function (pos, node, side)
 		return true
 	end,
