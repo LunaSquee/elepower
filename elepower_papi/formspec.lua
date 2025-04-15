@@ -220,14 +220,14 @@ function ele.formspec.power_meter(capacitor)
                ele.formspec
                    .image(0.625, 3.25, 0.5, 0.5,
                           "elepower_gui_icon_power_stored.png") ..
-               ele.formspec.tooltip(0.375, 0.375, 1, 2.9, tooltip)
+               ele.formspec.tooltip(0.375, 0.375, 1, 2.8, tooltip)
 end
 
 -- Fluid bar for formspec
 function ele.formspec.fluid_bar(x, y, fluid_buffer)
     local texture = epg.water
     local metric = 0
-    local tooltip = ele.formspec.tooltip(x, y, 1, 2.5, "Empty Buffer")
+    local tooltip = ele.formspec.tooltip(x, y, 1, 2.8, "Empty Buffer")
 
     if fluid_buffer and fluid_buffer.fluid and fluid_buffer.fluid ~= "" and
         core.registered_nodes[fluid_buffer.fluid] ~= nil then
@@ -244,7 +244,7 @@ function ele.formspec.fluid_bar(x, y, fluid_buffer)
                                                fluid_lib.unit)
 
         metric = math.floor(100 * fluid_buffer.amount / fluid_buffer.capacity)
-        tooltip = ele.formspec.tooltip(x, y, 1, 2.5, text)
+        tooltip = ele.formspec.tooltip(x, y, 1, 2.8, text)
     end
 
     return ele.formspec.image(x, y, 1, 2.8,

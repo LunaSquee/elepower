@@ -9,7 +9,7 @@ minetest.register_node("elepower_machines:machine_block", {
 })
 
 minetest.register_node("elepower_machines:heat_casing", {
-	description = "Heat Casing",
+	description = "Heat Casing\nUsed for the Thermal Evaporation Plant\nSafe for decoration",
 	tiles       = {"elepower_heat_casing.png"},
 	groups      = {cracky = 3, ele_evaporator_node = 1},
 	_mcl_blast_resistance = 4,
