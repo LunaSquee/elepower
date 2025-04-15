@@ -2,7 +2,7 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
-
+local epi = ele.external.ing
 
 local CAPACITY = 8000
 
@@ -22,7 +22,7 @@ minetest.register_node("elepower_machines:accumulator", {
 	},
 	on_construct = function ( pos )
 		local meta = minetest.get_meta(pos)
-		meta:set_string("water_fluid", epr.water_source)
+		meta:set_string("water_fluid", epi.water_source)
 	end
 })
 
@@ -71,7 +71,7 @@ minetest.register_abm({
 		local amount = 0
 		for _,fpos in pairs(positions) do
 			local node = minetest.get_node(fpos)
-			if node.name == epr.water_source then
+			if node.name == epi.water_source then
 				amount = amount + 1000
 			end
 		end
@@ -82,7 +82,7 @@ minetest.register_abm({
 		end
 
 		local ndef = minetest.registered_nodes[node.name]
-		local src = epr.water_source
+		local src = epi.water_source
 		if ndef and ndef._heavy then
 			src = "elepower_nuclear:heavy_water_source"
 			if amount > 1000 then

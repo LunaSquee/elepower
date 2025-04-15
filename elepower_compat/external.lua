@@ -54,6 +54,9 @@ ele.external.graphic = {}
 -------------
 -- General --
 -------------
+
+-- All of these can be configured with setting "elepower_resource_" + last table key
+-- e.g. elepower_resource_enable_iron_tools = false
 ele.external.tools.enable_iron_tools         = true
 ele.external.tools.enable_lead_tools         = true
 ele.external.armor.enable_iron_armor         = false
@@ -67,18 +70,27 @@ ele.external.conduit_stone_block_desert   = false
 ----------------
 -- References --
 ----------------
-ele.external.ref.gui_bg          = ""
-ele.external.ref.gui_bg_img      = ""
-ele.external.ref.gui_slots       = ""
-ele.external.ref.get_hotbar_bg   = ""
-ele.external.ref.get_itemslot_bg = ""
-ele.external.ref.gui_player_inv  = ""
-ele.external.ref.water_source    = "" -- convert to ing
-ele.external.ref.stone           = "" -- convert to ing
+ele.external.ref.player_inv_width = 8
+
+-- Item slot background can be configured with setting "elepower_resource_itemslot_bg"
+ele.external.ref.get_itemslot_bg  = function() return "" end
+ele.external.ref.gui_player_inv   = function(center_on, y)
+	local width = ele.external.ref.player_inv_width
+	y = y or 5
+	center_on = center_on or 11.75
+	local x = center_on / 2 - (((width - 1) * 0.25) + width) / 2
+	return ele.external.ref.get_itemslot_bg(x, y, width, 1) ..
+		   "list[current_player;main;"..x..","..y..";"..width..",1;]" ..
+		   ele.external.ref.get_itemslot_bg(x, y + 1.375, width, 3) ..
+		   "list[current_player;main;"..x..","..(y + 1.375)..";"..width..",3;"..width.."]"
+end
 
 -------------------------------------------------
 -- Ingredients or node item references in code --
 -------------------------------------------------
+
+-- All of the ingredients can be configured with setting "elepower_resource_" + last table key
+-- e.g. elepower_resource_group_stick = group:sticks
 ele.external.ing.group_stick        = "group:stick"
 ele.external.ing.group_stone        = "group:stone"
 ele.external.ing.group_color_red    = "group:color_red"
@@ -88,97 +100,105 @@ ele.external.ing.group_color_black  = "group:color_black"
 ele.external.ing.group_color_violet = "group:color_violet"
 ele.external.ing.group_wood         = "group:wood"
 
-ele.external.ing.dirt          = "" -- only used by conduit_dirt_with_grass/dry_grass
-ele.external.ing.wheat         = "" -- only used by conduit_dirt_with_dry_grass
-ele.external.ing.glass         = ""
-ele.external.ing.seed_wheat    = "" -- essential to acidic compound
-ele.external.ing.iron_lump     = ""
-ele.external.ing.coal_lump     = ""
-ele.external.ing.copper_ingot  = ""
-ele.external.ing.silver_ingot  = ""
-ele.external.ing.gold_ingot    = ""
-ele.external.ing.tin_ingot     = ""
-ele.external.ing.bronze_ingot  = ""
-ele.external.ing.iron_ingot    = ""
-ele.external.ing.iron_block    = ""
-ele.external.ing.steel_ingot   = ""
-ele.external.ing.steel_block   = ""
-ele.external.ing.diamond_block = ""
-ele.external.ing.mese          = ""
-ele.external.ing.mese_crystal  = ""
-ele.external.ing.mese_crystal_fragment = ""
-ele.external.ing.mese_lamp     = ""
-ele.external.ing.flour         = ""
-ele.external.ing.sand          = ""
-ele.external.ing.desert_sand   = ""
-ele.external.ing.cobble        = ""
-ele.external.ing.gravel        = ""
-ele.external.ing.brick         = ""
-ele.external.ing.flint         = ""
-ele.external.ing.clay_brick    = ""
-ele.external.ing.obsidian      = ""
-ele.external.ing.lava_source   = ""
-ele.external.ing.hoe_steel     = ""
-ele.external.ing.axe_steel     = ""
-ele.external.ing.tree          = ""
-ele.external.ing.leaves        = ""
-ele.external.ing.apple         = ""
-ele.external.ing.jungle_tree   = ""
-ele.external.ing.jungle_leaves = ""
-ele.external.ing.pine_tree     = ""
-ele.external.ing.pine_needles  = ""
-ele.external.ing.acacia_tree   = ""
-ele.external.ing.acacia_leaves = ""
-ele.external.ing.aspen_tree    = ""
-ele.external.ing.aspen_leaves  = ""
-ele.external.ing.slab_wood     = ""
-ele.external.ing.stick         = ""
-ele.external.ing.paper         = "" -- elepower_lighting decorative shades only
-ele.external.ing.farming_soil  = ""
-ele.external.ing.farming_soil_wet = ""
-ele.external.ing.slab_glass    = ""
-ele.external.ing.dye_red       = ""
-ele.external.ing.dye_green     = ""
-ele.external.ing.dye_blue      = ""
-ele.external.ing.furnace       = ""
-ele.external.ing.obsidian_glass = ""
-ele.external.ing.slab_stone_block = ""
-ele.external.ing.blueberry_bush_leaves = ""
-ele.external.ing.slab_desert_stone_block = ""
+ele.external.ing.water_source            = ""
+ele.external.ing.stone                   = ""
+ele.external.ing.dirt                    = "" -- only used by conduit_dirt_with_grass/dry_grass
+ele.external.ing.wheat                   = "" -- only used by conduit_dirt_with_dry_grass
+ele.external.ing.glass                   = ""
+ele.external.ing.seed_wheat              = "" -- essential to acidic compound
+ele.external.ing.iron_lump               = "" -- optional, will be registered by elepower_dynamic
+ele.external.ing.coal_lump               = ""
+ele.external.ing.copper_ingot            = ""
+ele.external.ing.silver_ingot            = "" -- optional, will be registered by elepower_compat
+ele.external.ing.gold_ingot              = ""
+ele.external.ing.tin_ingot               = "" -- optional, will be registered by elepower_compat
+ele.external.ing.bronze_ingot            = "" -- optional, will be registered by elepower_compat
+ele.external.ing.iron_ingot              = "" -- optional, will be registered by elepower_dynamic
+ele.external.ing.iron_block              = "" -- optional, will be registered by elepower_dynamic
+ele.external.ing.steel_ingot             = "" -- optional, will be registered by elepower_dynamic
+ele.external.ing.steel_block             = "" -- optional, will be registered by elepower_dynamic
+ele.external.ing.diamond_block           = ""
+ele.external.ing.mese                    = ""
+ele.external.ing.mese_crystal            = ""
+ele.external.ing.mese_crystal_fragment   = "" -- may be equal to mese_crystal if there is no distinct item
+ele.external.ing.mese_lamp               = ""
+ele.external.ing.flour                   = ""
+ele.external.ing.sand                    = ""
+ele.external.ing.desert_sand             = ""
+ele.external.ing.cobble                  = ""
+ele.external.ing.gravel                  = ""
+ele.external.ing.brick                   = ""
+ele.external.ing.flint                   = ""
+ele.external.ing.clay_brick              = ""
+ele.external.ing.obsidian                = ""
+ele.external.ing.lava_source             = ""
+ele.external.ing.hoe_steel               = ""
+ele.external.ing.axe_steel               = ""
+ele.external.ing.tree                    = ""
+ele.external.ing.leaves                  = ""
+ele.external.ing.apple                   = "" -- used by treecutter, needs better solution
+ele.external.ing.jungle_tree             = "" -- used by treecutter, needs better solution
+ele.external.ing.jungle_leaves           = "" -- used by treecutter, needs better solution
+ele.external.ing.pine_tree               = "" -- used by treecutter, needs better solution
+ele.external.ing.pine_needles            = "" -- used by treecutter, needs better solution
+ele.external.ing.acacia_tree             = "" -- used by treecutter, needs better solution
+ele.external.ing.acacia_leaves           = "" -- used by treecutter, needs better solution
+ele.external.ing.aspen_tree              = "" -- used by treecutter, needs better solution
+ele.external.ing.aspen_leaves            = "" -- used by treecutter, needs better solution
+ele.external.ing.slab_wood               = ""
+ele.external.ing.stick                   = ""
+ele.external.ing.paper                   = "" -- elepower_lighting decorative shades only
+ele.external.ing.farming_soil            = ""
+ele.external.ing.farming_soil_wet        = ""
+ele.external.ing.slab_glass              = ""
+ele.external.ing.dye_red                 = ""
+ele.external.ing.dye_green               = ""
+ele.external.ing.dye_blue                = ""
+ele.external.ing.furnace                 = ""
+ele.external.ing.obsidian_glass          = ""
+ele.external.ing.slab_stone_block        = "" -- only used by conduit_stone_block
+ele.external.ing.blueberry_bush_leaves   = "" -- tome only, could be any leaves
+ele.external.ing.slab_desert_stone_block = "" -- only used by conduit_stone_block_desert
 
 ------------
 -- Sounds --
 ------------
-ele.external.sounds.node_sound_stone = ""
-ele.external.sounds.node_sound_water = ""
-ele.external.sounds.node_sound_stone = ""
-ele.external.sounds.node_sound_wood  = ""
-ele.external.sounds.node_sound_glass = ""
-ele.external.sounds.node_sound_metal = ""
-ele.external.sounds.tool_breaks      = ""
-ele.external.sounds.dig_crumbly      = ""
+
+-- All of these can be configured with setting "elepower_resource_sound_" + last table key
+-- e.g. elepower_resource_sound_tool_breaks = default_tool_breaks
+ele.external.sounds.node_sound_stone  = ""
+ele.external.sounds.node_sound_water  = ""
+ele.external.sounds.node_sound_stone  = ""
+ele.external.sounds.node_sound_wood   = ""
+ele.external.sounds.node_sound_glass  = ""
+ele.external.sounds.node_sound_metal  = ""
+ele.external.sounds.tool_breaks       = ""
+ele.external.sounds.dig_crumbly       = ""
 ele.external.sounds.node_sound_dirt_c = ""
 
 ---------------------
 -- Graphics/Images --
 ---------------------
-ele.external.graphic.water               = ""
-ele.external.graphic.grass               = ""
-ele.external.graphic.dirt                = ""
-ele.external.graphic.grass_side          = ""
-ele.external.graphic.grass_dry           = ""
-ele.external.graphic.grass_side_dry      = ""
-ele.external.graphic.stone_block         = ""
-ele.external.graphic.desert_stone_block  = ""
-ele.external.graphic.stone               = ""
-ele.external.graphic.wood                = ""
-ele.external.graphic.obsidian_glass      = ""
-ele.external.graphic.furnace_fire_bg     = ""
-ele.external.graphic.furnace_fire_fg     = ""
+
+-- All of these can be configured with setting "elepower_resource_graphic_" + last table key
+-- e.g. elepower_resource_graphic_water = default_water.png
+ele.external.graphic.water                = ""
+ele.external.graphic.grass                = ""
+ele.external.graphic.dirt                 = ""
+ele.external.graphic.grass_side           = ""
+ele.external.graphic.grass_dry            = ""
+ele.external.graphic.grass_side_dry       = ""
+ele.external.graphic.stone_block          = ""
+ele.external.graphic.desert_stone_block   = ""
+ele.external.graphic.stone                = ""
+ele.external.graphic.wood                 = ""
+ele.external.graphic.obsidian_glass       = ""
+ele.external.graphic.furnace_fire_bg      = ""
+ele.external.graphic.furnace_fire_fg      = ""
 ele.external.graphic.gui_furnace_arrow_bg = ""
 ele.external.graphic.gui_furnace_arrow_fg = ""
-ele.external.graphic.gui_mesecons_on     = ""
-ele.external.graphic.gui_mesecons_off    = ""
+ele.external.graphic.gui_mesecons_on      = ""
+ele.external.graphic.gui_mesecons_off     = ""
 
 ------------------------------------------------------------
 --  ___ _                                ___           _  --
@@ -227,7 +247,8 @@ ele.external.graphic.gui_mesecons_off    = ""
 -- uses conduit_dirt_with_dry_grass
 -- uses conduit_stone_block
 -- uses conduit_stone_block_desert
--- uses tools.enable_iron_lead_tools
+-- uses tools.enable_iron_tools
+-- uses tools.enable_lead_tools
 -- uses graphic.grass
 -- uses graphic.dirt
 -- uses graphic.grass_side
@@ -266,18 +287,19 @@ ele.external.graphic.gui_mesecons_off    = ""
 -- uses ing.mese_crystal_fragment
 -- uses ing.mese_lamp
 
--- uses tools.enable_iron_lead_tools
+-- uses tools.enable_iron_tools
+-- uses tools.enable_lead_tools
 
 --------------------
 -- craftitems.lua --
 --------------------
--- uses ref.water_source
+-- uses ing.water_source
 -- uses ing.steel_ingot
 
 ----------------
 -- fluids.lua --
 ----------------
--- uses ref.water_source
+-- uses ing.water_source
 
 -----------------------
 -- gas_container.lua --
@@ -303,14 +325,14 @@ ele.external.graphic.gui_mesecons_off    = ""
 ---------------
 -- tools.lua --
 ---------------
--- not registered if "ele.external.tools.enable_iron_lead_tools = false"
+-- not registered if "ele.external.tools.enable_lead_tools = false" and "ele.external.tools.enable_iron_tools = false"
 -- uses sounds.tool_breaks
 
 
 ------------------
 -- worldgen.lua --
 ------------------
--- uses ref.stone
+-- uses ing.stone
 
 ----------------------
 -- subfolder compat --
@@ -391,7 +413,7 @@ ele.external.graphic.gui_mesecons_off    = ""
 ---------------------
 -- accumulator.lua --
 ---------------------
--- uses ref.water_source
+-- uses ing.water_source
 
 ---------------------
 -- alloy_furnace.lua --
@@ -401,10 +423,7 @@ ele.external.graphic.gui_mesecons_off    = ""
 ---------------------
 -- bucketer.lua --
 ---------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 -------------------------
 -- canning_machine.lua --
@@ -414,10 +433,6 @@ ele.external.graphic.gui_mesecons_off    = ""
 ----------------------------
 -- coal_alloy_furnace.lua --
 ----------------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
 -- uses graphic.furnace_fire_bg
 -- uses graphic.furnace_fire_fg
 -- uses graphic.gui_furnace_arrow_bg
@@ -431,19 +446,11 @@ ele.external.graphic.gui_mesecons_off    = ""
 ----------------------
 -- electrolyzer.lua --
 ----------------------
--- uses ref.water_source
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- uses ing.water_source
 
 --------------------
 -- evaporator.lua --
 --------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
 -- uses graphic.gui_furnace_arrow_bg
 
 ---------------------
@@ -464,10 +471,6 @@ ele.external.graphic.gui_mesecons_off    = ""
 --------------------
 -- grindstone.lua --
 --------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
 -- uses graphic.gui_furnace_arrow_fg
 -- uses graphic.gui_furnace_arrow_bg
 -- uses graphic.wood
@@ -476,12 +479,8 @@ ele.external.graphic.gui_mesecons_off    = ""
 -- lava_cooler.lua --
 ---------------------
 -- uses ing.cobble
--- uses ref.stone
--- uses ref.water_source
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- uses ing.stone
+-- uses ing.water_source
 -- uses graphic.gui_furnace_arrow_fg
 -- uses graphic.gui_furnace_arrow_bg
 -- uses ing.obsidian
@@ -495,10 +494,6 @@ ele.external.graphic.gui_mesecons_off    = ""
 -------------------
 -- pcb_plant.lua --
 -------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
 -- uses graphic.gui_furnace_arrow_fg
 -- uses graphic.gui_furnace_arrow_bg
 
@@ -510,11 +505,7 @@ ele.external.graphic.gui_mesecons_off    = ""
 --------------
 -- pump.lua --
 --------------
--- uses ref.water_source
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- uses ing.water_source
 
 -----------------
 -- sawmill.lua --
@@ -529,10 +520,7 @@ ele.external.graphic.gui_mesecons_off    = ""
 -----------------------
 -- steam_turbine.lua --
 -----------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 -----------------
 -- storage.lua --
@@ -541,10 +529,6 @@ ele.external.graphic.gui_mesecons_off    = ""
 ----------------------
 -- wind_turbine.lua --
 ----------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
 -- uses graphic.wood
 
 ---------------------
@@ -553,36 +537,23 @@ ele.external.graphic.gui_mesecons_off    = ""
 -----------------
 -- crafter.lua --
 -----------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 -------------------------
 -- fluid_generator.lua --
 -------------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
 -- uses graphic.gui_furnace_arrow_fg
 -- uses graphic.gui_furnace_arrow_bg
 
 -------------------
 -- generator.lua --
 -------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 -----------------
 -- storage.lua --
 -----------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 ---------------------------------------------------------------
 --  ___ _                                _____         _     --
@@ -617,18 +588,12 @@ ele.external.graphic.gui_mesecons_off    = ""
 --------------------------
 -- ed_reconstructor.lua --
 --------------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 -------------------
 -- soldering.lua --
 -------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 ---------------
 -- tools.lua --
@@ -694,18 +659,12 @@ ele.external.graphic.gui_mesecons_off    = ""
 -------------------
 -- composter.lua --
 -------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 -------------------
 -- harvester.lua --
 -------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 -----------------
 -- planter.lua --
@@ -717,10 +676,7 @@ ele.external.graphic.gui_mesecons_off    = ""
 -----------------
 -- spawner.lua --
 -----------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 ------------------------
 -- tree_extractor.lua --
@@ -734,11 +690,7 @@ ele.external.graphic.gui_mesecons_off    = ""
 ------------------------
 -- tree_processor.lua --
 ------------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
--- uses ref.water_source
+-- uses ing.water_source
 
 ------------------------------------------------------------
 --           ___ _                                        --
@@ -761,10 +713,7 @@ ele.external.graphic.gui_mesecons_off    = ""
 -------------------
 -- generator.lua --
 -------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 ----------------
 -- helmet.lua --
@@ -804,9 +753,7 @@ ele.external.graphic.gui_mesecons_off    = ""
 ---------------------------
 -- evaporation_plant.lua --
 ---------------------------
--- uses ref.water_source
--- uses ref.gui_bg
--- uses ref.gui_bg_img
+-- uses ing.water_source
 -- uses ref.gui_slots
 
 ------------------------------------------------------------
@@ -830,12 +777,8 @@ ele.external.graphic.gui_mesecons_off    = ""
 ---------------
 -- miner.lua --
 ---------------
--- uses ref.water_source
--- uses ref.stone
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- uses ing.water_source
+-- uses ing.stone
 
 ------------------------------------------------------------
 --           ___ _                                        --
@@ -874,7 +817,7 @@ ele.external.graphic.gui_mesecons_off    = ""
 ------------------
 -- worldgen.lua --
 ------------------
--- uses ref.stone
+-- uses ing.stone
 
 ------------------------
 -- subfolder machines --
@@ -883,45 +826,28 @@ ele.external.graphic.gui_mesecons_off    = ""
 -------------------------
 --enrichment_plant.lua --
 -------------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 -------------------------
 -- fission_reactor.lua --
 -------------------------
 -- uses ing.lava_source
--- uses ref.water_source
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- uses ing.water_source
 
 ------------------------
 -- fusion_reactor.lua --
 ------------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
 -- uses ref.gui_slots
 
 ------------------------
 -- heat_exchanger.lua --
 ------------------------
--- uses ref.water_source
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- uses ing.water_source
 -- uses graphic.gui_furnace_arrow_bg
 
 ---------------------------------
 -- solar_neutron_activator.lua --
 ---------------------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
 -- uses graphic.gui_furnace_arrow_bg
 -- uses graphic.gui_furnace_arrow_fg
 
@@ -953,34 +879,22 @@ ele.external.graphic.gui_mesecons_off    = ""
 -----------------
 -- dialler.lua --
 -----------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 -------------------------
 -- matter_receiver.lua --
 -------------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 ----------------------------
 -- matter_transmitter.lua --
 ----------------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 -----------------
 -- station.lua --
 -----------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 -------------------
 -- tesseract.lua --
@@ -994,10 +908,7 @@ ele.external.graphic.gui_mesecons_off    = ""
 -------------------------
 -- fission_reactor.lua --
 -------------------------
--- uses ref.gui_bg
--- uses ref.gui_bg_img
--- uses ref.gui_slots
--- uses ref.get_hotbar_bg
+-- NIL
 
 ------------------------------------------------------------
 --             ___ _                                      --
@@ -1082,8 +993,8 @@ ele.external.graphic.gui_mesecons_off    = ""
 -- uses ing.sand
 -- uses ing.glass
 -- uses ing.lava_source
--- uses ref.stone
--- uses ref,water_source
+-- uses ing.stone
+-- uses ing.water_source
 -- uses ing.blueberry_bush_leaves
 -- uses ing.furnace
 

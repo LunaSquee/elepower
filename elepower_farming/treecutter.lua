@@ -2,6 +2,7 @@
 -- This code is taken from TreeCapitator by HybridDog (WTFPL)
 -- https://github.com/HybridDog/treecapitator
 
+-- TODO: Better game support, currently very much hardcoded
 
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
@@ -1028,75 +1029,89 @@ end
 local mgname = minetest.get_mapgen_setting"mg_name"
 
 if mgname == "v6" then
-	elefarm.tc.register_tree{
-		trees = {epi.tree},
-		leaves = {epi.leaves},
-		range = 2,
-		fruits = {epi.apple}
-	}
+	if epi.tree ~= "" then
+		elefarm.tc.register_tree{
+			trees = {epi.tree},
+			leaves = {epi.leaves},
+			range = 2,
+			fruits = {epi.apple}
+		}
+	end
 
-	elefarm.tc.register_tree({
-		trees = {epi.jungle_tree},
-		leaves = {epi.jungle_leaves},
-		range = 3
-	})
+	if epi.jungle_tree ~= "" then
+		elefarm.tc.register_tree({
+			trees = {epi.jungle_tree},
+			leaves = {epi.jungle_leaves},
+			range = 3
+		})
+	end
 else
-	elefarm.tc.register_tree{
-		trees = {epi.tree},
-		leaves = {epi.leaves},
-		range = 2,
-		range_up = 4,
-		range_down = 0,
-		fruits = {epi.apple, epi.tree},
-		trunk_fruit_vertical = true
-	}
+	if epi.tree ~= "" then
+		elefarm.tc.register_tree{
+			trees = {epi.tree},
+			leaves = {epi.leaves},
+			range = 2,
+			range_up = 4,
+			range_down = 0,
+			fruits = {epi.apple, epi.tree},
+			trunk_fruit_vertical = true
+		}
+	end
 
-	elefarm.tc.register_tree({
-		trees = {epi.jungle_tree},
-		leaves = {epi.jungle_leaves},
-		fruits = {epi.jungle_tree},
-		range = 4,
-		range_up = 14,
-		range_down = 5,
-		trunk_fruit_vertical = true,
-		stem_height_min = 12,
-	})
+	if epi.jungle_tree ~= "" then
+		elefarm.tc.register_tree({
+			trees = {epi.jungle_tree},
+			leaves = {epi.jungle_leaves},
+			fruits = {epi.jungle_tree},
+			range = 4,
+			range_up = 14,
+			range_down = 5,
+			trunk_fruit_vertical = true,
+			stem_height_min = 12,
+		})
 
+		elefarm.tc.register_tree({
+			trees = {epi.jungle_tree},
+			leaves = {epi.jungle_leaves},
+			fruits = {epi.jungle_tree},
+			range = 4,
+			range_up = 14,
+			range_down = 3,
+			trunk_fruit_vertical = true,
+			stem_type = "2x2",
+			stem_height_min = 12,
+		})
+	end
+end
+
+if epi.pine_tree ~= "" then
 	elefarm.tc.register_tree({
-		trees = {epi.jungle_tree},
-		leaves = {epi.jungle_leaves},
-		fruits = {epi.jungle_tree},
-		range = 4,
-		range_up = 14,
-		range_down = 3,
-		trunk_fruit_vertical = true,
-		stem_type = "2x2",
-		stem_height_min = 12,
+		trees = {epi.pine_tree},
+		leaves = {epi.pine_needles},
+		-- the +2 height is used to also support the coned pine trees
+		range_up = 2 +2,
+		range_down = 6,
+		range = 3,
 	})
 end
 
-elefarm.tc.register_tree({
-	trees = {epi.pine_tree},
-	leaves = {epi.pine_needles},
-	-- the +2 height is used to also support the coned pine trees
-	range_up = 2 +2,
-	range_down = 6,
-	range = 3,
-})
+if epi.acacia_tree ~= "" then
+	elefarm.tc.register_tree({
+		trees = {epi.acacia_tree},
+		leaf = epi.acacia_leaves,
+		no_param2test = true,
+		--leavesrange = 4,
+		type = "acacia"
+	})
+end
 
-elefarm.tc.register_tree({
-	trees = {epi.acacia_tree},
-	leaf = epi.acacia_leaves,
-	no_param2test = true,
-	--leavesrange = 4,
-	type = "acacia"
-})
-
-elefarm.tc.register_tree({
-	trees = {epi.aspen_tree},
-	leaves = {epi.aspen_leaves},
-	range = 4,
-})
+if epi.aspen_tree ~= "" then
+	elefarm.tc.register_tree({
+		trees = {epi.aspen_tree},
+		leaves = {epi.aspen_leaves},
+		range = 4,
+	})
+end
 
 if minetest.get_modpath("farming_plus") then
 	elefarm.tc.register_tree({

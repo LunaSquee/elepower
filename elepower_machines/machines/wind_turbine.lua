@@ -8,8 +8,8 @@ local efs = ele.formspec
 local function get_formspec_default(power, state)
 	local start, _, by, mx = efs.begin(11.75, 10.45)
 	return start..
-		ele.formspec.power_meter_v2(power)..
-		ele.formspec.state_switcher(mx - 1, by, state)..
+		efs.power_meter_v2(power)..
+		efs.state_switcher(mx - 1, by, state)..
 		epr.gui_player_inv()
 end
 

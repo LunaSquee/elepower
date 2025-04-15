@@ -1,9 +1,10 @@
 local epg = ele.external.graphic
 local eps = ele.external.sounds
+local epi = ele.external.epi
 local ingot = "elepower_dynamics:tin_ingot"
 
-if ele.external.ing.tin_ingot == "" then
-    ele.external.ing.tin_ingot = ingot
+if epi.tin_ingot == "" then
+    epi.tin_ingot = ingot
 
     core.register_craftitem(":elepower_dynamics:tin_ingot", {
         description = "Tin Ingot",

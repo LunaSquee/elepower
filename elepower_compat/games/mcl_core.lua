@@ -16,12 +16,9 @@ if minetest.get_modpath("mcl_core") ~= nil then
   ----------------
   -- References --
   ----------------
-  ele.external.ref.gui_bg          = ""
-  ele.external.ref.gui_bg_img      = ""
-  ele.external.ref.gui_slots       = ""
-  ele.external.ref.get_hotbar_bg   = function () return "" end
-  ele.external.ref.get_itemslot_bg = mcl_formspec.get_itemslot_bg_v4
-  ele.external.ref.gui_player_inv  = function(center_on, y)
+  ele.external.ref.get_itemslot_bg  = mcl_formspec.get_itemslot_bg_v4
+  ele.external.ref.player_inv_width = 9
+  ele.external.ref.gui_player_inv   = function(center_on, y)
                 y = y or 5
                 center_on = center_on or 11.75
                 local x = center_on / 2 - ((8 * 0.25) + 9) / 2
@@ -30,12 +27,12 @@ if minetest.get_modpath("mcl_core") ~= nil then
                        mcl_formspec.get_itemslot_bg_v4(x, y + 4, 9, 1)..
                        "list[current_player;main;"..x..","..(y + 4)..";9,1;]"
   end
-  ele.external.ref.water_source    = "mcl_core:water_source"  -- convert to ing
-  ele.external.ref.stone           = "mcl_core:stone"         -- convert to ing
 
   -------------------------------------------------
   -- Ingredients or node item references in code --
   -------------------------------------------------
+  ele.external.ing.water_source       = "mcl_core:water_source"
+  ele.external.ing.stone              = "mcl_core:stone"
   ele.external.ing.group_stick        = "group:stick"
   ele.external.ing.group_stone        = "group:stone"
   ele.external.ing.group_color_red    = "group:color_red"
@@ -137,4 +134,24 @@ if minetest.get_modpath("mcl_core") ~= nil then
   ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
   ele.external.graphic.gui_mesecons_on     = ""
   ele.external.graphic.gui_mesecons_off    = ""
+
+  ----------------------
+  -- World generation --
+  ----------------------
+
+  -- Adjust ore generation for VoxeLibre overworld
+  ele.worldgen.ore.lead.normal.y_max = -24
+  ele.worldgen.ore.lead.normal.y_min = -128
+
+  ele.worldgen.ore.nickel.normal.y_max = -40
+  ele.worldgen.ore.nickel.normal.y_min = -128
+
+  ele.worldgen.ore.viridisium.normal.y_max = -50
+  ele.worldgen.ore.viridisium.normal.y_min = -128
+
+  ele.worldgen.ore.zinc.normal.y_max = -20
+  ele.worldgen.ore.zinc.normal.y_min = -128
+
+  ele.worldgen.ore._uranium.normal.y_max = -30
+  ele.worldgen.ore._uranium.normal.y_min = -128
 end

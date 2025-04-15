@@ -37,7 +37,7 @@ local function calculate_fitness(pos)
 	local data = manip:get_data()
 
 	local ids = {
-		c_water = minetest.get_content_id(epr.water_source),
+		c_water = minetest.get_content_id(epi.water_source),
 		c_lava  = minetest.get_content_id(epi.lava_source),
 	}
 
@@ -552,7 +552,7 @@ ele.register_base_device("elepower_nuclear:reactor_fluid_port", {
 	fluid_buffers = {
 		cool = {
 			capacity  = 16000,
-			accepts   = {epr.water_source, "elepower_nuclear:coolant_source"},
+			accepts   = {epi.water_source, "elepower_nuclear:coolant_source"},
 			drainable = false,
 		},
 		hot = {

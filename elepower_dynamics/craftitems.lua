@@ -184,7 +184,7 @@ minetest.register_craftitem("elepower_dynamics:pcb_blank", {
 
         -- Limited etchings
         if uses == 10 then
-            minetest.set_node(pos, {name = epr.water_source})
+            minetest.set_node(pos, {name = epi.water_source})
         else
             meta:set_int("uses", uses)
         end
@@ -208,7 +208,7 @@ minetest.register_craftitem("elepower_dynamics:acidic_compound", {
         local pos = pointed_thing.under
         local node = minetest.get_node(pos)
 
-        if node.name ~= epr.water_source then return itemstack end
+        if node.name ~= epi.water_source then return itemstack end
 
         minetest.set_node(pos, {name = "elepower_dynamics:etching_acid_source"})
         itemstack:take_item(1)

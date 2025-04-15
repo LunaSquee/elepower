@@ -1,43 +1,29 @@
-
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local epi = ele.external.ing
 
 --------------
 -- Worldgen --
 --------------
 
 -- Uranium
+local uranium = ele.worldgen.ore._uranium
 
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "elepower_nuclear:stone_with_uranium",
-	wherein        = epr.stone,
-	clust_scarcity = 16 * 16 * 16,
-	clust_num_ores = 5,
-	clust_size     = 3,
-	y_max          = 846,
-	y_min          = 248,
-})
+minetest.register_ore(ele.helpers.merge_tables({
+    ore_type = "scatter",
+    ore = "elepower_nuclear:stone_with_uranium",
+    wherein = epi.stone
+}, uranium.high))
 
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "elepower_nuclear:stone_with_uranium",
-	wherein        = epr.stone,
-	clust_scarcity = 16 * 16 * 16,
-	clust_num_ores = 5,
-	clust_size     = 3,
-	y_max          = -248,
-	y_min          = -846,
-})
+minetest.register_ore(ele.helpers.merge_tables({
+    ore_type = "scatter",
+    ore = "elepower_nuclear:stone_with_uranium",
+    wherein = epi.stone
+}, uranium.normal))
 
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "elepower_nuclear:stone_with_uranium",
-	wherein        = epr.stone,
-	clust_scarcity = 16 * 16 * 16,
-	clust_num_ores = 5,
-	clust_size     = 3,
-	y_max          = -1248,
-	y_min          = -1846,
-})
+minetest.register_ore(ele.helpers.merge_tables({
+    ore_type = "scatter",
+    ore = "elepower_nuclear:stone_with_uranium",
+    wherein = epi.stone
+}, uranium.deep))

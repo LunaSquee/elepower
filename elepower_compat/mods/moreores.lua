@@ -1,4 +1,5 @@
 
+local epi = ele.external.ing
 local epg = ele.external.graphic
 local eps = ele.external.sounds
 
@@ -6,7 +7,10 @@ local eps = ele.external.sounds
 -- Ingredients or node item references in code --
 -------------------------------------------------
 local ingot = "moreores:silver_ingot"
-ele.external.ing.silver_ingot = ingot
+
+if epi.silver_ingot == "" then
+  epi.silver_ingot = ingot
+end
 
 if core.get_modpath("moreores") == nil then
   core.register_craftitem(":moreores:silver_ingot", {

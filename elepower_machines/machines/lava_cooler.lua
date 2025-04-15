@@ -16,7 +16,7 @@ local cooler_recipes = {
 		lava  = 1000,
 		water = 0,
 	},
-	[epr.stone] = {
+	[epi.stone] = {
 		lava  = 0,
 		water = 1000,
 	},
@@ -133,7 +133,7 @@ ele.register_machine("elepower_machines:lava_cooler", {
 	fluid_buffers = {
 		coolant = {
 			capacity = 8000,
-			accepts  = {epr.water_source},
+			accepts  = {epi.water_source},
 		},
 		hot = {
 			capacity = 8000,

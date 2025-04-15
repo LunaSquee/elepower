@@ -1,7 +1,7 @@
 
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
-local epr = ele.external.ref 
+local epi = ele.external.ing
 
 -- Etching Acid
 
@@ -46,7 +46,7 @@ end
 minetest.register_node("elepower_dynamics:steam", {
 	description = "Steam",
 	groups      = {not_in_creative_inventory = 1, gas = 1},
-	liquid_form = epr.water_source,
+	liquid_form = epi.water_source,
 	tiles       = {"elepower_steam.png"},
 })
 

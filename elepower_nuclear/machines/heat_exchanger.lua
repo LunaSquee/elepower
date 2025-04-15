@@ -2,6 +2,7 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local epi = ele.external.ing
 local epg = ele.external.graphic
 local efs = ele.formspec
 
@@ -124,7 +125,7 @@ ele.register_machine("elepower_nuclear:heat_exchanger", {
 		},
 		water = {
 			capacity  = 64000,
-			accepts   = {epr.water_source},
+			accepts   = {epi.water_source},
 			drainable = false,
 		},
 		steam = {

@@ -316,7 +316,7 @@ eletome.ai.nodes["getting_started"]    = {how_use_1 = "This is a getting started
 											        "style_type[item_image_button;bgimg=elepower_tome_bgimg_2.png]"..
 													--line 1
 													"container[2.5,0]"..
-													"item_image_button[0.375,0.25;1,1;"..epr.stone..";"..epr.stone..";]"..
+													"item_image_button[0.375,0.25;1,1;"..epi.stone..";"..epi.stone..";]"..
 													"hypertext[0.375,0.9;1,1;num;<style size=12><right><b>08</b></right></style>]"..
 													"image[1.5,0.375;0.75,0.75;elepower_tome_icon_crafting.png]"..
 													"tooltip[1.5,0.25;0.75,0.75;Crafting;#30434c;#f9f9f9]"..
@@ -431,7 +431,7 @@ eletome.ai.nodes["first_pcb_creation"] = {how_use_1 = "More advanced machines re
 															"hypertext[0.375,0.9;1,1;num;<style size=12><right><b>01</b></right></style>]"..
 															"image[1.5,0.375;0.75,0.75;elepower_tome_mouse_rght_click.png]"..
 															"tooltip[1.5,0.25;0.75,0.75;Right Click;#30434c;#f9f9f9]"..
-															"item_image_button[2.375,0.25;1,1;"..epr.water_source..";"..epr.water_source..";]"..
+															"item_image_button[2.375,0.25;1,1;"..epi.water_source..";"..epi.water_source..";]"..
 															"hypertext[2.375,0.9;1,1;num;<style size=12><right><b>01</b></right></style>]"..
 															"image[3.5,0.375;0.75,0.75;elepower_tome_icon_output.png]"..
 															"tooltip[3.5,0.25;0.75,0.75;Turns Into;#30434c;#f9f9f9]"..

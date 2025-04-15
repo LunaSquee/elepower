@@ -100,3 +100,27 @@ ele.worldgen.ore.zinc = {
     y_min          = -31000,
   }
 }
+-- Only generated if elepower_nuclear is loaded
+ele.worldgen.ore._uranium = {
+  high = {
+    clust_scarcity = 16 * 16 * 16,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = 846,
+    y_min          = 248,
+  },
+  normal = {
+    clust_scarcity = 16 * 16 * 16,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = -248,
+    y_min          = -846,
+  },
+  deep = {
+    clust_scarcity = 16 * 16 * 16,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = -1248,
+    y_min          = -1846,
+  }
+}

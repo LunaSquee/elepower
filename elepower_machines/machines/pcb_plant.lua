@@ -7,11 +7,7 @@ local efs = ele.formspec
 local function get_formspec(power, input, state, active, percent)
 	local start, bx, by, mx, _, center_x = efs.begin(11.75, 10.45)
 
-	local t = efs.image(center_x, by + 2.5, 1, 1, "elepower_uv_bulb.png")
-	if active then
-		t = efs.image(center_x, by + 2.5, 1, 1, "elepower_uv_bulb_lit.png")
-	end
-
+	local t = active and "elepower_uv_bulb_lit.png" or "elepower_uv_bulb.png"
 	if not percent then
 		percent = 0
 	end
@@ -21,7 +17,7 @@ local function get_formspec(power, input, state, active, percent)
 		efs.state_switcher(mx - 1, by, state) ..
 		efs.fluid_bar(bx + 1.25, by, input) ..
 		efs.progress(center_x, by + 1.25, percent) ..
-		t..
+		efs.image(center_x, by + 2.5, 1, 1, t)..
 		efs.list("context", "src", center_x - 1.25, by + 1.25, 1, 1) ..
 		efs.list("context", "dst", center_x + 1.25, by + 1.25, 1, 1) ..
 		epr.gui_player_inv() ..

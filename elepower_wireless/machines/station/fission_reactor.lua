@@ -118,8 +118,8 @@ local function get_formspec(pos, power, station, station_meta)
 		local hot  = fluid_lib.get_buffer_data(metas.coolant, "hot")
 
 		fspec = fspec ..
-			ele.formspec.fluid_bar(mx - 1, by, hot)..
-			ele.formspec.fluid_bar(mx - 2.25, by, cool)
+			efs.fluid_bar(mx - 1, by, hot)..
+			efs.fluid_bar(mx - 2.25, by, cool)
 
 		--if seeitems then
 		--	fspec = fspec ..

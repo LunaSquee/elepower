@@ -20,7 +20,6 @@ ele.register_conduit("elepower_dynamics:conduit_wall", {
 	groups = {cracky = 1}
 })
 
-
 if ele.external.conduit_dirt_with_grass == true then
 	ele.register_conduit("elepower_dynamics:conduit_dirt_with_grass", {
 		description = "Power Conduit Grass Outlet",

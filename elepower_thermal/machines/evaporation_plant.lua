@@ -2,6 +2,7 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local epi = ele.external.ing
 local efs = ele.formspec
 
 -- Thermal Evaporation Plant
@@ -9,7 +10,7 @@ local efs = ele.formspec
 elethermal.cache = {}
 local results = {
 	{
-		input = epr.water_source.." 1000",
+		input = epi.water_source.." 1000",
 		output = "elepower_thermal:brine_source 100",
 		heat = 400
 	},
@@ -263,7 +264,7 @@ minetest.register_node("elepower_thermal:evaporator_controller", {
 	fluid_buffers = {
 		input = {
 			capacity  = 8000,
-			accepts   = {"elepower_thermal:brine_source", epr.water_source},
+			accepts   = {"elepower_thermal:brine_source", epi.water_source},
 			drainable = false,
 		},
 		output = {

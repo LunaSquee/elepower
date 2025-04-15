@@ -2,11 +2,12 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local epi = ele.external.ing
 local efs = ele.formspec
 
 elepm.electrolyzer_recipes = {
 	{
-		recipe = epr.water_source.." 1000",
+		recipe = epi.water_source.." 1000",
 		output = {
 			"elepower_dynamics:hydrogen 600",
 			"elepower_dynamics:oxygen 400",
@@ -175,7 +176,7 @@ ele.register_machine("elepower_machines:electrolyzer", {
 	ele_inrush = 128,
 	fluid_buffers = {
 		input = {
-			accepts = {epr.water_source, "elepower_nuclear:heavy_water_source",
+			accepts = {epi.water_source, "elepower_nuclear:heavy_water_source",
 				"group:biomass", "group:electrolysis_recipe"},
 			drainable = false,
 			capacity = 8000,

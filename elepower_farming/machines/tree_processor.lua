@@ -2,6 +2,7 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local epi = ele.external.ing
 local efs = ele.formspec
 
 local tree_fluid_recipes = {
@@ -173,7 +174,7 @@ ele.register_machine("elepower_farming:tree_processor", {
 		},
 		water = {
 			capacity  = 8000,
-			accepts   = {epr.water_source},
+			accepts   = {epi.water_source},
 			drainable = false,
 		},
 		output = {

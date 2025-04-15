@@ -1,6 +1,7 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local epi = ele.external.ing
 local efs = ele.formspec
 
 local c_air = minetest.get_content_id("air")
@@ -89,7 +90,7 @@ local function timer(pos, elapsed)
         local dig_node = pliquid
         local amount = 1000
         if pliquid == "elepower_nuclear:heavy_water_source" and heavy then
-            dig_node = epr.water_source
+            dig_node = epi.water_source
             amount = 200
         end
 
@@ -114,7 +115,7 @@ local function timer(pos, elapsed)
 
             -- Valid liquid, proceed pumping
             if liquid_list[node.name] ~= nil then
-                if node.name == epr.water_source and heavy then
+                if node.name == epi.water_source and heavy then
                     node.name = "elepower_nuclear:heavy_water_source"
                 end
 
@@ -129,7 +130,7 @@ local function timer(pos, elapsed)
 
         if pliquid ~= "" then
             -- Filter was installed
-            if pliquid == epr.water_source and heavy and fl_buffer.amount > 0 then
+            if pliquid == epi.water_source and heavy and fl_buffer.amount > 0 then
                 pliquid = "elepower_nuclear:heavy_water_source"
                 fl_buffer.amount = 0
                 refresh = true
@@ -142,7 +143,7 @@ local function timer(pos, elapsed)
             local dug = dig_node_leveled_radius(ppos, 16, dig_node)
             if not dug then
                 local node = minetest.get_node_or_nil(ppos)
-                if node.name == epr.water_source and heavy then
+                if node.name == epi.water_source and heavy then
                     node.name = "elepower_nuclear:heavy_water_source"
                 end
 

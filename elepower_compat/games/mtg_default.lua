@@ -16,20 +16,7 @@ if minetest.get_modpath("default") ~= nil then
   ----------------
   -- References --
   ----------------
-  ele.external.ref.gui_bg          = default.gui_bg
-  ele.external.ref.gui_bg_img      = default.gui_bg_img
-  ele.external.ref.gui_slots       = default.gui_slots
-  ele.external.ref.get_hotbar_bg   = default.get_hotbar_bg
-  ele.external.ref.get_itemslot_bg = function() return "" end
-  ele.external.ref.gui_player_inv  = function(center_on, y)
-                y = y or 5
-                center_on = center_on or 11.75
-                local x = center_on / 2 - ((7 * 0.25) + 8) / 2
-                return "list[current_player;main;"..x..","..y..";8,1;]" ..
-                       "list[current_player;main;"..x..","..(y + 1.375)..";8,3;8]"
-  end
-  ele.external.ref.water_source    = "default:water_source"  -- convert to ing
-  ele.external.ref.stone           = "default:stone"         -- convert to ing
+  ele.external.ref.player_inv_width = 8
 
   -------------------------------------------------
   -- Ingredients or node item references in code --
@@ -43,6 +30,8 @@ if minetest.get_modpath("default") ~= nil then
   ele.external.ing.group_color_violet = "group:color_violet"
   ele.external.ing.group_wood         = "group:wood"
 
+  ele.external.ing.water_source  = "default:water_source"
+  ele.external.ing.stone         = "default:stone"
   ele.external.ing.dirt          = "default:dirt"       -- only used by conduit_dirt_with_grass/dry_grass
   ele.external.ing.wheat         = "farming:wheat"      -- only used by conduit_dirt_with_dry_grass
   ele.external.ing.glass         = "default:glass"

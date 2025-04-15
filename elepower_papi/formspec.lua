@@ -119,12 +119,14 @@ function ele.formspec.button(x, y, w, h, name, text)
                ";" .. text .. "]"
 end
 
-function ele.formspec.tooltip(x, y, w, h, text)
+function ele.formspec.tooltip(x, y, w, h, text, bgcolor, fgcolor)
     w = w or 1
     h = h or 1
     text = text or ""
+    -- bgcolor and fgcolor are optional
+    color = bgcolor ~= nil and (";" .. bgcolor .. ";" .. (fgcolor or "")) or ""
     return "tooltip[" .. x .. "," .. y .. ";" .. w .. "," .. h .. ";" .. text ..
-               "]"
+               color .. "]"
 end
 
 -- List with game-specifc item slot background
@@ -179,7 +181,7 @@ function ele.formspec.create_bar(x, y, metric, color, small)
     if not metric or type(metric) ~= "number" or metric < 0 then metric = 0 end
 
     local width = 1
-    local gauge = "image[" .. x .. "," .. y .. ";1,2.8;elepower_gui_gauge.png]"
+    local gauge = ele.formspec.image(x, y, 1, 2.8, "elepower_gui_gauge.png")
 
     -- Smaller width bar
     if small then
@@ -187,12 +189,14 @@ function ele.formspec.create_bar(x, y, metric, color, small)
         gauge = ""
     end
 
-    return "image[" .. x .. "," .. y .. ";" .. width ..
-               ",2.8;elepower_gui_barbg.png" .. "\\^[lowpart\\:" .. metric ..
-               "\\:elepower_gui_bar.png\\\\^[multiply\\\\:" .. color .. "]" ..
-               gauge
+    return ele.formspec.image(x, y, width, 2.8,
+                              "elepower_gui_barbg.png" .. "\\^[lowpart\\:" ..
+                                  metric ..
+                                  "\\:elepower_gui_bar.png\\\\^[multiply\\\\:" ..
+                                  color) .. gauge
 end
 
+-- @deprecated
 function ele.formspec.power_meter(capacitor)
     if not capacitor then
         capacitor = {capacity = 8000, storage = 0, usage = 0}
@@ -223,44 +227,47 @@ function ele.formspec.power_meter_v2(capacitor)
     local usage = capacitor.usage
     if not usage then usage = 0 end
 
+    local tooltip = core.colorize("#c60303", "Energy Storage\n") ..
+                        core.colorize("#0399c6", ele.capacity_text(
+                                          capacitor.capacity, capacitor.storage)) ..
+                        core.colorize("#565656", "\nPower Used / Generated: " ..
+                                          usage .. " " .. ele.unit)
+
     return ele.formspec.create_bar(0.375, 0.375, pw_percent, "#00a1ff") ..
-               "image[0.625,3.25;0.5,0.5;elepower_gui_icon_power_stored.png]" ..
-               "tooltip[0.375,0.375;1,2.9;" ..
-               minetest.colorize("#c60303", "Energy Storage\n") ..
-               minetest.colorize("#0399c6",
-                                 ele.capacity_text(capacitor.capacity,
-                                                   capacitor.storage)) ..
-               minetest.colorize("#565656",
-                                 "\nPower Used / Generated: " .. usage .. " " ..
-                                     ele.unit) .. "]"
+               ele.formspec
+                   .image(0.625, 3.25, 0.5, 0.5,
+                          "elepower_gui_icon_power_stored.png") ..
+               ele.formspec.tooltip(0.375, 0.375, 1, 2.9, tooltip)
 end
 
 -- Fluid bar for formspec
 function ele.formspec.fluid_bar(x, y, fluid_buffer)
     local texture = epg.water
     local metric = 0
-    local tooltip = ("tooltip[%f,%f;1,2.5;%s]"):format(x, y, "Empty Buffer")
+    local tooltip = ele.formspec.tooltip(x, y, 1, 2.5, "Empty Buffer")
 
     if fluid_buffer and fluid_buffer.fluid and fluid_buffer.fluid ~= "" and
-        minetest.registered_nodes[fluid_buffer.fluid] ~= nil then
-        texture = minetest.registered_nodes[fluid_buffer.fluid].tiles[1]
+        core.registered_nodes[fluid_buffer.fluid] ~= nil then
+        texture = core.registered_nodes[fluid_buffer.fluid].tiles[1]
         if type(texture) == "table" then texture = texture.name end
 
         local fdesc = fluid_lib.cleanse_node_description(fluid_buffer.fluid)
+        local text = ("%s\n%s / %s %s"):format(fdesc, ele.helpers
+                                                   .comma_value(
+                                                   fluid_buffer.amount),
+                                               ele.helpers
+                                                   .comma_value(
+                                                   fluid_buffer.capacity),
+                                               fluid_lib.unit)
+
         metric = math.floor(100 * fluid_buffer.amount / fluid_buffer.capacity)
-        tooltip = ("tooltip[%f,%f;1,2.5;%s\n%s / %s %s]"):format(x, y, fdesc,
-                                                                 ele.helpers
-                                                                     .comma_value(
-                                                                     fluid_buffer.amount),
-                                                                 ele.helpers
-                                                                     .comma_value(
-                                                                     fluid_buffer.capacity),
-                                                                 fluid_lib.unit)
+        tooltip = ele.formspec.tooltip(x, y, 1, 2.5, text)
     end
 
-    return "image[" .. x .. "," .. y .. ";1,2.8;elepower_gui_barbg.png" ..
-               "\\^[lowpart\\:" .. metric .. "\\:" .. texture ..
-               "\\\\^[resize\\\\:64x128]" .. "image[" .. x .. "," .. y ..
-               ";1,2.8;elepower_gui_gauge.png]" .. -- "image[.."..(x+0.2)..","..(y+2.45)..";0.5,0.5;elepower_gui_icon_fluid_water.png]"..
-    tooltip
+    return ele.formspec.image(x, y, 1, 2.8,
+                              "elepower_gui_barbg.png" .. "\\^[lowpart\\:" ..
+                                  metric .. "\\:" .. texture ..
+                                  "\\\\^[resize\\\\:64x128") ..
+               ele.formspec.image(x, y, 1, 2.8, "elepower_gui_gauge.png") ..
+               tooltip
 end

@@ -5,9 +5,10 @@ local epi = ele.external.ing
 
 local CAPACITY = 8000
 
+-- TODO: Better game support, currently very much hardcoded
 local fluid_table = {
 	[epi.tree]        = { fpc = 100, fluid = "elepower_farming:tree_sap_source" },
-	[epi.jungle_tree]  = { fpc = 50,  fluid = "elepower_farming:resin_source" },
+	[epi.jungle_tree] = { fpc = 50,  fluid = "elepower_farming:resin_source" },
 	[epi.pine_tree]   = { fpc = 100, fluid = "elepower_farming:resin_source" },
 	[epi.acacia_tree] = { fpc = 50,  fluid = "elepower_farming:resin_source" },
 	[epi.aspen_tree]  = { fpc = 50,  fluid = "elepower_farming:resin_source" },

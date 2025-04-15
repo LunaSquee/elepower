@@ -1,8 +1,9 @@
 local eps = ele.external.sounds
+local epi = ele.external.epi
 local ingot = "elepower_dynamics:bronze_ingot"
 
-if ele.external.ing.bronze_ingot == "" then
-    ele.external.ing.bronze_ingot = ingot
+if epi.bronze_ingot == "" then
+    epi.bronze_ingot = ingot
 
     core.register_craftitem(":elepower_dynamics:bronze_ingot", {
         description = "Bronze Ingot",
