@@ -35,7 +35,7 @@ function eletome.contents_page()
 						   "are called EpU (Elepower Unit).\n"..
 						   "New crafts are added to the game as well as new machines "..
 						   "to enable these new crafts and make use of EpU/s.\n\n"..
-						   "A big thank you to IcyDiamond the orginal creator of this mod.\n\n"
+						   "Mod created by IcyDiamond and Sirrobzeroone.\n\n"
 
 	local heading_lp = "hypertext[0.50,0.70;8.5,1.2;content_lp_h_tome;"..sty_h0s.."Elepower Tome"..sty_h0e.."]"
 	local content_lp = "hypertext[0.75,1.8;8.0,5.5;content_lp_c_text;"..sty_h3s..content_lp_txt..sty_h3s.."]"
