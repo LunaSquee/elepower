@@ -28,9 +28,12 @@ if core.get_modpath("moreores") == nil then
   core.register_node(":moreores:mineral_silver", {
     description = "Silver Ore",
     tiles = {epg.stone.."^elepower_mineral_silver.png"},
-    groups = {cracky = 2},
+    groups = {cracky = 2, pickaxey = 4, material_stone = 1},
     drop = 'moreores:silver_lump',
     sounds = eps.node_sound_stone,
+    _mcl_blast_resistance = 3,
+    _mcl_hardness = 3,
+    _mcl_silk_touch_drop = true,
   })
 
   core.register_node(":moreores:silver_block", {

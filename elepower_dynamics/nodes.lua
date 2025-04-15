@@ -21,33 +21,45 @@ minetest.register_alias_force("elepower_dynamics:fluid_duct", "fluid_transfer:fl
 minetest.register_node("elepower_dynamics:stone_with_lead", {
 	description = "Lead Ore",
 	tiles = {epg.stone.."^elepower_mineral_lead.png"},
-	groups = {cracky = 2},
+	groups = {cracky = 2, pickaxey = 3, material_stone = 1},
 	drop = 'elepower_dynamics:lead_lump',
 	sounds = eps.node_sound_stone,
+	_mcl_blast_resistance = 3,
+	_mcl_hardness = 3,
+	_mcl_silk_touch_drop = true,
 })
 
 minetest.register_node("elepower_dynamics:stone_with_nickel", {
 	description = "Nickel Ore",
 	tiles = {epg.stone.."^elepower_mineral_nickel.png"},
-	groups = {cracky = 2},
+	groups = {cracky = 2, pickaxey = 3, material_stone = 1},
 	drop = 'elepower_dynamics:nickel_lump',
 	sounds = eps.node_sound_stone,
+	_mcl_blast_resistance = 3,
+	_mcl_hardness = 3,
+	_mcl_silk_touch_drop = true,
 })
 
 minetest.register_node("elepower_dynamics:stone_with_viridisium", {
 	description = "Viridisium Ore",
 	tiles = {epg.stone.."^elepower_mineral_viridisium.png"},
-	groups = {cracky = 3},
+	groups = {cracky = 3, pickaxey = 4, material_stone = 1},
 	drop = 'elepower_dynamics:viridisium_lump',
 	sounds = eps.node_sound_stone,
+	_mcl_blast_resistance = 3,
+	_mcl_hardness = 3,
+	_mcl_silk_touch_drop = true,
 })
 
 minetest.register_node("elepower_dynamics:stone_with_zinc", {
 	description = "Zinc Ore",
 	tiles = {epg.stone.."^elepower_mineral_zinc.png"},
-	groups = {cracky = 3},
+	groups = {cracky = 3, pickaxey = 3, material_stone = 1},
 	drop = 'elepower_dynamics:zinc_lump',
 	sounds = eps.node_sound_stone,
+	_mcl_blast_resistance = 3,
+	_mcl_hardness = 3,
+	_mcl_silk_touch_drop = true,
 })
 
 -- Other

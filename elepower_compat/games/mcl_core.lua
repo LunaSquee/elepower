@@ -117,7 +117,7 @@ if minetest.get_modpath("mcl_core") ~= nil then
   ---------------------
   -- Graphics/Images --
   ---------------------
-  ele.external.graphic.water               = "default_water.png"
+  ele.external.graphic.water               = "mcl_core_water_source_animation.png"
   ele.external.graphic.grass               = "default_dirt.png^mcl_core_grass_block_side_overlay.png"
   ele.external.graphic.dirt                = "default_dirt.png"
   ele.external.graphic.grass_side          = "default_dirt.png^mcl_dirt_grass_shadow.png"
@@ -132,8 +132,8 @@ if minetest.get_modpath("mcl_core") ~= nil then
   ele.external.graphic.furnace_fire_fg     = "default_furnace_fire_fg.png"
   ele.external.graphic.gui_furnace_arrow_bg = "gui_furnace_arrow_bg.png"
   ele.external.graphic.gui_furnace_arrow_fg = "gui_furnace_arrow_fg.png"
-  ele.external.graphic.gui_mesecons_on     = ""
-  ele.external.graphic.gui_mesecons_off    = ""
+  ele.external.graphic.gui_mesecons_on     = "redstone_redstone_dust_dot.png^[colorize:#FF0000:192"
+  ele.external.graphic.gui_mesecons_off    = "redstone_redstone_dust_dot.png^[colorize:#FF0000:128"
 
   ----------------------
   -- World generation --

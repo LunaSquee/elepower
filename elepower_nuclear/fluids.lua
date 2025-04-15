@@ -92,7 +92,8 @@ ele.helpers.register_liquid("coolant", {
 	use_texture_alpha = "blend",
 	liquid_viscosity  = 2,
 	post_effect_color = {a = 128, r = 36, g = 150, b = 255},
-	groups            = {liquid = 3, coolant = 1},
+	damage_per_second = 1,
+	groups            = {liquid = 3, coolant = 1, cold = 1},
 })
 
 -- Hot coolant
@@ -103,6 +104,7 @@ ele.helpers.register_liquid("hot_coolant", {
 	special_tiles     = {"elenuclear_hot_coolant.png", "elenuclear_hot_coolant.png"},
 	use_texture_alpha = "blend",
 	liquid_viscosity  = 2,
+	damage_per_second = 2,
 	post_effect_color = {a = 128, r = 136, g = 100, b = 158},
 	groups            = {liquid = 3, coolant = 1, hot = 1},
 })
