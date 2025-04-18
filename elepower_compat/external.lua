@@ -28,18 +28,18 @@ ele.external.graphic = {}
 -- Index --
 -----------
 --- settings to update............line 44
---- elepower_papi.................line 184
---- elepower_dynamics.............line 209
---- elepower_machines.............line 331
---- elepower_tools................line 589
---- elepower_farming..............line 644
---- elepower_solar................line 748
---- elepower_thermal..............line 784
---- elepower_mining...............line 818
---- elepower_nuclear..............line 845
---- elepower_wireless.............line 933
---- elepower_lighting.............line 1008
---- elepower_tome.................line 1065
+--- elepower_papi.................line 205
+--- elepower_dynamics.............line 226
+--- elepower_machines.............line 350
+--- elepower_tools................line 560
+--- elepower_farming..............line 605
+--- elepower_solar................line 697
+--- elepower_thermal..............line 730
+--- elepower_mining...............line 761
+--- elepower_nuclear..............line 785
+--- elepower_wireless.............line 856
+--- elepower_lighting.............line 915
+--- elepower_tome.................line 972
 
 ------------------------------------------------------------
 --         _   _ _   ___      _   _   _                   --
@@ -199,6 +199,8 @@ ele.external.graphic.gui_furnace_arrow_bg = ""
 ele.external.graphic.gui_furnace_arrow_fg = ""
 ele.external.graphic.gui_mesecons_on      = ""
 ele.external.graphic.gui_mesecons_off     = ""
+ele.external.graphic.farming_wheat        = ""
+ele.external.graphic.farming_wheat_seed   = ""
 
 ------------------------------------------------------------
 --  ___ _                                ___           _  --
@@ -997,6 +999,8 @@ ele.external.graphic.gui_mesecons_off     = ""
 -- uses ing.water_source
 -- uses ing.blueberry_bush_leaves
 -- uses ing.furnace
+-- uses graphic.farming_wheat
+-- uses graphic.farming_wheat_seed
 
 ---------------------
 -- i_functions.lua --

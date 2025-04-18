@@ -15,6 +15,7 @@
 -- shorten table ref
 local epi = ele.external.ing
 local epr = ele.external.ref
+local epg = ele.external.graphic
 
 -- This is a store of custom text and data metrics used 
 -- by the tome. In some cases some of these could be added
@@ -671,10 +672,10 @@ eletome.ai.nodes["elepower_machines:electrolyzer"]      = {lb_top_img = "elepowe
 														   hu_img_2   = "elepower_tome_electrolyzer_assemble.png"
 														  }
 														  
-eletome.ai.nodes["elepower_farming:harvester"]      = {lb_top_img = "farming_wheat.png",lb_top_tt  = "Crops\n   or\nTrees"}
+eletome.ai.nodes["elepower_farming:harvester"]      = {lb_top_img = epg.farming_wheat,lb_top_tt  = "Crops\n   or\nTrees"}
 
 
-eletome.ai.nodes["elepower_farming:planter"]      = {lb_top_img = "farming_wheat_seed.png",
+eletome.ai.nodes["elepower_farming:planter"]      = {lb_top_img = epg.farming_wheat_seed,
 													 lb_top_tt  = "Seeds or Seedlings",
 													 how_use_1  = "The automatic planter is used to keep a maximum 9x9 field planted with crops. The planter needs to be placed 1 node "..
 															      "below the ground surface, however it is waterproof and functions perfectly with a node of water above it.\n "..
