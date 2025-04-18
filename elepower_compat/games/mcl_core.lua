@@ -35,11 +35,11 @@ if minetest.get_modpath("mcl_core") ~= nil then
   ele.external.ing.stone              = "mcl_core:stone"
   ele.external.ing.group_stick        = "group:stick"
   ele.external.ing.group_stone        = "group:stone"
-  ele.external.ing.group_color_red    = "group:color_red"
-  ele.external.ing.group_color_green  = "group:color_green"
-  ele.external.ing.group_color_blue   = "group:color_blue"
-  ele.external.ing.group_color_black  = "group:color_black"
-  ele.external.ing.group_color_violet = "group:color_violet"
+  ele.external.ing.group_color_red    = "group:basecolor_red"
+  ele.external.ing.group_color_green  = "group:basecolor_green"
+  ele.external.ing.group_color_blue   = "group:basecolor_blue"
+  ele.external.ing.group_color_black  = "group:basecolor_black"
+  ele.external.ing.group_color_violet = "group:basecolor_magenta"
   ele.external.ing.group_wood         = "group:wood"
 
   ele.external.ing.dirt          = "mcl_core:dirt"       -- only used by conduit_dirt_with_grass/dry_grass
