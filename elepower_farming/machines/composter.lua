@@ -136,6 +136,7 @@ ele.register_base_device("elepower_farming:composter", {
     groups = {
         oddly_breakable_by_hand = 1,
         cracky = 1,
+        pickaxey = 1,
         fluid_container = 1,
         tubedevice = 1,
         tubedevice_receiver = 1
@@ -173,5 +174,8 @@ ele.register_base_device("elepower_farming:composter", {
 
     on_metadata_inventory_move = ele.default.metadata_inventory_changed,
     on_metadata_inventory_put = ele.default.metadata_inventory_changed,
-    on_metadata_inventory_take = ele.default.metadata_inventory_changed
+    on_metadata_inventory_take = ele.default.metadata_inventory_changed,
+
+	_mcl_blast_resistance = 2,
+	_mcl_hardness = 2,
 })

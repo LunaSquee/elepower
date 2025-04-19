@@ -40,7 +40,7 @@ if core.get_modpath("moreores") == nil then
     description = "Silver Block",
     tiles = {"elepower_silver_block.png"},
     is_ground_content = false,
-    groups = {cracky = 1, level = 2},
+    groups = {cracky = 1, pickaxey = 1, level = 2},
     sounds = eps.node_sound_metal,
   })
 

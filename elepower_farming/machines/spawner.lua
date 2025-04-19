@@ -186,6 +186,7 @@ ele.register_machine("elepower_farming:spawner", {
 		ele_machine = 1,
 		ele_user = 1,
 		cracky = 1,
+		pickaxey = 1,
 		tubedevice = 1,
 		tubedevice_receiver = 1,
 	},
@@ -201,4 +202,6 @@ ele.register_machine("elepower_farming:spawner", {
 	end,
 	can_dig  = can_dig,
 	on_timer = on_timer,
+	_mcl_blast_resistance = 2,
+	_mcl_hardness = 2,
 })

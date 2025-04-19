@@ -16,9 +16,14 @@ if ele.external.ing.iron_ingot == "" and ele.external.tools.enable_iron_tools ==
                     maxlevel = 2
                 }
             },
+            punch_attack_uses = 251,
             damage_groups = {fleshy = 4}
         },
-        sound = {breaks = eps.tool_breaks}
+        sound = {breaks = eps.tool_breaks},
+        _mcl_toollike_wield = true,
+        _mcl_diggroups = {
+            pickaxey = { speed = 6, level = 4, uses = 251 }
+        },
     })
 
     minetest.register_tool("elepower_dynamics:shovel_iron", {
@@ -35,9 +40,14 @@ if ele.external.ing.iron_ingot == "" and ele.external.tools.enable_iron_tools ==
                     maxlevel = 2
                 }
             },
+            punch_attack_uses = 251,
             damage_groups = {fleshy = 3}
         },
-        sound = {breaks = eps.tool_breaks}
+        sound = {breaks = eps.tool_breaks},
+        _mcl_toollike_wield = true,
+        _mcl_diggroups = {
+            shovely = { speed = 6, level = 4, uses = 251 }
+        },
     })
 
     minetest.register_tool("elepower_dynamics:axe_iron", {
@@ -53,9 +63,14 @@ if ele.external.ing.iron_ingot == "" and ele.external.tools.enable_iron_tools ==
                     maxlevel = 2
                 }
             },
+            punch_attack_uses = 251,
             damage_groups = {fleshy = 4}
         },
-        sound = {breaks = eps.tool_breaks}
+        sound = {breaks = eps.tool_breaks},
+        _mcl_toollike_wield = true,
+        _mcl_diggroups = {
+            axey = { speed = 6, level = 4, uses = 251 }
+        },
     })
 
     minetest.register_tool("elepower_dynamics:sword_iron", {
@@ -71,11 +86,19 @@ if ele.external.ing.iron_ingot == "" and ele.external.tools.enable_iron_tools ==
                     maxlevel = 2
                 }
             },
+            punch_attack_uses = 251,
             damage_groups = {fleshy = 5}
         },
-        sound = {breaks = eps.tool_breaks}
+        sound = {breaks = eps.tool_breaks},
+        _mcl_toollike_wield = true,
+        _mcl_diggroups = {
+            swordy = { speed = 6, level = 4, uses = 251 },
+            swordy_cobweb = { speed = 6, level = 4, uses = 251 }
+        },
     })
+end
 
+if ele.external.tools.enable_lead_tools == true then
     minetest.register_tool("elepower_dynamics:axe_lead", {
         description = "Lead Axe",
         inventory_image = "elepower_tool_leadaxe.png",
@@ -89,13 +112,16 @@ if ele.external.ing.iron_ingot == "" and ele.external.tools.enable_iron_tools ==
                     maxlevel = 2
                 }
             },
+            punch_attack_uses = 280,
             damage_groups = {fleshy = 5}
         },
-        sound = {breaks = eps.tool_breaks}
+        sound = {breaks = eps.tool_breaks},
+        _mcl_toollike_wield = true,
+        _mcl_diggroups = {
+            axey = { speed = 6, level = 4, uses = 280 }
+        },
     })
-end
 
-if ele.external.tools.enable_lead_tools == true then
     minetest.register_tool("elepower_dynamics:pick_lead", {
         description = "Lead Pickaxe",
         inventory_image = "elepower_tool_leadpick.png",
@@ -109,9 +135,14 @@ if ele.external.tools.enable_lead_tools == true then
                     maxlevel = 2
                 }
             },
+            punch_attack_uses = 280,
             damage_groups = {fleshy = 5}
         },
-        sound = {breaks = eps.tool_breaks}
+        sound = {breaks = eps.tool_breaks},
+        _mcl_toollike_wield = true,
+        _mcl_diggroups = {
+            pickaxey = { speed = 6, level = 4, uses = 280 }
+        },
     })
 
     minetest.register_tool("elepower_dynamics:shovel_lead", {
@@ -128,9 +159,14 @@ if ele.external.tools.enable_lead_tools == true then
                     maxlevel = 2
                 }
             },
+            punch_attack_uses = 280,
             damage_groups = {fleshy = 4}
         },
-        sound = {breaks = eps.tool_breaks}
+        sound = {breaks = eps.tool_breaks},
+        _mcl_toollike_wield = true,
+        _mcl_diggroups = {
+            shovely = { speed = 6, level = 4, uses = 280 }
+        },
     })
     minetest.register_tool("elepower_dynamics:sword_lead", {
         description = "Lead Sword",
@@ -145,8 +181,14 @@ if ele.external.tools.enable_lead_tools == true then
                     maxlevel = 2
                 }
             },
-            damage_groups = {fleshy = 7}
+            punch_attack_uses = 280,
+            damage_groups = {fleshy = 6}
         },
-        sound = {breaks = eps.tool_breaks}
+        sound = {breaks = eps.tool_breaks},
+        _mcl_toollike_wield = true,
+        _mcl_diggroups = {
+            swordy = { speed = 6, level = 4, uses = 280 },
+            swordy_cobweb = { speed = 6, level = 4, uses = 280 }
+        },
     })
 end

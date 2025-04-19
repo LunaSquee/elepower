@@ -81,7 +81,7 @@ minetest.register_node("elepower_dynamics:hardened_glass", {
 	sunlight_propagates = false,
 	use_texture_alpha = "clip",
 	sounds = eps.node_sound_glass,
-	groups = {cracky = 3},
+	groups = {cracky = 3, pickaxey = 2},
 })
 
 -- Blocks
@@ -90,7 +90,7 @@ minetest.register_node("elepower_dynamics:viridisium_block", {
 	description = "Viridisium Block",
 	tiles = {"elepower_viridisium_block.png"},
 	is_ground_content = false,
-	groups = {cracky = 1, level = 2},
+	groups = {cracky = 1, pickaxey = 1, level = 2},
 	sounds = eps.node_sound_metal,
 })
 
@@ -98,7 +98,7 @@ minetest.register_node("elepower_dynamics:lead_block", {
 	description = "Lead Block",
 	tiles = {"elepower_lead_block.png"},
 	is_ground_content = false,
-	groups = {cracky = 1, level = 2},
+	groups = {cracky = 1, pickaxey = 1, level = 2},
 	sounds = eps.node_sound_metal,
 })
 
@@ -106,7 +106,7 @@ minetest.register_node("elepower_dynamics:invar_block", {
 	description = "Invar Block",
 	tiles = {"elepower_invar_block.png"},
 	is_ground_content = false,
-	groups = {cracky = 1, level = 3},
+	groups = {cracky = 1, pickaxey = 1, level = 3},
 	sounds = eps.node_sound_metal,
 })
 
@@ -114,7 +114,7 @@ minetest.register_node("elepower_dynamics:nickel_block", {
 	description = "Nickel Block",
 	tiles = {"elepower_nickel_block.png"},
 	is_ground_content = false,
-	groups = {cracky = 1, level = 3},
+	groups = {cracky = 1, pickaxey = 1, level = 3},
 	sounds = eps.node_sound_metal,
 })
 
@@ -122,7 +122,7 @@ minetest.register_node("elepower_dynamics:zinc_block", {
 	description = "Zinc Block",
 	tiles = {"elepower_zinc_block.png"},
 	is_ground_content = false,
-	groups = {cracky = 1, level = 3},
+	groups = {cracky = 1, pickaxey = 1, level = 3},
 	sounds = eps.node_sound_metal,
 })
 
@@ -131,7 +131,7 @@ if epi.steel_ingot == "" then
 		description = "Steel Block",
 		tiles = {"elepower_steel_block.png"},
 		is_ground_content = false,
-		groups = {cracky = 1, level = 3},
+		groups = {cracky = 1, pickaxey = 1, level = 3},
 		sounds = eps.node_sound_metal,
 	})
 end
