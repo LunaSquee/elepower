@@ -11,10 +11,11 @@
 ---------------------------------------------------
 --            Additional Information             --
 --------------------------------------------------- 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epi = ele.external.ing
 local epr = ele.external.ref
+local epg = ele.external.graphic
 
 -- This is a store of custom text and data metrics used 
 -- by the tome. In some cases some of these could be added
@@ -303,7 +304,7 @@ eletome.ai.nodes["getting_started"]    = {how_use_1 = "This is a getting started
 													"hypertext[1.375,3.4;1,1;num;<style size=12><right><b>02</b></right></style>]"..
 													"item_image_button[2.5,2.75;1,1;basic_materials:plastic_sheet;basic_materials:plastic_sheet;]"..
 													"hypertext[2.5,3.4;1,1;num2;<style size=12><right><b>02</b></right></style>]"..
-													"item_image_button[3.625,2.75;1,1;"..epi.steel_ingot..";"..epi.steel_ingot..";]"..
+													"item_image_button[3.625,2.75;1,1;elepower_dynamics:steel_ingot;elepower_dynamics:steel_ingot;]"..
 													"hypertext[3.625,3.4;1,1;num;<style size=12><right><b>02</b></right></style>]"..
 													"item_image_button[4.75,2.75;1,1;"..epi.copper_ingot..";"..epi.copper_ingot..";]"..
 													"hypertext[4.75,3.4;1,1;num;<style size=12><right><b>01</b></right></style>]"..
@@ -316,7 +317,7 @@ eletome.ai.nodes["getting_started"]    = {how_use_1 = "This is a getting started
 											        "style_type[item_image_button;bgimg=elepower_tome_bgimg_2.png]"..
 													--line 1
 													"container[2.5,0]"..
-													"item_image_button[0.375,0.25;1,1;"..epr.stone..";"..epr.stone..";]"..
+													"item_image_button[0.375,0.25;1,1;"..epi.stone..";"..epi.stone..";]"..
 													"hypertext[0.375,0.9;1,1;num;<style size=12><right><b>08</b></right></style>]"..
 													"image[1.5,0.375;0.75,0.75;elepower_tome_icon_crafting.png]"..
 													"tooltip[1.5,0.25;0.75,0.75;Crafting;#30434c;#f9f9f9]"..
@@ -347,7 +348,7 @@ eletome.ai.nodes["getting_started"]    = {how_use_1 = "This is a getting started
 													"container[0.875,3.75]"..													
 													"item_image_button[0.375,0.25;1,1;"..epi.copper_ingot..";"..epi.copper_ingot..";]"..
 													"hypertext[0.375,0.9;1,1;num;<style size=12><right><b>04</b></right></style>]"..
-													"item_image_button[1.5,0.25;1,1;moreores:silver_ingot;moreores:silver_ingot;]"..
+													"item_image_button[1.5,0.25;1,1;"..ele.external.ing.silver_ingot..";"..ele.external.ing.silver_ingot..";]"..
 													"hypertext[1.5,0.9;1,1;num;<style size=12><right><b>02</b></right></style>]"..
 													"image[2.625,0.375;0.75,0.75;elepower_tome_icon_alloying.png]"..
 													"tooltip[2.625,0.375;0.75,0.75;Alloying;#30434c;#f9f9f9]"..
@@ -360,7 +361,7 @@ eletome.ai.nodes["getting_started"]    = {how_use_1 = "This is a getting started
 													"container_end[]"..
 													-- line 5
 													"container[0.75,5]"..
-													"item_image_button[0.375,0.25;1,1;"..epi.steel_ingot..";"..epi.steel_ingot..";]"..
+													"item_image_button[0.375,0.25;1,1;elepower_dynamics:steel_ingot;elepower_dynamics:steel_ingot;]"..
 													"hypertext[0.375,0.9;1,1;num;<style size=12><right><b>04</b></right></style>]"..
 													"item_image_button[1.5,0.25;1,1;"..epi.glass..";"..epi.glass..";]"..
 													"hypertext[1.5,0.9;1,1;num;<style size=12><right><b>03</b></right></style>]"..
@@ -375,7 +376,7 @@ eletome.ai.nodes["getting_started"]    = {how_use_1 = "This is a getting started
 													"container_end[]"..
 													-- line 6
 													"container[0.75,6.25]"..
-													"item_image_button[0.375,0.25;1,1;"..epi.steel_ingot..";"..epi.steel_ingot..";]"..
+													"item_image_button[0.375,0.25;1,1;elepower_dynamics:steel_ingot;elepower_dynamics:steel_ingot;]"..
 													"hypertext[0.375,0.9;1,1;num;<style size=12><right><b>03</b></right></style>]"..
 													"item_image_button[1.5,0.25;1,1;elepower_dynamics:wound_copper_coil;elepower_dynamics:wound_copper_coil;]"..
 													"hypertext[1.5,0.9;1,1;num;<style size=12><right><b>02</b></right></style>]"..
@@ -418,7 +419,7 @@ eletome.ai.nodes["first_pcb_creation"] = {how_use_1 = "More advanced machines re
 															"tooltip[1.5,0.25;0.75,0.75;Grinding;#30434c;#f9f9f9]"..
 															"item_image_button[2.375,0.25;1,1;elepower_dynamics:copper_dust;elepower_dynamics:copper_dust;]"..
 															"hypertext[2.375,0.9;1,1;num;<style size=12><right><b>04</b></right></style>]"..
-															"item_image_button[3.5,0.25;1,1;farming:seed_wheat;farming:seed_wheat;]"..
+															"item_image_button[3.5,0.25;1,1;"..epi.seed_wheat..";"..epi.seed_wheat..";]"..
 															"hypertext[3.5,0.9;1,1;num;<style size=12><right><b>01</b></right></style>]"..
 															"image[4.625,0.375;0.75,0.75;elepower_tome_icon_crafting.png]"..
 															"tooltip[4.625,0.375;0.75,0.75;Crafting;#30434c;#f9f9f9]"..
@@ -431,7 +432,7 @@ eletome.ai.nodes["first_pcb_creation"] = {how_use_1 = "More advanced machines re
 															"hypertext[0.375,0.9;1,1;num;<style size=12><right><b>01</b></right></style>]"..
 															"image[1.5,0.375;0.75,0.75;elepower_tome_mouse_rght_click.png]"..
 															"tooltip[1.5,0.25;0.75,0.75;Right Click;#30434c;#f9f9f9]"..
-															"item_image_button[2.375,0.25;1,1;"..epr.water_source..";"..epr.water_source..";]"..
+															"item_image_button[2.375,0.25;1,1;"..epi.water_source..";"..epi.water_source..";]"..
 															"hypertext[2.375,0.9;1,1;num;<style size=12><right><b>01</b></right></style>]"..
 															"image[3.5,0.375;0.75,0.75;elepower_tome_icon_output.png]"..
 															"tooltip[3.5,0.25;0.75,0.75;Turns Into;#30434c;#f9f9f9]"..
@@ -507,7 +508,7 @@ eletome.ai.nodes["upgrading_machines"] = { how_use_1 = "Some machines can be upg
 														"tooltip[1.5,0.375;0.75,0.75;Crafting;#30434c;#f9f9f9]"..
 														"item_image_button[2.375,0.25;1,1;basic_materials:empty_spool;basic_materials:empty_spool;]"..
 														"hypertext[2.375,0.9;1,1;num;<style size=12><right><b>16</b></right></style>]"..
-														"item_image_button[3.5,0.25;1,1;moreores:silver_ingot;moreores:silver_ingot;]"..
+														"item_image_button[3.5,0.25;1,1;"..ele.external.ing.silver_ingot..";"..ele.external.ing.silver_ingot..";]"..
 														"hypertext[3.5,0.9;1,1;num;<style size=12><right><b>08</b></right></style>]"..
 														"image[4.625,0.375;0.75,0.75;elepower_tome_icon_crafting.png]"..
 														"tooltip[4.625,0.375;0.75,0.75;Crafting;#30434c;#f9f9f9]"..
@@ -593,7 +594,7 @@ eletome.ai.nodes["upgrading_machines"] = { how_use_1 = "Some machines can be upg
 														"container_end[]"..	
 													-- line 8
 														"container[1,8.65]"..
-														"item_image_button[0.375,0.25;1,1;"..epi.steel_ingot..";"..epi.steel_ingot..";]"..
+														"item_image_button[0.375,0.25;1,1;elepower_dynamics:steel_ingot;elepower_dynamics:steel_ingot;]"..
 														"hypertext[0.375,0.9;1,1;num;<style size=12><right><b>01</b></right></style>]"..
 														"item_image_button[1.5,0.25;1,1;elepower_dynamics:wound_silver_coil;elepower_dynamics:wound_silver_coil;]"..
 														"hypertext[1.5,0.9;1,1;num;<style size=12><right><b>02</b></right></style>]"..
@@ -671,10 +672,10 @@ eletome.ai.nodes["elepower_machines:electrolyzer"]      = {lb_top_img = "elepowe
 														   hu_img_2   = "elepower_tome_electrolyzer_assemble.png"
 														  }
 														  
-eletome.ai.nodes["elepower_farming:harvester"]      = {lb_top_img = "farming_wheat.png",lb_top_tt  = "Crops\n   or\nTrees"}
+eletome.ai.nodes["elepower_farming:harvester"]      = {lb_top_img = epg.farming_wheat,lb_top_tt  = "Crops\n   or\nTrees"}
 
 
-eletome.ai.nodes["elepower_farming:planter"]      = {lb_top_img = "farming_wheat_seed.png",
+eletome.ai.nodes["elepower_farming:planter"]      = {lb_top_img = epg.farming_wheat_seed,
 													 lb_top_tt  = "Seeds or Seedlings",
 													 how_use_1  = "The automatic planter is used to keep a maximum 9x9 field planted with crops. The planter needs to be placed 1 node "..
 															      "below the ground surface, however it is waterproof and functions perfectly with a node of water above it.\n "..

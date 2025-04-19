@@ -1,14 +1,15 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 elewi.node_handlers = {}
 local desc_cache = {}
 
 local function default_on_receive_fields(name)
 	local rcv = minetest.registered_nodes[name].on_receive_fields
-	if not rcv then return function ( ... ) end end
+	if not rcv then return function () end end
 	return function (pos, fields, sender)
 		return rcv(pos, name, fields, sender)
 	end
@@ -34,18 +35,14 @@ local function get_desc(node)
 end
 
 local function get_formspec(power)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		"list[context;card;3.5,1;1,1;]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
+	local start, _, by, _, _, center_x = efs.begin(11.75, 10.45)
+	return start..
+		efs.power_meter(power) ..
+		efs.list("context", "card", center_x, by + 1.25, 1, 1) ..
+		epr.gui_player_inv()..
 		"listring[current_player;main]"..
 		"listring[context;card]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 local function data_from_card(card)

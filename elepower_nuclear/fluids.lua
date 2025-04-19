@@ -92,7 +92,8 @@ ele.helpers.register_liquid("coolant", {
 	use_texture_alpha = "blend",
 	liquid_viscosity  = 2,
 	post_effect_color = {a = 128, r = 36, g = 150, b = 255},
-	groups            = {liquid = 3, coolant = 1},
+	damage_per_second = 1,
+	groups            = {liquid = 3, coolant = 1, cold = 1},
 })
 
 -- Hot coolant
@@ -103,6 +104,7 @@ ele.helpers.register_liquid("hot_coolant", {
 	special_tiles     = {"elenuclear_hot_coolant.png", "elenuclear_hot_coolant.png"},
 	use_texture_alpha = "blend",
 	liquid_viscosity  = 2,
+	damage_per_second = 2,
 	post_effect_color = {a = 128, r = 136, g = 100, b = 158},
 	groups            = {liquid = 3, coolant = 1, hot = 1},
 })
@@ -152,14 +154,14 @@ ele.helpers.register_liquid("corium", {
 	groups            = {corium = 3, radioactive = 1, liquid = 3, igniter = 1},
 })
 
-if minetest.get_modpath("bucket") ~= nil then
-	bucket.register_liquid("elepower_nuclear:coolant_source", "elepower_nuclear:hot_coolant_flowing",
+if minetest.get_modpath("bucket_compat") ~= nil then
+	fluid_lib.register_liquid("elepower_nuclear:coolant_source", "elepower_nuclear:hot_coolant_flowing",
 		"elepower_nuclear:bucket_coolant", "#2497ff", "Coolant (Cold)")
 
-	bucket.register_liquid("elepower_nuclear:hot_coolant_source", "elepower_nuclear:hot_coolant_flowing",
+	fluid_lib.register_liquid("elepower_nuclear:hot_coolant_source", "elepower_nuclear:hot_coolant_flowing",
 		"elepower_nuclear:bucket_hot_coolant", "#88649e", "Coolant (Hot)")
 
-	bucket.register_liquid("elepower_nuclear:heavy_water_source", "elepower_nuclear:heavy_water_flowing",
+	fluid_lib.register_liquid("elepower_nuclear:heavy_water_source", "elepower_nuclear:heavy_water_flowing",
 		"elepower_nuclear:bucket_heavy_water", "#0d4579", "Heavy Water Bucket")
 
 	fluid_tanks.register_tank(":elepower_dynamics:portable_tank", {
@@ -169,7 +171,6 @@ if minetest.get_modpath("bucket") ~= nil then
 		tiles       = {
 			"elepower_tank_base.png", "elepower_tank_side.png", "elepower_tank_base.png^elepower_power_port.png",
 		}
-		
 	})
 end
 

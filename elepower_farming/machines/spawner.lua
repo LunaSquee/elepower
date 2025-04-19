@@ -1,7 +1,8 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 -- How many seconds there are between runs
 local SPAWNER_TICK = 10
@@ -94,21 +95,17 @@ local function spawn(pos, mob)
 end
 
 local function get_formspec(timer, power, state)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		ele.formspec.state_switcher(7, 0, state)..
-		ele.formspec.create_bar(1, 0, 100 - timer, "#00ff11", true)..
-		"list[context;src;3.5,1.5;1,1;]"..
+	local start, bx, by, mx = efs.begin(11.75, 10.45)
+	return start..
+		efs.power_meter(power) ..
+		efs.state_switcher(mx - 1, by, state) ..
+		efs.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true) ..
+		efs.list("context", "src", 3.5, 1.5, 1, 1) ..
 		"image[3.5,1.5;1,1;elefarming_egg_silhouette.png]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
+		epr.gui_player_inv()..
 		"listring[current_player;main]"..
 		"listring[context;src]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 local function on_timer(pos, elapsed)
@@ -189,6 +186,7 @@ ele.register_machine("elepower_farming:spawner", {
 		ele_machine = 1,
 		ele_user = 1,
 		cracky = 1,
+		pickaxey = 1,
 		tubedevice = 1,
 		tubedevice_receiver = 1,
 	},
@@ -204,4 +202,6 @@ ele.register_machine("elepower_farming:spawner", {
 	end,
 	can_dig  = can_dig,
 	on_timer = on_timer,
+	_mcl_blast_resistance = 2,
+	_mcl_hardness = 2,
 })

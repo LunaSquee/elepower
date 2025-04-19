@@ -1,32 +1,26 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 -- Nuclear fuel enrichment plant
 
 local function get_formspec(craft_type, power, progress, pos)
+	local start, _, by, mx, _, center_x = efs.begin(11.75, 10.45)
 	if not progress then progress = 0 end
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		"list[context;src;2,0.75;1,1;]"..
-		"image[3.5,0.75;1,1;elenuclear_gui_icon_bg.png^[lowpart:"..
-		(progress)..":elenuclear_gui_icon_fg.png]"..
-		--"image[3.5,0.75;1,1;elenuclear_gui_icon_bg.png^[lowpart:"..
-		--(progress)..":elenuclear_gui_icon_fg.png]"..
-		"list[context;dst;5,0.25;2,2;]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
-		"image[7,3;1,1;elenuclear_radioactive.png]"..
+	return start..
+		efs.power_meter(power)..
+		efs.list("context", "src", center_x - 1.25, by + 1.25, 1, 1) ..
+		efs.fuel(center_x, by + 1.25, progress, "elenuclear_gui_icon_bg.png", "elenuclear_gui_icon_fg.png") ..
+		efs.list("context", "dst", center_x + 2.25, by + 0.675, 2, 2) ..
+		epr.gui_player_inv() ..
+		efs.image(mx - 1, by + 3.5, 1, 1, "elenuclear_radioactive.png") ..
 		"listring[current_player;main]"..
 		"listring[context;src]"..
 		"listring[current_player;main]"..
 		"listring[context;dst]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 elepm.register_craft_type("enrichment", {

@@ -1,4 +1,4 @@
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local eps = ele.external.sounds
 
@@ -189,4 +189,17 @@ function ele.helpers.register_liquid(liquid, def)
 
 		minetest.register_node(mod..":"..liquid.."_"..state, def_base)
 	end
+end
+
+function ele.helpers.merge_tables(t1, t2)
+	for k, v in pairs(t2) do
+			if type(v) == "table" and type(t1[k]) == "table" then
+					-- If both t1[k] and v are tables, merge them recursively
+					ele.helpers.merge_tables(t1[k], v)
+			else
+					-- Otherwise, simply set the value
+					t1[k] = v
+			end
+	end
+	return t1
 end

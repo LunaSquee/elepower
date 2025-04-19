@@ -1,5 +1,5 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epg = ele.external.graphic
 local eps = ele.external.sounds
@@ -9,7 +9,7 @@ ele.register_conduit("elepower_dynamics:conduit", {
 	description = "Power Conduit",
 	tiles = {"elepower_conduit.png"},
 	use_texture_alpha = "clip",
-	groups = {oddly_breakable_by_hand = 1, cracky = 1}
+	groups = {oddly_breakable_by_hand = 1, cracky = 1, pickaxey = 1}
 })
 
 ele.register_conduit("elepower_dynamics:conduit_wall", {
@@ -17,9 +17,8 @@ ele.register_conduit("elepower_dynamics:conduit_wall", {
 	tiles = {"elepower_conduit_wall.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 4/8,
-	groups = {cracky = 1}
+	groups = {cracky = 1, pickaxey = 1}
 })
-
 
 if ele.external.conduit_dirt_with_grass == true then
 	ele.register_conduit("elepower_dynamics:conduit_dirt_with_grass", {
@@ -83,5 +82,5 @@ fluid_lib.register_transfer_node("elepower_dynamics:opaque_duct", {
 	tiles = {"elepower_opaque_duct.png"},
 	use_texture_alpha = "clip",
 	duct_density = 1/5,
-	groups = {oddly_breakable_by_hand = 1, cracky = 1}
+	groups = {oddly_breakable_by_hand = 1, pickaxey = 1, cracky = 1}
 })

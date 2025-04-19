@@ -1,11 +1,13 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local epi = ele.external.ing
+local efs = ele.formspec
 
 elepm.electrolyzer_recipes = {
 	{
-		recipe = epr.water_source.." 1000",
+		recipe = epi.water_source.." 1000",
 		output = {
 			"elepower_dynamics:hydrogen 600",
 			"elepower_dynamics:oxygen 400",
@@ -31,33 +33,29 @@ elepm.electrolyzer_recipes = {
 }
 
 local function get_formspec(time, power, input, out1, out2, state)
-	local bar = "image[3.5,1;1,1;gui_furnace_arrow_bg.png^[transformR270]"
+	local start, bx, by, mx, _, center_x = efs.begin(11.75, 10.45)
+	local move_two = 2.5
 
-	if time ~= nil then
-		bar = "image[3.5,1;1,1;gui_furnace_arrow_bg.png^[lowpart:"..
-			  (time)..":gui_furnace_arrow_fg.png^[transformR270]"
-	end
+	return start..
+		efs.power_meter(power)..
 
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		ele.formspec.fluid_bar(1, 0, input)..
-		"image[1.2,2.45;0.5,0.5;elepower_gui_icon_fluid_electrolyzer_in.png]"..
-		"tooltip[1.0,2.0;1,1;"..minetest.colorize("#0399c6","     Water\nHeavy Water\n    BioMass").."]"..
-		ele.formspec.state_switcher(3.5, 0, state)..
-		bar..
-		ele.formspec.fluid_bar(6, 0, out1)..
-		"image[6.2,2.45;0.5,0.5;elepower_gui_icon_fluid_electrolyzer_out1.png]"..
-		"tooltip[6.0,2.0;1,1;"..minetest.colorize("#0399c6"," Hydrogen\nDeuterium\n Nitrogen").."]"..		
-		ele.formspec.fluid_bar(7, 0, out2)..
-		"image[7.2,2.45;0.5,0.5;elepower_gui_icon_fluid_electrolyzer_out2.png]"..
-		"tooltip[7.0,2.0;1,1;"..minetest.colorize("#0399c6"," Oxygen").."]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		efs.fluid_bar(bx + 1.25, by, input)..
+		efs.image(bx + 1.5, by + 2.9, 0.5, 0.5, "elepower_gui_icon_fluid_electrolyzer_in.png") ..
+		efs.tooltip(bx + 1.25, by + 2.5, 1, 1, core.colorize("#0399c6","     Water\nHeavy Water\n    BioMass")) ..
+
+		efs.state_switcher(center_x, by, state)..
+		efs.progress(center_x, by + 1.25, time)..
+
+		efs.fluid_bar(mx - move_two, by, out1)..
+		efs.image(mx - move_two + 0.25, by + 2.9, 0.5, 0.5, "elepower_gui_icon_fluid_electrolyzer_out1.png") ..
+		efs.tooltip(mx - move_two, by + 2.5, 1, 1, core.colorize("#0399c6","Hydrogen\nDeuterium\n Nitrogen")) ..
+
+		efs.fluid_bar(mx - 1.25, by, out2)..
+		efs.image(mx - 1, by + 2.9, 0.5, 0.5, "elepower_gui_icon_fluid_electrolyzer_out2.png") ..
+		efs.tooltip(mx - 1.25, by + 2.5, 1, 1, core.colorize("#0399c6","Oxygen")) ..
+
+		epr.gui_player_inv() ..
+		"listring[current_player;main]"
 end
 
 local function get_electrolysis_result(buffer)
@@ -178,7 +176,7 @@ ele.register_machine("elepower_machines:electrolyzer", {
 	ele_inrush = 128,
 	fluid_buffers = {
 		input = {
-			accepts = {epr.water_source, "elepower_nuclear:heavy_water_source",
+			accepts = {epi.water_source, "elepower_nuclear:heavy_water_source",
 				"group:biomass", "group:electrolysis_recipe"},
 			drainable = false,
 			capacity = 8000,

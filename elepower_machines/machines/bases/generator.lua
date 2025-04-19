@@ -1,23 +1,20 @@
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 local function get_formspec_default(power, percent, state)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		ele.formspec.state_switcher(7, 0, state)..
-		"list[context;src;3,1.5;1,1;]"..
-		"image[4,1.5;1,1;elepower_gui_icon_elepower_bg.png^[lowpart:"..
-		percent..":elepower_gui_icon_elepower.png]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
+	local start, _, by, mx = efs.begin(11.75, 10.45)
+	local cx, cy = efs.center_in_box(11.75, 5, 1, 1)
+	return start..
+		efs.power_meter(power) ..
+		efs.state_switcher(mx - 1, by, state) ..
+		efs.list("context", "src", cx, cy, 1, 1) ..
+		efs.fuel(cx + 1.25, cy, percent) ..
+		epr.gui_player_inv() ..
 		"listring[current_player;main]"..
 		"listring[context;src]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 function elepm.register_fuel_generator(nodename, nodedef)
@@ -49,7 +46,7 @@ function elepm.register_fuel_generator(nodename, nodedef)
 
 		local burn_time      = meta:get_int("burn_time")
 		local burn_totaltime = meta:get_int("burn_totaltime")
-		
+
 		local capacity   = ele.helpers.get_node_property(meta, pos, "capacity")
 		local generation = ele.helpers.get_node_property(meta, pos, "usage")
 		local storage    = ele.helpers.get_node_property(meta, pos, "storage")

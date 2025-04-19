@@ -1,25 +1,26 @@
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local epg = ele.external.graphic
+local efs = ele.formspec
 
 local function get_formspec_default(power)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		"image[2,0.5;1,1;gui_furnace_arrow_bg.png^[transformR180]"..
-		"list[context;src;2,1.5;1,1;]"..
-		"image[5,0.5;1,1;gui_furnace_arrow_bg.png]"..
-		"list[context;dst;5,1.5;1,1;]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
+	local start, bx, by, mx = efs.begin(11.75, 10.45)
+	local slot_in_x = bx + efs.move(2.5)
+	local slot_out_x = mx - efs.move(3)
+	local slot_y = by + 0.5
+	return start..
+		efs.power_meter(power) ..
+		efs.image(slot_in_x, slot_y, 1, 1, epg.gui_furnace_arrow_fg.."^[transformR180") ..
+		efs.list("context", "src", slot_in_x, slot_y + 1.25, 1, 1) ..
+		efs.image(slot_out_x, slot_y, 1, 1, epg.gui_furnace_arrow_fg) ..
+		efs.list("context", "dst", slot_out_x, slot_y + 1.25, 1, 1) ..
+		epr.gui_player_inv() ..
 		"listring[current_player;main]"..
 		"listring[context;src]"..
 		"listring[current_player;main]"..
 		"listring[context;dst]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 local function can_dig(pos, player)

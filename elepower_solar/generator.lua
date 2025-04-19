@@ -1,21 +1,17 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 local function get_formspec_default(power, percent, state)
+	local start, _, by, mx, _, center_x = efs.begin(11.75, 10.45)
 	if not percent then percent = 0 end
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		ele.formspec.state_switcher(7, 0, state)..
-		"image[3.5,1.5;1,1;elepower_gui_icon_elepower_bg.png^[lowpart:"..
-		(percent)..":elepower_gui_icon_elepower.png]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
-		epr.get_hotbar_bg(0, 4.25)
+	return start..
+		efs.power_meter(power)..
+		efs.state_switcher(mx - 1, by, state)..
+		efs.fuel(center_x, by + 1.25, percent, "elepower_gui_icon_elepower_bg.png", "elepower_gui_icon_elepower.png") ..
+		epr.gui_player_inv()
 end
 
 -- A generator that creates power using sunlight

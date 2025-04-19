@@ -1,27 +1,20 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
-local epg = ele.external.graphic
+local efs = ele.formspec
 
 local function get_formspec(power, input, output, state)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		ele.formspec.state_switcher(3.5, 1, state)..
-		ele.formspec.fluid_bar(1, 0, input)..
-		ele.formspec.fluid_bar(7, 0, output)..
-		"image[3.5,2;1,1;"..epg.gui_furnace_arrow_bg.."^[transformR270]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
-		"listring[current_player;main]"..
-		"listring[context;src]"..
-		"listring[current_player;main]"..
-		"listring[context;dst]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+	local start, bx, by, mx, _, center_x = efs.begin(11.75, 10.45)
+
+	return start..
+		efs.power_meter(power)..
+		efs.state_switcher(center_x, by, state)..
+		efs.fluid_bar(bx + 1.25, by, input)..
+		efs.fluid_bar(mx - 1, by, output)..
+		efs.progress(center_x, by + 1.25, 0) ..
+		epr.gui_player_inv() ..
+		"listring[current_player;main]"
 end
 
 local function on_timer(pos, elapsed)

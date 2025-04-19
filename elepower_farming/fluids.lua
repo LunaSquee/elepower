@@ -58,20 +58,20 @@ ele.helpers.register_liquid("sludge", {
 	groups            = {sludge = 3, liquid = 3},
 })
 
-if minetest.get_modpath("bucket") ~= nil then
-	bucket.register_liquid("elepower_farming:tree_sap_source", "elepower_farming:tree_sap_flowing",
+if minetest.get_modpath("bucket_compat") ~= nil then
+	fluid_lib.register_liquid("elepower_farming:tree_sap_source", "elepower_farming:tree_sap_flowing",
 		"elepower_farming:bucket_tree_sap", "#411400", "Tree Sap Bucket")
 
-	bucket.register_liquid("elepower_farming:resin_source",    "elepower_farming:resin_flowing",
+	fluid_lib.register_liquid("elepower_farming:resin_source",    "elepower_farming:resin_flowing",
 		"elepower_farming:bucket_resin",    "#411401", "Resin Bucket")
 
-	bucket.register_liquid("elepower_farming:biomass_source",  "elepower_farming:biomass_flowing",
+	fluid_lib.register_liquid("elepower_farming:biomass_source",  "elepower_farming:biomass_flowing",
 		"elepower_farming:bucket_biomass",  "#002c01", "Biomass Bucket")
 
-	bucket.register_liquid("elepower_farming:biofuel_source",  "elepower_farming:biofuel_flowing",
+	fluid_lib.register_liquid("elepower_farming:biofuel_source",  "elepower_farming:biofuel_flowing",
 		"elepower_farming:bucket_biofuel",  "#762700", "Biofuel Bucket")
 
-	bucket.register_liquid("elepower_farming:sludge_source",   "elepower_farming:sludge_flowing",
+	fluid_lib.register_liquid("elepower_farming:sludge_source",   "elepower_farming:sludge_flowing",
 		"elepower_farming:bucket_sludge",   "#121212", "Sludge Bucket")
 
 	fluid_tanks.register_tank(":elepower_dynamics:portable_tank", {

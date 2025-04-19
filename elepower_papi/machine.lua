@@ -4,6 +4,7 @@
 local pw = minetest.get_modpath("pipeworks") ~= nil
 local mc = minetest.get_modpath("mesecons") ~= nil
 local tl = minetest.get_modpath("tubelib") ~= nil
+local mcl = minetest.get_modpath("mcl_core") ~= nil
 
 --[[
 	Groups:
@@ -238,6 +239,12 @@ end
 -- Register a base device
 function ele.register_base_device(nodename, nodedef)
 	local tlsupp = tl and nodedef.groups and (nodedef.groups["tubedevice"] or nodedef.groups["tube"])
+
+	-- VoxeLibre default hardness
+	if mcl then
+		nodedef._mcl_blast_resistance = nodedef._mcl_blast_resistance or 4
+		nodedef._mcl_hardness = nodedef._mcl_hardness or 3
+	end
 
 	-- Override construct callback
 	local original_on_construct = nodedef.on_construct

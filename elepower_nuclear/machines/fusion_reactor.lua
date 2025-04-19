@@ -1,7 +1,8 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 local struct_cache = {}
 
@@ -113,23 +114,15 @@ local function notify_controller_presence(posi, posj)
 end
 
 local function controller_formspec(in1, in2, out, power, time, state)
-	local bar = "image[3.5,1;1,1;gui_furnace_arrow_bg.png^[transformR270]"
+	local start, bx, by, mx, _, center_x = efs.begin(11.75, 4.75)
 
-	if time ~= nil then
-		bar = "image[3.5,1;1,1;gui_furnace_arrow_bg.png^[lowpart:"..
-			  (time)..":gui_furnace_arrow_fg.png^[transformR270]"
-	end
-
-	return "size[8,3.25]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		ele.formspec.fluid_bar(1, 0, in1)..
-		ele.formspec.fluid_bar(2, 0, in2)..
-		bar..
-		ele.formspec.fluid_bar(7, 0, out)..
-		ele.formspec.state_switcher(7, 2.5, state)
+	return start ..
+		efs.power_meter(power) ..
+		efs.fluid_bar(bx + 1.25, by, in1) ..
+		efs.fluid_bar(bx + 2.5, by, in2) ..
+		efs.progress(center_x, by + 1.25, time) ..
+		efs.fluid_bar(mx - 1, by, out) ..
+		efs.state_switcher(mx - 1, by + 3, state)
 end
 
 local function get_recipe(i1, i2)

@@ -1,8 +1,8 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
-local epr = ele.external.reg
-local epg = ele.external.graphic
+local epr = ele.external.ref
+local efs = ele.formspec
 
 local recipes = {
 	{
@@ -29,25 +29,15 @@ local function get_recipe(input)
 end
 
 local function get_formspec(inp, outp, solar, percent)
-	local bar = "image[3.5,1.5;1,1;"..epg.gui_furnace_arrow_bg.."^[transformR270]"
+	local start, bx, by, mx, _, center_x = efs.begin(11.75, 10.45)
 
-	if percent ~= nil then
-		bar = "image[3.5,1.5;1,1;"..epg.gui_furnace_arrow_bg.."^[lowpart:"..
-			  (percent)..":"..epg.gui_furnace_arrow_fg.."^[transformR270]"
-	end
-
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.fluid_bar(0, 0, inp)..
-		bar..
-		"label[3.4,0.5;Light: "..solar.."%]"..
-		ele.formspec.fluid_bar(7, 0, outp)..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+	return start..
+		efs.fluid_bar(bx, by, inp) ..
+		efs.progress(center_x, by + 1.25, percent) ..
+		efs.label(center_x, by + 1, "Light: "..solar.."%") ..
+		efs.fluid_bar(mx - 1, by, outp) ..
+		epr.gui_player_inv() ..
+		"listring[current_player;main]"
 end
 
 local function on_timer (pos, elapsed)

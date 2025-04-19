@@ -1,7 +1,7 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
-local epr = ele.external.ref 
+local epi = ele.external.ing
 
 -- Etching Acid
 
@@ -31,11 +31,13 @@ ele.helpers.register_liquid("lithium", {
 	groups            = {lithium = 1, liquid = 3},
 })
 
-bucket.register_liquid("elepower_dynamics:etching_acid_source", "elepower_dynamics:etching_acid_flowing",
-		"elepower_dynamics:bucket_etching_acid",   "#410800", "Etching Acid Bucket")
+if minetest.get_modpath("bucket_compat") ~= nil then
+	fluid_lib.register_liquid("elepower_dynamics:etching_acid_source", "elepower_dynamics:etching_acid_flowing",
+			"elepower_dynamics:bucket_etching_acid",   "#410800", "Etching Acid Bucket")
 
-bucket.register_liquid("elepower_dynamics:lithium_source", "elepower_dynamics:lithium_flowing",
-		"elepower_dynamics:bucket_lithium",   "#e5e3c4", "Liquid Lithium Bucket")
+	fluid_lib.register_liquid("elepower_dynamics:lithium_source", "elepower_dynamics:lithium_flowing",
+			"elepower_dynamics:bucket_lithium",   "#e5e3c4", "Liquid Lithium Bucket")
+end
 
 -----------
 -- Gases --
@@ -44,7 +46,7 @@ bucket.register_liquid("elepower_dynamics:lithium_source", "elepower_dynamics:li
 minetest.register_node("elepower_dynamics:steam", {
 	description = "Steam",
 	groups      = {not_in_creative_inventory = 1, gas = 1},
-	liquid_form = epr.water_source,
+	liquid_form = epi.water_source,
 	tiles       = {"elepower_steam.png"},
 })
 

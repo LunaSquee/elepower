@@ -1,7 +1,9 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local epi = ele.external.ing
+local efs = ele.formspec
 
 local structures = {}
 local ores = {}
@@ -99,25 +101,22 @@ local function get_mining_results(drills)
 end
 
 local function get_formspec(timer, power, buffer, state)
+	local start, bx, by, mx = efs.begin(11.75, 10.45)
+	local list_x = efs.center_list_in_box(11.75, 10.45, 5, 3)
 	if not timer then
 		timer = 0
 	end
 
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		ele.formspec.state_switcher(0, 2.5, state)..
-		ele.formspec.fluid_bar(7, 0, buffer)..
-		ele.formspec.create_bar(1, 0, 100 - timer, "#00ff11", true)..
-		"list[context;dst;1.5,0;5,3;]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
+	return start..
+		efs.power_meter(power) ..
+		efs.state_switcher(mx - 1, by + 3, state) ..
+		efs.fluid_bar(mx - 1, by, buffer) ..
+		efs.create_bar(bx + 1.25, by, 100 - timer, "#00ff11", true) ..
+		efs.list("context", "dst", list_x, by, 5, 3) ..
+		epr.gui_player_inv() ..
 		"listring[current_player;main]"..
 		"listring[context;dst]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 local function on_timer(pos, elapsed)
@@ -199,7 +198,7 @@ local function on_timer(pos, elapsed)
 	meta:set_string("formspec", get_formspec(wp, pow_buffer, buffer, state))
 	meta:set_int("storage", pow_buffer.storage)
 	meta:set_int("water_fluid_storage", buffer.amount)
-	meta:set_string("water_fluid", epr.water_source)
+	meta:set_string("water_fluid", epi.water_source)
 	meta:set_int("work", work)
 
 	return refresh
@@ -231,7 +230,7 @@ ele.register_machine("elepower_mining:miner_controller", {
 	fluid_buffers = {
 		water = {
 			capacity  = 16000,
-			accepts   = {epr.water_source},
+			accepts   = {epi.water_source},
 			drainable = false,
 		},
 	},
@@ -324,7 +323,7 @@ local function add_ores()
 			and drop ~= item.ore
 			and drop ~= ""
 			and item.ore_type == "scatter"
-			and item.wherein == epr.stone
+			and item.wherein == epi.stone
 			and item.clust_scarcity ~= nil and item.clust_scarcity > 0
 			and item.clust_num_ores ~= nil and item.clust_num_ores > 0
 			and item.y_max ~= nil and item.y_min ~= nil then

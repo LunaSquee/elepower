@@ -1,9 +1,11 @@
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 local function upgrade_formspec (upgrades, desc)
-	local posY  = 0.5
+	local start, bx, by, mx = efs.begin(11.75, 10.45)
+	local posY  = by + 0.25
 	local fspec = ""
 
 	for k in pairs(upgrades) do
@@ -12,21 +14,16 @@ local function upgrade_formspec (upgrades, desc)
 			scrib = k
 		end
 
-		fspec = fspec .. "label[1,"..(posY + 0.25)..";"..scrib.."]"
-		fspec = fspec .. "list[detached:soldering;"..k..";7,"..posY..";1,1;]"
-		posY  = posY + 1
+		fspec = fspec .. efs.label(bx, (posY + 0.5), scrib)
+		fspec = fspec .. efs.list("detached:soldering", k, mx - 1, posY, 1, 1)
+		posY  = posY + 1.25
 	end
 
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		"label[0,0;Modifying "..desc.."]"..
+	return start..
+		efs.label(bx, by, "Modifying "..desc) ..
 		fspec..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		epr.gui_player_inv() ..
+		"listring[current_player;main]"
 end
 
 local function set_component_list (pos, list)

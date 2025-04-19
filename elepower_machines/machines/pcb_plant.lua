@@ -1,40 +1,31 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
-local epg = ele.external.graphic
+local efs = ele.formspec
 
 local function get_formspec(power, input, state, active, percent)
-	local t = "image[3.5,1.75;1,1;elepower_uv_bulb.png]"
+	local start, bx, by, mx, _, center_x = efs.begin(11.75, 10.45)
 
-	if active then
-		t = "image[3.5,1.75;1,1;elepower_uv_bulb_lit.png]"
-	end
-
+	local t = active and "elepower_uv_bulb_lit.png" or "elepower_uv_bulb.png"
 	if not percent then
 		percent = 0
 	end
 
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		ele.formspec.state_switcher(7, 0, state)..
-		ele.formspec.fluid_bar(1, 0, input)..
-		"image[3.5,1;1,1;"..epg.gui_furnace_arrow_bg.."^[lowpart:"..
-			  (percent)..":"..epg.gui_furnace_arrow_fg.."^[transformR270]"..
-		t..
-		"list[context;src;2.5,1;1,1;]"..
-		"list[context;dst;4.5,1;1,1;]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
+	return start..
+		efs.power_meter(power) ..
+		efs.state_switcher(mx - 1, by, state) ..
+		efs.fluid_bar(bx + 1.25, by, input) ..
+		efs.progress(center_x, by + 1.25, percent) ..
+		efs.image(center_x, by + 2.5, 1, 1, t)..
+		efs.list("context", "src", center_x - 1.25, by + 1.25, 1, 1) ..
+		efs.list("context", "dst", center_x + 1.25, by + 1.25, 1, 1) ..
+		epr.gui_player_inv() ..
 		"listring[current_player;main]"..
 		"listring[context;src]"..
 		"listring[current_player;main]"..
 		"listring[context;dst]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 local function on_timer(pos, elapsed)

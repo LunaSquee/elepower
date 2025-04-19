@@ -1,8 +1,9 @@
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
 local epg = ele.external.graphic
 local epi = ele.external.ing
+local efs = ele.formspec
 
 local TIME = 5
 
@@ -15,45 +16,41 @@ local cooler_recipes = {
 		lava  = 1000,
 		water = 0,
 	},
-	[epr.stone] = {
+	[epi.stone] = {
 		lava  = 0,
 		water = 1000,
 	},
 }
 
 local function get_formspec(item_percent, coolant_buffer, hot_buffer, power, recipes, recipe, state)
+	local start, bx, by, mx, _, center_x = efs.begin(11.75, 10.45)
 	local rclist = {}
 
-	local x = 2.5
+	local x = center_x - efs.move(math.ceil(#recipes / 2) + 1)
 	for j in pairs(recipes) do
 		if j == recipe then
-			rclist[#rclist + 1] = "item_image["..x..",0;1,1;"..j.."]"
+			rclist[#rclist + 1] = "item_image["..x..","..by..";1,1;"..j.."]"
 		else
-			rclist[#rclist + 1] = "item_image_button[".. x ..",0;1,1;"..j..";"..j..";]"
+			rclist[#rclist + 1] = "item_image_button[".. x ..","..by..";1,1;"..j..";"..j..";]"
 		end
-		x = x + 1
+		x = x + 1.25
 	end
 
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		ele.formspec.state_switcher(3.5, 2.5, state)..
-		ele.formspec.fluid_bar(1, 0, coolant_buffer)..
-		ele.formspec.fluid_bar(7, 0, hot_buffer)..
-		"list[context;dst;3.5,1.5;1,1;]"..
-		"image[2.5,1.5;1,1;"..epg.gui_furnace_arrow_bg.."^[lowpart:"..
-		(item_percent)..":"..epg.gui_furnace_arrow_fg.."^[transformR270]"..
-		"image[4.5,1.5;1,1;"..epg.gui_furnace_arrow_bg.."^[lowpart:"..
-		(item_percent)..":"..epg.gui_furnace_arrow_fg.."^[transformFXR90]"..
+	return start..
+		efs.power_meter(power) ..
+		efs.state_switcher(center_x, by + 2.5, state) ..
+		efs.fluid_bar(bx + 1.25, by, coolant_buffer) ..
+		efs.fluid_bar(mx - 1, by, hot_buffer) ..
+		efs.list("context", "dst", center_x, by + 1.25, 1, 1) ..
+		efs.image(center_x - 1.25, by + 1.25, 1, 1, epg.gui_furnace_arrow_bg.."^[lowpart:"..
+		(item_percent)..":"..epg.gui_furnace_arrow_fg.."^[transformR270") ..
+		efs.image(center_x + 1.25, by + 1.25, 1, 1, epg.gui_furnace_arrow_bg.."^[lowpart:"..
+		(item_percent)..":"..epg.gui_furnace_arrow_fg.."^[transformFXR90") ..
 		table.concat(rclist, "")..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
+		epr.gui_player_inv() ..
 		"listring[current_player;main]"..
 		"listring[context;dst]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 local function lava_cooler_timer(pos, elapsed)
@@ -136,7 +133,7 @@ ele.register_machine("elepower_machines:lava_cooler", {
 	fluid_buffers = {
 		coolant = {
 			capacity = 8000,
-			accepts  = {epr.water_source},
+			accepts  = {epi.water_source},
 		},
 		hot = {
 			capacity = 8000,

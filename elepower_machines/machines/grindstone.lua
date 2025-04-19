@@ -1,27 +1,23 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
 local epg = ele.external.graphic
+local efs = ele.formspec
 
 local SPEED = 8
 
 local function get_formspec(item_percent)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		"list[context;src;1.6,1;1,1;]"..
-		"image[3.5,1;1,1;"..epg.gui_furnace_arrow_bg.."^[lowpart:"..
-		(item_percent)..":"..epg.gui_furnace_arrow_fg.."^[transformR270]"..
-		"list[context;dst;4.5,1;2,1;]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
+	local start, _, by, _, _, center_x = efs.begin(11.75, 10.45)
+	return start..
+		efs.list("context", "src", center_x - 2.5, by + 1.25, 1, 1) ..
+		efs.progress(center_x, by + 1.25, item_percent) ..
+		efs.list("context", "dst", center_x + 1.25, by + 1.25, 2, 1) ..
+		epr.gui_player_inv() ..
 		"listring[context;dst]"..
 		"listring[current_player;main]"..
 		"listring[context;src]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 local function can_dig(pos, player)
@@ -34,7 +30,7 @@ local function allow_metadata_inventory_put(pos, listname, index, stack, player)
 	if minetest.is_protected(pos, player:get_player_name()) or listname == "dst" then
 		return 0
 	end
-	
+
 	return stack:get_count()
 end
 

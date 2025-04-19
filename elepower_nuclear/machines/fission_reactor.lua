@@ -1,8 +1,9 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epi = ele.external.ing
 local epr = ele.external.ref
+local efs = ele.formspec
 
 --[[
 	Reactor fitness check:
@@ -36,7 +37,7 @@ local function calculate_fitness(pos)
 	local data = manip:get_data()
 
 	local ids = {
-		c_water = minetest.get_content_id(epr.water_source),
+		c_water = minetest.get_content_id(epi.water_source),
 		c_lava  = minetest.get_content_id(epi.lava_source),
 	}
 
@@ -136,6 +137,7 @@ local function allow_metadata_inventory_move(pos, from_list, from_index, to_list
 end
 
 local function get_core_formspec(heat, power)
+	local start, bx, by, mx, _, center_x = efs.begin(11.75, 10.45)
 	local status = "Activate by extracting the control rods"
 
 	if heat > 80 then
@@ -148,76 +150,65 @@ local function get_core_formspec(heat, power)
 		status = "Active reaction chain"
 	end
 
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		"list[context;fuel;2.5,0;3,3;]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
-		ele.formspec.create_bar(0, 0, power, "#ff0000", true)..
-		ele.formspec.create_bar(0.5, 0, heat, "#ffdd11", true)..
-		"tooltip[0,0;0.25,2.5;Power: "..power.."%]"..
-		"tooltip[0.5,0;0.25,2.5;Heat: "..heat.."%]"..
-		"label[0,3.75;".. status .."]"..
+	return start..
+		efs.list("context", "fuel", center_x - 1.25, by, 3, 3) ..
+		efs.create_bar(bx, by, power, "#ff0000", true)..
+		efs.create_bar(bx + 0.5, by, heat, "#ffdd11", true)..
+		efs.tooltip(bx, by, 0.25, 2.9, "Power: "..power.."%") ..
+		efs.tooltip(bx + 0.5, by, 0.25, 2.9, "Heat: "..heat.."%") ..
+		efs.label(bx, by + 4.25, status) ..
+		epr.gui_player_inv()..
 		"listring[current_player;main]"..
 		"listring[context;fuel]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
+-- TODO: Reactor-dependent rod count
+
 local function get_controller_formspec(rod_pos, selected)
-	-- TODO: Reactor-dependent rod count
-	local rods  = 4
+	local start, bx, by, mx, _, center_x = efs.begin(11.75, 10.45)
+	local gutter = 1.25
+	local stops = ((mx - bx) + gutter) / 3 - gutter - 0.125
 	local ctrls = {}
 
 	for num, depth in pairs(rod_pos) do
-		local xoffset = (num / rods) * 8
+		local xoffset = bx + (stops * (num - 1)) + gutter
 		local sel     = ""
 
 		if num == selected then
 			sel = " <- "
 		end
 
-		local fspc = ("label[%d,0;%s]"):format(xoffset - 0.25, depth .. " %" .. sel)
-
-		fspc = fspc .. ele.formspec.create_bar(xoffset - 1, 0.5, 100 - depth, "#252625", true)
+		local fspc = efs.label(xoffset, by, depth .. " %" .. sel)
+		fspc = fspc .. efs.create_bar(xoffset, by + 0.25, 100 - depth, "#252625", true)
 
 		table.insert(ctrls, fspc)
 	end
 
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
+	return start..
 		table.concat( ctrls, "" )..
-		"button[0,3.5;1.5,0.5;next;Next]"..
-		"button[1.5,3.5;1.5,0.5;prev;Previous]"..
-		"button[3.25,3.5;1.5,0.5;stop;SCRAM]"..
-		"button[5,3.5;1.5,0.5;up;Raise]"..
-		"button[6.5,3.5;1.5,0.5;down;Lower]"..
+		efs.button(bx, by + 3.5, 1.5, 0.5, "next", "Next")..
+		efs.button(bx + 1.75, by + 3.5, 1.5, 0.5, "prev", "Previous")..
+		efs.button(center_x - 0.25, by + 3.5, 1.5, 0.5, "stop", "SCRAM")..
+		efs.button(mx - 1.5, by + 3.5, 1.5, 0.5, "up", "Raise")..
+		efs.button(mx - 3.25, by + 3.5, 1.5, 0.5, "down", "Lower")..
 		"tooltip[next;Select the next control rod]"..
 		"tooltip[prev;Select the previous control rod]"..
 		"tooltip[stop;Drops all the rods into the reactor core, instantly stopping it]"..
 		"tooltip[up;Raise selected control rod]"..
 		"tooltip[down;Lower selected control rod]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		epr.gui_player_inv() ..
+		"listring[current_player;main]"
 end
 
 local function get_port_formspec(cool, hot)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.fluid_bar(0, 0, cool)..
-		ele.formspec.fluid_bar(7, 0, hot)..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+	local start, bx, by, mx, _, center_x = efs.begin(11.75, 10.45)
+	return start..
+		efs.fluid_bar(bx, by, cool)..
+		efs.progress(center_x, by + 1.25, 0)..
+		efs.fluid_bar(mx - 1, by, hot)..
+		epr.gui_player_inv() ..
+		"listring[current_player;main]"
 end
 
 local function reactor_core_timer(pos)
@@ -561,7 +552,7 @@ ele.register_base_device("elepower_nuclear:reactor_fluid_port", {
 	fluid_buffers = {
 		cool = {
 			capacity  = 16000,
-			accepts   = {epr.water_source, "elepower_nuclear:coolant_source"},
+			accepts   = {epi.water_source, "elepower_nuclear:coolant_source"},
 			drainable = false,
 		},
 		hot = {

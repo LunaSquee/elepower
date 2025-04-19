@@ -1,23 +1,20 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
+local efs = ele.formspec
 
 elewi.loaded_transmitters = {}
 
 local function get_formspec(power, name, player)
-	return "size[8,8.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
-		ele.formspec.power_meter(power)..
-		"field[1.5,0.5;5,1;name;Transmitter Name;".. name .."]"..
+	local start, bx, by = efs.begin(11.75, 10.45)
+	return start..
+		efs.power_meter(power)..
+		efs.field(bx + 1.25, by + 0.25, 5, 0.5, "name", "Transmitter Name", name) ..
+		efs.label(bx, by + 3.75, "Owned by " .. player) ..
+		epr.gui_player_inv()..
 		"field_close_on_enter[name;false]"..
-		"label[0,3.75;Owned by " .. player .. "]"..
-		"list[current_player;main;0,4.25;8,1;]"..
-		"list[current_player;main;0,5.5;8,3;8]"..
-		"listring[current_player;main]"..
-		epr.get_hotbar_bg(0, 4.25)
+		"listring[current_player;main]"
 end
 
 local function matter_transmitter_timer(pos)

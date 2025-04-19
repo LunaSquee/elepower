@@ -1,15 +1,16 @@
 
--- see elepower_papi >> external_nodes_items.lua for explanation
+-- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
 local epi = ele.external.ing
+local efs = ele.formspec
 
 -- Thermal Evaporation Plant
 -- Used to extract salt from water
 elethermal.cache = {}
 local results = {
 	{
-		input = epr.water_source.." 1000",
+		input = epi.water_source.." 1000",
 		output = "elepower_thermal:brine_source 100",
 		heat = 400
 	},
@@ -95,7 +96,7 @@ local function validate_structure(pos, player)
 
 	if player then minetest.chat_send_player(player, "Structure complete.") end
 	local meta = minetest.get_meta(pos)
-	meta:set_string("Thermal Evaporation Plant")
+	meta:set_string("infotext", "Thermal Evaporation Plant")
 
 	elethermal.cache[minetest.pos_to_string(pos)] = {
 		height = height,
@@ -143,19 +144,17 @@ local function get_recipe(i1, heat)
 end
 
 local function controller_formspec (input, output, heat)
-	local bar = "image[1.5,3.5;6,1;elethermal_gradient_bg.png^[transformR270]"
+	local start, bx, by, mx, my = efs.begin(11.75, 3.55)
+	local bar = efs.image(bx + 1.25, my - 1, mx - bx - 2.5, 1, "elethermal_gradient_bg.png^[transformR270]")
 	if heat then
-		bar = "image[1.5,3.5;6,1;elethermal_gradient_bg.png^[lowpart:"..
-			  (100 * heat / 1000)..":elethermal_gradient.png^[transformR270]"
+		bar = efs.image(bx + 1.25, my - 1, mx - bx - 2.5, 1, "elethermal_gradient_bg.png^[lowpart:"..
+			  (100 * heat / 1000)..":elethermal_gradient.png^[transformR270]")
 	end
-	return "size[8,4.5]"..
-		epr.gui_bg..
-		epr.gui_bg_img..
-		epr.gui_slots..
+	return start..
 		bar..
-		"tooltip[1.5,3.5;6,1;Heat: "..heat.."K]"..
-		ele.formspec.fluid_bar(0, 0, input)..
-		ele.formspec.fluid_bar(7, 0, output)
+		efs.tooltip(bx + 1.25, my - 1, mx - bx - 2.5, 1, "Heat: "..heat.."K") ..
+		efs.fluid_bar(bx, by, input)..
+		efs.fluid_bar(mx - 1, by, output)
 end
 
 local function break_structure(pos)
@@ -265,7 +264,7 @@ minetest.register_node("elepower_thermal:evaporator_controller", {
 	fluid_buffers = {
 		input = {
 			capacity  = 8000,
-			accepts   = {"elepower_thermal:brine_source", epr.water_source},
+			accepts   = {"elepower_thermal:brine_source", epi.water_source},
 			drainable = false,
 		},
 		output = {
@@ -274,6 +273,8 @@ minetest.register_node("elepower_thermal:evaporator_controller", {
 			drainable = true,
 		},
 	},
+	_mcl_blast_resistance = 4,
+	_mcl_hardness = 4,
 	on_construct = function (pos)
 		local meta = minetest.get_meta(pos)
 		meta:set_string("Thermal Evaporation Plant\nPunch to form structure")
@@ -301,6 +302,8 @@ minetest.register_node("elepower_thermal:evaporator_output", {
 		ele_evaporator_node = 1,
 	},
 	fluid_buffers = {},
+	_mcl_blast_resistance = 4,
+	_mcl_hardness = 4,
 	node_io_can_put_liquid = function (pos, node, side)
 		return false
 	end,
@@ -361,6 +364,8 @@ minetest.register_node("elepower_thermal:evaporator_input", {
 		ele_evaporator_node = 1,
 	},
 	fluid_buffers = {},
+	_mcl_blast_resistance = 4,
+	_mcl_hardness = 4,
 	node_io_can_put_liquid = function (pos, node, side)
 		return true
 	end,
