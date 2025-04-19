@@ -8,7 +8,7 @@ local CAPACITY = 8000
 
 minetest.register_node("elepower_machines:accumulator", {
 	description = "Water Accumulator",
-	groups = {fluid_container = 1, oddly_breakable_by_hand = 1, cracky = 1},
+	groups = {fluid_container = 1, oddly_breakable_by_hand = 1, cracky = 3, pickaxey = 1},
 	tiles = {
 		"elepower_machine_top.png^elepower_power_port.png", "elepower_machine_base.png", "elepower_machine_side.png^elepower_machine_accumulator.png",
 		"elepower_machine_side.png^elepower_machine_accumulator.png", "elepower_machine_side.png^elepower_machine_accumulator.png",
@@ -28,7 +28,7 @@ minetest.register_node("elepower_machines:accumulator", {
 
 minetest.register_node("elepower_machines:accumulator_heavy", {
 	description = "Water Accumulator (Heavy Water)",
-	groups = {fluid_container = 1, oddly_breakable_by_hand = 1, cracky = 1, not_in_creative_inventory = 1},
+	groups = {fluid_container = 1, oddly_breakable_by_hand = 1, cracky = 3, pickaxey = 1, not_in_creative_inventory = 1},
 	tiles = {
 		"elepower_machine_top.png^elepower_power_port.png", "elepower_machine_base.png", "elepower_machine_side.png^elepower_machine_accumulator.png",
 		"elepower_machine_side.png^elepower_machine_accumulator.png", "elepower_machine_side.png^elepower_machine_accumulator.png",

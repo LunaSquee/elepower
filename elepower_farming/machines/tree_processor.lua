@@ -158,7 +158,7 @@ ele.register_machine("elepower_farming:tree_processor", {
     groups = {
         ele_user = 1,
         oddly_breakable_by_hand = 1,
-        cracky = 1,
+        cracky = 3,
         fluid_container = 1,
         pickaxey = 1
     },

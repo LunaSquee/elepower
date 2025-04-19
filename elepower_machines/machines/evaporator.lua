@@ -110,7 +110,7 @@ local animated = {
 
 ele.register_machine("elepower_machines:evaporator", {
 	description = "Evaporator",
-	groups = {oddly_breakable_by_hand = 1, cracky = 1, fluid_container = 1, ele_user = 1},
+	groups = {oddly_breakable_by_hand = 1, cracky = 3, pickaxey = 1, fluid_container = 1, ele_user = 1},
 	fluid_buffers = {
 		input = {
 			capacity = 8000,

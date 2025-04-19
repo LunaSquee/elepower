@@ -38,7 +38,7 @@ ele.register_conduit("elepower_lighting:conduit_iron_thin", {
 	tiles = {"elepower_lighting_conduit_iron_thin.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 1/8,
-	groups = {cracky = 2}
+	groups = {cracky = 2, pickaxey = 1}
 })
 
 ele.register_conduit("elepower_lighting:conduit_iron_thick", {
@@ -46,7 +46,7 @@ ele.register_conduit("elepower_lighting:conduit_iron_thick", {
 	tiles = {"elepower_lighting_conduit_iron_thick.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 2/8,
-	groups = {cracky = 2}
+	groups = {cracky = 2, pickaxey = 1}
 })
 
 ele.register_conduit("elepower_lighting:conduit_steel_thin", {
@@ -54,7 +54,7 @@ ele.register_conduit("elepower_lighting:conduit_steel_thin", {
 	tiles = {"elepower_lighting_conduit_steel_thin.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 1/8,
-	groups = {cracky = 2}
+	groups = {cracky = 2, pickaxey = 1}
 })
 
 ele.register_conduit("elepower_lighting:conduit_steel_thick", {
@@ -62,7 +62,7 @@ ele.register_conduit("elepower_lighting:conduit_steel_thick", {
 	tiles = {"elepower_lighting_conduit_steel_thick.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 2/8,
-	groups = {cracky = 2}
+	groups = {cracky = 2, pickaxey = 1}
 })
 
 ele.register_conduit("elepower_lighting:conduit_gold_thin", {
@@ -70,7 +70,7 @@ ele.register_conduit("elepower_lighting:conduit_gold_thin", {
 	tiles = {"elepower_lighting_conduit_gold_thin.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 1/8,
-	groups = {cracky = 1}
+	groups = {cracky = 3, pickaxey = 1}
 })
 
 ele.register_conduit("elepower_lighting:conduit_gold_thick", {
@@ -78,7 +78,7 @@ ele.register_conduit("elepower_lighting:conduit_gold_thick", {
 	tiles = {"elepower_lighting_conduit_gold_thick.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 2/8,
-	groups = {cracky = 1}
+	groups = {cracky = 3, pickaxey = 1}
 })
 
 ele.register_conduit("elepower_lighting:conduit_wood_thin", {
@@ -86,7 +86,7 @@ ele.register_conduit("elepower_lighting:conduit_wood_thin", {
 	tiles = {"elepower_lighting_conduit_wood_thin.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 1/8,
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
+	groups = {choppy = 2, axey = 2, oddly_breakable_by_hand = 1, flammable = 2}
 })
 
 ele.register_conduit("elepower_lighting:conduit_wood_thick", {
@@ -94,7 +94,7 @@ ele.register_conduit("elepower_lighting:conduit_wood_thick", {
 	tiles = {"elepower_lighting_conduit_wood_thick.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 2/8,
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
+	groups = {choppy = 2, axey = 2, oddly_breakable_by_hand = 1, flammable = 2}
 })
 
 ------------
@@ -117,7 +117,7 @@ ele.register_machine("elepower_lighting:bulb_incandescent", {
 	use_texture_alpha = "clip",
 	paramtype = "light",
 	sunlight_propagates = true,
-	groups = {cracky = 1, ele_user = 1, ele_lighting = 1},
+	groups = {cracky = 3, pickaxey = 1, ele_user = 1, ele_lighting = 1},
 	ele_capacity = 32,
 	ele_usage    = 4,
 	ele_inrush   = 8,
@@ -145,7 +145,7 @@ ele.register_machine(":elepower_dynamics:uv_bulb", {
 	use_texture_alpha = "clip",
 	paramtype = "light",
 	sunlight_propagates = true,
-	groups = {cracky = 1, ele_user = 1, ele_lighting = 1},
+	groups = {cracky = 3, pickaxey = 1, ele_user = 1, ele_lighting = 1},
 	ele_capacity = 32,
 	ele_usage    = 4,
 	ele_inrush   = 8,
@@ -174,7 +174,7 @@ ele.register_machine("elepower_lighting:bulb_cf", {
 	use_texture_alpha = "clip",
 	paramtype = "light",
 	sunlight_propagates = true,
-	groups = {cracky = 1, ele_user = 1, ele_lighting = 1},
+	groups = {cracky = 3, pickaxey = 1, ele_user = 1, ele_lighting = 1},
 	ele_capacity = 64,
 	ele_usage    = 2,
 	ele_inrush   = 16,
@@ -188,7 +188,7 @@ ele.register_machine("elepower_lighting:bulb_cf", {
 ele.register_machine("elepower_lighting:fluro_light_bank", {
 	description = "Fluro Light Bank",
 	drawtype = "mesh",
-	mesh = "fluro_light_bank.obj",	
+	mesh = "fluro_light_bank.obj",
 	tiles = {"elepower_lighting_fluro_light_bank_off.png"},
 	inventory_image = "elepower_lighting_fluro_light_bank_inv.png",
 	selection_box = {
@@ -207,7 +207,7 @@ ele.register_machine("elepower_lighting:fluro_light_bank", {
 	use_texture_alpha = "clip",
 	paramtype = "light",
 	sunlight_propagates = true,
-	groups = {cracky = 1, ele_user = 1, ele_lighting = 1},
+	groups = {cracky = 3, pickaxey = 1, ele_user = 1, ele_lighting = 1},
 	ele_capacity = 64,
 	ele_usage    = 3,
 	ele_inrush   = 16,
@@ -238,7 +238,7 @@ ele.register_machine("elepower_lighting:bulb_led", {
 	use_texture_alpha = "clip",
 	paramtype = "light",
 	sunlight_propagates = true,
-	groups = {cracky = 1, ele_user = 1, ele_lighting = 1},
+	groups = {cracky = 3, pickaxey = 1, ele_user = 1, ele_lighting = 1},
 	ele_capacity = 96,
 	ele_usage    = 1,
 	ele_inrush   = 16,
@@ -275,7 +275,7 @@ ele.register_machine("elepower_lighting:led_light_panel", {
 	use_texture_alpha = "clip",
 	paramtype = "light",
 	sunlight_propagates = true,
-	groups = {cracky = 1, ele_user = 1, ele_lighting = 1},
+	groups = {cracky = 3, pickaxey = 1, ele_user = 1, ele_lighting = 1},
 	ele_capacity = 96,
 	ele_usage    = 1,
 	ele_inrush   = 16,
@@ -314,7 +314,7 @@ ele.register_machine("elepower_lighting:led_light_panel_colored", {
 	paramtype = "light",
 	sunlight_propagates = true,
     paramtype2 = 'wallmounted',
-	groups = {cracky = 1, ele_user = 1, ele_lighting = 1},
+	groups = {cracky = 3, pickaxey = 1, ele_user = 1, ele_lighting = 1},
 	ele_capacity = 96,
 	ele_usage    = 1,
 	ele_inrush   = 16,
@@ -353,7 +353,7 @@ ele.register_machine("elepower_lighting:led_1x3_light_panel", {
 	use_texture_alpha = "clip",
 	paramtype = "light",
 	sunlight_propagates = true,
-	groups = {cracky = 1, ele_user = 1, ele_lighting = 1},
+	groups = {cracky = 3, pickaxey = 1, ele_user = 1, ele_lighting = 1},
 	ele_capacity = 288,
 	ele_usage    = 1,
 	ele_inrush   = 16,
@@ -393,7 +393,7 @@ ele.register_machine("elepower_lighting:led_2x3_light_panel", {
 	use_texture_alpha = "clip",
 	paramtype = "light",
 	sunlight_propagates = true,
-	groups = {cracky = 1, ele_user = 1, ele_lighting = 1},
+	groups = {cracky = 3, pickaxey = 1, ele_user = 1, ele_lighting = 1},
 	ele_capacity = 576,
 	ele_usage    = 1,
 	ele_inrush   = 16,

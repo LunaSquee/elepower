@@ -121,7 +121,7 @@ local function lava_cooler_timer(pos, elapsed)
 	meta:set_int("storage", storage)
 	meta:set_string("infotext", ("Lava Cooler %s\n%s"):format(active, ele.capacity_text(capacity, storage)))
 
-	meta:set_string("formspec", get_formspec(timer, coolant_buffer, hot_buffer, 
+	meta:set_string("formspec", get_formspec(timer, coolant_buffer, hot_buffer,
 		power, cooler_recipes, recipe, state))
 
 	return refresh
@@ -129,7 +129,7 @@ end
 
 ele.register_machine("elepower_machines:lava_cooler", {
 	description = "Lava Cooler",
-	groups = {ele_machine = 1, ele_user = 1, cracky = 2, oddly_breakable_by_hand = 1, fluid_container = 1},
+	groups = {ele_machine = 1, ele_user = 1, cracky = 3, pickaxey = 1, oddly_breakable_by_hand = 1, fluid_container = 1},
 	fluid_buffers = {
 		coolant = {
 			capacity = 8000,

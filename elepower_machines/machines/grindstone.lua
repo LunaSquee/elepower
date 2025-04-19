@@ -149,12 +149,13 @@ ele.register_base_device("elepower_machines:grindstone", {
 		tubedevice = 1,
 		tubedevice_receiver = 1,
 		cracky = 2,
+		pickaxey = 2,
 	},
 })
 
 minetest.register_node("elepower_machines:crank", {
 	description = "Hand Crank\nPlace on Grindstone and hold Right-Click",
-	groups = {choppy = 1, oddly_breakable_by_hand = 1},
+	groups = {choppy = 3, axey = 1, oddly_breakable_by_hand = 1},
 	tiles = {epg.wood},
 	use_texture_alpha = "clip",
 	drawtype = "nodebox",

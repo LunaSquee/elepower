@@ -111,7 +111,7 @@ ele.register_machine("elepower_nuclear:heat_exchanger", {
 		"elenuclear_machine_top.png",  "elepower_lead_block.png",  "elenuclear_machine_side.png",
 		"elenuclear_machine_side.png", "elenuclear_machine_side.png", "elenuclear_heat_exchanger.png",
 	},
-	groups = {cracky = 3, fluid_container = 1},
+	groups = {cracky = 2, pickaxey = 2, fluid_container = 1},
 	fluid_buffers = {
 		heat = {
 			capacity  = 16000,

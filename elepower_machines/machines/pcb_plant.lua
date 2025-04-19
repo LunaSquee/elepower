@@ -141,7 +141,8 @@ ele.register_machine("elepower_machines:pcb_plant", {
 	description = "Printed Circuit Board Plant",
 	groups = {
 		fluid_container = 1,
-		cracky = 1,
+		cracky = 3,
+		pickaxey = 1,
 		ele_user = 1,
 		tubedevice = 1,
 		tubedevice_receiver = 1,

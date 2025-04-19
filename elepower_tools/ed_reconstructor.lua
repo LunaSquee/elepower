@@ -118,7 +118,7 @@ ele.register_machine("elepower_tools:ed_reconstructor", {
 		"elepower_machine_top.png", "elepower_machine_base.png", "elepower_machine_side.png",
 		"elepower_machine_side.png", "elepower_machine_side.png", "elepower_machine_side.png^elepower_machine_ed_reconstructor.png",
 	},
-	groups = {cracky = 1, ele_user = 1},
+	groups = {cracky = 2, pickaxey = 2, ele_user = 1},
 	on_timer = ed_timer,
 	ele_usage = 128,
 	ele_inrush = 128,

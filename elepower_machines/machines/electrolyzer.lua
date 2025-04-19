@@ -170,7 +170,7 @@ ele.register_machine("elepower_machines:electrolyzer", {
 		"elepower_machine_top.png", "elepower_machine_base.png", "elepower_machine_side.png",
 		"elepower_machine_side.png", "elepower_machine_side.png", "elepower_machine_side.png^elepower_electrolyzer.png",
 	},
-	groups = {fluid_container = 1, cracky = 1, ele_user = 1},
+	groups = {fluid_container = 1, cracky = 2, pickaxey = 2, ele_user = 1},
 	on_timer = electrolyzer_timer,
 	ele_usage = 128,
 	ele_inrush = 128,

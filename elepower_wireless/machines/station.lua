@@ -162,7 +162,7 @@ minetest.register_craftitem("elepower_wireless:card", {
 
 ele.register_machine("elepower_wireless:station", {
 	description = "Wireless Control Station",
-	groups = {cracky = 1, ele_user = 1},
+	groups = {cracky = 2, pickaxey = 2, ele_user = 1},
 	tiles = {
 		"elepower_machine_top.png", "elepower_machine_base.png", "elepower_machine_side.png",
 		"elepower_machine_side.png", "elepower_machine_side.png", "elepower_machine_side.png^elewireless_station.png",

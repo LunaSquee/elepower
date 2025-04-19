@@ -469,7 +469,8 @@ end
 ele.register_base_device("elepower_nuclear:fission_core", {
 	description = "Fission Reactor Core",
 	groups = {
-		cracky = 3,
+		cracky = 2,
+		pickaxey = 2,
 		ele_reactor_core = 1,
 		ele_reactor_component = 1,
 	},
@@ -501,7 +502,8 @@ ele.register_base_device("elepower_nuclear:fission_core", {
 ele.register_base_device("elepower_nuclear:fission_controller", {
 	description = "Fission Control Module\nPlace me on top of a Fission Reactor Core",
 	groups = {
-		cracky = 3,
+		cracky = 2,
+		pickaxey = 2,
 		ele_reactor_component = 1,
 	},
 	tiles = {
@@ -530,7 +532,8 @@ ele.register_base_device("elepower_nuclear:fission_controller", {
 ele.register_base_device("elepower_nuclear:reactor_fluid_port", {
 	description = "Reactor Fluid Port\nPlace me on the bottom of a Fission Reactor Core",
 	groups = {
-		cracky = 3,
+		cracky = 2,
+		pickaxey = 2,
 		ele_reactor_component = 1,
 		ele_port = 1,
 		fluid_container = 1,

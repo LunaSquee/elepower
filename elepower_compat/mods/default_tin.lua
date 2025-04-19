@@ -21,7 +21,7 @@ if epi.tin_ingot == "" then
     core.register_node(":elepower_dynamics:stone_with_tin", {
         description = "Tin Ore",
         tiles = {epg.stone .. "^elepower_mineral_tin.png"},
-        groups = {cracky = 2, pickaxey = 3, material_stone = 1},
+        groups = {cracky = 3, pickaxey = 1, material_stone = 1},
         drop = 'elepower_dynamics:tin_lump',
         sounds = eps.node_sound_stone,
         _mcl_blast_resistance = 3,
@@ -33,7 +33,7 @@ if epi.tin_ingot == "" then
         description = "Tin Block",
         tiles = {"elepower_tin_block.png"},
         is_ground_content = false,
-        groups = {cracky = 1, level = 2},
+        groups = {cracky = 3, pickaxey = 1, level = 2},
         sounds = eps.node_sound_metal
     })
 

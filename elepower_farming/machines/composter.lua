@@ -135,7 +135,7 @@ ele.register_base_device("elepower_farming:composter", {
     description = "Composter\nConvert organic matter to Biofuel",
     groups = {
         oddly_breakable_by_hand = 1,
-        cracky = 1,
+        cracky = 3,
         pickaxey = 1,
         fluid_container = 1,
         tubedevice = 1,

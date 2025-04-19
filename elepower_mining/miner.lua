@@ -241,7 +241,8 @@ ele.register_machine("elepower_mining:miner_controller", {
 	groups = {
 		fluid_container = 1,
 		oddly_breakable_by_hand = 1,
-		cracky = 1,
+		cracky = 3,
+		pickaxey = 1,
 		tubedevice = 1,
 		tubedevice_receiver = 0,
 		ele_user = 1
@@ -269,7 +270,7 @@ minetest.register_node("elepower_mining:miner_core", {
 		"elepower_mining_core.png^elepower_power_port.png", "elepower_mining_core.png^elepower_power_port.png",
 		"elepower_mining_core.png^elepower_power_port.png",
 	},
-	groups = {fluid_container = 1, oddly_breakable_by_hand = 1, cracky = 1},
+	groups = {fluid_container = 1, oddly_breakable_by_hand = 1, cracky = 3, pickaxey = 1},
 	after_dig_node = recalc_on_break,
 })
 
@@ -281,7 +282,7 @@ minetest.register_node("elepower_mining:miner_drill", {
 		"elepower_machine_side.png^elepower_mining_apparatus_side.png",
 		"elepower_machine_side.png^elepower_mining_apparatus_side.png", "elepower_machine_side.png^elepower_mining_apparatus_side.png",
 	},
-	groups = {fluid_container = 1, oddly_breakable_by_hand = 1, cracky = 1},
+	groups = {fluid_container = 1, oddly_breakable_by_hand = 1, cracky = 3, pickaxey = 1},
 	after_dig_node = recalc_on_break,
 })
 

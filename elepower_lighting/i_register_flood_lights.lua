@@ -13,15 +13,15 @@
 ------------------------------------------------------
 
 local flood_light_angles = {
-							xp0_yp0   = {groups = {cracky = 1, ele_user = 1, ele_lighting = 1}},
-							xp0_yp20  = {groups = {cracky = 1, ele_user = 1, not_in_creative_inventory = 1}},
-							xp0_yn20  = {groups = {cracky = 1, ele_user = 1, not_in_creative_inventory = 1}},
-							xp45_yp0  = {groups = {cracky = 1, ele_user = 1, not_in_creative_inventory = 1}},
-							xp45_yp20 = {groups = {cracky = 1, ele_user = 1, not_in_creative_inventory = 1}},
-							xp45_yn20 = {groups = {cracky = 1, ele_user = 1, not_in_creative_inventory = 1}},
-							xn45_yp0  = {groups = {cracky = 1, ele_user = 1, not_in_creative_inventory = 1}},
-							xn45_yp20 = {groups = {cracky = 1, ele_user = 1, not_in_creative_inventory = 1}},
-							xn45_yn20 = {groups = {cracky = 1, ele_user = 1, not_in_creative_inventory = 1}}
+							xp0_yp0   = {groups = {cracky = 2, pickaxey = 1, ele_user = 1, ele_lighting = 1}},
+							xp0_yp20  = {groups = {cracky = 2, pickaxey = 1, ele_user = 1, not_in_creative_inventory = 1}},
+							xp0_yn20  = {groups = {cracky = 2, pickaxey = 1, ele_user = 1, not_in_creative_inventory = 1}},
+							xp45_yp0  = {groups = {cracky = 2, pickaxey = 1, ele_user = 1, not_in_creative_inventory = 1}},
+							xp45_yp20 = {groups = {cracky = 2, pickaxey = 1, ele_user = 1, not_in_creative_inventory = 1}},
+							xp45_yn20 = {groups = {cracky = 2, pickaxey = 1, ele_user = 1, not_in_creative_inventory = 1}},
+							xn45_yp0  = {groups = {cracky = 2, pickaxey = 1, ele_user = 1, not_in_creative_inventory = 1}},
+							xn45_yp20 = {groups = {cracky = 2, pickaxey = 1, ele_user = 1, not_in_creative_inventory = 1}},
+							xn45_yn20 = {groups = {cracky = 2, pickaxey = 1, ele_user = 1, not_in_creative_inventory = 1}}
                            }
 
 for angle,def in pairs(flood_light_angles) do

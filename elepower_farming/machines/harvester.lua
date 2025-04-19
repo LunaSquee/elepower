@@ -191,7 +191,7 @@ ele.register_machine("elepower_farming:harvester", {
         oddly_breakable_by_hand = 1,
         ele_machine = 1,
         ele_user = 1,
-        cracky = 1,
+        cracky = 3,
         pickaxey = 1,
         tubedevice = 1,
         tubedevice_receiver = 0,

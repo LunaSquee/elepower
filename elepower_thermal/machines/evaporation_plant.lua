@@ -258,7 +258,8 @@ minetest.register_node("elepower_thermal:evaporator_controller", {
 	},
 	paramtype2 = "facedir",
 	groups = {
-		cracky = 3,
+		cracky = 2,
+		pickaxey = 2,
 		ele_evaporator_node = 1,
 	},
 	fluid_buffers = {
@@ -297,7 +298,8 @@ minetest.register_node("elepower_thermal:evaporator_output", {
 	},
 	paramtype2 = "facedir",
 	groups = {
-		cracky = 3,
+		cracky = 2,
+		pickaxey = 2,
 		fluid_container = 1,
 		ele_evaporator_node = 1,
 	},
@@ -359,7 +361,8 @@ minetest.register_node("elepower_thermal:evaporator_input", {
 	},
 	paramtype2 = "facedir",
 	groups = {
-		cracky = 3,
+		cracky = 2,
+		pickaxey = 2,
 		fluid_container = 1,
 		ele_evaporator_node = 1,
 	},

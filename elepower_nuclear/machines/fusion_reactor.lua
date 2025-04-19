@@ -363,6 +363,7 @@ minetest.register_node("elepower_nuclear:reactor_controller", {
 	},
 	groups = {
 		cracky = 2,
+		pickaxey = 2,
 	},
 	fluid_buffers = {
 		in1 = {
@@ -398,6 +399,7 @@ minetest.register_node("elepower_nuclear:reactor_power", {
 	paramtype2 = "facedir",
 	groups = {
 		cracky = 2,
+		pickaxey = 2,
 		ele_machine = 1,
 		ele_user = 1,
 	},
@@ -418,6 +420,7 @@ minetest.register_node("elepower_nuclear:reactor_fluid", {
 	paramtype2 = "facedir",
 	groups = {
 		cracky = 2,
+		pickaxey = 2,
 		fluid_container = 1,
 	},
 	fluid_buffers = {},
@@ -487,6 +490,7 @@ minetest.register_node("elepower_nuclear:reactor_output", {
 	paramtype2 = "facedir",
 	groups = {
 		cracky = 2,
+		pickaxey = 2,
 		fluid_container = 1,
 	},
 	fluid_buffers = {},

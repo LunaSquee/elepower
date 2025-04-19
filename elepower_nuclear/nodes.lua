@@ -10,7 +10,7 @@ minetest.register_node("elepower_nuclear:machine_block", {
 		"elenuclear_machine_top.png", "elepower_lead_block.png", "elenuclear_machine_block.png",
 		"elenuclear_machine_block.png", "elenuclear_machine_block.png", "elenuclear_machine_block.png",
 	},
-	groups = {cracky = 3},
+	groups = {cracky = 3, pickaxey = 1},
 	_mcl_blast_resistance = 4,
 	_mcl_hardness = 4,
 })
@@ -29,7 +29,7 @@ minetest.register_node("elepower_nuclear:stone_with_uranium", {
 minetest.register_node("elepower_nuclear:fusion_coil", {
 	description = "Fusion Reactor Coil",
 	tiles       = {"elenuclear_fusion_coil_top.png", "elenuclear_fusion_coil_top.png", "elenuclear_fusion_coil_side.png"},
-	groups      = {cracky = 2},
+	groups      = {cracky = 2, pickaxey = 2},
 	_mcl_blast_resistance = 4,
 	_mcl_hardness = 4,
 })

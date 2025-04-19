@@ -41,7 +41,7 @@ for num,name in pairs(light_shades_signlike) do
 	visual_scale = 1.13,
 	paramtype2 = "wallmounted",
 	sunlight_propagates = true,
-	groups = {snappy = 3}
+	groups = {snappy = 3, swordy = 1}
 })
 
 end
@@ -67,7 +67,7 @@ for num,name in pairs(light_shades_signlike) do
 	visual_scale = 1.13,
 	paramtype2 = "wallmounted",
 	sunlight_propagates = true,
-	groups = {snappy = 3}
+	groups = {snappy = 3, swordy = 1}
 })
 
 end
@@ -93,7 +93,7 @@ for num,name in pairs(light_shades_signlike) do
 	visual_scale = 1.13,
 	paramtype2 = "wallmounted",
 	sunlight_propagates = true,
-	groups = {snappy = 3}
+	groups = {snappy = 3, swordy = 1}
 })
 
 end

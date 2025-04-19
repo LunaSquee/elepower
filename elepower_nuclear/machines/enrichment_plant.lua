@@ -36,7 +36,7 @@ elepm.register_crafter("elepower_nuclear:enrichment_plant", {
 		"elenuclear_machine_top.png",  "elepower_lead_block.png",  "elenuclear_machine_side.png",
 		"elenuclear_machine_side.png", "elenuclear_machine_side.png", "elenuclear_enrichment_plant.png",
 	},
-	groups = {ele_user = 1, cracky = 3},
+	groups = {ele_user = 1, cracky = 2, pickaxey = 2},
 	ele_capacity = 8000,
 	ele_usage    = 1000,
 	ele_inrush   = 8000,

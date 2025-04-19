@@ -244,5 +244,6 @@ ele.register_base_device("elepower_machines:coal_alloy_furnace", {
 		tubedevice = 1,
 		tubedevice_receiver = 1,
 		cracky = 2,
+		pickaxey = 1,
 	}
 })

@@ -18,7 +18,7 @@ minetest.register_node("elepower_farming:tree_extractor", {
     groups = {
         fluid_container = 1,
         oddly_breakable_by_hand = 1,
-        cracky = 1,
+        cracky = 3,
         pickaxey = 1
     },
     tiles = {

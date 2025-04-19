@@ -88,7 +88,7 @@ ele.register_machine("elepower_wireless:matter_receiver", {
 		},
 	},
 	use_texture_alpha = "clip",
-	groups = {cracky = 1, ele_user = 1, matter_receiver = 1},
+	groups = {cracky = 2, pickaxey = 2, ele_user = 1, matter_receiver = 1},
 	ele_capacity = 8000,
 	ele_usage    = 120,
 	ele_inrush   = 240,
