@@ -104,7 +104,6 @@ if minetest.get_modpath("mcl_core") ~= nil then
   ------------
   ele.external.sounds.node_sound_stone = mcl_sounds.node_sound_stone_defaults()
   ele.external.sounds.node_sound_water = mcl_sounds.node_sound_water_defaults()
-  ele.external.sounds.node_sound_stone = mcl_sounds.node_sound_stone_defaults()
   ele.external.sounds.node_sound_wood  = mcl_sounds.node_sound_wood_defaults()
   ele.external.sounds.node_sound_glass = mcl_sounds.node_sound_glass_defaults()
   ele.external.sounds.node_sound_metal = mcl_sounds.node_sound_metal_defaults()

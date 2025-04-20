@@ -234,14 +234,14 @@ local compressor_recipes = {
 if epi.mese_crystal ~= epi.mese_crystal_fragment then
     table.insert(compressor_recipes, {
         recipe = {
-            epi.mese_crystal_fragment .. " 4", epi.mese_crystal_fragment .. " 4"
+            epi.mese_crystal_fragment .. " 5", epi.mese_crystal_fragment .. " 4"
         },
         output = epi.mese_crystal,
         time = 2
     })
 
     table.insert(compressor_recipes, {
-        recipe = {epi.mese_crystal .. " 4", epi.mese_crystal .. " 4"},
+        recipe = {epi.mese_crystal .. " 5", epi.mese_crystal .. " 4"},
         output = epi.mese,
         time = 2
     })

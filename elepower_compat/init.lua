@@ -10,6 +10,9 @@ dofile(modpath.."/worldgen.lua")
 dofile(modpath.."/games/mtg_default.lua")
 dofile(modpath.."/games/mcl_core.lua")
 
+-- Overrides by xcompat
+dofile(modpath.."/mods/xcompat.lua")
+
 -- Overrides by settings
 dofile(modpath.."/overrides.lua")
 
