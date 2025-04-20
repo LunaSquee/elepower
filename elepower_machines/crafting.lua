@@ -555,7 +555,8 @@ minetest.register_craft({
     output = "elepower_machines:coal_alloy_furnace",
     recipe = {
         {epi.brick, epi.brick, epi.brick},
-        {epi.brick, epi.coal_lump, epi.brick}, {epi.brick, epi.brick, epi.brick}
+        {epi.furnace, epi.coal_lump, epi.furnace},
+        {epi.brick, epi.brick, epi.brick}
     }
 })
 
