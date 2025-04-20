@@ -5,38 +5,32 @@
 local epr = ele.external.ref
 local efs = ele.formspec
 
--- Specialized formspec for crafters
-function ele.formspec.get_crafter_formspec(craft_type, power, percent, pos,
-                                           machine_name, state)
-    local start, bx, by, mx = efs.begin(11.75, 10.45)
+local function strip_description_lines(description)
+    if string.find(description, "\n") then
+        description = string.split(description, "\n")
+        description = description[1]
+    end
+    return description
+end
+
+local function get_crafter_tooltips(x, y, craft_type, machine_name)
+    local def = minetest.registered_nodes[machine_name]
     local craftstats = elepm.craft.types[craft_type]
     local craft_reg_path = elepm.craft[craft_type]
     local input_size = craftstats.inputs
     local material_inputs = {}
-    local mat_inputs_1 = "|"
-    local mat_inputs_2 = "|"
-    local mat_inputs_3 = "|"
-    local formspec_inout_icon_tooltip
-    local icon_def_slot_1 = minetest.registered_nodes[machine_name]
-                                .ele_icon_material_1 or
-                                "elepower_gui_icon_crafter_genmat_1.png"
-    local icon_def_slot_2 = minetest.registered_nodes[machine_name]
-                                .ele_icon_material_2 or
-                                "elepower_gui_icon_crafter_genmat_2.png"
-    local icon_def_slot_3 = minetest.registered_nodes[machine_name]
-                                .ele_icon_material_3 or
-                                "elepower_gui_icon_crafter_genmat_3.png"
+    local descriptions = {}
+    local formspec_inout_icon_tooltip = ""
 
     -- Start add icons and tooltips for input slots
     -- setting material name values to keys helps remove duplicates
     -- for cooking we have to retrieve from MT engine
     if craft_type == "cooking" then
-        local sort_output = {}
-        for name, def in pairs(minetest.registered_items) do
+        for name in pairs(minetest.registered_items) do
             local recipe = minetest.get_all_craft_recipes(name)
 
             if recipe ~= nil then
-                for k, v in pairs(recipe) do
+                for _, v in pairs(recipe) do
                     if v.method == "cooking" and v.output ~= "" then
                         local reg_name = v.items[1]
                         local description
@@ -48,12 +42,8 @@ function ele.formspec.get_crafter_formspec(craft_type, power, percent, pos,
                             description =
                                 minetest.registered_items[reg_name].description
                         end
-                        -- remove any text on 2nd/3rd line
-                        if string.find(description, "\n") then
-                            description = string.split(description, "\n")
-                            description = description[1]
-                        end
-                        material_inputs[description] = 1
+                        material_inputs[strip_description_lines(description)] =
+                            1
                     end
                 end
             end
@@ -61,20 +51,14 @@ function ele.formspec.get_crafter_formspec(craft_type, power, percent, pos,
     else
         for _, craft_recipes in pairs(craft_reg_path) do
             for item_pos, item in pairs(craft_recipes.recipe) do
-                for item_name, item_num in pairs(item) do
+                for item_name in pairs(item) do
                     -- have to check all registered items
                     if minetest.registered_items[item_name] then
                         local description =
                             minetest.registered_items[item_name].description
 
-                        -- remove any text on 2nd/3rd line
-                        if string.find(description, "\n") then
-                            description = string.split(description, "\n")
-                            description = description[1]
-                        end
-
-                        material_inputs[description .. ":" .. item_pos] =
-                            item_pos -- add a unique value to name
+                        material_inputs[strip_description_lines(description) ..
+                            ":" .. item_pos] = item_pos -- add a unique value to name
                     end
                 end
             end
@@ -83,71 +67,52 @@ function ele.formspec.get_crafter_formspec(craft_type, power, percent, pos,
 
     -- reverse table so we can sort
     local material_in_sort = {}
-    for k, v in pairs(material_inputs) do table.insert(material_in_sort, k) end
+    for k in pairs(material_inputs) do table.insert(material_in_sort, k) end
     table.sort(material_in_sort)
 
-    for k, mat_desc in pairs(material_in_sort) do
-
+    for _, mat_desc in pairs(material_in_sort) do
         local mat_desc_r = string.gsub(mat_desc, ":(.*)", "") -- remove :1,:2,:3
         if mat_desc_r ~= "" then
-            if material_inputs[mat_desc] == 1 then
-                mat_inputs_1 = mat_inputs_1 .. "\n" .. mat_desc_r
-
-            elseif material_inputs[mat_desc] == 2 then
-                mat_inputs_2 = mat_inputs_2 .. "\n" .. mat_desc_r
-
-            elseif material_inputs[mat_desc] == 3 then
-                mat_inputs_3 = mat_inputs_3 .. "\n" .. mat_desc_r
+            local index = material_inputs[mat_desc]
+            if index then
+                local newline = (descriptions[index] ~= nil) and "\n" or ""
+                descriptions[index] = (descriptions[index] or "") .. newline ..
+                                          mat_desc_r
             end
         end
     end
-    mat_inputs_1 = string.gsub(mat_inputs_1, "|\n", "")
-    mat_inputs_2 = string.gsub(mat_inputs_2, "|\n", "")
-    mat_inputs_3 = string.gsub(mat_inputs_3, "|\n", "")
 
-    -- adjust tooltip and layout depending on if we have 1/2/3 input slots
-    if input_size == 1 then
-        formspec_inout_icon_tooltip = "image[3.25,3.25;0.5,0.5;" ..
-                                          icon_def_slot_1 .. "]" ..
-                                          "tooltip[3,3;1,1;" .. mat_inputs_1 ..
-                                          ";#30434c;#0399c6]" -- "tooltip[1.5,2.0;1,1;"..minetest.colorize("#0399c6",mat_inputs).."]"
+    for i = 1, input_size do
+        local offset = efs.move(i - 1)
+        local description = descriptions[i]
+        local icon = def["ele_icon_material_" .. i] or
+                         "elepower_gui_icon_crafter_genmat_" .. i .. ".png"
 
-    elseif input_size == 2 then
-        formspec_inout_icon_tooltip = "image[2.25,3.25;0.5,0.5;" ..
-                                          icon_def_slot_1 .. "]" ..
-                                          "tooltip[2,3;1,1;" .. mat_inputs_1 ..
-                                          ";#30434c;#0399c6]" ..
-                                          "image[3.45,3.25;0.5,0.5;" ..
-                                          icon_def_slot_2 .. "]" ..
-                                          "tooltip[3.25,3;1,1;" .. mat_inputs_2 ..
-                                          ";#30434c;#0399c6]"
+        formspec_inout_icon_tooltip = formspec_inout_icon_tooltip ..
+                                          efs.image(x + offset + 0.25, y + 1.15,
+                                                    0.5, 0.5, icon)
 
-    else
-        formspec_inout_icon_tooltip = "image[2.25,3.25;0.5,0.5;" ..
-                                          icon_def_slot_1 .. "]" ..
-                                          "tooltip[2,3;1,1;" .. mat_inputs_1 ..
-                                          ";#30434c;#0399c6]" ..
-                                          "image[3.45,3.25;0.5,0.5;" ..
-                                          icon_def_slot_2 .. "]" ..
-                                          "tooltip[3.25,3;1,1;" .. mat_inputs_2 ..
-                                          ";#30434c;#0399c6]" ..
-                                          "image[4.7,3.25;0.5,0.5;" ..
-                                          icon_def_slot_3 .. "]" ..
-                                          "tooltip[4.5,3;1,1;" .. mat_inputs_3 ..
-                                          ";#30434c;#0399c6]"
+        if description ~= nil and description ~= "" then
+            formspec_inout_icon_tooltip =
+                formspec_inout_icon_tooltip ..
+                    efs.tooltip(x + offset, y + 1, 1, 0.75, description)
+        end
     end
+
+    return formspec_inout_icon_tooltip
+end
+
+-- Specialized formspec for crafters
+function ele.formspec.get_crafter_formspec(craft_type, power, percent, _,
+                                           machine_name, state)
+    local start, _, by, mx = efs.begin(11.75, 10.45)
+    local craftstats = elepm.craft.types[craft_type]
+    local input_size = craftstats.inputs
+
     -- End add icons tooltips for in slots
 
     local gui_name = "gui_furnace_arrow"
     if craftstats.gui_name then gui_name = craftstats.gui_name end
-
-    local bar = "image[6.125,2.125;1,1;" .. gui_name .. "_bg.png^[transformR270]"
-
-    if percent ~= nil then
-        bar =
-            "image[6.125,2.125;1,1;" .. gui_name .. "_bg.png^[lowpart:" .. (percent) ..
-                ":" .. gui_name .. "_fg.png^[transformR270]"
-    end
 
     local in_width = input_size
     local in_height = 1
@@ -170,19 +135,19 @@ function ele.formspec.get_crafter_formspec(craft_type, power, percent, pos,
 
     if in_width >= 2 then x = 2 end
 
-    return start ..
-               efs.power_meter(power) ..
+    local formspec_inout_icon_tooltip = get_crafter_tooltips(x, y, craft_type,
+                                                             machine_name)
+
+    return start .. efs.power_meter(power) ..
                efs.state_switcher(mx - 1, by, state) ..
                efs.list("context", "src", x, y, in_width, in_height) ..
-               bar ..
+               efs.progress(6.125, 2.125, percent, gui_name .. "_bg.png",
+                            gui_name .. "_fg.png") ..
                formspec_inout_icon_tooltip ..
                efs.list("context", "dst", 7.875, 1.5, 2, 2) ..
-               epr.gui_player_inv() ..
-               "listring[current_player;main]" ..
-               "listring[context;src]" ..
-               "listring[current_player;main]" ..
-               "listring[context;dst]" ..
-               "listring[current_player;main]"
+               epr.gui_player_inv() .. "listring[current_player;main]" ..
+               "listring[context;src]" .. "listring[current_player;main]" ..
+               "listring[context;dst]" .. "listring[current_player;main]"
 end
 
 -- Don't duplicate function for every single crafter node
