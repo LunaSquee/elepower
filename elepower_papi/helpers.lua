@@ -87,14 +87,24 @@ function ele.helpers.get_first_line(str)
 end
 
 -- Look for item name regardless of mod
-function ele.helpers.scan_item_list(item_name)
+function ele.helpers.scan_item_list(mat, keyword)
 	local found = nil
+	local test_for = {
+		mat .. keyword,
+		mat .. "_" .. keyword,
+		keyword .. mat,
+		keyword .. "_" .. mat,
+	}
 
-	for name in pairs(minetest.registered_items) do
-		local nomod = name:gsub("([%w_]+):", "")
-		if nomod == item_name then
-			found = name
-			break
+	for _, item_name in pairs(test_for) do
+		if item_name ~= keyword then
+			for name in pairs(minetest.registered_items) do
+				local nomod = name:gsub("([%w_]+):", "")
+				if nomod == item_name then
+					found = name
+					break
+				end
+			end
 		end
 	end
 

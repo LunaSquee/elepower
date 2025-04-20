@@ -67,13 +67,13 @@ end
 -- Grinding --
 --------------
 
-local keywords = {_ingot = 1, _lump = 2, _block = 9, block = 9}
+local keywords = {ingot = 1, lump = 2, raw = 2, block = 9}
 local ingot_map = {}
 local block_map = {}
 for mat, data in pairs(elepd.registered_dusts) do
     local kwfound = nil
     for keyword, count in pairs(keywords) do
-        local found = ele.helpers.scan_item_list(mat .. keyword)
+        local found = ele.helpers.scan_item_list(mat, keyword)
         if found then
             if keyword == "_ingot" and not kwfound then
                 kwfound = found

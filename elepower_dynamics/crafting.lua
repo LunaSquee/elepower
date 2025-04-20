@@ -476,10 +476,10 @@ minetest.register_craft({
 -- Gears --
 -----------
 
-local keywords = {"_ingot", ""}
+local keywords = {"ingot", ""}
 for mat, data in pairs(elepd.registered_gears) do
     for _, keyword in ipairs(keywords) do
-        local found = ele.helpers.scan_item_list(mat .. keyword)
+        local found = ele.helpers.scan_item_list(mat, keyword)
         local immebreak = false
 
         if mat == "wood" then
