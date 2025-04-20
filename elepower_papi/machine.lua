@@ -125,10 +125,10 @@ local function retrieve_metadata(pos, placer, itemstack, pointed_thing)
 	local storage   = item_meta:get_int("storage")
 	local partsstr  = item_meta:get_string("components")
 
+	local meta = minetest.get_meta(pos)
 	if storage > 0 or partsstr ~= "" then
-		local meta = minetest.get_meta(pos)
-
 		meta:set_int("storage", storage)
+
 		if partsstr ~= "" then
 			meta:set_string("components", partsstr)
 
@@ -140,12 +140,32 @@ local function retrieve_metadata(pos, placer, itemstack, pointed_thing)
 		end
 	end
 
+	-- Set machine owner to do protected actions
+	if placer ~= nil and placer:get_player_name() then
+		meta:set_string("owner", placer:get_player_name())
+	end
+
 	return false
 end
 
 function ele.capacity_text(capacity, storage)
 	return ("Charge: %s / %s %s"):format(ele.helpers.comma_value(storage),
 		ele.helpers.comma_value(capacity), ele.unit)
+end
+
+-- Get fake ObjectRef for the owner of the machine to allow protected actions.
+function ele.get_machine_owner(pos)
+	local meta = core.get_meta(pos)
+	local owner = meta:get_string("owner")
+
+	return {
+		get_player_control = function()
+				return {sneak = false}
+		end,
+		get_player_name = function()
+				return owner or ""
+		end
+	}
 end
 
 -- API support

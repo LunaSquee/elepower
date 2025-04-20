@@ -103,7 +103,7 @@ local function allow_metadata_inventory_take(pos, listname, index, stack, player
     return stack:get_count()
 end
 
-local function plant(pos, range, stack, inv)
+local function plant(pos, range, stack, inv, owner)
 
     local planted = 0
     local range_st = vector.add(ranges[range][1], pos)
@@ -197,14 +197,7 @@ local function plant(pos, range, stack, inv)
                         else
                             local seeddef = minetest.registered_items[to_plant]
 
-                            seeddef.on_place(ItemStack(to_plant), {
-                                get_player_control = function()
-                                    return {sneak = false}
-                                end,
-                                get_player_name = function()
-                                    return ""
-                                end
-                            }, {
+                            seeddef.on_place(ItemStack(to_plant), owner, {
                                 type = "node",
                                 under = base_pos,
                                 above = place_pos
@@ -240,6 +233,7 @@ local function on_timer(pos, elapsed)
     local state = meta:get_int("state")
     local is_enabled = ele.helpers.state_enabled(meta, pos, state)
     local pow_buffer = {capacity = capacity, storage = storage, usage = 0}
+    local owner = ele.get_machine_owner(pos)
     local active = "Idle"
 
     if pow_buffer.storage > usage and is_enabled then
@@ -249,7 +243,7 @@ local function on_timer(pos, elapsed)
 
                 if planted >= 9 then break end
                 if not slot:is_empty() then
-                    planted = planted + plant(pos, index, slot, inv)
+                    planted = planted + plant(pos, index, slot, inv, owner)
                 end
             end
 

@@ -122,6 +122,7 @@ globals = {
             "gases",
             "capacity_text",
             "get_gas_for_container",
+            "get_machine_owner",
             "register_conduit",
             "register_gas",
             "register_base_device",
