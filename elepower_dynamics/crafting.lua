@@ -438,38 +438,43 @@ minetest.register_craft({
 minetest.register_craft({
     type = "cooking",
     output = "elepower_dynamics:iron_ingot",
-    recipe = epi.iron_lump
+    recipe = epi.iron_lump,
+    cooktime = 10
 })
 
 minetest.register_craft({
     type = "cooking",
     output = "elepower_dynamics:steel_ingot",
-    recipe = "elepower_dynamics:iron_ingot"
+    recipe = "elepower_dynamics:iron_ingot",
+    cooktime = 20
 })
 
 minetest.register_craft({
     type = "cooking",
     output = "elepower_dynamics:lead_ingot",
-    recipe = "elepower_dynamics:lead_lump"
+    recipe = "elepower_dynamics:lead_lump",
+    cooktime = 10
 })
 
 minetest.register_craft({
     type = "cooking",
     output = "elepower_dynamics:nickel_ingot",
-    recipe = "elepower_dynamics:nickel_lump"
+    recipe = "elepower_dynamics:nickel_lump",
+    cooktime = 10
 })
 
 minetest.register_craft({
     type = "cooking",
     output = "elepower_dynamics:zinc_ingot",
-    recipe = "elepower_dynamics:zinc_lump"
+    recipe = "elepower_dynamics:zinc_lump",
+    cooktime = 10
 })
 
 minetest.register_craft({
     type = "cooking",
     output = "elepower_dynamics:viridisium_ingot",
     recipe = "elepower_dynamics:viridisium_lump",
-    cooktime = 10
+    cooktime = 20
 })
 
 -----------
