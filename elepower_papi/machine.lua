@@ -159,6 +159,9 @@ function ele.get_machine_owner(pos)
 	local owner = meta:get_string("owner")
 
 	return {
+		get_inventory = function() return nil end,
+		get_wield_index = function() return 0 end,
+		is_player = function() return false end,
 		get_player_control = function()
 				return {sneak = false}
 		end,
