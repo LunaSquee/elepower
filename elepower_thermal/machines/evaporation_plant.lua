@@ -4,6 +4,7 @@
 local epr = ele.external.ref
 local epi = ele.external.ing
 local efs = ele.formspec
+local S = ele.translator
 
 -- Thermal Evaporation Plant
 -- Used to extract salt from water
@@ -56,7 +57,7 @@ local function validate_structure(pos, player)
 
 				if n.name == "elepower_thermal:evaporator_controller" and not vector.equals(pos, p) then
 					height = 0
-					if player then minetest.chat_send_player(player, "Multiple controllers detected.") end
+					if player then minetest.chat_send_player(player, S("Multiple controllers detected.")) end
 					break
 				end
 
@@ -90,13 +91,13 @@ local function validate_structure(pos, player)
 	end
 
 	if height <= 2 then
-		if player then minetest.chat_send_player(player, "Invalid structure surrounding the controller.") end
+		if player then minetest.chat_send_player(player, S("Invalid structure surrounding the controller.")) end
 		return nil
 	end
 
-	if player then minetest.chat_send_player(player, "Structure complete.") end
+	if player then minetest.chat_send_player(player, S("Structure complete.")) end
 	local meta = minetest.get_meta(pos)
-	meta:set_string("infotext", "Thermal Evaporation Plant")
+	meta:set_string("infotext", S("Thermal Evaporation Plant"))
 
 	elethermal.cache[minetest.pos_to_string(pos)] = {
 		height = height,
@@ -169,7 +170,7 @@ local function controller_timer (pos, elapsed)
 	local refresh = true
 
 	if not elethermal.cache[minetest.pos_to_string(pos)] and not validate_structure(pos) then
-		meta:set_string("infotext", "Thermal Evaporation Plant Incomplete")
+		meta:set_string("infotext", S("Thermal Evaporation Plant") .. " " .. S("Incomplete"))
 		meta:set_string("formspec", "")
 		return false
 	end
@@ -251,7 +252,7 @@ local function controller_timer (pos, elapsed)
 end
 
 minetest.register_node("elepower_thermal:evaporator_controller", {
-	description = "Thermal Evaporation Plant Controller",
+	description = S("Thermal Evaporation Plant Controller"),
 	tiles = {
 		"elepower_heat_casing.png", "elepower_heat_casing.png", "elepower_heat_casing.png",
 		"elepower_heat_casing.png", "elepower_heat_casing.png", "elepower_heat_casing.png^elenuclear_fusion_controller.png",
@@ -278,7 +279,7 @@ minetest.register_node("elepower_thermal:evaporator_controller", {
 	_mcl_hardness = 4,
 	on_construct = function (pos)
 		local meta = minetest.get_meta(pos)
-		meta:set_string("Thermal Evaporation Plant\nPunch to form structure")
+		meta:set_string("infotext", S("Thermal Evaporation Plant") .. "\n" .. S("Punch to form structure"))
 	end,
 	on_timer = controller_timer,
 	on_punch = function (pos, node, puncher, pointed_thing)
@@ -291,7 +292,7 @@ minetest.register_node("elepower_thermal:evaporator_controller", {
 })
 
 minetest.register_node("elepower_thermal:evaporator_output", {
-	description = "Thermal Evaporation Plant Output",
+	description = S("Thermal Evaporation Plant Output"),
 	tiles = {
 		"elepower_heat_casing.png", "elepower_heat_casing.png", "elepower_heat_casing.png",
 		"elepower_heat_casing.png", "elepower_heat_casing.png", "elepower_heat_casing.png^elenuclear_fluid_port_out.png^elepower_power_port.png",
@@ -354,7 +355,7 @@ minetest.register_node("elepower_thermal:evaporator_output", {
 })
 
 minetest.register_node("elepower_thermal:evaporator_input", {
-	description = "Thermal Evaporation Plant Input",
+	description = S("Thermal Evaporation Plant Input"),
 	tiles = {
 		"elepower_heat_casing.png", "elepower_heat_casing.png", "elepower_heat_casing.png",
 		"elepower_heat_casing.png", "elepower_heat_casing.png", "elepower_heat_casing.png^elenuclear_fluid_port.png^elepower_power_port.png",

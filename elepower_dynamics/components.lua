@@ -1,23 +1,24 @@
+local S = ele.translator
 
 local list_def = {
-	{material = "bronze",     description = "Bronze",     color = "#fa7b26", dust = true, plate = true, gear = true},
-	{material = "copper",     description = "Copper",     color = "#fcb15f", dust = true, plate = true, gear = true},
-	{material = "brass",      description = "Brass",      color = "#cdaf2c", dust = true, plate = true, gear = true},
-	{material = "gold",       description = "Gold",       color = "#ffff47", dust = true, plate = true, gear = true},
-	{material = "steel",      description = "Steel",      color = "#ffffff", dust = true, plate = true, gear = true},
-	{material = "tin",        description = "Tin",        color = "#c1c1c1", dust = true, plate = true, gear = true},
-	{material = "silver",     description = "Silver",     color = "#d7e2e8", dust = true, plate = true, gear = true},
-	{material = "lead",       description = "Lead",       color = "#374559", dust = true, plate = true, gear = true},
-	{material = "iron",       description = "Iron",       color = "#dddddd", dust = true, plate = true, gear = true},
-	{material = "diamond",    description = "Diamond",    color = "#02c1e8", dust = true, plate = true, gear = true},
-	{material = "nickel",     description = "Nickel",     color = "#d6d5ab", dust = true, plate = true, gear = true},
-	{material = "invar",      description = "Invar",      color = "#71848c", dust = true, plate = true, gear = true},
-	{material = "electrum",   description = "Electrum",   color = "#ebeb90", dust = true, plate = true, gear = true},
-	{material = "viridisium", description = "Viridisium", color = "#5b9751", dust = true, plate = true, gear = true},
-	{material = "zinc",       description = "Zinc",       color = "#598a9e", dust = true, plate = true},
-	{material = "coal",       description = "Coal",       color = "#1f1f1f", dust = true},
-	{material = "mese",       description = "Mese",       color = "#fdff2d99", dust = true},
-	{material = "wood",       description = "Wood",       color = "#847454", dust = "Sawdust", gear = true}
+	{material = "bronze",     description = S("Bronze"),     color = "#fa7b26", dust = true, plate = true, gear = true},
+	{material = "copper",     description = S("Copper"),     color = "#fcb15f", dust = true, plate = true, gear = true},
+	{material = "brass",      description = S("Brass"),      color = "#cdaf2c", dust = true, plate = true, gear = true},
+	{material = "gold",       description = S("Gold"),       color = "#ffff47", dust = true, plate = true, gear = true},
+	{material = "steel",      description = S("Steel"),      color = "#ffffff", dust = true, plate = true, gear = true},
+	{material = "tin",        description = S("Tin"),        color = "#c1c1c1", dust = true, plate = true, gear = true},
+	{material = "silver",     description = S("Silver"),     color = "#d7e2e8", dust = true, plate = true, gear = true},
+	{material = "lead",       description = S("Lead"),       color = "#374559", dust = true, plate = true, gear = true},
+	{material = "iron",       description = S("Iron"),       color = "#dddddd", dust = true, plate = true, gear = true},
+	{material = "diamond",    description = S("Diamond"),    color = "#02c1e8", dust = true, plate = true, gear = true},
+	{material = "nickel",     description = S("Nickel"),     color = "#d6d5ab", dust = true, plate = true, gear = true},
+	{material = "invar",      description = S("Invar"),      color = "#71848c", dust = true, plate = true, gear = true},
+	{material = "electrum",   description = S("Electrum"),   color = "#ebeb90", dust = true, plate = true, gear = true},
+	{material = "viridisium", description = S("Viridisium"), color = "#5b9751", dust = true, plate = true, gear = true},
+	{material = "zinc",       description = S("Zinc"),       color = "#598a9e", dust = true, plate = true},
+	{material = "coal",       description = S("Coal"),       color = "#1f1f1f", dust = true},
+	{material = "mese",       description = S("Mese"),       color = "#fdff2d99", dust = true},
+	{material = "wood",       description = S("Wood"),       color = "#847454", dust = S("Sawdust"), gear = true}
 }
 
 elepd.registered_gears = {}
@@ -32,7 +33,7 @@ function elepd.register_plate(mat, data)
 	elepd.registered_plates[mat] = data
 
 	-- Make descriptions overridable
-	local description = data.description .. " Plate"
+	local description = data.description .. " " ..S("Plate")
 	if data.force_description then
 		description = data.description
 	end
@@ -60,7 +61,7 @@ function elepd.register_dust(mat, data)
 	elepd.registered_dusts[mat] = data
 
 	-- Make descriptions overridable
-	local description = "Pulverized " .. data.description
+	local description = S("Pulverized").. " " .. data.description
 	if data.force_description then
 		description = data.description
 	end
@@ -83,7 +84,7 @@ function elepd.register_gear(mat, data)
 	elepd.registered_gears[mat] = data
 
 	-- Make descriptions overridable
-	local description = data.description .. " Gear"
+	local description = data.description .. " " .. S("Gear")
 	if data.force_description then
 		description = data.description
 	end

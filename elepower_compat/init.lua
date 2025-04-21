@@ -1,6 +1,7 @@
 local modpath = minetest.get_modpath(minetest.get_current_modname())
 
 ele = rawget(_G, "ele") or {}
+ele.translator = core.get_translator("elepower")
 
 -- Setup globals
 dofile(modpath.."/external.lua")

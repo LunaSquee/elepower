@@ -1,7 +1,7 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
-local epr = ele.external.ref
 local epi = ele.external.ing
+local S = ele.translator
 
 ----------------
 -- Craftitems --
@@ -10,14 +10,14 @@ local epi = ele.external.ing
 -- Ingots
 
 minetest.register_craftitem("elepower_dynamics:lead_ingot", {
-    description = "Lead Ingot",
+    description = S("Lead Ingot"),
     inventory_image = "elepower_lead_ingot.png",
     groups = {lead = 1, ingot = 1}
 })
 
 if epi.iron_ingot == "" then
     minetest.register_craftitem("elepower_dynamics:iron_ingot", {
-        description = "Iron Ingot",
+        description = S("Iron Ingot"),
         inventory_image = "elepower_iron_ingot.png",
         groups = {iron = 1, ingot = 1}
     })
@@ -27,48 +27,48 @@ end
 
 if epi.steel_ingot ~= "" then
     minetest.override_item(epi.steel_ingot,
-                           {description = "Low Carbon Steel Ingot"})
-		minetest.register_alias("elepower_dynamics:steel_ingot", epi.steel_ingot)
+                           {description = S("Low Carbon Steel Ingot")})
+    minetest.register_alias("elepower_dynamics:steel_ingot", epi.steel_ingot)
 else
     minetest.register_craftitem("elepower_dynamics:steel_ingot", {
-        description = "Low Carbon Steel Ingot",
+        description = S("Low Carbon Steel Ingot"),
         inventory_image = "elepower_steel_ingot.png",
         groups = {steel = 1, ingot = 1}
     })
 end
 
 minetest.register_craftitem("elepower_dynamics:nickel_ingot", {
-    description = "Nickel Ingot",
+    description = S("Nickel Ingot"),
     inventory_image = "elepower_nickel_ingot.png",
     groups = {nickel = 1, ingot = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:invar_ingot", {
-    description = "Invar Ingot",
+    description = S("Invar Ingot"),
     inventory_image = "elepower_invar_ingot.png",
     groups = {invar = 1, ingot = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:electrum_ingot", {
-    description = "Electrum Ingot",
+    description = S("Electrum Ingot"),
     inventory_image = "elepower_electrum_ingot.png",
     groups = {electrum = 1, ingot = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:viridisium_ingot", {
-    description = "Viridisium Ingot",
+    description = S("Viridisium Ingot"),
     inventory_image = "elepower_viridisium_ingot.png",
     groups = {viridisium = 1, ingot = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:zinc_ingot", {
-    description = "Zinc Ingot",
+    description = S("Zinc Ingot"),
     inventory_image = "elepower_zinc_ingot.png",
     groups = {zinc = 1, ingot = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:graphite_ingot", {
-    description = "Graphite Ingot",
+    description = S("Graphite Ingot"),
     inventory_image = "elepower_graphite_ingot.png",
     groups = {graphite = 1, ingot = 1}
 })
@@ -76,31 +76,32 @@ minetest.register_craftitem("elepower_dynamics:graphite_ingot", {
 -- Lumps
 
 minetest.register_craftitem("elepower_dynamics:lead_lump", {
-    description = "Lead Lump",
+    description = S("Lead Lump"),
     inventory_image = "elepower_lead_lump.png",
     groups = {lead = 1, lump = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:nickel_lump", {
-    description = "Nickel Lump",
+    description = S("Nickel Lump"),
     inventory_image = "elepower_nickel_lump.png",
     groups = {nickel = 1, lump = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:viridisium_lump", {
-    description = "Viridisium Lump",
+    description = S("Viridisium Lump"),
     inventory_image = "elepower_viridisium_lump.png",
     groups = {viridisium = 1, lump = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:zinc_lump", {
-    description = "Zinc Lump",
+    description = S("Zinc Lump"),
     inventory_image = "elepower_zinc_lump.png",
     groups = {zinc = 1, lump = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:xycrone_lump", {
-    description = "Xycrone\nUsed for Quantum Entanglement\nUnstable",
+    description = S("Xycrone") .. S("Used for Quantum Entanglement") .. "\n\n" ..
+        S("Unstable"),
     inventory_image = "elepower_xycrone.png",
     groups = {xycrone = 1, lump = 1}
 })
@@ -108,49 +109,50 @@ minetest.register_craftitem("elepower_dynamics:xycrone_lump", {
 -- Special
 
 minetest.register_craftitem("elepower_dynamics:graphite_rod", {
-    description = "Graphite Rod",
+    description = S("Graphite Rod"),
     inventory_image = "elepower_graphite_rod.png",
     groups = {graphite = 1, rod = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:carbon_fiber", {
-    description = "Carbon Fibers",
+    description = S("Carbon Fibers"),
     inventory_image = "elepower_carbon_fiber.png",
     groups = {carbon_fiber = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:carbon_sheet", {
-    description = "Carbon Fiber Sheet",
+    description = S("Carbon Fiber Sheet"),
     inventory_image = "elepower_carbon_fiber_sheet.png",
     groups = {carbon_fiber_sheet = 1, sheet = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:silicon_wafer", {
-    description = "Silicon Wafer",
+    description = S("Silicon Wafer"),
     inventory_image = "elepower_silicon_wafer.png",
     groups = {wafer = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:silicon_wafer_doped", {
-    description = "Doped Silicon Wafer",
+    description = S("Doped Silicon Wafer"),
     inventory_image = "elepower_silicon_wafer_solar.png",
     groups = {wafer = 2}
 })
 
 minetest.register_craftitem("elepower_dynamics:tree_tap", {
-    description = "Steel Treetap",
+    description = S("Steel Treetap"),
     inventory_image = "elepower_tree_tap.png",
     groups = {treetap = 1, static_component = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:tin_can", {
-    description = "Tin Can",
+    description = S("Tin Can"),
     inventory_image = "elepower_tin_can.png",
     groups = {can = 1, food_grade = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:pcb_blank", {
-    description = "Printed Circuit Board (PCB) Blank\nUse Etching Acid to etch",
+    description = S("Printed Circuit Board (PCB) Blank") .. "\n" ..
+        S("Use Etching Acid to etch"),
     inventory_image = "elepower_blank_pcb.png",
     liquids_pointable = true,
     groups = {blank_board = 1, static_component = 1},
@@ -163,7 +165,6 @@ minetest.register_craftitem("elepower_dynamics:pcb_blank", {
             return itemstack
         end
 
-        local istack = itemstack:get_name()
         if not placer or placer:get_player_name() == "" then
             return itemstack
         end
@@ -194,13 +195,14 @@ minetest.register_craftitem("elepower_dynamics:pcb_blank", {
 })
 
 minetest.register_craftitem("elepower_dynamics:pcb", {
-    description = "Printed Circuit Board (PCB)",
+    description = S("Printed Circuit Board (PCB)"),
     inventory_image = "elepower_pcb.png",
     groups = {pcb = 1, static_component = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:acidic_compound", {
-    description = "Acidic Compound\nRight-Click on Water to turn it into Etching Acid",
+    description = S("Acidic Compound") .. "\n" ..
+        S("Right-Click on Water to turn it into Etching Acid"),
     inventory_image = "elepower_acidic_compound.png",
     liquids_pointable = true,
     groups = {acid = 1, static_component = 1},
@@ -220,55 +222,57 @@ minetest.register_craftitem("elepower_dynamics:acidic_compound", {
 -- Electronics
 
 minetest.register_craftitem("elepower_dynamics:wound_copper_coil", {
-    description = "Wound Copper Coil\nTier 1 Coil",
+    description = S("Wound Copper Coil") .. "\n" .. S("Tier @1 Coil", "1"),
     inventory_image = "elepower_copper_coil.png",
     groups = {copper = 1, coil = 1, component = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:wound_silver_coil", {
-    description = "Wound Silver Coil\nTier 2 Coil",
+    description = S("Wound Silver Coil") .. "\n" .. S("Tier @1 Coil", "2"),
     inventory_image = "elepower_silver_coil.png",
     groups = {silver = 1, coil = 1, component = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:induction_coil", {
-    description = "Induction Coil\nTier 3 Coil",
+    description = S("Induction Coil") .. "\n" .. S("Tier @1 Coil", "3"),
     inventory_image = "elepower_induction_coil.png",
     groups = {induction_coil = 1, component = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:induction_coil_advanced", {
-    description = "Advanced Induction Coil\nSuitable for high-power applications\nTier 4 Coil",
+    description = S("Advanced Induction Coil") .. "\n" ..
+        S("Suitable for high-power applications") .. "\n" ..
+        S("Tier @1 Coil", "4"),
     inventory_image = "elepower_induction_coil_advanced.png",
     groups = {induction_coil = 1, component = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:chip", {
-    description = "Chip\nTier 1 Chip",
+    description = S("Chip") .. "\n" .. S("Tier @1 Chip", "1"),
     inventory_image = "elepower_chip.png",
     groups = {chip = 1, component = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:microcontroller", {
-    description = "Microcontroller\nTier 2 Chip",
+    description = S("Microcontroller") .. "\n" .. S("Tier @1 Chip", "2"),
     inventory_image = "elepower_microcontroller.png",
     groups = {chip = 2, component = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:soc", {
-    description = "System on a Chip (SoC)\nTier 3 Chip",
+    description = S("System on a Chip (SoC)") .. "\n" .. S("Tier @1 Chip", "3"),
     inventory_image = "elepower_soc.png",
     groups = {chip = 3, component = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:capacitor", {
-    description = "Capacitor\nTier 1 Capacitor",
+    description = S("Capacitor") .. "\n" .. S("Tier @1 Capacitor", "1"),
     inventory_image = "elepower_capacitor.png",
     groups = {capacitor = 1, component = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:uv_bulb", {
-    description = "Ultraviolet Light Bulb",
+    description = S("Ultraviolet Light Bulb"),
     inventory_image = "elepower_uv_bulb.png",
     groups = {component = 1, bulb = 1}
 })
@@ -276,43 +280,45 @@ minetest.register_craftitem("elepower_dynamics:uv_bulb", {
 -- Assembled Components
 
 minetest.register_craftitem("elepower_dynamics:battery", {
-    description = "Battery",
+    description = S("Battery"),
     inventory_image = "elepower_battery.png",
     groups = {battery = 1, component = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:servo_valve", {
-    description = "Servo Valve",
+    description = S("Servo Valve"),
     inventory_image = "elepower_servo_valve.png",
     groups = {servo_valve = 1, assembled_component = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:integrated_circuit", {
-    description = "Integrated Circuit\nTier 1 Circuit",
+    description = S("Integrated Circuit") .. "\n" .. S("Tier @1 Circuit", "1"),
     inventory_image = "elepower_ic.png",
     groups = {circuit = 1, assembled_component = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:control_circuit", {
-    description = "Integrated Control Circuit\nTier 2 Circuit",
+    description = S("Integrated Control Circuit") .. "\n" ..
+        S("Tier @1 Circuit", "2"),
     inventory_image = "elepower_ic_2.png",
     groups = {circuit = 2, assembled_component = 1, control_circuit = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:micro_circuit", {
-    description = "Microcontroller Circuit\nTier 3 Circuit",
+    description = S("Microcontroller Circuit") .. "\n" ..
+        S("Tier @1 Circuit", "3"),
     inventory_image = "elepower_ic_3.png",
     groups = {circuit = 3, assembled_component = 1, control_circuit = 2}
 })
 
 minetest.register_craftitem("elepower_dynamics:lcd_panel", {
-    description = "LCD Panel",
+    description = S("LCD Panel"),
     inventory_image = "elepower_lcd_panel.png",
     groups = {lcd = 1, assembled_component = 1}
 })
 
 minetest.register_craftitem("elepower_dynamics:pv_cell", {
-    description = "Photovoltaic Cell",
+    description = S("Photovoltaic Cell"),
     inventory_image = "elepower_pv_cell.png",
     groups = {pv = 1, assembled_component = 1}
 })

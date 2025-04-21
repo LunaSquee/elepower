@@ -3,6 +3,7 @@
 -- shorten table ref
 local epr = ele.external.ref
 local efs = ele.formspec
+local S = ele.translator
 
 elewi.loaded_transmitters = {}
 
@@ -10,8 +11,8 @@ local function get_formspec(power, name, player)
 	local start, bx, by = efs.begin(11.75, 10.45)
 	return start..
 		efs.power_meter(power)..
-		efs.field(bx + 1.25, by + 0.25, 5, 0.5, "name", "Transmitter Name", name) ..
-		efs.label(bx, by + 3.75, "Owned by " .. player) ..
+		efs.field(bx + 1.25, by + 0.25, 5, 0.5, "name", S("Transmitter Name"), name) ..
+		efs.label(bx, by + 3.75, S("Owned by @1", player)) ..
 		epr.gui_player_inv()..
 		"field_close_on_enter[name;false]"..
 		"listring[current_player;main]"
@@ -24,7 +25,7 @@ local function matter_transmitter_timer(pos)
 	local target = meta:get_string("target")
 
 	if name == "" then
-		name = "Matter Transmitter"
+		name = S("Matter Transmitter")
 	end
 
 	local capacity = ele.helpers.get_node_property(meta, pos, "capacity")
@@ -42,7 +43,7 @@ local function matter_transmitter_timer(pos)
 
 	local extra = ""
 	if target ~= "" then
-		extra = "\nDialled to " .. target
+		extra = "\n" .. S("Dialled to @1", target)
 	end
 
 	meta:set_string("formspec", get_formspec(pow_buffer, name, player, target))
@@ -61,7 +62,7 @@ local function save_transmitter(pos)
 	local player = meta:get_string("player")
 
 	if name == "" then
-		name = "Matter Transmitter"
+		name = S("Matter Transmitter")
 	end
 
 	elewi.loaded_transmitters[strname] = {
@@ -71,7 +72,7 @@ local function save_transmitter(pos)
 end
 
 ele.register_machine("elepower_wireless:matter_transmitter", {
-	description = "Matter Transmitter",
+	description = S("Matter Transmitter"),
 	tiles = {
 		"elewireless_teleport_top.png", "elewireless_device_side.png^elepower_power_port.png", "elewireless_device_side.png",
 		"elewireless_device_side.png", "elewireless_device_side.png", "elewireless_device_side.png"

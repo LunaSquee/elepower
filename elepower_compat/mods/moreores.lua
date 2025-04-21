@@ -2,6 +2,7 @@
 local epi = ele.external.ing
 local epg = ele.external.graphic
 local eps = ele.external.sounds
+local S = ele.translator
 
 -------------------------------------------------
 -- Ingredients or node item references in code --
@@ -14,19 +15,19 @@ end
 
 if core.get_modpath("moreores") == nil then
   core.register_craftitem(":moreores:silver_ingot", {
-    description = "Silver Ingot",
+    description = S("Silver Ingot"),
     inventory_image = "elepower_silver_ingot.png",
     groups = {silver = 1, ingot = 1}
   })
 
   core.register_craftitem(":moreores:silver_lump", {
-    description = "Silver Lump",
+    description = S("Silver Lump"),
     inventory_image = "elepower_silver_lump.png",
     groups = {silver = 1, lump = 1}
   })
 
   core.register_node(":moreores:mineral_silver", {
-    description = "Silver Ore",
+    description = S("Silver Ore"),
     tiles = {epg.stone.."^elepower_mineral_silver.png"},
     groups = {cracky = 1, pickaxey = 4, material_stone = 1},
     drop = 'moreores:silver_lump',
@@ -37,7 +38,7 @@ if core.get_modpath("moreores") == nil then
   })
 
   core.register_node(":moreores:silver_block", {
-    description = "Silver Block",
+    description = S("Silver Block"),
     tiles = {"elepower_silver_block.png"},
     is_ground_content = false,
     groups = {cracky = 2, pickaxey = 2, level = 2},

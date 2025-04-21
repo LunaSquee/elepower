@@ -11,11 +11,14 @@
 ------------------------------------------------------
 --                  Register Nodes                  --
 ------------------------------------------------------
+
+local S = ele.translator
+
 ----------------
 -- Light Fill --
 ----------------
 minetest.register_node("elepower_lighting:light_fill", {
-	description = "Light Fill",
+	description = S("Light Fill"),
 	drawtype = "airlike",
 	paramtype = "light",
 	--tiles = {"elepower_lighting_light_fill.png"}, -- debugging
@@ -34,7 +37,7 @@ minetest.register_node("elepower_lighting:light_fill", {
 -- Conduit --
 -------------
 ele.register_conduit("elepower_lighting:conduit_iron_thin", {
-	description = "Conduit Decorative Cast Iron Thin",
+	description = S("Conduit Decorative Cast Iron Thin"),
 	tiles = {"elepower_lighting_conduit_iron_thin.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 1/8,
@@ -42,7 +45,7 @@ ele.register_conduit("elepower_lighting:conduit_iron_thin", {
 })
 
 ele.register_conduit("elepower_lighting:conduit_iron_thick", {
-	description = "Conduit Decorative Cast Iron Thick",
+	description = S("Conduit Decorative Cast Iron Thick"),
 	tiles = {"elepower_lighting_conduit_iron_thick.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 2/8,
@@ -50,7 +53,7 @@ ele.register_conduit("elepower_lighting:conduit_iron_thick", {
 })
 
 ele.register_conduit("elepower_lighting:conduit_steel_thin", {
-	description = "Conduit Decorative Steel Thin",
+	description = S("Conduit Decorative Steel Thin"),
 	tiles = {"elepower_lighting_conduit_steel_thin.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 1/8,
@@ -58,7 +61,7 @@ ele.register_conduit("elepower_lighting:conduit_steel_thin", {
 })
 
 ele.register_conduit("elepower_lighting:conduit_steel_thick", {
-	description = "Conduit Decorative Steel Thick",
+	description = S("Conduit Decorative Steel Thick"),
 	tiles = {"elepower_lighting_conduit_steel_thick.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 2/8,
@@ -66,7 +69,7 @@ ele.register_conduit("elepower_lighting:conduit_steel_thick", {
 })
 
 ele.register_conduit("elepower_lighting:conduit_gold_thin", {
-	description = "Conduit Decorative Gold Thin",
+	description = S("Conduit Decorative Gold Thin"),
 	tiles = {"elepower_lighting_conduit_gold_thin.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 1/8,
@@ -74,7 +77,7 @@ ele.register_conduit("elepower_lighting:conduit_gold_thin", {
 })
 
 ele.register_conduit("elepower_lighting:conduit_gold_thick", {
-	description = "Conduit Decorative Gold Thick",
+	description = S("Conduit Decorative Gold Thick"),
 	tiles = {"elepower_lighting_conduit_gold_thick.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 2/8,
@@ -82,7 +85,7 @@ ele.register_conduit("elepower_lighting:conduit_gold_thick", {
 })
 
 ele.register_conduit("elepower_lighting:conduit_wood_thin", {
-	description = "Conduit Decorative Wood Thin",
+	description = S("Conduit Decorative Wood Thin"),
 	tiles = {"elepower_lighting_conduit_wood_thin.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 1/8,
@@ -90,7 +93,7 @@ ele.register_conduit("elepower_lighting:conduit_wood_thin", {
 })
 
 ele.register_conduit("elepower_lighting:conduit_wood_thick", {
-	description = "Conduit Decorative Wood Thick",
+	description = S("Conduit Decorative Wood Thick"),
 	tiles = {"elepower_lighting_conduit_wood_thick.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 2/8,
@@ -101,7 +104,7 @@ ele.register_conduit("elepower_lighting:conduit_wood_thick", {
 -- Lights --
 ------------
 ele.register_machine("elepower_lighting:bulb_incandescent", {
-	description = "Bulb Incandescent",
+	description = S("Bulb Incandescent"),
 	drawtype = "mesh",
 	mesh = "incandescent_light_bulb.obj",	
 	tiles = {"elepower_lighting_incandescent_light_off.png"},
@@ -129,7 +132,7 @@ ele.register_machine("elepower_lighting:bulb_incandescent", {
 })
 
 ele.register_machine(":elepower_dynamics:uv_bulb", {
-	description = "UV Bulb Incandescent",
+	description = S("UV Bulb Incandescent"),
 	drawtype = "mesh",
 	mesh = "incandescent_light_bulb.obj",	
 	tiles = {"elepower_lighting_incandescent_uv_light_off.png"},
@@ -158,7 +161,7 @@ ele.register_machine(":elepower_dynamics:uv_bulb", {
 
 
 ele.register_machine("elepower_lighting:bulb_cf", {
-	description = "Bulb Compact Fluro",
+	description = S("Bulb Compact Fluro"),
 	drawtype = "mesh",
 	mesh = "cf_light_bulb.obj",	
 	tiles = {"elepower_lighting_cf_light_off.png"},
@@ -186,7 +189,7 @@ ele.register_machine("elepower_lighting:bulb_cf", {
 })
 
 ele.register_machine("elepower_lighting:fluro_light_bank", {
-	description = "Fluro Light Bank",
+	description = S("Fluro Light Bank"),
 	drawtype = "mesh",
 	mesh = "fluro_light_bank.obj",
 	tiles = {"elepower_lighting_fluro_light_bank_off.png"},
@@ -222,7 +225,7 @@ ele.register_machine("elepower_lighting:fluro_light_bank", {
 
 
 ele.register_machine("elepower_lighting:bulb_led", {
-	description = "Bulb Light-Emitting Diode",
+	description = S("Bulb Light-Emitting Diode"),
 	drawtype = "mesh",
 	mesh = "incandescent_light_bulb.obj",	
 	tiles = {"elepower_lighting_led_light_bulb_off.png"},
@@ -251,7 +254,7 @@ ele.register_machine("elepower_lighting:bulb_led", {
 
 
 ele.register_machine("elepower_lighting:led_light_panel", {
-	description = "LED Light Panel",
+	description = S("LED Light Panel"),
 	drawtype = "mesh",
 	mesh = "led_light_panel_1x1.obj",	
 	tiles = {"elepower_lighting_led_light_off.png"},
@@ -287,7 +290,7 @@ ele.register_machine("elepower_lighting:led_light_panel", {
 })
 
 ele.register_machine("elepower_lighting:led_light_panel_colored", {
-    description = 'LED Light Panel Colored',
+    description = S('LED Light Panel Colored'),
 	drawtype = "mesh",
 	mesh = "led_light_panel_1x1.obj",	
 	tiles = {"elepower_lighting_led_light_off.png"},
@@ -328,7 +331,7 @@ ele.register_machine("elepower_lighting:led_light_panel_colored", {
 })
 
 ele.register_machine("elepower_lighting:led_1x3_light_panel", {
-	description = "LED 1x3 Light Panel",
+	description = S("LED 1x3 Light Panel"),
 	drawtype = "mesh",
 	mesh = "led_light_panel_1x3.obj",	
 	tiles = {"elepower_lighting_led_light_1x3_off.png"},
@@ -368,7 +371,7 @@ ele.register_machine("elepower_lighting:led_1x3_light_panel", {
 
 
 ele.register_machine("elepower_lighting:led_2x3_light_panel", {
-	description = "LED 2x3 Light Panel",
+	description = S("LED 2x3 Light Panel"),
 	drawtype = "mesh",
 	mesh = "led_light_panel_2x3.obj",	
 	tiles = {"elepower_lighting_led_light_2x3_off.png"},

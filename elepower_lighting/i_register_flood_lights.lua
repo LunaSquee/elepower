@@ -12,6 +12,8 @@
 --          Register Nodes - Flood Lights           --
 ------------------------------------------------------
 
+local S = ele.translator
+
 local flood_light_angles = {
 							xp0_yp0   = {groups = {cracky = 2, pickaxey = 1, ele_user = 1, ele_lighting = 1}},
 							xp0_yp20  = {groups = {cracky = 2, pickaxey = 1, ele_user = 1, not_in_creative_inventory = 1}},
@@ -26,7 +28,7 @@ local flood_light_angles = {
 
 for angle,def in pairs(flood_light_angles) do
 	ele.register_machine("elepower_lighting:incandescent_floodlight_"..angle, {
-		description = "Flood Light Incandescent ",
+		description = S("Flood Light Incandescent"),
 		drawtype = "mesh",
 		mesh = "flood_light_"..angle..".obj",	
 		tiles = {"elepower_lighting_flood_light_off.png"},
@@ -64,9 +66,9 @@ end
 
 for angle,def in pairs(flood_light_angles) do
 	ele.register_machine("elepower_lighting:cf_floodlight_"..angle, {
-		description = "Flood Light CF",
+		description = S("Flood Light CF"),
 		drawtype = "mesh",
-		mesh = "flood_light_"..angle..".obj",	
+		mesh = "flood_light_"..angle..".obj",
 		tiles = {"elepower_lighting_flood_light_off.png"},
 		inventory_image = "elepower_lighting_cf_flood_light_inv.png",
 		selection_box = {
@@ -102,9 +104,9 @@ end
 
 for angle,def in pairs(flood_light_angles) do
 	ele.register_machine("elepower_lighting:led_floodlight_"..angle, {
-		description = "Flood Light LED",
+		description = S("Flood Light LED"),
 		drawtype = "mesh",
-		mesh = "flood_light_"..angle..".obj",	
+		mesh = "flood_light_"..angle..".obj",
 		tiles = {"elepower_lighting_flood_light_off.png"},
 		inventory_image = "elepower_lighting_led_flood_light_inv.png",
 		selection_box = {

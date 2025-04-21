@@ -4,6 +4,7 @@
 local epg = ele.external.graphic
 local eps = ele.external.sounds
 local epi = ele.external.ing
+local S = ele.translator
 
 ---------------
 -- Overrides --
@@ -19,7 +20,7 @@ minetest.register_alias_force("elepower_dynamics:fluid_duct", "fluid_transfer:fl
 -- Ores
 
 minetest.register_node("elepower_dynamics:stone_with_lead", {
-	description = "Lead Ore",
+	description = S("Lead Ore"),
 	tiles = {epg.stone.."^elepower_mineral_lead.png"},
 	groups = {cracky = 2, pickaxey = 2, material_stone = 1},
 	drop = 'elepower_dynamics:lead_lump',
@@ -30,7 +31,7 @@ minetest.register_node("elepower_dynamics:stone_with_lead", {
 })
 
 minetest.register_node("elepower_dynamics:stone_with_nickel", {
-	description = "Nickel Ore",
+	description = S("Nickel Ore"),
 	tiles = {epg.stone.."^elepower_mineral_nickel.png"},
 	groups = {cracky = 2, pickaxey = 2, material_stone = 1},
 	drop = 'elepower_dynamics:nickel_lump',
@@ -41,7 +42,7 @@ minetest.register_node("elepower_dynamics:stone_with_nickel", {
 })
 
 minetest.register_node("elepower_dynamics:stone_with_viridisium", {
-	description = "Viridisium Ore",
+	description = S("Viridisium Ore"),
 	tiles = {epg.stone.."^elepower_mineral_viridisium.png"},
 	groups = {cracky = 1, pickaxey = 4, material_stone = 1},
 	drop = 'elepower_dynamics:viridisium_lump',
@@ -52,7 +53,7 @@ minetest.register_node("elepower_dynamics:stone_with_viridisium", {
 })
 
 minetest.register_node("elepower_dynamics:stone_with_zinc", {
-	description = "Zinc Ore",
+	description = S("Zinc Ore"),
 	tiles = {epg.stone.."^elepower_mineral_zinc.png"},
 	groups = {cracky = 3, pickaxey = 2, material_stone = 1},
 	drop = 'elepower_dynamics:zinc_lump',
@@ -65,7 +66,7 @@ minetest.register_node("elepower_dynamics:stone_with_zinc", {
 -- Other
 
 minetest.register_node("elepower_dynamics:particle_board", {
-	description = "Particle Board",
+	description = S("Particle Board"),
 	tiles = {"elepower_particle_board.png"},
 	groups = {choppy = 2, axey = 1, wood = 1},
 	drop = 'elepower_dynamics:wood_dust 4',
@@ -73,7 +74,7 @@ minetest.register_node("elepower_dynamics:particle_board", {
 })
 
 minetest.register_node("elepower_dynamics:hardened_glass", {
-	description = "Hardened Obsidian Glass\nDoes not let light through",
+	description = S("Hardened Obsidian Glass") .. "\n" .. S("Does not let light through"),
 	drawtype = "glasslike_framed_optional",
 	tiles = {epg.obsidian_glass, "elepower_hard_glass_detail.png"},
 	paramtype2 = "glasslikeliquidlevel",
@@ -87,7 +88,7 @@ minetest.register_node("elepower_dynamics:hardened_glass", {
 -- Blocks
 
 minetest.register_node("elepower_dynamics:viridisium_block", {
-	description = "Viridisium Block",
+	description = S("Viridisium Block"),
 	tiles = {"elepower_viridisium_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, pickaxey = 2, level = 2},
@@ -95,7 +96,7 @@ minetest.register_node("elepower_dynamics:viridisium_block", {
 })
 
 minetest.register_node("elepower_dynamics:lead_block", {
-	description = "Lead Block",
+	description = S("Lead Block"),
 	tiles = {"elepower_lead_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, pickaxey = 1, level = 2},
@@ -103,7 +104,7 @@ minetest.register_node("elepower_dynamics:lead_block", {
 })
 
 minetest.register_node("elepower_dynamics:invar_block", {
-	description = "Invar Block",
+	description = S("Invar Block"),
 	tiles = {"elepower_invar_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, pickaxey = 1, level = 3},
@@ -111,7 +112,7 @@ minetest.register_node("elepower_dynamics:invar_block", {
 })
 
 minetest.register_node("elepower_dynamics:nickel_block", {
-	description = "Nickel Block",
+	description = S("Nickel Block"),
 	tiles = {"elepower_nickel_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, pickaxey = 1, level = 3},
@@ -119,7 +120,7 @@ minetest.register_node("elepower_dynamics:nickel_block", {
 })
 
 minetest.register_node("elepower_dynamics:zinc_block", {
-	description = "Zinc Block",
+	description = S("Zinc Block"),
 	tiles = {"elepower_zinc_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 2, pickaxey = 1, level = 3},
@@ -128,7 +129,7 @@ minetest.register_node("elepower_dynamics:zinc_block", {
 
 if epi.steel_ingot == "" then
 	minetest.register_node("elepower_dynamics:steel_block", {
-		description = "Steel Block",
+		description = S("Steel Block"),
 		tiles = {"elepower_steel_block.png"},
 		is_ground_content = false,
 		groups = {cracky = 2, pickaxey = 1, level = 3},

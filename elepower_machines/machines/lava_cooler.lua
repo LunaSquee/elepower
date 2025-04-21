@@ -4,6 +4,7 @@ local epr = ele.external.ref
 local epg = ele.external.graphic
 local epi = ele.external.ing
 local efs = ele.formspec
+local S = ele.translator
 
 local TIME = 5
 
@@ -69,7 +70,7 @@ local function lava_cooler_timer(pos, elapsed)
 	local recipe  = meta:get_string("recipe")
 	local consume = cooler_recipes[recipe]
 	local time    = meta:get_int("src_time")
-	local active  = "Active"
+	local active  = S("Active")
 
 	local state = meta:get_int("state")
 	local is_enabled = ele.helpers.state_enabled(meta, pos, state)
@@ -106,20 +107,20 @@ local function lava_cooler_timer(pos, elapsed)
 				refresh = true
 			end
 		else
-			active = "Idle"
+			active = S("Idle")
 			refresh = false
 		end
 	elseif not is_enabled then
-		active = "Off"
+		active = S("Off")
 	else
-		active = "Idle"
+		active = S("Idle")
 	end
 
 	local timer = math.floor(100 * time / TIME)
 
 	meta:set_int("src_time", time)
 	meta:set_int("storage", storage)
-	meta:set_string("infotext", ("Lava Cooler %s\n%s"):format(active, ele.capacity_text(capacity, storage)))
+	meta:set_string("infotext", (S("Lava Cooler") .. " %s\n%s"):format(active, ele.capacity_text(capacity, storage)))
 
 	meta:set_string("formspec", get_formspec(timer, coolant_buffer, hot_buffer,
 		power, cooler_recipes, recipe, state))
@@ -128,7 +129,7 @@ local function lava_cooler_timer(pos, elapsed)
 end
 
 ele.register_machine("elepower_machines:lava_cooler", {
-	description = "Lava Cooler",
+	description = S("Lava Cooler"),
 	groups = {ele_machine = 1, ele_user = 1, cracky = 3, pickaxey = 1, oddly_breakable_by_hand = 1, fluid_container = 1},
 	fluid_buffers = {
 		coolant = {

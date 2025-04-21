@@ -2,6 +2,7 @@
 -- shorten table ref
 local epr = ele.external.ref
 local efs = ele.formspec
+local S = ele.translator
 
 local function get_formspec_default(power, percent, state)
 	local start, _, by, mx = efs.begin(11.75, 10.45)
@@ -53,13 +54,13 @@ function elepm.register_fuel_generator(nodename, nodedef)
 
 		local state = meta:get_int("state")
 		local is_enabled = ele.helpers.state_enabled(meta, pos, state)
-		local status = "Idle"
+		local status = S("Idle")
 
 		local pow_buffer = {capacity = capacity, storage = storage, usage = 0}
 
 		while true do
 			if not is_enabled then
-				status = "Off"
+				status = S("Off")
 				break
 			end
 
@@ -78,12 +79,12 @@ function elepm.register_fuel_generator(nodename, nodedef)
 				refresh = true
 			end
 
-			status = "Active"
+			status = S("Active")
 
 			-- Burn another piece of fuel
 			if burn_time == 0 then
 				local inv = meta:get_inventory()
-				if not inv:is_empty("src") then 
+				if not inv:is_empty("src") then
 					local fuellist        = inv:get_list("src")
 					local fuel, afterfuel = minetest.get_craft_result({method = "fuel", width = 1, items = fuellist})
 
@@ -108,7 +109,7 @@ function elepm.register_fuel_generator(nodename, nodedef)
 
 					refresh = true
 				else
-					status = "Idle"
+					status = S("Idle")
 					ele.helpers.swap_node(pos, nodename)
 
 					refresh = false

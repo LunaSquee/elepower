@@ -3,6 +3,7 @@
 local epr = ele.external.ref
 local epi = ele.external.ing
 local efs = ele.formspec
+local S = ele.translator
 
 local tree_fluid_recipes = {
     ["elepower_farming:tree_sap_source"] = {
@@ -60,11 +61,11 @@ local function on_timer(pos, elapsed)
 
     local state = meta:get_int("state")
     local is_enabled = ele.helpers.state_enabled(meta, pos, state)
-    local active = "Idle"
+    local active = S("Idle")
 
     while true do
         if not is_enabled then
-            active = "Off"
+            active = S("Off")
             break
         end
 
@@ -89,7 +90,7 @@ local function on_timer(pos, elapsed)
 
         pow_buffer.storage = pow_buffer.storage - usage
         pow_buffer.usage = usage
-        active = "Active"
+        active = S("Active")
 
         if time < time_max then
             time = time + 1
@@ -112,7 +113,7 @@ local function on_timer(pos, elapsed)
             end
 
             if not room_for_output then
-                active = "Output Full!"
+                active = S("Output Full!")
                 break
             end
 
@@ -143,7 +144,7 @@ local function on_timer(pos, elapsed)
     meta:set_string("formspec", get_formspec(timer, pow_buffer, tree_buffer,
                                              water_buffer, out_buffer, state))
     meta:set_string("infotext",
-                    ("Tree Processor %s\n%s"):format(active,
+                    (S("Tree Fluid Processor").." %s\n%s"):format(active,
                                                      ele.capacity_text(capacity,
                                                                        pow_buffer.storage)))
     meta:set_int("storage", pow_buffer.storage)
@@ -152,7 +153,7 @@ local function on_timer(pos, elapsed)
 end
 
 ele.register_machine("elepower_farming:tree_processor", {
-    description = "Tree Fluid Processor",
+    description = S("Tree Fluid Processor"),
     ele_usage = 8,
     ele_no_automatic_ports = true,
     groups = {

@@ -1,0 +1,2512 @@
+# Estonian translations for PACKAGE package.
+# Copyright (C) 2025 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#  <evert@lunasqu.ee>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-21 20:19+0300\n"
+"PO-Revision-Date: 2025-04-21 20:21+0300\n"
+"Last-Translator: evert@lunasqu.ee\n"
+"Language-Team: Estonian <linux-ee@lists.eenet.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 3.5\n"
+
+#: elepower_compat/mods/basic_materials.lua:13
+msgid "Oil Extract"
+msgstr "Õliekstrakt"
+
+#: elepower_compat/mods/basic_materials.lua:18
+msgid "Unprocessed Paraffin"
+msgstr "Töötlemata parafiin"
+
+#: elepower_compat/mods/basic_materials.lua:31
+msgid "Plastic Sheet"
+msgstr "Plastist leht"
+
+#: elepower_compat/mods/basic_materials.lua:36
+msgid "Plastic Strips"
+msgstr "Plastist ribad"
+
+#: elepower_compat/mods/basic_materials.lua:42
+msgid "Empty wire spool"
+msgstr "Tühi traadipool"
+
+#: elepower_compat/mods/basic_materials.lua:110
+msgid "Copper Wire"
+msgstr "Vasktraat"
+
+#: elepower_compat/mods/basic_materials.lua:126
+msgid "Silver Wire"
+msgstr "Hõbetraat"
+
+#: elepower_compat/mods/basic_materials.lua:145
+msgid "Heating element"
+msgstr "Kütteelement"
+
+#: elepower_compat/mods/basic_materials.lua:161
+msgid "Motor"
+msgstr "Mootor"
+
+#: elepower_compat/mods/basic_materials.lua:180
+msgid "Silicon"
+msgstr "Silikoonvahvel"
+
+#: elepower_compat/mods/basic_materials.lua:190
+msgid "Brass Ingot"
+msgstr "Messingukang"
+
+#: elepower_compat/mods/basic_materials.lua:200
+msgid "Steel Strip"
+msgstr "Terasest riba"
+
+#: elepower_compat/mods/basic_materials.lua:206
+msgid "Spool of steel wire"
+msgstr "Terastraadi pool"
+
+#: elepower_compat/mods/default_bronze.lua:10
+msgid "Bronze Ingot"
+msgstr "Pronksikang"
+
+#: elepower_compat/mods/default_bronze.lua:16
+msgid "Bronze Block"
+msgstr "Pronksiplokk"
+
+#: elepower_compat/mods/default_tin.lua:11
+msgid "Tin Ingot"
+msgstr "Tinakang"
+
+#: elepower_compat/mods/default_tin.lua:17
+msgid "Tin Lump"
+msgstr "Töötlemata tina"
+
+#: elepower_compat/mods/default_tin.lua:23
+msgid "Tin Ore"
+msgstr "Tinamaak"
+
+#: elepower_compat/mods/default_tin.lua:34
+msgid "Tin Block"
+msgstr "Tinaplokk"
+
+#: elepower_compat/mods/moreores.lua:18
+msgid "Silver Ingot"
+msgstr "Hõbekang"
+
+#: elepower_compat/mods/moreores.lua:24
+msgid "Silver Lump"
+msgstr "Töötlemata hõbe"
+
+#: elepower_compat/mods/moreores.lua:30
+msgid "Silver Ore"
+msgstr "Hõbemaak"
+
+#: elepower_compat/mods/moreores.lua:41
+msgid "Silver Block"
+msgstr "Hõbeplokk"
+
+#: elepower_dynamics/components.lua:4
+msgid "Bronze"
+msgstr "Pronks"
+
+#: elepower_dynamics/components.lua:5
+msgid "Copper"
+msgstr "Vask"
+
+#: elepower_dynamics/components.lua:6
+msgid "Brass"
+msgstr "Messing"
+
+#: elepower_dynamics/components.lua:7
+msgid "Gold"
+msgstr "Kuld"
+
+#: elepower_dynamics/components.lua:8
+msgid "Steel"
+msgstr "Teras"
+
+#: elepower_dynamics/components.lua:9
+msgid "Tin"
+msgstr "Tina"
+
+#: elepower_dynamics/components.lua:10
+msgid "Silver"
+msgstr "Hõbe"
+
+#: elepower_dynamics/components.lua:11
+msgid "Lead"
+msgstr "Plii"
+
+#: elepower_dynamics/components.lua:12
+msgid "Iron"
+msgstr "Raud"
+
+#: elepower_dynamics/components.lua:13
+msgid "Diamond"
+msgstr "Teemant"
+
+#: elepower_dynamics/components.lua:14
+msgid "Nickel"
+msgstr "Nikkel"
+
+#: elepower_dynamics/components.lua:15
+msgid "Invar"
+msgstr "Invar"
+
+#: elepower_dynamics/components.lua:16
+msgid "Electrum"
+msgstr "Elektrum"
+
+#: elepower_dynamics/components.lua:17
+msgid "Viridisium"
+msgstr "Viridiisia"
+
+#: elepower_dynamics/components.lua:18
+msgid "Zinc"
+msgstr "Tsink"
+
+#: elepower_dynamics/components.lua:19
+msgid "Coal"
+msgstr "Kivisüsi"
+
+#: elepower_dynamics/components.lua:20
+msgid "Mese"
+msgstr "Mese"
+
+#: elepower_dynamics/components.lua:21
+msgid "Wood"
+msgstr "Puit"
+
+#: elepower_dynamics/components.lua:21
+msgid "Sawdust"
+msgstr "Saepuru"
+
+#: elepower_dynamics/components.lua:36
+msgid "Plate"
+msgstr "Plaat"
+
+#: elepower_dynamics/components.lua:64
+msgid "Pulverized"
+msgstr "Pulbristatud"
+
+#: elepower_dynamics/components.lua:87
+msgid "Gear"
+msgstr "hammasratas"
+
+#: elepower_dynamics/conduits.lua:10
+msgid "Power Conduit"
+msgstr "Voolukaabel"
+
+#: elepower_dynamics/conduits.lua:17
+msgid "Power Conduit Wall Pass Through"
+msgstr "Voolukaabli seina läbistaja"
+
+#: elepower_dynamics/conduits.lua:26
+msgid "Power Conduit Grass Outlet"
+msgstr "Voolukaabel murus"
+
+#: elepower_dynamics/conduits.lua:40
+msgid "Power Conduit Dry Grass Outlet"
+msgstr "Voolukaabel kuivas murus"
+
+#: elepower_dynamics/conduits.lua:54
+msgid "Power Conduit Stone Block"
+msgstr "Voolukaabel kivis"
+
+#: elepower_dynamics/conduits.lua:68
+msgid "Power Conduit Desert Stone Block"
+msgstr "Voolukaabel kõrbekivis"
+
+#: elepower_dynamics/conduits.lua:82
+msgid "Opaque Fluid Duct"
+msgstr "Läbipaistmatu vedelikutoru"
+
+#: elepower_dynamics/craftitems.lua:13
+msgid "Lead Ingot"
+msgstr "Pliikang"
+
+#: elepower_dynamics/craftitems.lua:20
+msgid "Iron Ingot"
+msgstr "Rauakang"
+
+#: elepower_dynamics/craftitems.lua:30 elepower_dynamics/craftitems.lua:34
+msgid "Low Carbon Steel Ingot"
+msgstr "Vähese süsinikusisaldusega terasekang"
+
+#: elepower_dynamics/craftitems.lua:41
+msgid "Nickel Ingot"
+msgstr "Niklikang"
+
+#: elepower_dynamics/craftitems.lua:47
+msgid "Invar Ingot"
+msgstr "Invarikang"
+
+#: elepower_dynamics/craftitems.lua:53
+msgid "Electrum Ingot"
+msgstr "Elektrumikang"
+
+#: elepower_dynamics/craftitems.lua:59
+msgid "Viridisium Ingot"
+msgstr "Viridiisiakang"
+
+#: elepower_dynamics/craftitems.lua:65
+msgid "Zinc Ingot"
+msgstr "Tsingikang"
+
+#: elepower_dynamics/craftitems.lua:71
+msgid "Graphite Ingot"
+msgstr "Grafiidikang"
+
+#: elepower_dynamics/craftitems.lua:79
+msgid "Lead Lump"
+msgstr "Töötlemata plii"
+
+#: elepower_dynamics/craftitems.lua:85
+msgid "Nickel Lump"
+msgstr "Töötlemata nikkel"
+
+#: elepower_dynamics/craftitems.lua:91
+msgid "Viridisium Lump"
+msgstr "Töötlemata viridiisia"
+
+#: elepower_dynamics/craftitems.lua:97
+msgid "Zinc Lump"
+msgstr "Töötlemata tsink"
+
+#: elepower_dynamics/craftitems.lua:103
+msgid "Xycrone"
+msgstr "Tsükroon"
+
+#: elepower_dynamics/craftitems.lua:103
+msgid "Used for Quantum Entanglement"
+msgstr "Kasutatakse kvantpõimumiseks"
+
+#: elepower_dynamics/craftitems.lua:104
+msgid "Unstable"
+msgstr "Ebastabiilne"
+
+#: elepower_dynamics/craftitems.lua:112
+msgid "Graphite Rod"
+msgstr "Grafiidivarras"
+
+#: elepower_dynamics/craftitems.lua:118
+msgid "Carbon Fibers"
+msgstr "Süsinikkiud"
+
+#: elepower_dynamics/craftitems.lua:124
+msgid "Carbon Fiber Sheet"
+msgstr "Süsinikkiuleht"
+
+#: elepower_dynamics/craftitems.lua:130
+msgid "Silicon Wafer"
+msgstr "Silikoonvahvel"
+
+#: elepower_dynamics/craftitems.lua:136
+msgid "Doped Silicon Wafer"
+msgstr "Dopinguga silikoonvahvel"
+
+#: elepower_dynamics/craftitems.lua:142
+msgid "Steel Treetap"
+msgstr "Terasest puu kraan"
+
+#: elepower_dynamics/craftitems.lua:148
+msgid "Tin Can"
+msgstr "Plekkpurk"
+
+#: elepower_dynamics/craftitems.lua:154
+msgid "Printed Circuit Board (PCB) Blank"
+msgstr "Trükkplaadi toorik"
+
+#: elepower_dynamics/craftitems.lua:155
+msgid "Use Etching Acid to etch"
+msgstr "Kasuta söövitusainet söövitamiseks"
+
+#: elepower_dynamics/craftitems.lua:198
+msgid "Printed Circuit Board (PCB)"
+msgstr "Trükkplaat (PCB)"
+
+#: elepower_dynamics/craftitems.lua:204
+msgid "Acidic Compound"
+msgstr "Happeline aine"
+
+#: elepower_dynamics/craftitems.lua:205
+msgid "Right-Click on Water to turn it into Etching Acid"
+msgstr "Tee paremklõps vee allikal, et muuta vesi söövitushappeks"
+
+#: elepower_dynamics/craftitems.lua:225
+msgid "Wound Copper Coil"
+msgstr "Vaskmähis"
+
+#: elepower_dynamics/craftitems.lua:225 elepower_dynamics/craftitems.lua:231
+#: elepower_dynamics/craftitems.lua:237 elepower_dynamics/craftitems.lua:245
+msgid "Tier @1 Coil"
+msgstr "@1. taseme mähis"
+
+#: elepower_dynamics/craftitems.lua:231
+msgid "Wound Silver Coil"
+msgstr "Hõbemähis"
+
+#: elepower_dynamics/craftitems.lua:237
+msgid "Induction Coil"
+msgstr "Induktsiooni mähis"
+
+#: elepower_dynamics/craftitems.lua:243
+msgid "Advanced Induction Coil"
+msgstr "Kõrgtehnoloogiline induktsiooni mähis"
+
+#: elepower_dynamics/craftitems.lua:244
+msgid "Suitable for high-power applications"
+msgstr "Sobilik kõrge võimsusega seotud kasutusaladel"
+
+#: elepower_dynamics/craftitems.lua:251
+msgid "Chip"
+msgstr "Kiip"
+
+#: elepower_dynamics/craftitems.lua:251 elepower_dynamics/craftitems.lua:257
+#: elepower_dynamics/craftitems.lua:263
+msgid "Tier @1 Chip"
+msgstr "@1. taseme kiip"
+
+#: elepower_dynamics/craftitems.lua:257
+msgid "Microcontroller"
+msgstr "Mikrokontroller"
+
+#: elepower_dynamics/craftitems.lua:263
+msgid "System on a Chip (SoC)"
+msgstr "Süsteem kiibil (SoC)"
+
+#: elepower_dynamics/craftitems.lua:269 elepower_machines/upgrading.lua:7
+msgid "Capacitor"
+msgstr "Kondensaator"
+
+#: elepower_dynamics/craftitems.lua:269 elepower_machines/craftitems.lua:27
+#: elepower_machines/craftitems.lua:36 elepower_machines/craftitems.lua:43
+#: elepower_machines/craftitems.lua:52
+msgid "Tier @1 Capacitor"
+msgstr "@1. taseme kondensaator"
+
+#: elepower_dynamics/craftitems.lua:275
+msgid "Ultraviolet Light Bulb"
+msgstr "Ultraviolettlamp"
+
+#: elepower_dynamics/craftitems.lua:283
+msgid "Battery"
+msgstr "Patarei"
+
+#: elepower_dynamics/craftitems.lua:289
+msgid "Servo Valve"
+msgstr "Servoklapp"
+
+#: elepower_dynamics/craftitems.lua:295
+msgid "Integrated Circuit"
+msgstr "Integraallülitus"
+
+#: elepower_dynamics/craftitems.lua:295 elepower_dynamics/craftitems.lua:302
+#: elepower_dynamics/craftitems.lua:309
+msgid "Tier @1 Circuit"
+msgstr "@1. taseme mikrokiip"
+
+#: elepower_dynamics/craftitems.lua:301
+msgid "Integrated Control Circuit"
+msgstr "Integreeritud juhtimisahel"
+
+#: elepower_dynamics/craftitems.lua:308
+msgid "Microcontroller Circuit"
+msgstr "Mikrokontrolleriga juhtimisahel"
+
+#: elepower_dynamics/craftitems.lua:315
+msgid "LCD Panel"
+msgstr "LCD paneel"
+
+#: elepower_dynamics/craftitems.lua:321
+msgid "Photovoltaic Cell"
+msgstr "Fotogalvaaniline element"
+
+#: elepower_dynamics/fluids.lua:10
+msgid "Etching Acid"
+msgstr "Söövitav hape"
+
+#: elepower_dynamics/fluids.lua:23
+msgid "Liquid Lithium"
+msgstr "Vedel liitium"
+
+#: elepower_dynamics/fluids.lua:37
+msgid "Etching Acid Bucket"
+msgstr "Söövitava happega ämber"
+
+#: elepower_dynamics/fluids.lua:40
+msgid "Liquid Lithium Bucket"
+msgstr "Vedela liitiumiga ämber"
+
+#: elepower_dynamics/fluids.lua:48 elepower_dynamics/gas_container.lua:37
+#: elepower_tome/i_eletome_additional_info.lua:629
+msgid "Steam"
+msgstr "Aur"
+
+#: elepower_dynamics/fluids.lua:55 elepower_dynamics/gas_container.lua:42
+#: elepower_machines/machines/electrolyzer.lua:60
+msgid "Oxygen"
+msgstr "Hapnik"
+
+#: elepower_dynamics/fluids.lua:61 elepower_dynamics/gas_container.lua:39
+#: elepower_machines/machines/electrolyzer.lua:53
+msgid "Hydrogen"
+msgstr "Vesinik"
+
+#: elepower_dynamics/fluids.lua:67 elepower_dynamics/gas_container.lua:45
+#: elepower_machines/machines/electrolyzer.lua:54
+msgid "Nitrogen"
+msgstr "Lämmastik"
+
+#: elepower_dynamics/fluids.lua:73
+msgid "Lithium Gas"
+msgstr "Liitiumi gaas"
+
+#: elepower_dynamics/fluids.lua:80
+msgid "Chlorine Gas"
+msgstr "Kloori gaas"
+
+#: elepower_dynamics/gas_container.lua:9
+msgid "Gas Container"
+msgstr "gaasimahuti"
+
+#: elepower_dynamics/gas_container.lua:32
+msgid "Empty Gas Container"
+msgstr "Tühi gaasimahuti"
+
+#: elepower_dynamics/gas_container.lua:48
+#: elepower_tome/i_eletome_additional_info.lua:772
+#: elepower_tome/i_eletome_additional_info.lua:782
+msgid "Lithium"
+msgstr "Liitium"
+
+#: elepower_dynamics/gas_container.lua:51
+msgid "Chlorine"
+msgstr "Kloor"
+
+#: elepower_dynamics/nodes.lua:23
+msgid "Lead Ore"
+msgstr "Pliimaak"
+
+#: elepower_dynamics/nodes.lua:34
+msgid "Nickel Ore"
+msgstr "Niklimaak"
+
+#: elepower_dynamics/nodes.lua:45
+msgid "Viridisium Ore"
+msgstr "Viridiisiamaak"
+
+#: elepower_dynamics/nodes.lua:56
+msgid "Zinc Ore"
+msgstr "Tsingimaak"
+
+#: elepower_dynamics/nodes.lua:69
+msgid "Particle Board"
+msgstr "Puitlaastplaat"
+
+#: elepower_dynamics/nodes.lua:77
+msgid "Hardened Obsidian Glass"
+msgstr "Karastatud obsidiaanklaas"
+
+#: elepower_dynamics/nodes.lua:77
+msgid "Does not let light through"
+msgstr "Ei lase valgust läbi"
+
+#: elepower_dynamics/nodes.lua:91
+msgid "Viridisium Block"
+msgstr "Viridiisia plokk"
+
+#: elepower_dynamics/nodes.lua:99
+msgid "Lead Block"
+msgstr "Plii plokk"
+
+#: elepower_dynamics/nodes.lua:107
+msgid "Invar Block"
+msgstr "Invari plokk"
+
+#: elepower_dynamics/nodes.lua:115
+msgid "Nickel Block"
+msgstr "Nikli plokk"
+
+#: elepower_dynamics/nodes.lua:123
+msgid "Zinc Block"
+msgstr "Tsingi plokk"
+
+#: elepower_dynamics/nodes.lua:132
+msgid "Steel Block"
+msgstr "Terase plokk"
+
+#: elepower_dynamics/tanks.lua:4 elepower_farming/fluids.lua:80
+#: elepower_nuclear/fluids.lua:169 elepower_thermal/fluids.lua:29
+msgid "Portable Tank"
+msgstr "Teisaldatav paak"
+
+#: elepower_dynamics/tools.lua:8
+msgid "Iron Pickaxe"
+msgstr "Raudkirka"
+
+#: elepower_dynamics/tools.lua:31
+msgid "Iron Shovel"
+msgstr "Raudlabidas"
+
+#: elepower_dynamics/tools.lua:55
+msgid "Iron Axe"
+msgstr "Raudkirves"
+
+#: elepower_dynamics/tools.lua:78
+msgid "Iron Sword"
+msgstr "Raudmöök"
+
+#: elepower_dynamics/tools.lua:104
+msgid "Lead Axe"
+msgstr "Pliikirves"
+
+#: elepower_dynamics/tools.lua:127
+msgid "Lead Pickaxe"
+msgstr "Pliikirka"
+
+#: elepower_dynamics/tools.lua:150
+msgid "Lead Shovel"
+msgstr "Pliilabidas"
+
+#: elepower_dynamics/tools.lua:173
+msgid "Lead Sword"
+msgstr "Pliimöök"
+
+#: elepower_farming/craftitems.lua:5 elepower_farming/fluids.lua:19
+msgid "Resin"
+msgstr "Vaik"
+
+#: elepower_farming/fluids.lua:7
+msgid "Tree Sap"
+msgstr "Piimmahl"
+
+#: elepower_farming/fluids.lua:31
+#: elepower_machines/machines/electrolyzer.lua:43
+msgid "Biomass"
+msgstr "Biomass"
+
+#: elepower_farming/fluids.lua:43
+msgid "Biofuel"
+msgstr "Biokütus"
+
+#: elepower_farming/fluids.lua:55
+msgid "Sludge"
+msgstr "Muda"
+
+#: elepower_farming/fluids.lua:65
+msgid "Tree Sap Bucket"
+msgstr "Piimmahlaämber"
+
+#: elepower_farming/fluids.lua:68
+msgid "Resin Bucket"
+msgstr "Vaiguämber"
+
+#: elepower_farming/fluids.lua:71
+msgid "Biomass Bucket"
+msgstr "Biomassiämber"
+
+#: elepower_farming/fluids.lua:74
+msgid "Biofuel Bucket"
+msgstr "Biokütuseämber"
+
+#: elepower_farming/fluids.lua:77
+msgid "Sludge Bucket"
+msgstr "Mudaämber"
+
+#: elepower_farming/machines/composter.lua:136
+msgid "Composter"
+msgstr "Komposteerija"
+
+#: elepower_farming/machines/composter.lua:136
+msgid "Convert organic matter to Biofuel"
+msgstr "Muudab orgaanilised ained biokütuseks"
+
+#: elepower_farming/machines/harvester.lua:127
+#: elepower_farming/machines/planter.lua:238
+#: elepower_farming/machines/tree_processor.lua:64
+#: elepower_machines/machines/bases/crafter.lua:178
+#: elepower_machines/machines/bases/fluid_generator.lua:66
+#: elepower_machines/machines/bases/fluid_generator.lua:115
+#: elepower_machines/machines/bases/generator.lua:57
+#: elepower_machines/machines/bases/generator.lua:112
+#: elepower_machines/machines/electrolyzer.lua:97
+#: elepower_machines/machines/evaporator.lua:34
+#: elepower_machines/machines/lava_cooler.lua:110
+#: elepower_machines/machines/lava_cooler.lua:116
+#: elepower_machines/machines/pcb_plant.lua:43
+#: elepower_machines/machines/wind_turbine.lua:61 elepower_mining/miner.lua:130
+#: elepower_nuclear/machines/solar_neutron_activator.lua:52
+#: elepower_solar/generator.lua:58 elepower_wireless/machines/station.lua:72
+msgid "Idle"
+msgstr "on ootel"
+
+#: elepower_farming/machines/harvester.lua:153
+#: elepower_farming/machines/planter.lua:259
+#: elepower_farming/machines/spawner.lua:129
+#: elepower_farming/machines/tree_processor.lua:93
+#: elepower_machines/machines/bases/crafter.lua:222
+#: elepower_machines/machines/bases/fluid_generator.lua:89
+#: elepower_machines/machines/bases/generator.lua:82
+#: elepower_machines/machines/bases/storage.lua:70
+#: elepower_machines/machines/coal_alloy_furnace.lua:178
+#: elepower_machines/machines/electrolyzer.lua:132
+#: elepower_machines/machines/evaporator.lua:61
+#: elepower_machines/machines/lava_cooler.lua:73
+#: elepower_machines/machines/pcb_plant.lua:68
+#: elepower_machines/machines/wind_turbine.lua:95
+#: elepower_nuclear/machines/solar_neutron_activator.lua:81
+#: elepower_solar/generator.lua:115 elepower_tools/ed_reconstructor.lua:66
+msgid "Active"
+msgstr "on aktiivne"
+
+#: elepower_farming/machines/harvester.lua:158
+#: elepower_farming/machines/planter.lua:263
+#: elepower_farming/machines/spawner.lua:157
+#: elepower_farming/machines/tree_processor.lua:68
+#: elepower_machines/machines/bases/crafter.lua:194
+#: elepower_machines/machines/bases/fluid_generator.lua:70
+#: elepower_machines/machines/bases/generator.lua:63
+#: elepower_machines/machines/electrolyzer.lua:106
+#: elepower_machines/machines/evaporator.lua:38
+#: elepower_machines/machines/lava_cooler.lua:114
+#: elepower_machines/machines/pcb_plant.lua:48
+#: elepower_machines/machines/pump.lua:81
+#: elepower_machines/machines/wind_turbine.lua:67
+#: elepower_solar/generator.lua:63 elepower_tools/ed_reconstructor.lua:49
+msgid "Off"
+msgstr "on välja lülitatud"
+
+#: elepower_farming/machines/harvester.lua:167
+#: elepower_farming/machines/harvester.lua:182
+msgid "Automatic Harvester"
+msgstr "Automaatne viljakoristaja"
+
+#: elepower_farming/machines/planter.lua:36
+msgid ""
+"Item placed here\n"
+"  will be planted\n"
+"out in a 3x3 area"
+msgstr ""
+"Esemed kuvatud siin\n"
+"istutatakse 3x3 alale"
+
+#: elepower_farming/machines/planter.lua:56
+msgid ""
+"Place stacks of items\n"
+"     here to keep planter\n"
+"supplied with items to plant"
+msgstr "Pane seemned siia istutamiseks"
+
+#: elepower_farming/machines/planter.lua:269
+msgid "Planter"
+msgstr "Viljaistutaja"
+
+#: elepower_farming/machines/planter.lua:280
+msgid "Automatic Planter"
+msgstr "Automaatne viljaistutaja"
+
+#: elepower_farming/machines/spawner.lua:128
+msgid "None"
+msgstr "on tühi"
+
+#: elepower_farming/machines/spawner.lua:160
+#: elepower_machines/machines/coal_alloy_furnace.lua:174
+msgid "Inactive"
+msgstr "on ootel"
+
+#: elepower_farming/machines/spawner.lua:163
+#: elepower_farming/machines/spawner.lua:176
+msgid "Powered Mob Spawner"
+msgstr ""
+
+#: elepower_farming/machines/spawner.lua:163
+msgid "Mob"
+msgstr ""
+
+#: elepower_farming/machines/tree_extractor.lua:18
+msgid "Tree Fluid Extractor"
+msgstr "Puiduvedeliku ekstraktor"
+
+#: elepower_farming/machines/tree_extractor.lua:60
+msgid "Place me in front of a tree!"
+msgstr "Paigalda mind mõne puu ette!"
+
+#: elepower_farming/machines/tree_processor.lua:116
+#: elepower_machines/machines/bases/crafter.lua:261
+#: elepower_machines/machines/electrolyzer.lua:128
+#: elepower_machines/machines/pcb_plant.lua:84
+#: elepower_nuclear/machines/solar_neutron_activator.lua:69
+msgid "Output Full!"
+msgstr "väljund on täis!"
+
+#: elepower_farming/machines/tree_processor.lua:147
+#: elepower_farming/machines/tree_processor.lua:156
+msgid "Tree Fluid Processor"
+msgstr "Puiduvedeliku töötleja"
+
+#: elepower_farming/nodes.lua:5
+msgid "Plastic Device Frame"
+msgstr "Plastmassist seadmeraam"
+
+#: elepower_farming/nodes.lua:5 elepower_machines/nodes.lua:6
+#: elepower_machines/nodes.lua:19 elepower_machines/nodes.lua:28
+msgid "Safe for decoration"
+msgstr "Sobilik dekoreerimiseks"
+
+#: elepower_lighting/i_craftitems.lua:18
+msgid "Bulb Glass"
+msgstr "Lambipirni klaas"
+
+#: elepower_lighting/i_craftitems.lua:24
+msgid "Incandescent Bulb Element"
+msgstr "Hõõglambi element"
+
+#: elepower_lighting/i_craftitems.lua:30
+msgid "CF Bulb Glass"
+msgstr "CF lambi klaas"
+
+#: elepower_lighting/i_craftitems.lua:36
+msgid "Magnifying Lens"
+msgstr "Suurendav lääts"
+
+#: elepower_lighting/i_craftitems.lua:42
+msgid "Fluro Tube Glass"
+msgstr "Flurolambi klaas"
+
+#: elepower_lighting/i_craftitems.lua:48
+msgid "Electrum Strip"
+msgstr "Elektrumist riba"
+
+#: elepower_lighting/i_craftitems.lua:54
+msgid "Red Light Emitting Diode"
+msgstr "Punane valgusdiood"
+
+#: elepower_lighting/i_craftitems.lua:61
+msgid "Green Light Emitting Diode"
+msgstr "Roheline valgusdiood"
+
+#: elepower_lighting/i_craftitems.lua:68
+msgid "Blue Light Emitting Diode"
+msgstr "Sinine valgusdiood"
+
+#: elepower_lighting/i_craftitems.lua:75
+msgid "Light Emitting Diode Cluster"
+msgstr "Valgusdioodide klaster"
+
+#: elepower_lighting/i_craftitems.lua:81
+msgid "LED Driver Board"
+msgstr "Valgusdioodi draiverlaud"
+
+#: elepower_lighting/i_register_flood_lights.lua:31
+msgid "Flood Light Incandescent"
+msgstr "Hõõglambiga prožektor"
+
+#: elepower_lighting/i_register_flood_lights.lua:69
+msgid "Flood Light CF"
+msgstr "CF lambiga prožektor"
+
+#: elepower_lighting/i_register_flood_lights.lua:107
+msgid "Flood Light LED"
+msgstr "LED lambiga prožektor"
+
+#: elepower_lighting/i_register_nodes.lua:21
+msgid "Light Fill"
+msgstr "Valgusega täituvus"
+
+#: elepower_lighting/i_register_nodes.lua:40
+msgid "Conduit Decorative Cast Iron Thin"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:48
+msgid "Conduit Decorative Cast Iron Thick"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:56
+msgid "Conduit Decorative Steel Thin"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:64
+msgid "Conduit Decorative Steel Thick"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:72
+msgid "Conduit Decorative Gold Thin"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:80
+msgid "Conduit Decorative Gold Thick"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:88
+msgid "Conduit Decorative Wood Thin"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:96
+msgid "Conduit Decorative Wood Thick"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:107
+msgid "Bulb Incandescent"
+msgstr "Hõõglamp"
+
+#: elepower_lighting/i_register_nodes.lua:135
+msgid "UV Bulb Incandescent"
+msgstr "UV hõõglamp"
+
+#: elepower_lighting/i_register_nodes.lua:164
+msgid "Bulb Compact Fluro"
+msgstr "Kompaktne flurolamp"
+
+#: elepower_lighting/i_register_nodes.lua:192
+msgid "Fluro Light Bank"
+msgstr "Flurolambikogum"
+
+#: elepower_lighting/i_register_nodes.lua:228
+msgid "Bulb Light-Emitting Diode"
+msgstr "Valgusdioodidega lamp"
+
+#: elepower_lighting/i_register_nodes.lua:257
+msgid "LED Light Panel"
+msgstr "LED valguspaneel"
+
+#: elepower_lighting/i_register_nodes.lua:293
+msgid "LED Light Panel Colored"
+msgstr "Värviline LED valguspaneel"
+
+#: elepower_lighting/i_register_nodes.lua:334
+msgid "LED 1x3 Light Panel"
+msgstr "LED 1x3 valguspaneel"
+
+#: elepower_lighting/i_register_nodes.lua:374
+msgid "LED 2x3 Light Panel"
+msgstr "LED 2x3 valguspaneel"
+
+#: elepower_lighting/i_register_nodes_shades.lua:18
+msgid "Light Shade Timber Cross"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes_shades.lua:19
+msgid "Light Shade Timber Stripe"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes_shades.lua:20
+msgid "Light Shade Timber Decorative Stripe"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes_shades.lua:21
+msgid "Light Shade Timber Round"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes_shades.lua:22
+msgid "Light Shade Timber Small Round"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes_shades.lua:51
+msgid "Red"
+msgstr "Punane"
+
+#: elepower_lighting/i_register_nodes_shades.lua:76
+msgid "Blue"
+msgstr "Sinine"
+
+#: elepower_lighting/i_register_nodes_shades.lua:100
+msgid "Red Paper"
+msgstr "Punane paber"
+
+#: elepower_lighting/i_register_nodes_shades.lua:106
+msgid "Blue Paper"
+msgstr "Sinine paber"
+
+#: elepower_machines/craftitems.lua:4
+msgid "Compressor Piston"
+msgstr "Kompressori kolb"
+
+#: elepower_machines/craftitems.lua:9
+msgid "Turbine Blades"
+msgstr "Turbiinilabad"
+
+#: elepower_machines/craftitems.lua:15
+msgid "Retractable Opaque Fluid Duct"
+msgstr "Kokkutõmmatav läbipaistmatu vedelikutoru"
+
+#: elepower_machines/craftitems.lua:16
+msgid "A Pump uses this to reach fluids."
+msgstr "Mõni pump kasutab seda vedelikkudeni jõudmiseks."
+
+#: elepower_machines/craftitems.lua:27
+msgid "Hardened Capacitor"
+msgstr "Karastatud kondensaator"
+
+#: elepower_machines/craftitems.lua:34
+msgid "Reinforced Capacitor"
+msgstr "Tugevdatud kondensaator"
+
+#: elepower_machines/craftitems.lua:35
+msgid "It will probably obliterate you if you touched it while charged"
+msgstr "See teeks kindlasti väga haiget, kui sa seda laetuna katsuksid"
+
+#: elepower_machines/craftitems.lua:43
+msgid "Resonant Capacitor"
+msgstr "Resoneeriv kondensaator"
+
+#: elepower_machines/craftitems.lua:50
+msgid "Supercapacitor"
+msgstr "Superkondensaator"
+
+#: elepower_machines/craftitems.lua:51
+msgid "Amazing energy density in a small container! Wow!"
+msgstr "Hämmastav energiatihedus pisikeses vidinas! Vägev!"
+
+#: elepower_machines/craftitems.lua:61
+msgid "Speed Upgrade"
+msgstr "Kiirust parandav moodul"
+
+#: elepower_machines/craftitems.lua:61
+msgid "Crafting Speed @1"
+msgstr "Meisterduskiirusele @1"
+
+#: elepower_machines/craftitems.lua:62
+msgid "Power Usage @1"
+msgstr "Voolukasutusele @1"
+
+#: elepower_machines/craftitems.lua:73 elepower_machines/craftitems.lua:81
+msgid "Efficiency Upgrade"
+msgstr "Efektiivsust parandav moodul"
+
+#: elepower_machines/craftitems.lua:74 elepower_machines/craftitems.lua:82
+msgid "Reduces power usage by @1"
+msgstr "Vähendab voolukasutust @1"
+
+#: elepower_machines/craftitems.lua:91
+msgid "Liquid Weight Filter"
+msgstr "Vedeliku kaalu filter"
+
+#: elepower_machines/craftitems.lua:92
+msgid "Makes water pumps pump only Heavy Water"
+msgstr "Seda rakendades pumpavd pumbad ainult rasket vett"
+
+#: elepower_machines/craftitems.lua:93
+msgid "Right-Click to apply to Water Accumulator"
+msgstr "Tee paremklõps Veekoguja peal, et seda rakendada"
+
+#: elepower_machines/craftitems.lua:127
+msgid "Wind Turbine Blade (Wooden)"
+msgstr "Tuulikulaba (puidust)"
+
+#: elepower_machines/craft.lua:234
+#: elepower_tome/i_eletome_additional_info.lua:281
+#: elepower_tome/i_eletome_additional_info.lua:285
+#: elepower_tome/i_eletome_additional_info.lua:333
+#: elepower_tome/i_eletome_additional_info.lua:495
+#: elepower_tome/i_eletome_additional_info.lua:499
+#: elepower_tome/i_eletome_additional_info.lua:701
+msgid "Cooking"
+msgstr "Küpsetamine"
+
+#: elepower_machines/craft.lua:235
+msgid ""
+"Cooking is more than just the preparation of food, it provides access to the "
+"preparation of ores to metals and the creation of glass and glass objects."
+msgstr ""
+"Küpsetamine on enamat kui lihtsalt toidu valmistamine, see võimaldab "
+"juurdepääsu maakidest metallide valmistamisele ning klaasi ja klaasist "
+"esemete valmistamisele."
+
+#: elepower_machines/machines/accumulator.lua:10
+#: elepower_machines/machines/accumulator.lua:33
+msgid "Water Accumulator"
+msgstr "Veekoguja"
+
+#: elepower_machines/machines/accumulator.lua:33
+#: elepower_machines/machines/electrolyzer.lua:42
+#: elepower_nuclear/fluids.lua:46
+#: elepower_tome/i_eletome_additional_info.lua:762
+msgid "Heavy Water"
+msgstr "Raske vesi"
+
+#: elepower_machines/machines/alloy_furnace.lua:5
+#: elepower_tome/i_eletome_additional_info.lua:355
+#: elepower_tome/i_eletome_additional_info.lua:543
+msgid "Alloying"
+msgstr "Sulamite valmistamine"
+
+#: elepower_machines/machines/alloy_furnace.lua:6
+msgid ""
+"Alloys are created materials which are stronger than their base material "
+"components. These can be obtained by combining differing materials in the "
+"Alloying Furnace.\n"
+"Elepower provides a number of alloying recipes."
+msgstr ""
+"Sulamid on ained, mis on tihti paremate omadustega, kui nende algosad. "
+"Sulameid saab luua liites erinevad ained teineteisega Sulamiahjus.\n"
+"Elepower pakub mitmeid erinevaid sulameid."
+
+#: elepower_machines/machines/alloy_furnace.lua:15
+#: elepower_machines/machines/coal_alloy_furnace.lua:189
+msgid "Alloy Furnace"
+msgstr "Sulamiahi"
+
+#: elepower_machines/machines/bases/crafter.lua:41
+msgid "All"
+msgstr "Kõik grupist"
+
+#: elepower_machines/machines/bases/crafter.lua:215
+#: elepower_machines/machines/electrolyzer.lua:115
+#: elepower_machines/machines/evaporator.lua:43
+#: elepower_machines/machines/pcb_plant.lua:53
+#: elepower_machines/machines/pump.lua:86 elepower_mining/miner.lua:136
+#: elepower_tools/ed_reconstructor.lua:59
+#: elepower_wireless/machines/station.lua:86
+msgid "Out of Power!"
+msgstr "on energia otsas!"
+
+#: elepower_machines/machines/bucketer.lua:141
+msgid "Bucketer"
+msgstr "Ämbristaja"
+
+#: elepower_machines/machines/canning_machine.lua:5
+#: elepower_tome/i_eletome_additional_info.lua:693
+msgid "Canning"
+msgstr "Purgistamine"
+
+#: elepower_machines/machines/canning_machine.lua:11
+msgid "Canning Machine"
+msgstr "Purgistusmasin"
+
+#: elepower_machines/machines/coal_alloy_furnace.lua:204
+msgid "Coal-fired Alloy Furnace"
+msgstr "Kivisöel töötav sulamiahi"
+
+#: elepower_machines/machines/compressor.lua:5
+#: elepower_tome/i_eletome_additional_info.lua:557
+#: elepower_tome/i_eletome_additional_info.lua:695
+msgid "Compressing"
+msgstr "Kompressimine"
+
+#: elepower_machines/machines/compressor.lua:11
+msgid "Compressor"
+msgstr "Kompressor"
+
+#: elepower_machines/machines/electrolyzer.lua:41
+#: elepower_tome/i_eletome_additional_info.lua:758
+#: elepower_tome/i_eletome_additional_info.lua:772
+#: elepower_tome/i_eletome_additional_info.lua:777
+#: elepower_tome/i_eletome_additional_info.lua:793
+#: elepower_tome/i_eletome_additional_info.lua:798
+msgid "Water"
+msgstr "Vesi"
+
+#: elepower_machines/machines/electrolyzer.lua:53
+#: elepower_nuclear/fluids.lua:35
+msgid "Deuterium"
+msgstr "Deuteerium"
+
+#: elepower_machines/machines/electrolyzer.lua:167
+#: elepower_machines/machines/electrolyzer.lua:177
+msgid "Electrolyzer"
+msgstr "Elektrolüsaator"
+
+#: elepower_machines/machines/evaporator.lua:89
+#: elepower_machines/machines/evaporator.lua:109
+msgid "Evaporator"
+msgstr "Aurustaja"
+
+#: elepower_machines/machines/fuel_burner.lua:4
+msgid "Liquid Fuel Combustion Generator"
+msgstr "Vedelkütust põletav generaator"
+
+#: elepower_machines/machines/furnace.lua:8
+msgid "Powered Furnace"
+msgstr "Elektriahi"
+
+#: elepower_machines/machines/generator.lua:8
+msgid "Coal-fired Generator"
+msgstr "Kivisütt põletav generaator"
+
+#: elepower_machines/machines/grindstone.lua:114
+#: elepower_machines/machines/grindstone.lua:119
+#: elepower_machines/machines/grindstone.lua:126
+msgid "Grindstone"
+msgstr "Lihvkivi"
+
+#: elepower_machines/machines/grindstone.lua:126
+msgid ""
+"A medieval pulverizer\n"
+"Requires Hand Crank to operate"
+msgstr ""
+"Vanamoodne Pulbristaja\n"
+"Nõuab töötamiseks Vänta"
+
+#: elepower_machines/machines/grindstone.lua:158
+msgid "Hand Crank"
+msgstr "Vänt"
+
+#: elepower_machines/machines/grindstone.lua:158
+msgid "Place on Grindstone and hold Right-Click"
+msgstr "Paigalda lihvkivi peale ja hoia paremklõpsu all"
+
+#: elepower_machines/machines/lava_cooler.lua:123
+#: elepower_machines/machines/lava_cooler.lua:132
+msgid "Lava Cooler"
+msgstr "Laava jahutaja"
+
+#: elepower_machines/machines/lava_generator.lua:7
+msgid "Lava Generator"
+msgstr "Laava generaator"
+
+#: elepower_machines/machines/pcb_plant.lua:63
+msgid "Out of Acid!"
+msgstr "on hape otsas!"
+
+#: elepower_machines/machines/pcb_plant.lua:109
+#: elepower_machines/machines/pcb_plant.lua:138
+msgid "Printed Circuit Board Plant"
+msgstr "Trükkplaadivabrik"
+
+#: elepower_machines/machines/pulverizer.lua:4
+#: elepower_tome/i_eletome_additional_info.lua:420
+#: elepower_tome/i_eletome_additional_info.lua:537
+#: elepower_tome/i_eletome_additional_info.lua:547
+#: elepower_tome/i_eletome_additional_info.lua:567
+#: elepower_tome/i_eletome_additional_info.lua:573
+#: elepower_tome/i_eletome_additional_info.lua:705
+msgid "Grinding"
+msgstr "Pulbristamine"
+
+#: elepower_machines/machines/pulverizer.lua:5
+msgid ""
+"Grinding of solid materials occurs through mechanical forces that break up "
+"the structure of the material. After grinding the state of the material is "
+"changed; the grain size and the grain shape will be smaller and finer."
+msgstr ""
+"Tahkete materjalide pulbristamine toimub mehaaniliste jõudude mõjul, mis "
+"lõhuvad materjali struktuuri. Pärast pulbristamist muudetakse materjali "
+"olekut; tera suurus ja kuju on väiksem ja peenem."
+
+#: elepower_machines/machines/pulverizer.lua:14
+msgid "Pulverizer"
+msgstr "Pulbristaja"
+
+#: elepower_machines/machines/pump.lua:98
+msgid "Tank Full!"
+msgstr "on paak täis!"
+
+#: elepower_machines/machines/pump.lua:110
+msgid "Seeking"
+msgstr "otsib"
+
+#: elepower_machines/machines/pump.lua:152
+msgid "No More Fluid!"
+msgstr "ei leia rohkem vedelikku!"
+
+#: elepower_machines/machines/pump.lua:165
+msgid "Pumping"
+msgstr "pumpab"
+
+#: elepower_machines/machines/pump.lua:217
+msgid "Pickup Pump Tank"
+msgstr "Pump"
+
+#: elepower_machines/machines/sawmill.lua:4
+msgid "Sawmilling"
+msgstr "Saeveski"
+
+#: elepower_machines/machines/sawmill.lua:11
+msgid "Sawmill"
+msgstr "Saeveski"
+
+#: elepower_machines/machines/solderer.lua:4
+msgid "Soldering"
+msgstr "Jootmine"
+
+#: elepower_machines/machines/solderer.lua:10
+msgid "Solderer"
+msgstr "Jootejaam"
+
+#: elepower_machines/machines/steam_turbine.lua:15
+msgid "Steam Turbine"
+msgstr "Auruturbiin"
+
+#: elepower_machines/machines/storage.lua:8
+msgid "Power Cell"
+msgstr "Akumulaator"
+
+#: elepower_machines/machines/storage.lua:20
+msgid "Hardened Power Cell"
+msgstr "Karastatud akumulaator"
+
+#: elepower_machines/machines/storage.lua:36
+msgid "Reinforced Power Cell"
+msgstr "Tugevdatud akumulaator"
+
+#: elepower_machines/machines/storage.lua:52
+msgid "Resonant Power Cell"
+msgstr "Resoneeriv akumulaator"
+
+#: elepower_machines/machines/storage.lua:68
+msgid "Supercapacitor Cell"
+msgstr "Superkondensaatoriga akumulaator"
+
+#: elepower_machines/machines/wind_turbine.lua:86
+msgid "No wind"
+msgstr "pole tuult"
+
+#: elepower_machines/machines/wind_turbine.lua:104
+#: elepower_machines/machines/wind_turbine.lua:139
+#: elepower_tome/i_page_contents.lua:81 elepower_tome/i_page_machines.lua:22
+msgid "Wind Turbine"
+msgstr "Tuulik"
+
+#: elepower_machines/machines/wind_turbine.lua:140
+msgid "Requires Wind Turbine Blades"
+msgstr "nõuab Tuulikulabasid"
+
+#: elepower_machines/machines/wind_turbine.lua:151
+msgid "Wind Turbine Blades (Wooden)"
+msgstr "Tuulikulabad (puidust)"
+
+#: elepower_machines/machines/wind_turbine.lua:152
+msgid "Sneak Right-Click on the Wind Turbine node to place it"
+msgstr "Hiili+paremklõps tuulikul nende paigaldamiseks"
+
+#: elepower_machines/nodes.lua:6
+msgid "Machine Block"
+msgstr "Masinaraam"
+
+#: elepower_machines/nodes.lua:17
+msgid "Heat Casing"
+msgstr "Soojust hoidev raam"
+
+#: elepower_machines/nodes.lua:18
+msgid "Used for the Thermal Evaporation Plant"
+msgstr "Kasutatakse termoaurustusjaamas"
+
+#: elepower_machines/nodes.lua:27
+msgid "Advanced Machine Block"
+msgstr "Kõrgtehnoloogilise masina raam"
+
+#: elepower_machines/upgrading.lua:5
+msgid "Machine Chip"
+msgstr "Masinakiip"
+
+#: elepower_machines/upgrading.lua:6
+msgid "Wireless Chip"
+msgstr "Juhtmevaba kiip"
+
+#: elepower_machines/upgrading.lua:8
+msgid "Pump Filter"
+msgstr "Pumbafilter"
+
+#: elepower_mining/miner.lua:52
+msgid "Miner structure complete (detected @1 drills)!"
+msgstr "Kaevandaja struktuur on täiuslik (avastati @1 puuri)!"
+
+#: elepower_mining/miner.lua:123
+msgid "with Invalid structure - Punch to redetect"
+msgstr "on vale struktuuriga - toksi mind uuesti otsimiseks"
+
+#: elepower_mining/miner.lua:140
+msgid "Mining with @1 miners"
+msgstr "kaevandab @1 puuriga"
+
+#: elepower_mining/miner.lua:145
+msgid "Out of Water!"
+msgstr "on vesi otsas!"
+
+#: elepower_mining/miner.lua:168
+msgid "Inventory full!"
+msgstr "on väljund täis!"
+
+#: elepower_mining/miner.lua:182 elepower_tome/i_page_contents.lua:93
+#: elepower_tome/i_page_machines.lua:27
+msgid "Miner"
+msgstr "Kaevandaja"
+
+#: elepower_mining/miner.lua:211
+msgid "Miner Controller"
+msgstr "Kaevandaja juhtplokk"
+
+#: elepower_mining/miner.lua:211 elepower_mining/miner.lua:256
+#: elepower_mining/miner.lua:275
+msgid "Machine Component"
+msgstr "Masina komponent"
+
+#: elepower_mining/miner.lua:256
+msgid "Miner Core"
+msgstr "Kaevandaja tuum"
+
+#: elepower_mining/miner.lua:275
+msgid "Miner Drill"
+msgstr "Kaevandaja puur"
+
+#: elepower_nuclear/craftitems.lua:10
+msgid "Uranium Lump"
+msgstr "Töötlemata uraan"
+
+#: elepower_nuclear/craftitems.lua:17
+msgid ""
+"Enriched Uranium Dust\n"
+"(Ready to be used as fuel)"
+msgstr ""
+"Rikastatud uraanipulber\n"
+"(Valmis kasutamiseks kütusena)"
+
+#: elepower_nuclear/craftitems.lua:22
+msgid ""
+"Depleted Uranium Dust\n"
+"(Requires enrichment)"
+msgstr ""
+"Ammendatud uraanipulber\n"
+"(Vajab rikastamist)"
+
+#: elepower_nuclear/craftitems.lua:27
+msgid ""
+"Nuclear Waste\n"
+"(Mostly unusable for nuclear fission)"
+msgstr ""
+"Tuumajäätmed\n"
+"(Suuresti kasutuskõlbmatu tuumalõhustamiseks)"
+
+#: elepower_nuclear/craftitems.lua:34
+msgid "Empty Fuel Rod"
+msgstr "Tühi kütusevarras"
+
+#: elepower_nuclear/craftitems.lua:40
+msgid ""
+"Fissile Fuel Rod\n"
+"Lasts @1 hours (@2 seconds)"
+msgstr ""
+"Tuumalõhustuskütuse varras\n"
+"Kestab @1 tundi (@2 sekundit)"
+
+#: elepower_nuclear/craftitems.lua:48
+msgid ""
+"Depleted Fuel Rod\n"
+"Can not be used in a reactor anymore"
+msgstr ""
+"Ammendatud kütusevarras\n"
+"Ei ole enam sobilik reaktoris kasutamiseks"
+
+#: elepower_nuclear/craftitems.lua:56
+msgid "Control Rod"
+msgstr "Juhtvarras"
+
+#: elepower_nuclear/craftitems.lua:62
+msgid "Control Rod Assembly"
+msgstr "Juhtvarraste komplekt"
+
+#: elepower_nuclear/craftitems.lua:68
+msgid "Perforated Control Plate"
+msgstr "Augustatud juhtplaat"
+
+#: elepower_nuclear/craftitems.lua:76
+msgid "Reactor Pressure Vessel"
+msgstr "Tuumareaktori surveanum"
+
+#: elepower_nuclear/fluids.lua:11
+msgid "Tritium Gas"
+msgstr "Triitiumi gaas"
+
+#: elepower_nuclear/fluids.lua:17
+msgid "Deuterium Gas"
+msgstr "Deuteeriumi gaas"
+
+#: elepower_nuclear/fluids.lua:23
+msgid "Helium Gas"
+msgstr "Heeliumi gaas"
+
+#: elepower_nuclear/fluids.lua:29 elepower_nuclear/fluids.lua:38
+msgid "Helium Plasma"
+msgstr "Heeliumi plasma"
+
+#: elepower_nuclear/fluids.lua:29
+msgid "Superheated"
+msgstr "Ülekuumendatud"
+
+#: elepower_nuclear/fluids.lua:34
+msgid "Tritium"
+msgstr "Triitium"
+
+#: elepower_nuclear/fluids.lua:36
+msgid "Helium"
+msgstr "Heelium"
+
+#: elepower_nuclear/fluids.lua:90 elepower_nuclear/fluids.lua:160
+msgid "Cold Coolant"
+msgstr "Külm jahutusvedelik"
+
+#: elepower_nuclear/fluids.lua:103 elepower_nuclear/fluids.lua:163
+msgid "Hot Coolant"
+msgstr "Kuum jahutusvedelik"
+
+#: elepower_nuclear/fluids.lua:116
+msgid "Corium"
+msgstr "Sulanud tuum"
+
+#: elepower_nuclear/fluids.lua:166
+msgid "Heavy Water Bucket"
+msgstr "Raskevee ämber"
+
+#: elepower_nuclear/machines/enrichment_plant.lua:26
+msgid "Enrichment"
+msgstr "Rikastamine"
+
+#: elepower_nuclear/machines/enrichment_plant.lua:32
+msgid "Enrichment Plant"
+msgstr "Rikastusjaam"
+
+#: elepower_nuclear/machines/fission_reactor.lua:95
+msgid "Depleted"
+msgstr "Ammendatud"
+
+#: elepower_nuclear/machines/fission_reactor.lua:139
+#: elepower_wireless/machines/station/fission_reactor.lua:91
+msgid "Activate by extracting the control rods"
+msgstr "Aktiveerimiseks tõsta juhtvardad tuumast välja"
+
+#: elepower_nuclear/machines/fission_reactor.lua:142
+#: elepower_wireless/machines/station/fission_reactor.lua:94
+msgid "!!! TEMPERATURE CRITICAL !!!"
+msgstr "!!! TEMPERATUUR KRIITILINE !!!"
+
+#: elepower_nuclear/machines/fission_reactor.lua:144
+#: elepower_wireless/machines/station/fission_reactor.lua:96
+msgid "!!! REACTOR CRITICAL !!!"
+msgstr "!!! REAKTOR KRIITILINE !!!"
+
+#: elepower_nuclear/machines/fission_reactor.lua:146
+#: elepower_wireless/machines/station/fission_reactor.lua:98
+msgid "!!! REACTOR MELTDOWN IMMINENT !!!"
+msgstr "!!! REAKTORI SULAMINE TÕENÄOLINE !!!"
+
+#: elepower_nuclear/machines/fission_reactor.lua:148
+#: elepower_wireless/machines/station/fission_reactor.lua:100
+msgid "Active reaction chain"
+msgstr "Aktiivne tuumareaktsiooniahel"
+
+#: elepower_nuclear/machines/fission_reactor.lua:154
+#: elepower_wireless/machines/station/fission_reactor.lua:107
+msgid "Power: @1"
+msgstr "Võimsus: @1"
+
+#: elepower_nuclear/machines/fission_reactor.lua:155
+#: elepower_wireless/machines/station/fission_reactor.lua:108
+msgid "Heat: @1"
+msgstr "Soojus: @1"
+
+#: elepower_nuclear/machines/fission_reactor.lua:184 elepower_tome/init.lua:209
+#: elepower_wireless/machines/station/fission_reactor.lua:57
+msgid "Next"
+msgstr "Järgmine"
+
+#: elepower_nuclear/machines/fission_reactor.lua:185
+#: elepower_wireless/machines/station/fission_reactor.lua:59
+msgid "Previous"
+msgstr "Eelmine"
+
+#: elepower_nuclear/machines/fission_reactor.lua:187
+#: elepower_wireless/machines/station/fission_reactor.lua:61
+msgid "SCRAM"
+msgstr "Hädapeata"
+
+#: elepower_nuclear/machines/fission_reactor.lua:188
+#: elepower_wireless/machines/station/fission_reactor.lua:62
+msgid "Raise"
+msgstr "Tõsta"
+
+#: elepower_nuclear/machines/fission_reactor.lua:189
+#: elepower_wireless/machines/station/fission_reactor.lua:63
+msgid "Lower"
+msgstr "Langeta"
+
+#: elepower_nuclear/machines/fission_reactor.lua:190
+#: elepower_wireless/machines/station/fission_reactor.lua:64
+msgid "Select the next control rod"
+msgstr "Vali järgmine juhtvarras"
+
+#: elepower_nuclear/machines/fission_reactor.lua:191
+#: elepower_wireless/machines/station/fission_reactor.lua:65
+msgid "Select the previous control rod"
+msgstr "Vali eelmine juhtvarras"
+
+#: elepower_nuclear/machines/fission_reactor.lua:194
+#: elepower_wireless/machines/station/fission_reactor.lua:68
+msgid "Drops all the rods into the reactor core, instantly stopping it"
+msgstr ""
+"Langetab otsekohe kõik juhtvardad tuumareaktorisse, mis peatab koheselt "
+"reaktsiooniahela"
+
+#: elepower_nuclear/machines/fission_reactor.lua:195
+#: elepower_wireless/machines/station/fission_reactor.lua:69
+msgid "Raise selected control rod"
+msgstr "Tõsta valitud juhtvarras"
+
+#: elepower_nuclear/machines/fission_reactor.lua:196
+#: elepower_wireless/machines/station/fission_reactor.lua:70
+msgid "Lower selected control rod"
+msgstr "Langeta valitud juhtvarras"
+
+#: elepower_nuclear/machines/fission_reactor.lua:448
+msgid "Fission Reactor Core"
+msgstr "Tuumalõhustusreaktori tuum"
+
+#: elepower_nuclear/machines/fission_reactor.lua:482
+msgid "Fission Control Module"
+msgstr "Tuumalõhustusreaktori juhtmoodul"
+
+#: elepower_nuclear/machines/fission_reactor.lua:483
+msgid "Place me on top of a Fission Reactor Core"
+msgstr "Paigalda mind tuumalõhustusreaktori tuuma peale"
+
+#: elepower_nuclear/machines/fission_reactor.lua:513
+msgid "Reactor Fluid Port"
+msgstr "Reaktori vedeliku sisendi- ja väljundimoodul"
+
+#: elepower_nuclear/machines/fission_reactor.lua:514
+msgid "Place me on the bottom of a Fission Reactor Core"
+msgstr "Paigalda mind tuumalõhustusreaktori tuuma alla"
+
+#: elepower_nuclear/machines/fusion_reactor.lua:80
+msgid "Incorrect node at @1; expected @2, found @3"
+msgstr "Vale plokk asukohas @1; oodatud oleks @2, leidsin @3"
+
+#: elepower_nuclear/machines/fusion_reactor.lua:104
+msgid "Multi-node structure complete!"
+msgstr "Mitmeplokiline struktuur valmis!"
+
+#: elepower_nuclear/machines/fusion_reactor.lua:293
+#: elepower_nuclear/machines/fusion_reactor.lua:336
+msgid "No controller found."
+msgstr "juhtmoodul on puudu."
+
+#: elepower_nuclear/machines/fusion_reactor.lua:324
+msgid ""
+"Connected to controller at @1\n"
+"Local @2"
+msgstr ""
+"Ühendatud juhtmooduliga asukohas @1\n"
+"Kohalik @2"
+
+#: elepower_nuclear/machines/fusion_reactor.lua:340
+msgid "Connected to controller at @1"
+msgstr "Ühendatud juhtmooduliga asukohas @1"
+
+#: elepower_nuclear/machines/fusion_reactor.lua:350
+msgid "Fusion Reactor Controller"
+msgstr "Termotuumasünteesi reaktori juhtmoodul"
+
+#: elepower_nuclear/machines/fusion_reactor.lua:380
+msgid "Fusion Reactor Power Port (Input)"
+msgstr "Termotuumasünteesi reaktori voolusisend"
+
+#: elepower_nuclear/machines/fusion_reactor.lua:397
+msgid "Fusion Reactor Fluid Port (Input)"
+msgstr "Termotuumasünteesi reaktori vedeliku sisend"
+
+#: elepower_nuclear/machines/fusion_reactor.lua:461
+msgid "Fusion Reactor Fluid Port (Output)"
+msgstr "Termotuumasünteesi reaktori vedeliku väljund"
+
+#: elepower_nuclear/machines/heat_exchanger.lua:110
+msgid "Shielded Heat Exchanger"
+msgstr "Varjestatud soojusvaheti"
+
+#: elepower_nuclear/machines/heat_exchanger.lua:110
+msgid "For use in nuclear power plants"
+msgstr "Mõeldud tuumajaamas kasutamiseks"
+
+#: elepower_nuclear/machines/solar_neutron_activator.lua:38
+#: elepower_solar/generator.lua:126
+msgid "Light: @1"
+msgstr "Valgus: @1"
+
+#: elepower_nuclear/machines/solar_neutron_activator.lua:88
+msgid "Not enough light!"
+msgstr "pole piisavalt valgust!"
+
+#: elepower_nuclear/machines/solar_neutron_activator.lua:116
+#: elepower_nuclear/machines/solar_neutron_activator.lua:122
+msgid "Solar Neutron Activator"
+msgstr "Päikesevalgusega neutronite aktiveerimisjaam"
+
+#: elepower_nuclear/nodes.lua:9
+msgid "Radiation-shielded Lead Machine Chassis"
+msgstr "Kiirgusvarjustusega pliist masinaraam"
+
+#: elepower_nuclear/nodes.lua:10
+msgid "Provides shielding against dangerous ionizing radiation"
+msgstr "Pakub kaitset ioniseeriva kiirguse eest"
+
+#: elepower_nuclear/nodes.lua:22
+msgid "Uranium Ore"
+msgstr "Uraanimaak"
+
+#: elepower_nuclear/nodes.lua:33
+msgid "Fusion Reactor Coil"
+msgstr "Termotuumasünteesi reaktori mähis"
+
+#: elepower_papi/formspec.lua:181
+msgid "Press to toggle"
+msgstr "Vajuta lülitamiseks"
+
+#: elepower_papi/formspec.lua:215
+msgid "Energy Storage"
+msgstr "Akumulaatori seis"
+
+#: elepower_papi/formspec.lua:219
+msgid "Power Used / Generated"
+msgstr "Voolukasutus või -tootmine"
+
+#: elepower_papi/formspec.lua:233
+msgid "Empty Buffer"
+msgstr "Tühi puhver"
+
+#: elepower_papi/helpers.lua:183
+msgid "Flowing"
+msgstr "Voolav"
+
+#: elepower_papi/helpers.lua:188
+msgid "Source"
+msgstr "allikas"
+
+#: elepower_papi/machine.lua:85
+msgid "Always on"
+msgstr "Alati sisselülitatud"
+
+#: elepower_papi/machine.lua:86
+msgid "Always off"
+msgstr "Alati väljalülitatud"
+
+#: elepower_papi/machine.lua:87
+msgid "Enable by Mesecons signal"
+msgstr "Lülita sisse Meseconsi signaali peale"
+
+#: elepower_papi/machine.lua:88
+msgid "Disable by Mesecons signal"
+msgstr "Lülita välja Meseconsi signaali peale"
+
+#: elepower_papi/machine.lua:111
+msgid "Modified Device"
+msgstr "Modifitseeritud seade"
+
+#: elepower_papi/machine.lua:149
+msgid "Charge: @1 / @2 @3"
+msgstr "Laeng: @1 / @2 @3"
+
+#: elepower_solar/helmet.lua:5
+msgid "Solar Helmet"
+msgstr "Päiksepaneeliga kiiver"
+
+#: elepower_solar/register.lua:4
+msgid "Solar Generator"
+msgstr "Päikesegeneraator"
+
+#: elepower_thermal/fluids.lua:6
+#: elepower_tome/i_eletome_additional_info.lua:772
+#: elepower_tome/i_eletome_additional_info.lua:777
+#: elepower_tome/i_eletome_additional_info.lua:782
+msgid "Brine"
+msgstr "Soolvesi"
+
+#: elepower_thermal/fluids.lua:26
+msgid "Brine Bucket"
+msgstr "Soolveeämber"
+
+#: elepower_thermal/machines/evaporation_plant.lua:60
+msgid "Multiple controllers detected."
+msgstr "Avastati mitu juhtplokki."
+
+#: elepower_thermal/machines/evaporation_plant.lua:94
+msgid "Invalid structure surrounding the controller."
+msgstr "Vale struktuur juhtploki ümber."
+
+#: elepower_thermal/machines/evaporation_plant.lua:98
+msgid "Structure complete."
+msgstr "Struktuur on täiuslik."
+
+#: elepower_thermal/machines/evaporation_plant.lua:100
+#: elepower_thermal/machines/evaporation_plant.lua:173
+#: elepower_thermal/machines/evaporation_plant.lua:282
+msgid "Thermal Evaporation Plant"
+msgstr "Termoaurustusjaam"
+
+#: elepower_thermal/machines/evaporation_plant.lua:173
+msgid "Incomplete"
+msgstr "pole täisulik"
+
+#: elepower_thermal/machines/evaporation_plant.lua:255
+msgid "Thermal Evaporation Plant Controller"
+msgstr "Termoaurustusjaama juhtplokk"
+
+#: elepower_thermal/machines/evaporation_plant.lua:282
+msgid "Punch to form structure"
+msgstr "toksi mind struktuuri kontrollimiseks"
+
+#: elepower_thermal/machines/evaporation_plant.lua:295
+msgid "Thermal Evaporation Plant Output"
+msgstr "Termoaurustusjaama väljund"
+
+#: elepower_thermal/machines/evaporation_plant.lua:358
+msgid "Thermal Evaporation Plant Input"
+msgstr "Termoaurustusjaama sisend"
+
+#: elepower_tome/i_eletome_additional_info.lua:54
+msgid ""
+"Generators produce EpU/s by taking something from the natural environment "
+"and converting it to power that can be used by machines. There are both low "
+"and high tech solutions for producing power so choose a power generation "
+"method that best fits with what your current needs are and the resources you "
+"have available.\n"
+"\n"
+"Generators produce power (EpU/s) every second, they then distribute this "
+"power across their network to all connected machines that require power.\n"
+"\n"
+"A single power network is a group of machines and conduits which is "
+"connected in one single un-broken group two examples of simple valid power "
+"networks is pictured below."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:68
+msgid ""
+"Powercells will charge from the network when power is available.Once power "
+"supply on a network is 0 ie generators no longer producing EpUs. The "
+"powercell(s) will provide power only to active machines on the network. "
+"Powercells will provide the minimum EpUs to the machine ie the usage amount "
+"not the max amount the machine can recieve.\n"
+"For example the Sawmill when active(being used) uses 32 EpUs, however the "
+"Sawmill can accept upto 64 EpUs of power until fully charged. Powercell(s) "
+"will only provide the Sawmill with 32 EpUs of power if the Sawmill is active."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:80
+msgid ""
+"These are the simpliest machines in elepower consisting of single node that "
+"performs a single/simple function.\n"
+"The machines can often interface with other machines using fluid ducts to "
+"help automate the inputs/outputs of certain machines. Where a machine maybe "
+"more complex a small 'I' will be present on the large image, indicating "
+"there is a subpage with additional information for that machine. for example "
+"the Automatic Planter at the bottom of the opposite page."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:91
+msgid ""
+"There is an array of lighting in elepower which increase in technical "
+"complexity while off setting this with a lower power usage. Lighting types "
+"include:\n"
+"                   Incandescent bulbs\n"
+"      Compact Fluroscent bulbs and Fluroscent Tubes\n"
+"                LED bulbs and Light panels\n"
+"             Flood Lights for each type of bulb\n"
+"  A very small number of decorative panels to place around bulbs\n"
+"Black, Silver and Gold conduit to allow the creation of lamps and hanging "
+"lights"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:108
+msgid ""
+"The simplest fluid Pump is assembled from two components:the 'Pickup Pump "
+"Tank' and the 'Fluid Transfer Pump'\n"
+"The 'Pickup Pump Tank' must be placed above a body of fluid, and provided "
+"with power. The black end of the 'Fluid Transfer Pump' must be placed up "
+"against the 'Pickup Pump Tank'.\n"
+"Once completed fluid ducting can then be used to run fluid to machines that "
+"require fluid - For example water to the Electrolyzer."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:124
+msgid ""
+"The miner uses significant volumes of power and water to sift metals from "
+"the surronding electro-molecular environment. The miner then gathers the "
+"molecules together until enough are gathered for a lump of metal to "
+"materialise.\n"
+"Assembly requires an incoming water supply from a fluid pump, a power source "
+"providing at least 128 EpUs of power. 1-9 mining drills, 1 central core, 1 "
+"miner controller and some lengths of fluid duct. Place the 1-9 mining drills "
+"down as 1x1 to 3x3 grid, place the central core ontop of the center drill "
+"and place the controller ontop of the central core. Join them all togther "
+"with fluid duct ensure one fluid duct is going into the side of the "
+"controller. Supply power and water to the miner and it will start "
+"functioning."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:146
+msgid ""
+"The Thermal Evaporation Plant is a machine which converts Water into Brine "
+"and Brine into liquid Lithium. It is powered via solar panels around the top "
+"edge.\n"
+"The plant consists of a Thermal Evaporation Plant Controller, Heat Casings, "
+"Thermal Evaporation Plant Inputs and Thermal Evaporation Plant Outputs. It "
+"is a 4x4 structure which can be built between 3 and 18 nodes high. The first "
+"layer is a solid 4x4 of Heat Casings. The controller must be placed on top "
+"of this floor of heat casings and on an outside edge. The center must be "
+"left hollow. On top of the top layer of heat casings you place Solar "
+"Generators this is in order to increase the heat inside the plant, More heat "
+"increases the production rate per second of the plant. The plant has a "
+"maximum temp of 1000 Kelvin.\n"
+"Note: If the controller fails to verify your structure (PUNCH the "
+"controller) or try placing it on a different side."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:166
+msgid ""
+"Once setup the Teleporter allows for instanaeous travel from the sending pad "
+"to the recieveing pad.\n"
+"To construct the teleporter simply place the transmission pad down were you "
+"would like to travel from and the reciever pad were you would like to travel "
+"too. Both ends will need to be provided with power to function. It is "
+"suggested you place a sending and recieving pad at both ends so you can "
+"teleport back and forth easily."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:180
+msgid ""
+"The wind turbine produces power from the wind. The minimum height a wind "
+"turbine will produce power is at y 10. The wind turbine will produce a small "
+"amount of power without blades, however with blades the wind turbine will "
+"produce 4x as much power.\n"
+"The higher the wind turbine is placed the more power it will produce to a "
+"maximum output of 100 EpUs."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:198
+msgid ""
+"The Nuclear (Fission) Reactor is a type of Nuclear Reactor in Elepower used "
+"for power generation. The reactor itself is composed of three nodes:\n"
+"Fission Control Module - Used for controlling the power of the reactor (top "
+"node)\n"
+"Fission Reactor Core - The core of the reactor (middle node)\n"
+"Reactor Fluid Port - Used to turn Cold Coolant into Hot Coolant (bottom "
+"node)\n"
+"The Reactor Core takes Fissile Fuel Rods and turns them into Depleted Fuel "
+"Rods after 2 hours (7200 seconds). The reactor assembly needs to have area "
+"of Water Source nodes surrounding it in order to keep the reactor cool "
+"(9x9x9 block of water). If the reactor heat reaches above 80%, it will start "
+"to melt down. The Control Rods can be raised or lowered to control the power "
+"output of the reactor core. Lowered control rods mean that the reactor is "
+"slowed down and raised mean that the reactor is accelerated.\n"
+"To gather power from the reactor you will need to add a heat exchanger, "
+"water pump, steam turbine and at least 1 bucket of cold coolant as well as "
+"the fluid ducts and fluid transfer pumps to move the fluids and steam "
+"around.\n"
+"This reactor is inspired by the real world pressurized water reactor "
+"design.\n"
+"\n"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:260
+msgid ""
+"This is a getting started guide for Elepower. The first step is to create "
+"your first power generator. The coal-fired generator is a good starting "
+"generator as it will produce power from anything that is burnable.You will "
+"need 3 Steel Ingots, 2 Wound copper coils, 1 Furnace and 1 Machine block to "
+"create a coal-fired generator. To craft all those you will need a Total of: "
+"174 leaves, 17 Copper Ingots, 8 Stone blocks, 9 Steel Ingots, 3 sand, 2 Iron "
+"ingots, 2 Silver Ingots and 2 Mese Crystal Fragments\n"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:273
+#: elepower_tome/i_eletome_additional_info.lua:487
+msgid "Any Leaves"
+msgstr "Üks kõik millised puulehed"
+
+#: elepower_tome/i_eletome_additional_info.lua:277
+#: elepower_tome/i_eletome_additional_info.lua:292
+#: elepower_tome/i_eletome_additional_info.lua:298
+#: elepower_tome/i_eletome_additional_info.lua:313
+#: elepower_tome/i_eletome_additional_info.lua:324
+#: elepower_tome/i_eletome_additional_info.lua:344
+#: elepower_tome/i_eletome_additional_info.lua:359
+#: elepower_tome/i_eletome_additional_info.lua:374
+#: elepower_tome/i_eletome_additional_info.lua:389
+#: elepower_tome/i_eletome_additional_info.lua:426
+#: elepower_tome/i_eletome_additional_info.lua:452
+#: elepower_tome/i_eletome_additional_info.lua:491
+#: elepower_tome/i_eletome_additional_info.lua:509
+#: elepower_tome/i_eletome_additional_info.lua:515
+#: elepower_tome/i_eletome_additional_info.lua:527
+#: elepower_tome/i_eletome_additional_info.lua:591
+#: elepower_tome/i_eletome_additional_info.lua:605
+msgid "Crafting"
+msgstr "Meisterdamine"
+
+#: elepower_tome/i_eletome_additional_info.lua:396
+msgid ""
+"Now you have your generator built, place it down and then place the machines "
+"you wish to power next to it.\n"
+" Later on you'll need to join machines to power generators using power "
+"conduit."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:404
+msgid ""
+"More advanced machines require a Printed Circuit Board(PCB) to craft them. "
+"Early on you will need to manually craft your PCB's until you have access to "
+"a Printed Circuit Board Plant.\n"
+"You need two main components to create a PCB, etching acid and Printed "
+"Circuit Board (PCB) Blank. To create these two items you will need: 9 copper "
+"ingots, 3 gold ingots 1 mese crystal, 1 wheat seed and single water source "
+"block placed.\n"
+"Once you have turned the water into etching acid you can use it to turn 10 "
+"PCB blanks into 10 PCBs, you can also pickup the etching acid with a bucket "
+"and store it."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:435
+#: elepower_tome/i_eletome_additional_info.lua:461
+#: elepower_tome/i_eletome_additional_info.lua:763
+msgid "Right Click"
+msgstr "Paremklõps"
+
+#: elepower_tome/i_eletome_additional_info.lua:439
+#: elepower_tome/i_eletome_additional_info.lua:465
+msgid "Turns Into"
+msgstr "Muutub"
+
+#: elepower_tome/i_eletome_additional_info.lua:474
+msgid ""
+"Some machines can be upgraded to improve their power storage capacity, "
+"production speed or to make them more power efficient. To upgrade machines "
+"you need to craft a soldering iron so you can fit new parts to the machine.\n"
+" To craft a soldering iron you will need: 126 leaves, 8 silver ingots, 8 tin "
+"ingots, 5 coal lumps, 4 zinc ingots, 2 lead ingots, 2 mese crystal fragments "
+"and 1 steel ingot. Detailed crafting instructions are on the right page.\n"
+"Once you have your Soldering Iron simply hold the the tool and then left "
+"click on any machine and if it is upgradable you will be able to add "
+"components."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:615
+msgid "Burnable Items"
+msgstr "Põletatavad esemed"
+
+#: elepower_tome/i_eletome_additional_info.lua:616
+#: elepower_tome/i_eletome_additional_info.lua:619
+#: elepower_tome/i_eletome_additional_info.lua:622
+#: elepower_tome/i_eletome_additional_info.lua:626
+#: elepower_tome/i_eletome_additional_info.lua:630
+#: elepower_tome/i_eletome_additional_info.lua:634
+msgid "EpU generated"
+msgstr "EpU toodetud"
+
+#: elepower_tome/i_eletome_additional_info.lua:616
+#: elepower_tome/i_eletome_additional_info.lua:626
+#: elepower_tome/i_eletome_additional_info.lua:634
+#: elepower_tome/i_eletome_additional_info.lua:640
+#: elepower_tome/i_eletome_additional_info.lua:644
+#: elepower_tome/i_eletome_additional_info.lua:648
+#: elepower_tome/i_eletome_additional_info.lua:652
+#: elepower_tome/i_eletome_additional_info.lua:656
+msgid "per second"
+msgstr "sekundis"
+
+#: elepower_tome/i_eletome_additional_info.lua:619
+msgid "per @1 lava/second"
+msgstr "iga @1 laava/sekundis kohta"
+
+#: elepower_tome/i_eletome_additional_info.lua:622
+msgid "per @1 biofuel/second"
+msgstr "iga @1 biokütus/sekundis kohta"
+
+#: elepower_tome/i_eletome_additional_info.lua:625
+msgid "Sunlight"
+msgstr "Päiksevalgus"
+
+#: elepower_tome/i_eletome_additional_info.lua:630
+msgid "per @1 steam/second"
+msgstr "iga @1 auru/sekundis kohta"
+
+#: elepower_tome/i_eletome_additional_info.lua:633
+#: elepower_tome/i_eletome_additional_info.lua:739
+msgid "Wind"
+msgstr "Tuul"
+
+#: elepower_tome/i_eletome_additional_info.lua:639
+#: elepower_tome/i_eletome_additional_info.lua:643
+#: elepower_tome/i_eletome_additional_info.lua:647
+#: elepower_tome/i_eletome_additional_info.lua:651
+#: elepower_tome/i_eletome_additional_info.lua:655
+msgid "Storage @1 EpUs"
+msgstr "Ladustab @1 EpU-d"
+
+#: elepower_tome/i_eletome_additional_info.lua:640
+#: elepower_tome/i_eletome_additional_info.lua:644
+#: elepower_tome/i_eletome_additional_info.lua:648
+#: elepower_tome/i_eletome_additional_info.lua:652
+#: elepower_tome/i_eletome_additional_info.lua:656
+msgid "EpU max output"
+msgstr "EpU maksimaalne väljund"
+
+#: elepower_tome/i_eletome_additional_info.lua:661
+msgid ""
+"@1 Materials\n"
+"to be Alloyed"
+msgstr ""
+"@1 materjali\n"
+"sulamiks teha"
+
+#: elepower_tome/i_eletome_additional_info.lua:662
+msgid "used per second"
+msgstr "kasutatud sekundis"
+
+#: elepower_tome/i_eletome_additional_info.lua:665
+#: elepower_tome/i_eletome_additional_info.lua:697
+msgid "Fluids"
+msgstr "Vedelikud"
+
+#: elepower_tome/i_eletome_additional_info.lua:666
+msgid ""
+"The Electrolyzer is used to create gases out of certain fluids. The "
+"electrolyzer can accept three fluids/liquids, although not at the same time "
+"- water, heavy water and biomass. The electrolyzer will at the cost of 128 "
+"EpUs a second break each down into different gases, see table below\n"
+" "
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:669
+msgid ""
+"To extract gas from the electrolyzer you will need a fluid pump, bucketeer "
+"and an empty gas canister. The electrolyzer can only output to a single "
+"bucketeer so you will need to empty one gas completely before you will be "
+"able to bottle the second gas (always oxygen)."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:680
+msgid "Seeds or Seedlings"
+msgstr "Seemned või seemikud"
+
+#: elepower_tome/i_eletome_additional_info.lua:681
+msgid ""
+"The automatic planter is used to keep a maximum 9x9 field planted with "
+"crops. The planter needs to be placed 1 node below the ground surface, "
+"however it is waterproof and functions perfectly with a node of water above "
+"it.\n"
+" The planter, plants from the most north westerly 3x3 block of nodes (top "
+"left corner) to the most south easterly 3x3 block of nodes (bottom right "
+"corner)."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:685
+msgid ""
+"The planter has a special interface to allow it to plant. The upper 3x3 grid "
+"represents a maximum area of 9x9 around the planter ie each grid segment "
+"represents a 3x3 area of nodes. The bottom 2 rows of 8 is the planters "
+"available inventory of items. There must be items of the type specified in "
+"the planting grid available in the inventory area for the planter to be able "
+"to plant, so keep the planters inventory well stocked with seeds or "
+"seedlings."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:699
+msgid ""
+"Water\n"
+" and\n"
+"Lava"
+msgstr ""
+"Vesi\n"
+"   ja\n"
+"laava"
+
+#: elepower_tome/i_eletome_additional_info.lua:703
+msgid "Creates PCB's"
+msgstr "Loob trükkplaate"
+
+#: elepower_tome/i_eletome_additional_info.lua:707
+msgid "Sawing"
+msgstr "Saagimine"
+
+#: elepower_tome/i_eletome_additional_info.lua:709
+msgid ""
+"       Creates\n"
+" Machine Upgrades"
+msgstr ""
+"           Loob\n"
+" masinauuendusi"
+
+#: elepower_tome/i_eletome_additional_info.lua:711
+msgid ""
+"Processes\n"
+" Tree Sap"
+msgstr ""
+"   Töötleb\n"
+" piimmahla"
+
+#: elepower_tome/i_eletome_additional_info.lua:714
+#: elepower_tome/i_eletome_additional_info.lua:716
+#: elepower_tome/i_eletome_additional_info.lua:718
+#: elepower_tome/i_eletome_additional_info.lua:720
+#: elepower_tome/i_eletome_additional_info.lua:722
+#: elepower_tome/i_eletome_additional_info.lua:724
+#: elepower_tome/i_eletome_additional_info.lua:726
+#: elepower_tome/i_eletome_additional_info.lua:728
+#: elepower_tome/i_eletome_additional_info.lua:730
+#: elepower_tome/i_eletome_additional_info.lua:732
+#: elepower_tome/i_eletome_additional_info.lua:734
+msgid "Light"
+msgstr "Valgus"
+
+#: elepower_tome/i_eletome_additional_info.lua:741
+msgid ""
+" Epu Max\n"
+"   Potential\n"
+"  Production"
+msgstr ""
+" EpU maksimaalne\n"
+"   potentsiaalne\n"
+"  tootmine"
+
+#: elepower_tome/i_eletome_additional_info.lua:750
+#: elepower_tome/i_eletome_additional_info.lua:754
+msgid "Fluid"
+msgstr "Vedelik"
+
+#: elepower_tome/i_eletome_additional_info.lua:793
+#: elepower_tome/i_eletome_additional_info.lua:798
+msgid "Requires"
+msgstr "Nõuab"
+
+#: elepower_tome/i_eletome_additional_info.lua:803
+msgid ""
+"Produces\n"
+" Metal lumps"
+msgstr ""
+"Toodab\n"
+" metallmaake"
+
+#: elepower_tome/i_eletome_additional_info.lua:805
+msgid ""
+"128 EpUs & 500 Water\n"
+" used per drill"
+msgstr ""
+" kasutab puuri kohta\n"
+"128 EpU'd & 500 vett"
+
+#: elepower_tome/i_functions.lua:133 elepower_tome/i_functions.lua:139
+msgid "Page @1"
+msgstr "Lehekülg @1"
+
+#: elepower_tome/i_functions.lua:136
+msgid "@1 Page"
+msgstr "@1 Lehekülg"
+
+#: elepower_tome/init.lua:34 elepower_tome/i_page_contents.lua:41
+msgid "Elepower Tome"
+msgstr "Elepoweri õpetus"
+
+#: elepower_tome/init.lua:83 elepower_tome/init.lua:203
+msgid "Content"
+msgstr "Sisu"
+
+#: elepower_tome/init.lua:205 elepower_tome/init.lua:212
+msgid "Back"
+msgstr "Tagasi"
+
+#: elepower_tome/init.lua:207
+msgid "Prev"
+msgstr "Eelmine"
+
+#: elepower_tome/i_page_contents.lua:34
+msgid ""
+"Elepower adds power to a game, Power is referred to in units and these units "
+"are called EpU (Elepower Unit).\n"
+"New crafts are added to the game as well as new machines to enable these new "
+"crafts and make use of EpU/s.\n"
+"\n"
+"Mod created by IcyDiamond and Sirrobzeroone.\n"
+"\n"
+msgstr ""
+"Elepower lisab mängule elektrivõimsust, võimsusele viidatakse ühikutes ja "
+"neid ühikuid nimetatakse EpU (Elepower Unit).\n"
+"Mängu lisatakse uusi meisterdusi ning masinaid, mis võimaldavad kasutada "
+"neid uusi meisterdusi mis omakorda kasutavad EpU-sid.\n"
+"\n"
+"Mod on loodud IcyDiamond ja Sirrobzeroone poolt.\n"
+"\n"
+
+#: elepower_tome/i_page_contents.lua:44
+msgid "Getting Started"
+msgstr "Alustamiseks"
+
+#: elepower_tome/i_page_contents.lua:45
+msgid "First PCB Creation"
+msgstr "Esimese trükkplaadi loomine"
+
+#: elepower_tome/i_page_contents.lua:46
+msgid "Upgrading Machines"
+msgstr "Masinate uuendamine"
+
+#: elepower_tome/i_page_contents.lua:50
+msgid "Contents"
+msgstr "Sisu"
+
+#: elepower_tome/i_page_contents.lua:51
+msgid "Crafts"
+msgstr "Meisterdused"
+
+#: elepower_tome/i_page_contents.lua:76
+msgid "Machines"
+msgstr "Masinad"
+
+#: elepower_tome/i_page_contents.lua:79
+msgid "Simple Generators"
+msgstr "Lihtsad generaatorid"
+
+#: elepower_tome/i_page_contents.lua:80
+msgid "Simple Machines"
+msgstr "Lihtsad masinad"
+
+#: elepower_tome/i_page_contents.lua:82 elepower_tome/i_page_machines.lua:23
+msgid "Fission Reactor"
+msgstr "Tuumalõhustusreaktor"
+
+#: elepower_tome/i_page_contents.lua:83 elepower_tome/i_page_machines.lua:24
+msgid "Fusion Reactor"
+msgstr "Termotuumasünteesi reaktor"
+
+#: elepower_tome/i_page_contents.lua:85
+msgid ""
+"Single Node\n"
+"Power Generators"
+msgstr ""
+"Ühe-ploki\n"
+"generaatorid"
+
+#: elepower_tome/i_page_contents.lua:86
+msgid ""
+"Single Node\n"
+"Machines"
+msgstr ""
+"Ühe-ploki\n"
+"masinad"
+
+#: elepower_tome/i_page_contents.lua:89 elepower_tome/i_page_machines.lua:20
+msgid "Powercells"
+msgstr "Akumulaatorid"
+
+#: elepower_tome/i_page_contents.lua:90 elepower_tome/i_page_machines.lua:21
+msgid "Lighting"
+msgstr "Valgustus"
+
+#: elepower_tome/i_page_contents.lua:91 elepower_tome/i_page_machines.lua:25
+msgid "Fluid Pump"
+msgstr "Vedelikupump"
+
+#: elepower_tome/i_page_contents.lua:92 elepower_tome/i_page_machines.lua:26
+msgid "Evaporation Plant"
+msgstr "Termoaurustusjaam"
+
+#: elepower_tome/i_page_contents.lua:94 elepower_tome/i_page_machines.lua:28
+msgid "Transporter"
+msgstr "Transporteerija"
+
+#: elepower_tome/i_page_crafts.lua:58 elepower_tome/i_page_machines.lua:63
+msgid "Overview"
+msgstr "Ülevaade"
+
+#: elepower_tome/i_page_crafts.lua:102
+msgid "Recipes"
+msgstr "Retseptid"
+
+#: elepower_tome/i_page_help.lua:37
+msgid "Help"
+msgstr "Abi"
+
+#: elepower_tome/i_page_help.lua:41
+msgid "How to use"
+msgstr "Kuidas kasutada"
+
+#: elepower_tome/i_page_instructions.lua:59
+msgid "Instructions"
+msgstr "Juhendid"
+
+#: elepower_tome/i_page_instructions.lua:128
+#: elepower_tome/i_page_machines.lua:70
+msgid ""
+"Click for detailed\n"
+"instructions"
+msgstr ""
+"Kliki, et näha detail-\n"
+"semalt õpetust"
+
+#: elepower_tome/i_page_machines.lua:18
+msgid "Generators"
+msgstr "Generaatorid"
+
+#: elepower_tome/i_page_machines.lua:19
+msgid "Machine"
+msgstr "Masin"
+
+#: elepower_tome/i_page_machines.lua:72
+msgid "Larger Image"
+msgstr "Suurem pilt"
+
+#: elepower_tome/i_page_machines.lua:137 elepower_tome/i_page_machines.lua:155
+msgid "EpUs per second"
+msgstr "EpU'd sekundis"
+
+#: elepower_tome/i_page_machines.lua:203
+msgid ""
+"Click for\n"
+"How to use"
+msgstr ""
+"Kliki, et\n"
+"vaadata kasutust"
+
+#: elepower_tools/armor.lua:10
+msgid "Iron Helmet"
+msgstr "Raudkiiver"
+
+#: elepower_tools/armor.lua:21
+msgid "Iron Chestplate"
+msgstr "Rauast rinnaplaat"
+
+#: elepower_tools/armor.lua:32
+msgid "Iron Leggings"
+msgstr "Rauast säärised"
+
+#: elepower_tools/armor.lua:43
+msgid "Iron Boots"
+msgstr "Raudsaapad"
+
+#: elepower_tools/armor.lua:60
+msgid "Carbon Fiber Helmet"
+msgstr "Süsinikkiust kiiver"
+
+#: elepower_tools/armor.lua:71
+msgid "Carbon Fiber Chestplate"
+msgstr "Süsinikkiust rinnaplaat"
+
+#: elepower_tools/armor.lua:82
+msgid "Carbon Fiber Leggings"
+msgstr "Süsinikkiust säärised"
+
+#: elepower_tools/armor.lua:93
+msgid "Carbon Fiber Boots"
+msgstr "Süsinikkiust saapad"
+
+#: elepower_tools/craftitems.lua:4
+msgid "Drill Bit"
+msgstr "Puur"
+
+#: elepower_tools/craftitems.lua:9
+msgid "Chainsaw Chain"
+msgstr "Mootorsae kett"
+
+#: elepower_tools/craftitems.lua:14
+msgid "Repair Core"
+msgstr "Parandustuumik"
+
+#: elepower_tools/ed_reconstructor.lua:54
+msgid "Invalid Input"
+msgstr "vale sisend"
+
+#: elepower_tools/ed_reconstructor.lua:83
+#: elepower_tools/ed_reconstructor.lua:108
+msgid "Energy Density Reconstructor"
+msgstr "Energiatihedusega rekonstruktureerija"
+
+#: elepower_tools/ed_reconstructor.lua:109
+msgid "Repairs tools using energy"
+msgstr "Parandab tööriistu kasutades energiat"
+
+#: elepower_tools/soldering.lua:21
+msgid "Modifying @1"
+msgstr "Modifitseerime masinat @1"
+
+#: elepower_tools/soldering.lua:44
+msgid "This machine cannot be modified."
+msgstr "Seda masinat ei saa modifitseerida."
+
+#: elepower_tools/soldering.lua:139
+msgid "Soldering Iron"
+msgstr "Jootekolb"
+
+#: elepower_tools/soldering.lua:140
+msgid "Used to replace components in machines"
+msgstr "Kasutatakse masinates komponentide vahetamiseks"
+
+#: elepower_tools/tools.lua:4
+msgid "Electric Hand Drill"
+msgstr "Elektriline käsipuur"
+
+#: elepower_tools/tools.lua:22
+msgid "Electric Chainsaw"
+msgstr "Elektriline mootorsaag"
+
+#: elepower_wireless/machines/dialler.lua:51
+msgid "Refresh"
+msgstr "Värskenda"
+
+#: elepower_wireless/machines/dialler.lua:52
+#: elepower_wireless/machines/matter_transmitter.lua:15
+msgid "Owned by @1"
+msgstr "Omanik on @1"
+
+#: elepower_wireless/machines/dialler.lua:132
+#: elepower_wireless/machines/dialler.lua:138
+msgid "Dialler"
+msgstr "Ühendaja"
+
+#: elepower_wireless/machines/matter_receiver.lua:27
+#: elepower_wireless/machines/matter_receiver.lua:58
+#: elepower_wireless/machines/matter_receiver.lua:68
+msgid "Matter Receiver"
+msgstr "Mateeria vastuvõtja"
+
+#: elepower_wireless/machines/matter_transmitter.lua:14
+msgid "Transmitter Name"
+msgstr "Saatja nimi"
+
+#: elepower_wireless/machines/matter_transmitter.lua:28
+#: elepower_wireless/machines/matter_transmitter.lua:65
+#: elepower_wireless/machines/matter_transmitter.lua:75
+msgid "Matter Transmitter"
+msgstr "Mateeria saatja"
+
+#: elepower_wireless/machines/matter_transmitter.lua:46
+msgid "Dialled to @1"
+msgstr "Ühendatud asukohaga @1"
+
+#: elepower_wireless/machines/station.lua:78
+#: elepower_wireless/machines/station.lua:95
+#: elepower_wireless/machines/station.lua:167
+msgid "Wireless Control Station"
+msgstr "Juhtmevaba juhtjaam"
+
+#: elepower_wireless/machines/station.lua:82
+msgid "Monitoring @1 at @2"
+msgstr "Jälgin masinat @1 asukohas @2"
+
+#: elepower_wireless/machines/station.lua:126
+#: elepower_wireless/machines/station.lua:150
+#: elepower_wireless/machines/station.lua:157
+msgid "Wireless Control Station Card"
+msgstr "Juhtmevaba juhtjaama kaart"
+
+#: elepower_wireless/machines/station.lua:127
+#: elepower_wireless/machines/station.lua:158
+msgid "Sneak-Right-Click on a node to bind it"
+msgstr "Hiili+paremklõps masinal selle asukoha kaardile meelde jätmiseks"
+
+#: elepower_wireless/machines/station.lua:135
+msgid "You do not have permission to remotely control this node!"
+msgstr "Sul ei ole lubatud seda masinat kaugjuhtida!"
+
+#: elepower_wireless/machines/station.lua:144
+msgid "Bound to @1 at @2"
+msgstr "Seotud masinaga @1 asukohas @2"
+
+#: elepower_wireless/machines/tesseract.lua:4
+msgid "Tesseract Frame"
+msgstr "Tesserakti raam"
+
+#: elepower_wireless/machines/tesseract.lua:32
+msgid "Tesseract"
+msgstr "Tesserakt"

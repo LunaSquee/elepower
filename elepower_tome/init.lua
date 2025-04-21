@@ -18,8 +18,7 @@ eletome = rawget(_G, "eletome") or {}
 -- path, modname and translation
 local modname = minetest.get_current_modname()
 local modpath = minetest.get_modpath(modname)
-eletome.S = minetest.get_translator(modname)
-local S = eletome.S
+local S = ele.translator
 
 -- includes
 dofile(modpath .. "/i_eletome_additional_info.lua")
@@ -32,16 +31,14 @@ dofile(modpath .. "/i_page_help.lua")
 
 -- register our Tome/Book item
 minetest.register_craftitem("elepower_tome:tome", {
-	description = "Elepower Tome",
+	description = S("Elepower Tome"),
 	inventory_image = "elepower_tome.png",
 	groups = {book = 1, flammable = 3},
 	on_use = function(itemstack, user, pointed_thing)
-
-				 local eletome_bg = eletome.tome_bg
-				 local eletome_contents = eletome.contents_page()
-				 minetest.show_formspec(user:get_player_name(), "elepower_tome:tome", eletome_bg..eletome_contents)
-
-			 end,
+		local eletome_bg = eletome.tome_bg
+		local eletome_contents = eletome.contents_page()
+		minetest.show_formspec(user:get_player_name(), "elepower_tome:tome", eletome_bg..eletome_contents)
+	end,
 })
 
 
@@ -59,7 +56,6 @@ end)
 
 -- register our recieve field callback
 minetest.register_on_player_receive_fields(function(player, formname, fields)
-
 	if formname ~= "elepower_tome:tome" then
 		return
 	end
@@ -81,7 +77,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 			fields = {}
 			back = {}
 			pmeta:set_string("elepower_tome_back", minetest.serialize(back))
-			fields.content = "Content"
+			fields.content = S("Content")
 		else
 			fields = back[prev_page]
 			table.remove(back,#back)
@@ -201,16 +197,16 @@ eletome.tome_bg = "formspec_version[4]size[18,11]"..
 				  "box[9.0,0.5;8.5,10;#d1caaeFF]"..
 				  "style_type[button;bgcolor=#003782]"..
 				  "style_type[button_exit;bgcolor=#003782]"..
-				  "button[0,0;2.5,0.5;content;Content]"..
+				  "button[0,0;2.5,0.5;content;".. S("Content") .. "]"..
 				  "style[fake_back;textcolor=#777777]"..
-				  "button[2.5,0;2.5,0.5;fake_back;Back]"..
+				  "button[2.5,0;2.5,0.5;fake_back;".. S("Back") .. "]"..
 				  "style[fake_prev_page;textcolor=#777777]"..
-				  "button[12.5,0;2.5,0.5;fake_prev_page;<<   Prev]"..
+				  "button[12.5,0;2.5,0.5;fake_prev_page;<<   ".. S("Prev") .. "]"..
 				  "style[fake_next_page;textcolor=#777777]"..
-				  "button[15,0;2.5,0.5;fake_prev_page;Next   >>]"..
+				  "button[15,0;2.5,0.5;fake_prev_page;".. S("Next") .. "   >>]"..
 				  "button_exit[17.5,0;0.5,0.5;X;X]"
 
-eletome.back_button = "style[back;textcolor=#ffffff]".."button[2.5,0;2.5,0.5;back;Back]"
+eletome.back_button = "style[back;textcolor=#ffffff]".."button[2.5,0;2.5,0.5;back;".. S("Back") .. "]"
 eletome.font_color = "#1f1f1fFF"
 eletome.y_space_line = 0.4
 eletome.char_per_line = 60

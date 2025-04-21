@@ -4,6 +4,7 @@
 local epr = ele.external.ref
 local epg = ele.external.graphic
 local efs = ele.formspec
+local S = ele.translator
 
 local SPEED = 8
 
@@ -110,19 +111,19 @@ local function grindstone_timer(pos, elapsed)
 	meta:set_string("formspec", get_formspec(percentile))
 	meta:set_int("src_time", time)
 	meta:set_int("src_time_max", target_time)
-	meta:set_string("infotext", "Grindstone: ".. percentile .. "%")
+	meta:set_string("infotext", S("Grindstone") .. ": ".. percentile .. "%")
 
 	local crank = vector.add(pos, {x=0,y=1,z=0})
 	if minetest.get_node(crank).name == "elepower_machines:crank" then
 		local crank_meta = minetest.get_meta(crank)
-		crank_meta:set_string("infotext", "Grindstone: ".. percentile .. "%")
+		crank_meta:set_string("infotext", S("Grindstone") .. ": ".. percentile .. "%")
 	end
 
 	return refresh
 end
 
 ele.register_base_device("elepower_machines:grindstone", {
-	description = "Grindstone\nA medieval pulverizer\nRequires Hand Crank to operate",
+	description = S("Grindstone") .. "\n" .. S("A medieval pulverizer\nRequires Hand Crank to operate"),
 	tiles = {
 		"elepower_grinder_top.png", "elepower_cfalloy_bottom.png", "elepower_grinder_side.png",
 		"elepower_grinder_side.png", "elepower_grinder_side.png", "elepower_grinder_side.png"
@@ -154,7 +155,7 @@ ele.register_base_device("elepower_machines:grindstone", {
 })
 
 minetest.register_node("elepower_machines:crank", {
-	description = "Hand Crank\nPlace on Grindstone and hold Right-Click",
+	description = S("Hand Crank") .. "\n" .. S("Place on Grindstone and hold Right-Click"),
 	groups = {choppy = 3, axey = 1, oddly_breakable_by_hand = 1},
 	tiles = {epg.wood},
 	use_texture_alpha = "clip",

@@ -3,16 +3,15 @@
 local epr = ele.external.ref
 local epi = ele.external.ing
 local efs = ele.formspec
+local S = ele.translator
 
 local c_air = minetest.get_content_id("air")
 
 local function get_formspec(power, fluid, state, level)
-	local start, bx, by, mx = efs.begin(11.75, 10.45)
+    local start, bx, by, mx = efs.begin(11.75, 10.45)
     if not level then level = 0 end
-    return start..
-               efs.state_switcher(mx - 1, by + 3, state) ..
-               efs.power_meter(power) ..
-               efs.fluid_bar(mx - 1, by, fluid) ..
+    return start .. efs.state_switcher(mx - 1, by + 3, state) ..
+               efs.power_meter(power) .. efs.fluid_bar(mx - 1, by, fluid) ..
                efs.label(bx + 1.25, by + 0.125, "Pump level: " .. level) ..
                epr.gui_player_inv()
 end
@@ -75,15 +74,16 @@ local function timer(pos, elapsed)
     local ppos = vector.add(pos, {x = 0, y = plevel, z = 0})
 
     local heavy = comps:match("elepower_machines:heavy_filter") ~= nil
+    local spawn_pipes = false
 
     while true do
         if not is_enabled then
-            status = "Off"
+            status = S("Off")
             break
         end
 
         if pow_buffer.storage < usage then
-            status = "Out of Power!"
+            status = S("Out of Power!")
             break
         end
 
@@ -95,7 +95,7 @@ local function timer(pos, elapsed)
         end
 
         if fl_buffer.amount + amount > fl_buffer.capacity then
-            status = "Tank Full!"
+            status = S("Tank Full!")
             break
         end
 
@@ -107,7 +107,8 @@ local function timer(pos, elapsed)
                     fluid_lib.get_flowing_for_source(node.name).flowing ==
                     node.name) then
                 plevel = plevel - 1
-                status = "Seeking"
+                status = S("Seeking")
+                spawn_pipes = true
                 refresh = true
                 if plevel < -16 then plevel = -1 end
                 break
@@ -148,7 +149,7 @@ local function timer(pos, elapsed)
                 end
 
                 if not node or (node.name ~= pliquid and node.name ~= "air") then
-                    status = "No More Fluid!"
+                    status = S("No More Fluid!")
                     refresh = false
                     break
                 end
@@ -161,7 +162,8 @@ local function timer(pos, elapsed)
                 fl_buffer.amount = fl_buffer.amount + amount
                 pow_buffer.usage = usage
                 pow_buffer.storage = pow_buffer.storage - usage
-                status = "Pumping"
+                status = S("Pumping")
+                spawn_pipes = true
                 refresh = true
             end
         end
@@ -172,7 +174,7 @@ local function timer(pos, elapsed)
     fl_buffer.fluid = pliquid
 
     -- Spawn tube entities
-    if status == "Pumping" or status == "Seeking" then
+    if spawn_pipes then
         for i = 1, math.abs(plevel) do
             local tentpos = vector.subtract(pos, {x = 0, y = i, z = 0})
             local skip = false
@@ -212,7 +214,7 @@ local function timer(pos, elapsed)
 end
 
 ele.register_machine("elepower_machines:pump", {
-    description = "Pickup Pump Tank",
+    description = S("Pickup Pump Tank"),
     tiles = {
         "elepower_machine_top.png^elepower_power_port.png",
         "elepower_machine_base.png^elepower_pump_base.png",

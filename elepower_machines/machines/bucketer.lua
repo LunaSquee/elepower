@@ -2,6 +2,7 @@
 -- shorten table ref
 local epr = ele.external.ref
 local efs = ele.formspec
+local S = ele.translator
 
 local function get_formspec(mode, buffer, state)
 	local start, bx, by, mx = efs.begin(11.75, 10.45)
@@ -137,7 +138,7 @@ local function get_fields(pos, formname, fields, sender)
 end
 
 ele.register_base_device("elepower_machines:bucketer", {
-    description = "Bucketer",
+    description = S("Bucketer"),
     groups = {
         oddly_breakable_by_hand = 1,
         cracky = 3,

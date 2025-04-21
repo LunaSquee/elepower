@@ -1,8 +1,10 @@
 
+local S = ele.translator
+
 -- Tree Sap
 
 ele.helpers.register_liquid("tree_sap", {
-	description       = "Tree Sap",
+	description       = S("Tree Sap"),
 	tiles             = {"elefarming_tree_sap.png"},
 	special_tiles     = {"elefarming_tree_sap.png", "elefarming_tree_sap.png"},
 	use_texture_alpha = "blend",
@@ -14,7 +16,7 @@ ele.helpers.register_liquid("tree_sap", {
 -- Tree Resin
 
 ele.helpers.register_liquid("resin", {
-	description       = "Resin",
+	description       = S("Resin"),
 	tiles             = {"elefarming_tree_sap.png"},
 	special_tiles     = {"elefarming_tree_sap.png", "elefarming_tree_sap.png"},
 	use_texture_alpha = "blend",
@@ -26,7 +28,7 @@ ele.helpers.register_liquid("resin", {
 -- Biomass
 
 ele.helpers.register_liquid("biomass", {
-	description       = "Biomass",
+	description       = S("Biomass"),
 	tiles             = {"elefarming_biomass.png"},
 	special_tiles     = {"elefarming_biomass.png", "elefarming_biomass.png"},
 	use_texture_alpha = "blend",
@@ -38,7 +40,7 @@ ele.helpers.register_liquid("biomass", {
 -- Biofuel
 
 ele.helpers.register_liquid("biofuel", {
-	description       = "Biofuel",
+	description       = S("Biofuel"),
 	tiles             = {"elefarming_biofuel.png"},
 	special_tiles     = {"elefarming_biofuel.png", "elefarming_biofuel.png"},
 	use_texture_alpha = "blend",
@@ -50,7 +52,7 @@ ele.helpers.register_liquid("biofuel", {
 -- Sludge
 
 ele.helpers.register_liquid("sludge", {
-	description       = "Sludge",
+	description       = S("Sludge"),
 	tiles             = {"elefarming_tar.png"},
 	special_tiles     = {"elefarming_tar.png", "elefarming_tar.png"},
 	liquid_viscosity  = 8,
@@ -60,22 +62,22 @@ ele.helpers.register_liquid("sludge", {
 
 if minetest.get_modpath("bucket_compat") ~= nil then
 	fluid_lib.register_liquid("elepower_farming:tree_sap_source", "elepower_farming:tree_sap_flowing",
-		"elepower_farming:bucket_tree_sap", "#411400", "Tree Sap Bucket")
+		"elepower_farming:bucket_tree_sap", "#411400", S("Tree Sap Bucket"))
 
 	fluid_lib.register_liquid("elepower_farming:resin_source",    "elepower_farming:resin_flowing",
-		"elepower_farming:bucket_resin",    "#411401", "Resin Bucket")
+		"elepower_farming:bucket_resin",    "#411401", S("Resin Bucket"))
 
 	fluid_lib.register_liquid("elepower_farming:biomass_source",  "elepower_farming:biomass_flowing",
-		"elepower_farming:bucket_biomass",  "#002c01", "Biomass Bucket")
+		"elepower_farming:bucket_biomass",  "#002c01", S("Biomass Bucket"))
 
 	fluid_lib.register_liquid("elepower_farming:biofuel_source",  "elepower_farming:biofuel_flowing",
-		"elepower_farming:bucket_biofuel",  "#762700", "Biofuel Bucket")
+		"elepower_farming:bucket_biofuel",  "#762700", S("Biofuel Bucket"))
 
 	fluid_lib.register_liquid("elepower_farming:sludge_source",   "elepower_farming:sludge_flowing",
-		"elepower_farming:bucket_sludge",   "#121212", "Sludge Bucket")
+		"elepower_farming:bucket_sludge",   "#121212", S("Sludge Bucket"))
 
 	fluid_tanks.register_tank(":elepower_dynamics:portable_tank", {
-		description = "Portable Tank",
+		description = S("Portable Tank"),
 		capacity    = 8000,
 		accepts     = true,
 		tiles       = {

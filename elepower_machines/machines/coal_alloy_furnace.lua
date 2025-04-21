@@ -3,6 +3,7 @@
 -- shorten table ref
 local epr = ele.external.ref
 local efs = ele.formspec
+local S = ele.translator
 
 local function get_formspec(fuel_percent, item_percent)
 	local start, bx, by, mx = efs.begin(11.75, 10.45)
@@ -170,11 +171,11 @@ local function alloy_furnace_timer(pos, elapsed)
 		item_percent = math.floor(src_time / time * 100)
 	end
 
-	local active = "Inactive"
+	local active = S("Inactive")
 	local result = false
 
 	if fuel_totaltime ~= 0 then
-		active = "Active"
+		active = S("Active")
 		local fuel_percent = 100 - math.floor(fuel_time / fuel_totaltime * 100)
 		formspec = get_formspec(fuel_percent, item_percent)
 		ele.helpers.swap_node(pos, "elepower_machines:coal_alloy_furnace_active")
@@ -185,7 +186,7 @@ local function alloy_furnace_timer(pos, elapsed)
 		minetest.get_node_timer(pos):stop()
 	end
 
-	local infotext = "Alloy Furnace " .. active
+	local infotext = S("Alloy Furnace") .. " " .. active
 
 	--
 	-- Set meta values
@@ -200,7 +201,7 @@ local function alloy_furnace_timer(pos, elapsed)
 end
 
 ele.register_base_device("elepower_machines:coal_alloy_furnace", {
-	description = "Coal-fired Alloy Furnace",
+	description = S("Coal-fired Alloy Furnace"),
 	craft_type = "alloy",
 	paramtype2 = "facedir",
 	ele_active_node = true,

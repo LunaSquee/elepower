@@ -1,6 +1,8 @@
 
+local S = ele.translator
+
 minetest.register_craftitem("elepower_farming:resin", {
-	description = "Resin",
+	description = S("Resin"),
 	inventory_image = "elefarming_resin.png",
 	groups = {resin = 1}
 })

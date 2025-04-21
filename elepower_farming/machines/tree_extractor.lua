@@ -1,6 +1,7 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epi = ele.external.ing
+local S = ele.translator
 
 local CAPACITY = 8000
 
@@ -14,7 +15,7 @@ local fluid_table = {
 }
 
 minetest.register_node("elepower_farming:tree_extractor", {
-    description = "Tree Fluid Extractor",
+    description = S("Tree Fluid Extractor"),
     groups = {
         fluid_container = 1,
         oddly_breakable_by_hand = 1,
@@ -56,7 +57,7 @@ minetest.register_abm({
         end
 
         if amount == 0 then
-            meta:set_string("infotext", "Place me in front of a tree!")
+            meta:set_string("infotext", S("Place me in front of a tree!"))
             return
         end
 

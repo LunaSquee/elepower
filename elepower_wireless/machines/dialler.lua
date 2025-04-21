@@ -3,6 +3,7 @@
 -- shorten table ref
 local epr = ele.external.ref
 local efs = ele.formspec
+local S = ele.translator
 
 local function escape_comma(str)
 	return str:gsub(",","\\,")
@@ -47,8 +48,8 @@ local function get_formspec(power, player, transmitters, receivers)
 		efs.power_meter(power)..
 		efs.textlist(center_x - offset, by, width, 1.5, "transmitter", table.concat(list_tr, ",") .. tr_spc) ..
 		efs.textlist(center_x - offset, by + 1.75, width, 1.5, "receiver", table.concat(list_re, ",") .. re_spc) ..
-		efs.button(mx - 2, by + 3.5, 2, 0.5, "refresh", "Refresh") ..
-		efs.label(bx, by + 3.75, "Owned by " .. player) ..
+		efs.button(mx - 2, by + 3.5, 2, 0.5, "refresh", S("Refresh")) ..
+		efs.label(bx, by + 3.75, S("Owned by @1", player)) ..
 		epr.gui_player_inv()..
 		"listring[current_player;main]"
 end
@@ -128,13 +129,13 @@ local function dialler_timer(pos)
 	end
 
 	meta:set_string("formspec", get_formspec(pow_buffer, player, transmitters, receivers))
-	meta:set_string("infotext", "Dialler\n" .. ele.capacity_text(capacity, storage))
+	meta:set_string("infotext", S("Dialler") .. "\n" .. ele.capacity_text(capacity, storage))
 
 	return false
 end
 
 ele.register_machine("elepower_wireless:dialler", {
-	description = "Dialler",
+	description = S("Dialler"),
 	tiles = {
 		"elewireless_device_side.png", "elewireless_device_side.png", "elewireless_device_side.png",
 		"elewireless_device_side.png", "elewireless_device_side.png", "elewireless_dialler_inactive.png"

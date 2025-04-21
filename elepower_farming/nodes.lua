@@ -1,6 +1,8 @@
 
+local S = ele.translator
+
 minetest.register_node("elepower_farming:device_frame", {
-	description = "Plastic Device Frame\nSafe for decoration",
+	description = S("Plastic Device Frame") .. "\n" .. S("Safe for decoration"),
 	tiles = {
 		"elefarming_machine_base.png", "elefarming_machine_base.png", "elefarming_machine_side.png",
 		"elefarming_machine_side.png", "elefarming_machine_side.png", "elefarming_machine_side.png",

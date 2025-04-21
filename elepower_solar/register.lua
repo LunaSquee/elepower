@@ -1,6 +1,7 @@
+local S = ele.translator
 
 elesolar.register_solar_generator("elepower_solar:solar_generator", {
-	description = "Solar Generator",
+	description = S("Solar Generator"),
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed",

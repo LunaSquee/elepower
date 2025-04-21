@@ -2,8 +2,8 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epr = ele.external.ref
-local epg = ele.external.graphic
 local efs = ele.formspec
+local S = ele.translator
 
 local function get_formspec_default(power, percent, buffer, state)
 	local start, bx, by, mx = efs.begin(11.75, 10.45)
@@ -52,7 +52,7 @@ function ele.register_fluid_generator(nodename, nodedef)
 
 			local burn_time      = meta:get_int("burn_time")
 			local burn_totaltime = meta:get_int("burn_totaltime")
-			
+
 			local capacity   = ele.helpers.get_node_property(meta, pos, "capacity")
 			local generation = ele.helpers.get_node_property(meta, pos, "usage")
 			local storage    = ele.helpers.get_node_property(meta, pos, "storage")
@@ -63,11 +63,11 @@ function ele.register_fluid_generator(nodename, nodedef)
 			-- Fluid buffer
 			local flbuffer = fluid_lib.get_buffer_data(pos, buffer_name)
 			local pow_buffer = {capacity = capacity, storage = storage, usage = 0}
-			local status = "Idle"
+			local status = S("Idle")
 
 			while true do
 				if not is_enabled then
-					status = "Off"
+					status = S("Off")
 					break
 				end
 
@@ -86,7 +86,7 @@ function ele.register_fluid_generator(nodename, nodedef)
 					refresh = true
 				end
 
-				status = "Active"
+				status = S("Active")
 
 				-- Burn another bucket of fluid fuel
 				if burn_time == 0 then
@@ -112,7 +112,7 @@ function ele.register_fluid_generator(nodename, nodedef)
 
 						refresh = true
 					else
-						status = "Idle"
+						status = S("Idle")
 						ele.helpers.swap_node(pos, nodename)
 
 						refresh = false
@@ -152,6 +152,6 @@ function ele.register_fluid_generator(nodename, nodedef)
 			nodedef[key] = val
 		end
 	end
-	
+
 	ele.register_machine(nodename, nodedef)
 end

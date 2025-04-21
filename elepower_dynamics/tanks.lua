@@ -1,6 +1,7 @@
+local S = ele.translator
 
 fluid_tanks.register_tank("elepower_dynamics:portable_tank", {
-	description = "Portable Tank",
+	description = S("Portable Tank"),
 	capacity    = 8000,
 	accepts     = true,
 	tiles       = {

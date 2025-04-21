@@ -1,25 +1,26 @@
 local epg = ele.external.graphic
 local eps = ele.external.sounds
 local epi = ele.external.ing
+local S = ele.translator
 local ingot = "elepower_dynamics:tin_ingot"
 
 if epi.tin_ingot == "" then
     epi.tin_ingot = ingot
 
     core.register_craftitem(":elepower_dynamics:tin_ingot", {
-        description = "Tin Ingot",
+        description = S("Tin Ingot"),
         inventory_image = "elepower_tin_ingot.png",
         groups = {tin = 1, ingot = 1}
     })
 
     core.register_craftitem(":elepower_dynamics:tin_lump", {
-        description = "Tin Lump",
+        description = S("Tin Lump"),
         inventory_image = "elepower_tin_lump.png",
         groups = {tin = 1, lump = 1}
     })
 
     core.register_node(":elepower_dynamics:stone_with_tin", {
-        description = "Tin Ore",
+        description = S("Tin Ore"),
         tiles = {epg.stone .. "^elepower_mineral_tin.png"},
         groups = {cracky = 3, pickaxey = 1, material_stone = 1},
         drop = 'elepower_dynamics:tin_lump',
@@ -30,7 +31,7 @@ if epi.tin_ingot == "" then
     })
 
     core.register_node(":elepower_dynamics:tin_block", {
-        description = "Tin Block",
+        description = S("Tin Block"),
         tiles = {"elepower_tin_block.png"},
         is_ground_content = false,
         groups = {cracky = 3, pickaxey = 1, level = 2},

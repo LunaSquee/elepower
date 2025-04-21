@@ -2,11 +2,12 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epi = ele.external.ing
+local S = ele.translator
 
 -- Etching Acid
 
 ele.helpers.register_liquid("etching_acid", {
-	description       = "Etching Acid",
+	description       = S("Etching Acid"),
 	tiles             = {"elepower_etching_acid.png"},
 	special_tiles     = {"elepower_etching_acid.png", "elepower_etching_acid.png"},
 	use_texture_alpha = "blend",
@@ -19,7 +20,7 @@ ele.helpers.register_liquid("etching_acid", {
 -- Liquid Lithium
 
 ele.helpers.register_liquid("lithium", {
-	description       = "Liquid Lithium",
+	description       = S("Liquid Lithium"),
 	drawtype          = "liquid",
 	tiles             = {"elepower_lithium.png"},
 	special_tiles     = {"elepower_lithium.png", "elepower_lithium.png"},
@@ -33,10 +34,10 @@ ele.helpers.register_liquid("lithium", {
 
 if minetest.get_modpath("bucket_compat") ~= nil then
 	fluid_lib.register_liquid("elepower_dynamics:etching_acid_source", "elepower_dynamics:etching_acid_flowing",
-			"elepower_dynamics:bucket_etching_acid",   "#410800", "Etching Acid Bucket")
+			"elepower_dynamics:bucket_etching_acid",   "#410800", S("Etching Acid Bucket"))
 
 	fluid_lib.register_liquid("elepower_dynamics:lithium_source", "elepower_dynamics:lithium_flowing",
-			"elepower_dynamics:bucket_lithium",   "#e5e3c4", "Liquid Lithium Bucket")
+			"elepower_dynamics:bucket_lithium",   "#e5e3c4", S("Liquid Lithium Bucket"))
 end
 
 -----------
@@ -44,39 +45,39 @@ end
 -----------
 
 minetest.register_node("elepower_dynamics:steam", {
-	description = "Steam",
+	description = S("Steam"),
 	groups      = {not_in_creative_inventory = 1, gas = 1},
 	liquid_form = epi.water_source,
 	tiles       = {"elepower_steam.png"},
 })
 
 minetest.register_node("elepower_dynamics:oxygen", {
-	description = "Oxygen",
+	description = S("Oxygen"),
 	groups      = {not_in_creative_inventory = 1, gas = 1},
 	tiles       = {"elepower_steam.png"},
 })
 
 minetest.register_node("elepower_dynamics:hydrogen", {
-	description = "Hydrogen",
+	description = S("Hydrogen"),
 	groups      = {not_in_creative_inventory = 1, gas = 1},
 	tiles       = {"elepower_steam.png"},
 })
 
 minetest.register_node("elepower_dynamics:nitrogen", {
-	description = "Nitrogen",
+	description = S("Nitrogen"),
 	groups      = {not_in_creative_inventory = 1, gas = 1},
 	tiles       = {"elepower_steam.png"},
 })
 
 minetest.register_node("elepower_dynamics:lithium_gas", {
-	description = "Lithium Gas",
+	description = S("Lithium Gas"),
 	groups      = {not_in_creative_inventory = 1, gas = 1, lithium = 1},
 	liquid_form = "elepower_dynamics:lithium_source",
 	tiles       = {"elepower_lithium.png"},
 })
 
 minetest.register_node("elepower_dynamics:chlorine_gas", {
-	description = "Chlorine Gas",
+	description = S("Chlorine Gas"),
 	groups      = {not_in_creative_inventory = 1, gas = 1, chlorine = 1},
 	tiles       = {"elepower_chlorine.png"},
 })

@@ -1,12 +1,13 @@
+local S = ele.translator
 
 elepm.register_craft_type("solder", {
-	description = "Soldering",
+	description = S("Soldering"),
 	inputs      = 3,
 	icon        = "elepower_machine_side.png^elepower_solderer.png",
 })
 
 elepm.register_crafter("elepower_machines:solderer", {
-	description = "Solderer",
+	description = S("Solderer"),
 	craft_type = "solder",
 	tiles = {
 		"elepower_machine_top.png", "elepower_machine_base.png", "elepower_machine_side.png",

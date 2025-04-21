@@ -3,17 +3,18 @@
 -- shorten table ref
 local epg = ele.external.graphic
 local eps = ele.external.sounds
+local S = ele.translator
 
 -- Electric power
 ele.register_conduit("elepower_dynamics:conduit", {
-	description = "Power Conduit",
+	description = S("Power Conduit"),
 	tiles = {"elepower_conduit.png"},
 	use_texture_alpha = "clip",
 	groups = {oddly_breakable_by_hand = 1, cracky = 3, pickaxey = 1}
 })
 
 ele.register_conduit("elepower_dynamics:conduit_wall", {
-	description = "Power Conduit Wall Pass Through",
+	description = S("Power Conduit Wall Pass Through"),
 	tiles = {"elepower_conduit_wall.png"},
 	use_texture_alpha = "clip",
 	ele_conductor_density = 4/8,
@@ -22,7 +23,7 @@ ele.register_conduit("elepower_dynamics:conduit_wall", {
 
 if ele.external.conduit_dirt_with_grass == true then
 	ele.register_conduit("elepower_dynamics:conduit_dirt_with_grass", {
-		description = "Power Conduit Grass Outlet",
+		description = S("Power Conduit Grass Outlet"),
 		tiles = {epg.grass.."^elepower_conduit_node_socket.png",
 				 epg.dirt,
 				 epg.dirt.."^"..epg.grass_side
@@ -36,7 +37,7 @@ end
 
 if ele.external.conduit_dirt_with_dry_grass == true then
 	ele.register_conduit("elepower_dynamics:conduit_dirt_with_dry_grass", {
-		description = "Power Conduit Dry Grass Outlet",
+		description = S("Power Conduit Dry Grass Outlet"),
 		tiles = {epg.grass_dry.."^elepower_conduit_node_socket.png",
 				 epg.dirt,
 				 epg.dirt.."^"..epg.grass_side_dry
@@ -50,7 +51,7 @@ end
 
 if ele.external.conduit_stone_block == true then
 	ele.register_conduit("elepower_dynamics:conduit_stone_block", {
-		description = "Power Conduit Stone Block",
+		description = S("Power Conduit Stone Block"),
 		tiles = {epg.stone_block.."^elepower_conduit_node_socket.png",
 				 epg.stone_block.."^elepower_conduit_node_socket.png",
 				 epg.stone_block.."^elepower_conduit_node_socket.png"
@@ -64,7 +65,7 @@ end
 
 if ele.external.conduit_stone_block_desert == true then
 	ele.register_conduit("elepower_dynamics:conduit_stone_block_desert", {
-		description = "Power Conduit Desert Stone Block",
+		description = S("Power Conduit Desert Stone Block"),
 		tiles = {epg.desert_stone_block.."^elepower_conduit_node_socket.png",
 				 epg.desert_stone_block.."^elepower_conduit_node_socket.png",
 				 epg.desert_stone_block.."^elepower_conduit_node_socket.png"
@@ -78,7 +79,7 @@ end
 
 -- Fluid
 fluid_lib.register_transfer_node("elepower_dynamics:opaque_duct", {
-	description = "Opaque Fluid Duct",
+	description = S("Opaque Fluid Duct"),
 	tiles = {"elepower_opaque_duct.png"},
 	use_texture_alpha = "clip",
 	duct_density = 1/5,

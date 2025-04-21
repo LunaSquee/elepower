@@ -1,7 +1,8 @@
+local S = ele.translator
 
 -- Solar helmet
 armor:register_armor("elepower_solar:helmet_solar", {
-	description = "Solar Helmet",
+	description = S("Solar Helmet"),
 	inventory_image = "elepower_armor_inv_helmet_solar.png",
 	texture = "elepower_armor_helmet_solar.png",
 	preview = "elepower_armor_helmet_solar_preview.png",

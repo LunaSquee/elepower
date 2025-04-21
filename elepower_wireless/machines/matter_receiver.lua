@@ -3,6 +3,7 @@
 -- shorten table ref
 local epr = ele.external.ref
 local efs = ele.formspec
+local S = ele.translator
 
 elewi.loaded_receivers = {}
 
@@ -23,7 +24,7 @@ local function matter_receiver_timer(pos)
 	local player = meta:get_string("player")
 
 	if name == "" then
-		name = "Matter Receiver"
+		name = S("Matter Receiver")
 	end
 
 	local capacity = ele.helpers.get_node_property(meta, pos, "capacity")
@@ -54,7 +55,7 @@ local function save_receiver(pos)
 	local player = meta:get_string("player")
 
 	if name == "" then
-		name = "Matter Receiver"
+		name = S("Matter Receiver")
 	end
 
 	elewi.loaded_receivers[strname] = {
@@ -64,7 +65,7 @@ local function save_receiver(pos)
 end
 
 ele.register_machine("elepower_wireless:matter_receiver", {
-	description = "Matter Receiver",
+	description = S("Matter Receiver"),
 	tiles = {
 		"elewireless_teleport_top.png", "elewireless_device_side.png^elepower_power_port.png", "elewireless_device_side.png",
 		"elewireless_device_side.png", "elewireless_device_side.png", "elewireless_device_side.png"

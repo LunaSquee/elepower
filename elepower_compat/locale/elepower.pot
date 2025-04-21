@@ -1,0 +1,2452 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-21 20:19+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: elepower_compat/mods/basic_materials.lua:13
+msgid "Oil Extract"
+msgstr ""
+
+#: elepower_compat/mods/basic_materials.lua:18
+msgid "Unprocessed Paraffin"
+msgstr ""
+
+#: elepower_compat/mods/basic_materials.lua:31
+msgid "Plastic Sheet"
+msgstr ""
+
+#: elepower_compat/mods/basic_materials.lua:36
+msgid "Plastic Strips"
+msgstr ""
+
+#: elepower_compat/mods/basic_materials.lua:42
+msgid "Empty wire spool"
+msgstr ""
+
+#: elepower_compat/mods/basic_materials.lua:110
+msgid "Copper Wire"
+msgstr ""
+
+#: elepower_compat/mods/basic_materials.lua:126
+msgid "Silver Wire"
+msgstr ""
+
+#: elepower_compat/mods/basic_materials.lua:145
+msgid "Heating element"
+msgstr ""
+
+#: elepower_compat/mods/basic_materials.lua:161
+msgid "Motor"
+msgstr ""
+
+#: elepower_compat/mods/basic_materials.lua:180
+msgid "Silicon"
+msgstr ""
+
+#: elepower_compat/mods/basic_materials.lua:190
+msgid "Brass Ingot"
+msgstr ""
+
+#: elepower_compat/mods/basic_materials.lua:200
+msgid "Steel Strip"
+msgstr ""
+
+#: elepower_compat/mods/basic_materials.lua:206
+msgid "Spool of steel wire"
+msgstr ""
+
+#: elepower_compat/mods/default_bronze.lua:10
+msgid "Bronze Ingot"
+msgstr ""
+
+#: elepower_compat/mods/default_bronze.lua:16
+msgid "Bronze Block"
+msgstr ""
+
+#: elepower_compat/mods/default_tin.lua:11
+msgid "Tin Ingot"
+msgstr ""
+
+#: elepower_compat/mods/default_tin.lua:17
+msgid "Tin Lump"
+msgstr ""
+
+#: elepower_compat/mods/default_tin.lua:23
+msgid "Tin Ore"
+msgstr ""
+
+#: elepower_compat/mods/default_tin.lua:34
+msgid "Tin Block"
+msgstr ""
+
+#: elepower_compat/mods/moreores.lua:18
+msgid "Silver Ingot"
+msgstr ""
+
+#: elepower_compat/mods/moreores.lua:24
+msgid "Silver Lump"
+msgstr ""
+
+#: elepower_compat/mods/moreores.lua:30
+msgid "Silver Ore"
+msgstr ""
+
+#: elepower_compat/mods/moreores.lua:41
+msgid "Silver Block"
+msgstr ""
+
+#: elepower_dynamics/components.lua:4
+msgid "Bronze"
+msgstr ""
+
+#: elepower_dynamics/components.lua:5
+msgid "Copper"
+msgstr ""
+
+#: elepower_dynamics/components.lua:6
+msgid "Brass"
+msgstr ""
+
+#: elepower_dynamics/components.lua:7
+msgid "Gold"
+msgstr ""
+
+#: elepower_dynamics/components.lua:8
+msgid "Steel"
+msgstr ""
+
+#: elepower_dynamics/components.lua:9
+msgid "Tin"
+msgstr ""
+
+#: elepower_dynamics/components.lua:10
+msgid "Silver"
+msgstr ""
+
+#: elepower_dynamics/components.lua:11
+msgid "Lead"
+msgstr ""
+
+#: elepower_dynamics/components.lua:12
+msgid "Iron"
+msgstr ""
+
+#: elepower_dynamics/components.lua:13
+msgid "Diamond"
+msgstr ""
+
+#: elepower_dynamics/components.lua:14
+msgid "Nickel"
+msgstr ""
+
+#: elepower_dynamics/components.lua:15
+msgid "Invar"
+msgstr ""
+
+#: elepower_dynamics/components.lua:16
+msgid "Electrum"
+msgstr ""
+
+#: elepower_dynamics/components.lua:17
+msgid "Viridisium"
+msgstr ""
+
+#: elepower_dynamics/components.lua:18
+msgid "Zinc"
+msgstr ""
+
+#: elepower_dynamics/components.lua:19
+msgid "Coal"
+msgstr ""
+
+#: elepower_dynamics/components.lua:20
+msgid "Mese"
+msgstr ""
+
+#: elepower_dynamics/components.lua:21
+msgid "Wood"
+msgstr ""
+
+#: elepower_dynamics/components.lua:21
+msgid "Sawdust"
+msgstr ""
+
+#: elepower_dynamics/components.lua:36
+msgid "Plate"
+msgstr ""
+
+#: elepower_dynamics/components.lua:64
+msgid "Pulverized"
+msgstr ""
+
+#: elepower_dynamics/components.lua:87
+msgid "Gear"
+msgstr ""
+
+#: elepower_dynamics/conduits.lua:10
+msgid "Power Conduit"
+msgstr ""
+
+#: elepower_dynamics/conduits.lua:17
+msgid "Power Conduit Wall Pass Through"
+msgstr ""
+
+#: elepower_dynamics/conduits.lua:26
+msgid "Power Conduit Grass Outlet"
+msgstr ""
+
+#: elepower_dynamics/conduits.lua:40
+msgid "Power Conduit Dry Grass Outlet"
+msgstr ""
+
+#: elepower_dynamics/conduits.lua:54
+msgid "Power Conduit Stone Block"
+msgstr ""
+
+#: elepower_dynamics/conduits.lua:68
+msgid "Power Conduit Desert Stone Block"
+msgstr ""
+
+#: elepower_dynamics/conduits.lua:82
+msgid "Opaque Fluid Duct"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:13
+msgid "Lead Ingot"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:20
+msgid "Iron Ingot"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:30 elepower_dynamics/craftitems.lua:34
+msgid "Low Carbon Steel Ingot"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:41
+msgid "Nickel Ingot"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:47
+msgid "Invar Ingot"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:53
+msgid "Electrum Ingot"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:59
+msgid "Viridisium Ingot"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:65
+msgid "Zinc Ingot"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:71
+msgid "Graphite Ingot"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:79
+msgid "Lead Lump"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:85
+msgid "Nickel Lump"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:91
+msgid "Viridisium Lump"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:97
+msgid "Zinc Lump"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:103
+msgid "Xycrone"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:103
+msgid "Used for Quantum Entanglement"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:104
+msgid "Unstable"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:112
+msgid "Graphite Rod"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:118
+msgid "Carbon Fibers"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:124
+msgid "Carbon Fiber Sheet"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:130
+msgid "Silicon Wafer"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:136
+msgid "Doped Silicon Wafer"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:142
+msgid "Steel Treetap"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:148
+msgid "Tin Can"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:154
+msgid "Printed Circuit Board (PCB) Blank"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:155
+msgid "Use Etching Acid to etch"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:198
+msgid "Printed Circuit Board (PCB)"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:204
+msgid "Acidic Compound"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:205
+msgid "Right-Click on Water to turn it into Etching Acid"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:225
+msgid "Wound Copper Coil"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:225 elepower_dynamics/craftitems.lua:231
+#: elepower_dynamics/craftitems.lua:237 elepower_dynamics/craftitems.lua:245
+msgid "Tier @1 Coil"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:231
+msgid "Wound Silver Coil"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:237
+msgid "Induction Coil"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:243
+msgid "Advanced Induction Coil"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:244
+msgid "Suitable for high-power applications"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:251
+msgid "Chip"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:251 elepower_dynamics/craftitems.lua:257
+#: elepower_dynamics/craftitems.lua:263
+msgid "Tier @1 Chip"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:257
+msgid "Microcontroller"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:263
+msgid "System on a Chip (SoC)"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:269 elepower_machines/upgrading.lua:7
+msgid "Capacitor"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:269 elepower_machines/craftitems.lua:27
+#: elepower_machines/craftitems.lua:36 elepower_machines/craftitems.lua:43
+#: elepower_machines/craftitems.lua:52
+msgid "Tier @1 Capacitor"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:275
+msgid "Ultraviolet Light Bulb"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:283
+msgid "Battery"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:289
+msgid "Servo Valve"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:295
+msgid "Integrated Circuit"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:295 elepower_dynamics/craftitems.lua:302
+#: elepower_dynamics/craftitems.lua:309
+msgid "Tier @1 Circuit"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:301
+msgid "Integrated Control Circuit"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:308
+msgid "Microcontroller Circuit"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:315
+msgid "LCD Panel"
+msgstr ""
+
+#: elepower_dynamics/craftitems.lua:321
+msgid "Photovoltaic Cell"
+msgstr ""
+
+#: elepower_dynamics/fluids.lua:10
+msgid "Etching Acid"
+msgstr ""
+
+#: elepower_dynamics/fluids.lua:23
+msgid "Liquid Lithium"
+msgstr ""
+
+#: elepower_dynamics/fluids.lua:37
+msgid "Etching Acid Bucket"
+msgstr ""
+
+#: elepower_dynamics/fluids.lua:40
+msgid "Liquid Lithium Bucket"
+msgstr ""
+
+#: elepower_dynamics/fluids.lua:48 elepower_dynamics/gas_container.lua:37
+#: elepower_tome/i_eletome_additional_info.lua:629
+msgid "Steam"
+msgstr ""
+
+#: elepower_dynamics/fluids.lua:55 elepower_dynamics/gas_container.lua:42
+#: elepower_machines/machines/electrolyzer.lua:60
+msgid "Oxygen"
+msgstr ""
+
+#: elepower_dynamics/fluids.lua:61 elepower_dynamics/gas_container.lua:39
+#: elepower_machines/machines/electrolyzer.lua:53
+msgid "Hydrogen"
+msgstr ""
+
+#: elepower_dynamics/fluids.lua:67 elepower_dynamics/gas_container.lua:45
+#: elepower_machines/machines/electrolyzer.lua:54
+msgid "Nitrogen"
+msgstr ""
+
+#: elepower_dynamics/fluids.lua:73
+msgid "Lithium Gas"
+msgstr ""
+
+#: elepower_dynamics/fluids.lua:80
+msgid "Chlorine Gas"
+msgstr ""
+
+#: elepower_dynamics/gas_container.lua:9
+msgid "Gas Container"
+msgstr ""
+
+#: elepower_dynamics/gas_container.lua:32
+msgid "Empty Gas Container"
+msgstr ""
+
+#: elepower_dynamics/gas_container.lua:48
+#: elepower_tome/i_eletome_additional_info.lua:772
+#: elepower_tome/i_eletome_additional_info.lua:782
+msgid "Lithium"
+msgstr ""
+
+#: elepower_dynamics/gas_container.lua:51
+msgid "Chlorine"
+msgstr ""
+
+#: elepower_dynamics/nodes.lua:23
+msgid "Lead Ore"
+msgstr ""
+
+#: elepower_dynamics/nodes.lua:34
+msgid "Nickel Ore"
+msgstr ""
+
+#: elepower_dynamics/nodes.lua:45
+msgid "Viridisium Ore"
+msgstr ""
+
+#: elepower_dynamics/nodes.lua:56
+msgid "Zinc Ore"
+msgstr ""
+
+#: elepower_dynamics/nodes.lua:69
+msgid "Particle Board"
+msgstr ""
+
+#: elepower_dynamics/nodes.lua:77
+msgid "Hardened Obsidian Glass"
+msgstr ""
+
+#: elepower_dynamics/nodes.lua:77
+msgid "Does not let light through"
+msgstr ""
+
+#: elepower_dynamics/nodes.lua:91
+msgid "Viridisium Block"
+msgstr ""
+
+#: elepower_dynamics/nodes.lua:99
+msgid "Lead Block"
+msgstr ""
+
+#: elepower_dynamics/nodes.lua:107
+msgid "Invar Block"
+msgstr ""
+
+#: elepower_dynamics/nodes.lua:115
+msgid "Nickel Block"
+msgstr ""
+
+#: elepower_dynamics/nodes.lua:123
+msgid "Zinc Block"
+msgstr ""
+
+#: elepower_dynamics/nodes.lua:132
+msgid "Steel Block"
+msgstr ""
+
+#: elepower_dynamics/tanks.lua:4 elepower_farming/fluids.lua:80
+#: elepower_nuclear/fluids.lua:169 elepower_thermal/fluids.lua:29
+msgid "Portable Tank"
+msgstr ""
+
+#: elepower_dynamics/tools.lua:8
+msgid "Iron Pickaxe"
+msgstr ""
+
+#: elepower_dynamics/tools.lua:31
+msgid "Iron Shovel"
+msgstr ""
+
+#: elepower_dynamics/tools.lua:55
+msgid "Iron Axe"
+msgstr ""
+
+#: elepower_dynamics/tools.lua:78
+msgid "Iron Sword"
+msgstr ""
+
+#: elepower_dynamics/tools.lua:104
+msgid "Lead Axe"
+msgstr ""
+
+#: elepower_dynamics/tools.lua:127
+msgid "Lead Pickaxe"
+msgstr ""
+
+#: elepower_dynamics/tools.lua:150
+msgid "Lead Shovel"
+msgstr ""
+
+#: elepower_dynamics/tools.lua:173
+msgid "Lead Sword"
+msgstr ""
+
+#: elepower_farming/craftitems.lua:5 elepower_farming/fluids.lua:19
+msgid "Resin"
+msgstr ""
+
+#: elepower_farming/fluids.lua:7
+msgid "Tree Sap"
+msgstr ""
+
+#: elepower_farming/fluids.lua:31
+#: elepower_machines/machines/electrolyzer.lua:43
+msgid "Biomass"
+msgstr ""
+
+#: elepower_farming/fluids.lua:43
+msgid "Biofuel"
+msgstr ""
+
+#: elepower_farming/fluids.lua:55
+msgid "Sludge"
+msgstr ""
+
+#: elepower_farming/fluids.lua:65
+msgid "Tree Sap Bucket"
+msgstr ""
+
+#: elepower_farming/fluids.lua:68
+msgid "Resin Bucket"
+msgstr ""
+
+#: elepower_farming/fluids.lua:71
+msgid "Biomass Bucket"
+msgstr ""
+
+#: elepower_farming/fluids.lua:74
+msgid "Biofuel Bucket"
+msgstr ""
+
+#: elepower_farming/fluids.lua:77
+msgid "Sludge Bucket"
+msgstr ""
+
+#: elepower_farming/machines/composter.lua:136
+msgid "Composter"
+msgstr ""
+
+#: elepower_farming/machines/composter.lua:136
+msgid "Convert organic matter to Biofuel"
+msgstr ""
+
+#: elepower_farming/machines/harvester.lua:127
+#: elepower_farming/machines/planter.lua:238
+#: elepower_farming/machines/tree_processor.lua:64
+#: elepower_machines/machines/bases/crafter.lua:178
+#: elepower_machines/machines/bases/fluid_generator.lua:66
+#: elepower_machines/machines/bases/fluid_generator.lua:115
+#: elepower_machines/machines/bases/generator.lua:57
+#: elepower_machines/machines/bases/generator.lua:112
+#: elepower_machines/machines/electrolyzer.lua:97
+#: elepower_machines/machines/evaporator.lua:34
+#: elepower_machines/machines/lava_cooler.lua:110
+#: elepower_machines/machines/lava_cooler.lua:116
+#: elepower_machines/machines/pcb_plant.lua:43
+#: elepower_machines/machines/wind_turbine.lua:61 elepower_mining/miner.lua:130
+#: elepower_nuclear/machines/solar_neutron_activator.lua:52
+#: elepower_solar/generator.lua:58 elepower_wireless/machines/station.lua:72
+msgid "Idle"
+msgstr ""
+
+#: elepower_farming/machines/harvester.lua:153
+#: elepower_farming/machines/planter.lua:259
+#: elepower_farming/machines/spawner.lua:129
+#: elepower_farming/machines/tree_processor.lua:93
+#: elepower_machines/machines/bases/crafter.lua:222
+#: elepower_machines/machines/bases/fluid_generator.lua:89
+#: elepower_machines/machines/bases/generator.lua:82
+#: elepower_machines/machines/bases/storage.lua:70
+#: elepower_machines/machines/coal_alloy_furnace.lua:178
+#: elepower_machines/machines/electrolyzer.lua:132
+#: elepower_machines/machines/evaporator.lua:61
+#: elepower_machines/machines/lava_cooler.lua:73
+#: elepower_machines/machines/pcb_plant.lua:68
+#: elepower_machines/machines/wind_turbine.lua:95
+#: elepower_nuclear/machines/solar_neutron_activator.lua:81
+#: elepower_solar/generator.lua:115 elepower_tools/ed_reconstructor.lua:66
+msgid "Active"
+msgstr ""
+
+#: elepower_farming/machines/harvester.lua:158
+#: elepower_farming/machines/planter.lua:263
+#: elepower_farming/machines/spawner.lua:157
+#: elepower_farming/machines/tree_processor.lua:68
+#: elepower_machines/machines/bases/crafter.lua:194
+#: elepower_machines/machines/bases/fluid_generator.lua:70
+#: elepower_machines/machines/bases/generator.lua:63
+#: elepower_machines/machines/electrolyzer.lua:106
+#: elepower_machines/machines/evaporator.lua:38
+#: elepower_machines/machines/lava_cooler.lua:114
+#: elepower_machines/machines/pcb_plant.lua:48
+#: elepower_machines/machines/pump.lua:81
+#: elepower_machines/machines/wind_turbine.lua:67
+#: elepower_solar/generator.lua:63 elepower_tools/ed_reconstructor.lua:49
+msgid "Off"
+msgstr ""
+
+#: elepower_farming/machines/harvester.lua:167
+#: elepower_farming/machines/harvester.lua:182
+msgid "Automatic Harvester"
+msgstr ""
+
+#: elepower_farming/machines/planter.lua:36
+msgid ""
+"Item placed here\n"
+"  will be planted\n"
+"out in a 3x3 area"
+msgstr ""
+
+#: elepower_farming/machines/planter.lua:56
+msgid ""
+"Place stacks of items\n"
+"     here to keep planter\n"
+"supplied with items to plant"
+msgstr ""
+
+#: elepower_farming/machines/planter.lua:269
+msgid "Planter"
+msgstr ""
+
+#: elepower_farming/machines/planter.lua:280
+msgid "Automatic Planter"
+msgstr ""
+
+#: elepower_farming/machines/spawner.lua:128
+msgid "None"
+msgstr ""
+
+#: elepower_farming/machines/spawner.lua:160
+#: elepower_machines/machines/coal_alloy_furnace.lua:174
+msgid "Inactive"
+msgstr ""
+
+#: elepower_farming/machines/spawner.lua:163
+#: elepower_farming/machines/spawner.lua:176
+msgid "Powered Mob Spawner"
+msgstr ""
+
+#: elepower_farming/machines/spawner.lua:163
+msgid "Mob"
+msgstr ""
+
+#: elepower_farming/machines/tree_extractor.lua:18
+msgid "Tree Fluid Extractor"
+msgstr ""
+
+#: elepower_farming/machines/tree_extractor.lua:60
+msgid "Place me in front of a tree!"
+msgstr ""
+
+#: elepower_farming/machines/tree_processor.lua:116
+#: elepower_machines/machines/bases/crafter.lua:261
+#: elepower_machines/machines/electrolyzer.lua:128
+#: elepower_machines/machines/pcb_plant.lua:84
+#: elepower_nuclear/machines/solar_neutron_activator.lua:69
+msgid "Output Full!"
+msgstr ""
+
+#: elepower_farming/machines/tree_processor.lua:147
+#: elepower_farming/machines/tree_processor.lua:156
+msgid "Tree Fluid Processor"
+msgstr ""
+
+#: elepower_farming/nodes.lua:5
+msgid "Plastic Device Frame"
+msgstr ""
+
+#: elepower_farming/nodes.lua:5 elepower_machines/nodes.lua:6
+#: elepower_machines/nodes.lua:19 elepower_machines/nodes.lua:28
+msgid "Safe for decoration"
+msgstr ""
+
+#: elepower_lighting/i_craftitems.lua:18
+msgid "Bulb Glass"
+msgstr ""
+
+#: elepower_lighting/i_craftitems.lua:24
+msgid "Incandescent Bulb Element"
+msgstr ""
+
+#: elepower_lighting/i_craftitems.lua:30
+msgid "CF Bulb Glass"
+msgstr ""
+
+#: elepower_lighting/i_craftitems.lua:36
+msgid "Magnifying Lens"
+msgstr ""
+
+#: elepower_lighting/i_craftitems.lua:42
+msgid "Fluro Tube Glass"
+msgstr ""
+
+#: elepower_lighting/i_craftitems.lua:48
+msgid "Electrum Strip"
+msgstr ""
+
+#: elepower_lighting/i_craftitems.lua:54
+msgid "Red Light Emitting Diode"
+msgstr ""
+
+#: elepower_lighting/i_craftitems.lua:61
+msgid "Green Light Emitting Diode"
+msgstr ""
+
+#: elepower_lighting/i_craftitems.lua:68
+msgid "Blue Light Emitting Diode"
+msgstr ""
+
+#: elepower_lighting/i_craftitems.lua:75
+msgid "Light Emitting Diode Cluster"
+msgstr ""
+
+#: elepower_lighting/i_craftitems.lua:81
+msgid "LED Driver Board"
+msgstr ""
+
+#: elepower_lighting/i_register_flood_lights.lua:31
+msgid "Flood Light Incandescent"
+msgstr ""
+
+#: elepower_lighting/i_register_flood_lights.lua:69
+msgid "Flood Light CF"
+msgstr ""
+
+#: elepower_lighting/i_register_flood_lights.lua:107
+msgid "Flood Light LED"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:21
+msgid "Light Fill"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:40
+msgid "Conduit Decorative Cast Iron Thin"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:48
+msgid "Conduit Decorative Cast Iron Thick"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:56
+msgid "Conduit Decorative Steel Thin"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:64
+msgid "Conduit Decorative Steel Thick"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:72
+msgid "Conduit Decorative Gold Thin"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:80
+msgid "Conduit Decorative Gold Thick"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:88
+msgid "Conduit Decorative Wood Thin"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:96
+msgid "Conduit Decorative Wood Thick"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:107
+msgid "Bulb Incandescent"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:135
+msgid "UV Bulb Incandescent"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:164
+msgid "Bulb Compact Fluro"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:192
+msgid "Fluro Light Bank"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:228
+msgid "Bulb Light-Emitting Diode"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:257
+msgid "LED Light Panel"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:293
+msgid "LED Light Panel Colored"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:334
+msgid "LED 1x3 Light Panel"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes.lua:374
+msgid "LED 2x3 Light Panel"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes_shades.lua:18
+msgid "Light Shade Timber Cross"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes_shades.lua:19
+msgid "Light Shade Timber Stripe"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes_shades.lua:20
+msgid "Light Shade Timber Decorative Stripe"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes_shades.lua:21
+msgid "Light Shade Timber Round"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes_shades.lua:22
+msgid "Light Shade Timber Small Round"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes_shades.lua:51
+msgid "Red"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes_shades.lua:76
+msgid "Blue"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes_shades.lua:100
+msgid "Red Paper"
+msgstr ""
+
+#: elepower_lighting/i_register_nodes_shades.lua:106
+msgid "Blue Paper"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:4
+msgid "Compressor Piston"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:9
+msgid "Turbine Blades"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:15
+msgid "Retractable Opaque Fluid Duct"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:16
+msgid "A Pump uses this to reach fluids."
+msgstr ""
+
+#: elepower_machines/craftitems.lua:27
+msgid "Hardened Capacitor"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:34
+msgid "Reinforced Capacitor"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:35
+msgid "It will probably obliterate you if you touched it while charged"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:43
+msgid "Resonant Capacitor"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:50
+msgid "Supercapacitor"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:51
+msgid "Amazing energy density in a small container! Wow!"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:61
+msgid "Speed Upgrade"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:61
+msgid "Crafting Speed @1"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:62
+msgid "Power Usage @1"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:73 elepower_machines/craftitems.lua:81
+msgid "Efficiency Upgrade"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:74 elepower_machines/craftitems.lua:82
+msgid "Reduces power usage by @1"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:91
+msgid "Liquid Weight Filter"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:92
+msgid "Makes water pumps pump only Heavy Water"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:93
+msgid "Right-Click to apply to Water Accumulator"
+msgstr ""
+
+#: elepower_machines/craftitems.lua:127
+msgid "Wind Turbine Blade (Wooden)"
+msgstr ""
+
+#: elepower_machines/craft.lua:234
+#: elepower_tome/i_eletome_additional_info.lua:281
+#: elepower_tome/i_eletome_additional_info.lua:285
+#: elepower_tome/i_eletome_additional_info.lua:333
+#: elepower_tome/i_eletome_additional_info.lua:495
+#: elepower_tome/i_eletome_additional_info.lua:499
+#: elepower_tome/i_eletome_additional_info.lua:701
+msgid "Cooking"
+msgstr ""
+
+#: elepower_machines/craft.lua:235
+msgid ""
+"Cooking is more than just the preparation of food, it provides access to the "
+"preparation of ores to metals and the creation of glass and glass objects."
+msgstr ""
+
+#: elepower_machines/machines/accumulator.lua:10
+#: elepower_machines/machines/accumulator.lua:33
+msgid "Water Accumulator"
+msgstr ""
+
+#: elepower_machines/machines/accumulator.lua:33
+#: elepower_machines/machines/electrolyzer.lua:42
+#: elepower_nuclear/fluids.lua:46
+#: elepower_tome/i_eletome_additional_info.lua:762
+msgid "Heavy Water"
+msgstr ""
+
+#: elepower_machines/machines/alloy_furnace.lua:5
+#: elepower_tome/i_eletome_additional_info.lua:355
+#: elepower_tome/i_eletome_additional_info.lua:543
+msgid "Alloying"
+msgstr ""
+
+#: elepower_machines/machines/alloy_furnace.lua:6
+msgid ""
+"Alloys are created materials which are stronger than their base material "
+"components. These can be obtained by combining differing materials in the "
+"Alloying Furnace.\n"
+"Elepower provides a number of alloying recipes."
+msgstr ""
+
+#: elepower_machines/machines/alloy_furnace.lua:15
+#: elepower_machines/machines/coal_alloy_furnace.lua:189
+msgid "Alloy Furnace"
+msgstr ""
+
+#: elepower_machines/machines/bases/crafter.lua:41
+msgid "All"
+msgstr ""
+
+#: elepower_machines/machines/bases/crafter.lua:215
+#: elepower_machines/machines/electrolyzer.lua:115
+#: elepower_machines/machines/evaporator.lua:43
+#: elepower_machines/machines/pcb_plant.lua:53
+#: elepower_machines/machines/pump.lua:86 elepower_mining/miner.lua:136
+#: elepower_tools/ed_reconstructor.lua:59
+#: elepower_wireless/machines/station.lua:86
+msgid "Out of Power!"
+msgstr ""
+
+#: elepower_machines/machines/bucketer.lua:141
+msgid "Bucketer"
+msgstr ""
+
+#: elepower_machines/machines/canning_machine.lua:5
+#: elepower_tome/i_eletome_additional_info.lua:693
+msgid "Canning"
+msgstr ""
+
+#: elepower_machines/machines/canning_machine.lua:11
+msgid "Canning Machine"
+msgstr ""
+
+#: elepower_machines/machines/coal_alloy_furnace.lua:204
+msgid "Coal-fired Alloy Furnace"
+msgstr ""
+
+#: elepower_machines/machines/compressor.lua:5
+#: elepower_tome/i_eletome_additional_info.lua:557
+#: elepower_tome/i_eletome_additional_info.lua:695
+msgid "Compressing"
+msgstr ""
+
+#: elepower_machines/machines/compressor.lua:11
+msgid "Compressor"
+msgstr ""
+
+#: elepower_machines/machines/electrolyzer.lua:41
+#: elepower_tome/i_eletome_additional_info.lua:758
+#: elepower_tome/i_eletome_additional_info.lua:772
+#: elepower_tome/i_eletome_additional_info.lua:777
+#: elepower_tome/i_eletome_additional_info.lua:793
+#: elepower_tome/i_eletome_additional_info.lua:798
+msgid "Water"
+msgstr ""
+
+#: elepower_machines/machines/electrolyzer.lua:53
+#: elepower_nuclear/fluids.lua:35
+msgid "Deuterium"
+msgstr ""
+
+#: elepower_machines/machines/electrolyzer.lua:167
+#: elepower_machines/machines/electrolyzer.lua:177
+msgid "Electrolyzer"
+msgstr ""
+
+#: elepower_machines/machines/evaporator.lua:89
+#: elepower_machines/machines/evaporator.lua:109
+msgid "Evaporator"
+msgstr ""
+
+#: elepower_machines/machines/fuel_burner.lua:4
+msgid "Liquid Fuel Combustion Generator"
+msgstr ""
+
+#: elepower_machines/machines/furnace.lua:8
+msgid "Powered Furnace"
+msgstr ""
+
+#: elepower_machines/machines/generator.lua:8
+msgid "Coal-fired Generator"
+msgstr ""
+
+#: elepower_machines/machines/grindstone.lua:114
+#: elepower_machines/machines/grindstone.lua:119
+#: elepower_machines/machines/grindstone.lua:126
+msgid "Grindstone"
+msgstr ""
+
+#: elepower_machines/machines/grindstone.lua:126
+msgid ""
+"A medieval pulverizer\n"
+"Requires Hand Crank to operate"
+msgstr ""
+
+#: elepower_machines/machines/grindstone.lua:158
+msgid "Hand Crank"
+msgstr ""
+
+#: elepower_machines/machines/grindstone.lua:158
+msgid "Place on Grindstone and hold Right-Click"
+msgstr ""
+
+#: elepower_machines/machines/lava_cooler.lua:123
+#: elepower_machines/machines/lava_cooler.lua:132
+msgid "Lava Cooler"
+msgstr ""
+
+#: elepower_machines/machines/lava_generator.lua:7
+msgid "Lava Generator"
+msgstr ""
+
+#: elepower_machines/machines/pcb_plant.lua:63
+msgid "Out of Acid!"
+msgstr ""
+
+#: elepower_machines/machines/pcb_plant.lua:109
+#: elepower_machines/machines/pcb_plant.lua:138
+msgid "Printed Circuit Board Plant"
+msgstr ""
+
+#: elepower_machines/machines/pulverizer.lua:4
+#: elepower_tome/i_eletome_additional_info.lua:420
+#: elepower_tome/i_eletome_additional_info.lua:537
+#: elepower_tome/i_eletome_additional_info.lua:547
+#: elepower_tome/i_eletome_additional_info.lua:567
+#: elepower_tome/i_eletome_additional_info.lua:573
+#: elepower_tome/i_eletome_additional_info.lua:705
+msgid "Grinding"
+msgstr ""
+
+#: elepower_machines/machines/pulverizer.lua:5
+msgid ""
+"Grinding of solid materials occurs through mechanical forces that break up "
+"the structure of the material. After grinding the state of the material is "
+"changed; the grain size and the grain shape will be smaller and finer."
+msgstr ""
+
+#: elepower_machines/machines/pulverizer.lua:14
+msgid "Pulverizer"
+msgstr ""
+
+#: elepower_machines/machines/pump.lua:98
+msgid "Tank Full!"
+msgstr ""
+
+#: elepower_machines/machines/pump.lua:110
+msgid "Seeking"
+msgstr ""
+
+#: elepower_machines/machines/pump.lua:152
+msgid "No More Fluid!"
+msgstr ""
+
+#: elepower_machines/machines/pump.lua:165
+msgid "Pumping"
+msgstr ""
+
+#: elepower_machines/machines/pump.lua:217
+msgid "Pickup Pump Tank"
+msgstr ""
+
+#: elepower_machines/machines/sawmill.lua:4
+msgid "Sawmilling"
+msgstr ""
+
+#: elepower_machines/machines/sawmill.lua:11
+msgid "Sawmill"
+msgstr ""
+
+#: elepower_machines/machines/solderer.lua:4
+msgid "Soldering"
+msgstr ""
+
+#: elepower_machines/machines/solderer.lua:10
+msgid "Solderer"
+msgstr ""
+
+#: elepower_machines/machines/steam_turbine.lua:15
+msgid "Steam Turbine"
+msgstr ""
+
+#: elepower_machines/machines/storage.lua:8
+msgid "Power Cell"
+msgstr ""
+
+#: elepower_machines/machines/storage.lua:20
+msgid "Hardened Power Cell"
+msgstr ""
+
+#: elepower_machines/machines/storage.lua:36
+msgid "Reinforced Power Cell"
+msgstr ""
+
+#: elepower_machines/machines/storage.lua:52
+msgid "Resonant Power Cell"
+msgstr ""
+
+#: elepower_machines/machines/storage.lua:68
+msgid "Supercapacitor Cell"
+msgstr ""
+
+#: elepower_machines/machines/wind_turbine.lua:86
+msgid "No wind"
+msgstr ""
+
+#: elepower_machines/machines/wind_turbine.lua:104
+#: elepower_machines/machines/wind_turbine.lua:139
+#: elepower_tome/i_page_contents.lua:81 elepower_tome/i_page_machines.lua:22
+msgid "Wind Turbine"
+msgstr ""
+
+#: elepower_machines/machines/wind_turbine.lua:140
+msgid "Requires Wind Turbine Blades"
+msgstr ""
+
+#: elepower_machines/machines/wind_turbine.lua:151
+msgid "Wind Turbine Blades (Wooden)"
+msgstr ""
+
+#: elepower_machines/machines/wind_turbine.lua:152
+msgid "Sneak Right-Click on the Wind Turbine node to place it"
+msgstr ""
+
+#: elepower_machines/nodes.lua:6
+msgid "Machine Block"
+msgstr ""
+
+#: elepower_machines/nodes.lua:17
+msgid "Heat Casing"
+msgstr ""
+
+#: elepower_machines/nodes.lua:18
+msgid "Used for the Thermal Evaporation Plant"
+msgstr ""
+
+#: elepower_machines/nodes.lua:27
+msgid "Advanced Machine Block"
+msgstr ""
+
+#: elepower_machines/upgrading.lua:5
+msgid "Machine Chip"
+msgstr ""
+
+#: elepower_machines/upgrading.lua:6
+msgid "Wireless Chip"
+msgstr ""
+
+#: elepower_machines/upgrading.lua:8
+msgid "Pump Filter"
+msgstr ""
+
+#: elepower_mining/miner.lua:52
+msgid "Miner structure complete (detected @1 drills)!"
+msgstr ""
+
+#: elepower_mining/miner.lua:123
+msgid "with Invalid structure - Punch to redetect"
+msgstr ""
+
+#: elepower_mining/miner.lua:140
+msgid "Mining with @1 miners"
+msgstr ""
+
+#: elepower_mining/miner.lua:145
+msgid "Out of Water!"
+msgstr ""
+
+#: elepower_mining/miner.lua:168
+msgid "Inventory full!"
+msgstr ""
+
+#: elepower_mining/miner.lua:182 elepower_tome/i_page_contents.lua:93
+#: elepower_tome/i_page_machines.lua:27
+msgid "Miner"
+msgstr ""
+
+#: elepower_mining/miner.lua:211
+msgid "Miner Controller"
+msgstr ""
+
+#: elepower_mining/miner.lua:211 elepower_mining/miner.lua:256
+#: elepower_mining/miner.lua:275
+msgid "Machine Component"
+msgstr ""
+
+#: elepower_mining/miner.lua:256
+msgid "Miner Core"
+msgstr ""
+
+#: elepower_mining/miner.lua:275
+msgid "Miner Drill"
+msgstr ""
+
+#: elepower_nuclear/craftitems.lua:10
+msgid "Uranium Lump"
+msgstr ""
+
+#: elepower_nuclear/craftitems.lua:17
+msgid ""
+"Enriched Uranium Dust\n"
+"(Ready to be used as fuel)"
+msgstr ""
+
+#: elepower_nuclear/craftitems.lua:22
+msgid ""
+"Depleted Uranium Dust\n"
+"(Requires enrichment)"
+msgstr ""
+
+#: elepower_nuclear/craftitems.lua:27
+msgid ""
+"Nuclear Waste\n"
+"(Mostly unusable for nuclear fission)"
+msgstr ""
+
+#: elepower_nuclear/craftitems.lua:34
+msgid "Empty Fuel Rod"
+msgstr ""
+
+#: elepower_nuclear/craftitems.lua:40
+msgid ""
+"Fissile Fuel Rod\n"
+"Lasts @1 hours (@2 seconds)"
+msgstr ""
+
+#: elepower_nuclear/craftitems.lua:48
+msgid ""
+"Depleted Fuel Rod\n"
+"Can not be used in a reactor anymore"
+msgstr ""
+
+#: elepower_nuclear/craftitems.lua:56
+msgid "Control Rod"
+msgstr ""
+
+#: elepower_nuclear/craftitems.lua:62
+msgid "Control Rod Assembly"
+msgstr ""
+
+#: elepower_nuclear/craftitems.lua:68
+msgid "Perforated Control Plate"
+msgstr ""
+
+#: elepower_nuclear/craftitems.lua:76
+msgid "Reactor Pressure Vessel"
+msgstr ""
+
+#: elepower_nuclear/fluids.lua:11
+msgid "Tritium Gas"
+msgstr ""
+
+#: elepower_nuclear/fluids.lua:17
+msgid "Deuterium Gas"
+msgstr ""
+
+#: elepower_nuclear/fluids.lua:23
+msgid "Helium Gas"
+msgstr ""
+
+#: elepower_nuclear/fluids.lua:29 elepower_nuclear/fluids.lua:38
+msgid "Helium Plasma"
+msgstr ""
+
+#: elepower_nuclear/fluids.lua:29
+msgid "Superheated"
+msgstr ""
+
+#: elepower_nuclear/fluids.lua:34
+msgid "Tritium"
+msgstr ""
+
+#: elepower_nuclear/fluids.lua:36
+msgid "Helium"
+msgstr ""
+
+#: elepower_nuclear/fluids.lua:90 elepower_nuclear/fluids.lua:160
+msgid "Cold Coolant"
+msgstr ""
+
+#: elepower_nuclear/fluids.lua:103 elepower_nuclear/fluids.lua:163
+msgid "Hot Coolant"
+msgstr ""
+
+#: elepower_nuclear/fluids.lua:116
+msgid "Corium"
+msgstr ""
+
+#: elepower_nuclear/fluids.lua:166
+msgid "Heavy Water Bucket"
+msgstr ""
+
+#: elepower_nuclear/machines/enrichment_plant.lua:26
+msgid "Enrichment"
+msgstr ""
+
+#: elepower_nuclear/machines/enrichment_plant.lua:32
+msgid "Enrichment Plant"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:95
+msgid "Depleted"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:139
+#: elepower_wireless/machines/station/fission_reactor.lua:91
+msgid "Activate by extracting the control rods"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:142
+#: elepower_wireless/machines/station/fission_reactor.lua:94
+msgid "!!! TEMPERATURE CRITICAL !!!"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:144
+#: elepower_wireless/machines/station/fission_reactor.lua:96
+msgid "!!! REACTOR CRITICAL !!!"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:146
+#: elepower_wireless/machines/station/fission_reactor.lua:98
+msgid "!!! REACTOR MELTDOWN IMMINENT !!!"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:148
+#: elepower_wireless/machines/station/fission_reactor.lua:100
+msgid "Active reaction chain"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:154
+#: elepower_wireless/machines/station/fission_reactor.lua:107
+msgid "Power: @1"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:155
+#: elepower_wireless/machines/station/fission_reactor.lua:108
+msgid "Heat: @1"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:184 elepower_tome/init.lua:209
+#: elepower_wireless/machines/station/fission_reactor.lua:57
+msgid "Next"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:185
+#: elepower_wireless/machines/station/fission_reactor.lua:59
+msgid "Previous"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:187
+#: elepower_wireless/machines/station/fission_reactor.lua:61
+msgid "SCRAM"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:188
+#: elepower_wireless/machines/station/fission_reactor.lua:62
+msgid "Raise"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:189
+#: elepower_wireless/machines/station/fission_reactor.lua:63
+msgid "Lower"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:190
+#: elepower_wireless/machines/station/fission_reactor.lua:64
+msgid "Select the next control rod"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:191
+#: elepower_wireless/machines/station/fission_reactor.lua:65
+msgid "Select the previous control rod"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:194
+#: elepower_wireless/machines/station/fission_reactor.lua:68
+msgid "Drops all the rods into the reactor core, instantly stopping it"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:195
+#: elepower_wireless/machines/station/fission_reactor.lua:69
+msgid "Raise selected control rod"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:196
+#: elepower_wireless/machines/station/fission_reactor.lua:70
+msgid "Lower selected control rod"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:448
+msgid "Fission Reactor Core"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:482
+msgid "Fission Control Module"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:483
+msgid "Place me on top of a Fission Reactor Core"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:513
+msgid "Reactor Fluid Port"
+msgstr ""
+
+#: elepower_nuclear/machines/fission_reactor.lua:514
+msgid "Place me on the bottom of a Fission Reactor Core"
+msgstr ""
+
+#: elepower_nuclear/machines/fusion_reactor.lua:80
+msgid "Incorrect node at @1; expected @2, found @3"
+msgstr ""
+
+#: elepower_nuclear/machines/fusion_reactor.lua:104
+msgid "Multi-node structure complete!"
+msgstr ""
+
+#: elepower_nuclear/machines/fusion_reactor.lua:293
+#: elepower_nuclear/machines/fusion_reactor.lua:336
+msgid "No controller found."
+msgstr ""
+
+#: elepower_nuclear/machines/fusion_reactor.lua:324
+msgid ""
+"Connected to controller at @1\n"
+"Local @2"
+msgstr ""
+
+#: elepower_nuclear/machines/fusion_reactor.lua:340
+msgid "Connected to controller at @1"
+msgstr ""
+
+#: elepower_nuclear/machines/fusion_reactor.lua:350
+msgid "Fusion Reactor Controller"
+msgstr ""
+
+#: elepower_nuclear/machines/fusion_reactor.lua:380
+msgid "Fusion Reactor Power Port (Input)"
+msgstr ""
+
+#: elepower_nuclear/machines/fusion_reactor.lua:397
+msgid "Fusion Reactor Fluid Port (Input)"
+msgstr ""
+
+#: elepower_nuclear/machines/fusion_reactor.lua:461
+msgid "Fusion Reactor Fluid Port (Output)"
+msgstr ""
+
+#: elepower_nuclear/machines/heat_exchanger.lua:110
+msgid "Shielded Heat Exchanger"
+msgstr ""
+
+#: elepower_nuclear/machines/heat_exchanger.lua:110
+msgid "For use in nuclear power plants"
+msgstr ""
+
+#: elepower_nuclear/machines/solar_neutron_activator.lua:38
+#: elepower_solar/generator.lua:126
+msgid "Light: @1"
+msgstr ""
+
+#: elepower_nuclear/machines/solar_neutron_activator.lua:88
+msgid "Not enough light!"
+msgstr ""
+
+#: elepower_nuclear/machines/solar_neutron_activator.lua:116
+#: elepower_nuclear/machines/solar_neutron_activator.lua:122
+msgid "Solar Neutron Activator"
+msgstr ""
+
+#: elepower_nuclear/nodes.lua:9
+msgid "Radiation-shielded Lead Machine Chassis"
+msgstr ""
+
+#: elepower_nuclear/nodes.lua:10
+msgid "Provides shielding against dangerous ionizing radiation"
+msgstr ""
+
+#: elepower_nuclear/nodes.lua:22
+msgid "Uranium Ore"
+msgstr ""
+
+#: elepower_nuclear/nodes.lua:33
+msgid "Fusion Reactor Coil"
+msgstr ""
+
+#: elepower_papi/formspec.lua:181
+msgid "Press to toggle"
+msgstr ""
+
+#: elepower_papi/formspec.lua:215
+msgid "Energy Storage"
+msgstr ""
+
+#: elepower_papi/formspec.lua:219
+msgid "Power Used / Generated"
+msgstr ""
+
+#: elepower_papi/formspec.lua:233
+msgid "Empty Buffer"
+msgstr ""
+
+#: elepower_papi/helpers.lua:183
+msgid "Flowing"
+msgstr ""
+
+#: elepower_papi/helpers.lua:188
+msgid "Source"
+msgstr ""
+
+#: elepower_papi/machine.lua:85
+msgid "Always on"
+msgstr ""
+
+#: elepower_papi/machine.lua:86
+msgid "Always off"
+msgstr ""
+
+#: elepower_papi/machine.lua:87
+msgid "Enable by Mesecons signal"
+msgstr ""
+
+#: elepower_papi/machine.lua:88
+msgid "Disable by Mesecons signal"
+msgstr ""
+
+#: elepower_papi/machine.lua:111
+msgid "Modified Device"
+msgstr ""
+
+#: elepower_papi/machine.lua:149
+msgid "Charge: @1 / @2 @3"
+msgstr ""
+
+#: elepower_solar/helmet.lua:5
+msgid "Solar Helmet"
+msgstr ""
+
+#: elepower_solar/register.lua:4
+msgid "Solar Generator"
+msgstr ""
+
+#: elepower_thermal/fluids.lua:6
+#: elepower_tome/i_eletome_additional_info.lua:772
+#: elepower_tome/i_eletome_additional_info.lua:777
+#: elepower_tome/i_eletome_additional_info.lua:782
+msgid "Brine"
+msgstr ""
+
+#: elepower_thermal/fluids.lua:26
+msgid "Brine Bucket"
+msgstr ""
+
+#: elepower_thermal/machines/evaporation_plant.lua:60
+msgid "Multiple controllers detected."
+msgstr ""
+
+#: elepower_thermal/machines/evaporation_plant.lua:94
+msgid "Invalid structure surrounding the controller."
+msgstr ""
+
+#: elepower_thermal/machines/evaporation_plant.lua:98
+msgid "Structure complete."
+msgstr ""
+
+#: elepower_thermal/machines/evaporation_plant.lua:100
+#: elepower_thermal/machines/evaporation_plant.lua:173
+#: elepower_thermal/machines/evaporation_plant.lua:282
+msgid "Thermal Evaporation Plant"
+msgstr ""
+
+#: elepower_thermal/machines/evaporation_plant.lua:173
+msgid "Incomplete"
+msgstr ""
+
+#: elepower_thermal/machines/evaporation_plant.lua:255
+msgid "Thermal Evaporation Plant Controller"
+msgstr ""
+
+#: elepower_thermal/machines/evaporation_plant.lua:282
+msgid "Punch to form structure"
+msgstr ""
+
+#: elepower_thermal/machines/evaporation_plant.lua:295
+msgid "Thermal Evaporation Plant Output"
+msgstr ""
+
+#: elepower_thermal/machines/evaporation_plant.lua:358
+msgid "Thermal Evaporation Plant Input"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:54
+msgid ""
+"Generators produce EpU/s by taking something from the natural environment "
+"and converting it to power that can be used by machines. There are both low "
+"and high tech solutions for producing power so choose a power generation "
+"method that best fits with what your current needs are and the resources you "
+"have available.\n"
+"\n"
+"Generators produce power (EpU/s) every second, they then distribute this "
+"power across their network to all connected machines that require power.\n"
+"\n"
+"A single power network is a group of machines and conduits which is "
+"connected in one single un-broken group two examples of simple valid power "
+"networks is pictured below."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:68
+msgid ""
+"Powercells will charge from the network when power is available.Once power "
+"supply on a network is 0 ie generators no longer producing EpUs. The "
+"powercell(s) will provide power only to active machines on the network. "
+"Powercells will provide the minimum EpUs to the machine ie the usage amount "
+"not the max amount the machine can recieve.\n"
+"For example the Sawmill when active(being used) uses 32 EpUs, however the "
+"Sawmill can accept upto 64 EpUs of power until fully charged. Powercell(s) "
+"will only provide the Sawmill with 32 EpUs of power if the Sawmill is active."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:80
+msgid ""
+"These are the simpliest machines in elepower consisting of single node that "
+"performs a single/simple function.\n"
+"The machines can often interface with other machines using fluid ducts to "
+"help automate the inputs/outputs of certain machines. Where a machine maybe "
+"more complex a small 'I' will be present on the large image, indicating "
+"there is a subpage with additional information for that machine. for example "
+"the Automatic Planter at the bottom of the opposite page."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:91
+msgid ""
+"There is an array of lighting in elepower which increase in technical "
+"complexity while off setting this with a lower power usage. Lighting types "
+"include:\n"
+"                   Incandescent bulbs\n"
+"      Compact Fluroscent bulbs and Fluroscent Tubes\n"
+"                LED bulbs and Light panels\n"
+"             Flood Lights for each type of bulb\n"
+"  A very small number of decorative panels to place around bulbs\n"
+"Black, Silver and Gold conduit to allow the creation of lamps and hanging "
+"lights"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:108
+msgid ""
+"The simplest fluid Pump is assembled from two components:the 'Pickup Pump "
+"Tank' and the 'Fluid Transfer Pump'\n"
+"The 'Pickup Pump Tank' must be placed above a body of fluid, and provided "
+"with power. The black end of the 'Fluid Transfer Pump' must be placed up "
+"against the 'Pickup Pump Tank'.\n"
+"Once completed fluid ducting can then be used to run fluid to machines that "
+"require fluid - For example water to the Electrolyzer."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:124
+msgid ""
+"The miner uses significant volumes of power and water to sift metals from "
+"the surronding electro-molecular environment. The miner then gathers the "
+"molecules together until enough are gathered for a lump of metal to "
+"materialise.\n"
+"Assembly requires an incoming water supply from a fluid pump, a power source "
+"providing at least 128 EpUs of power. 1-9 mining drills, 1 central core, 1 "
+"miner controller and some lengths of fluid duct. Place the 1-9 mining drills "
+"down as 1x1 to 3x3 grid, place the central core ontop of the center drill "
+"and place the controller ontop of the central core. Join them all togther "
+"with fluid duct ensure one fluid duct is going into the side of the "
+"controller. Supply power and water to the miner and it will start "
+"functioning."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:146
+msgid ""
+"The Thermal Evaporation Plant is a machine which converts Water into Brine "
+"and Brine into liquid Lithium. It is powered via solar panels around the top "
+"edge.\n"
+"The plant consists of a Thermal Evaporation Plant Controller, Heat Casings, "
+"Thermal Evaporation Plant Inputs and Thermal Evaporation Plant Outputs. It "
+"is a 4x4 structure which can be built between 3 and 18 nodes high. The first "
+"layer is a solid 4x4 of Heat Casings. The controller must be placed on top "
+"of this floor of heat casings and on an outside edge. The center must be "
+"left hollow. On top of the top layer of heat casings you place Solar "
+"Generators this is in order to increase the heat inside the plant, More heat "
+"increases the production rate per second of the plant. The plant has a "
+"maximum temp of 1000 Kelvin.\n"
+"Note: If the controller fails to verify your structure (PUNCH the "
+"controller) or try placing it on a different side."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:166
+msgid ""
+"Once setup the Teleporter allows for instanaeous travel from the sending pad "
+"to the recieveing pad.\n"
+"To construct the teleporter simply place the transmission pad down were you "
+"would like to travel from and the reciever pad were you would like to travel "
+"too. Both ends will need to be provided with power to function. It is "
+"suggested you place a sending and recieving pad at both ends so you can "
+"teleport back and forth easily."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:180
+msgid ""
+"The wind turbine produces power from the wind. The minimum height a wind "
+"turbine will produce power is at y 10. The wind turbine will produce a small "
+"amount of power without blades, however with blades the wind turbine will "
+"produce 4x as much power.\n"
+"The higher the wind turbine is placed the more power it will produce to a "
+"maximum output of 100 EpUs."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:198
+msgid ""
+"The Nuclear (Fission) Reactor is a type of Nuclear Reactor in Elepower used "
+"for power generation. The reactor itself is composed of three nodes:\n"
+"Fission Control Module - Used for controlling the power of the reactor (top "
+"node)\n"
+"Fission Reactor Core - The core of the reactor (middle node)\n"
+"Reactor Fluid Port - Used to turn Cold Coolant into Hot Coolant (bottom "
+"node)\n"
+"The Reactor Core takes Fissile Fuel Rods and turns them into Depleted Fuel "
+"Rods after 2 hours (7200 seconds). The reactor assembly needs to have area "
+"of Water Source nodes surrounding it in order to keep the reactor cool "
+"(9x9x9 block of water). If the reactor heat reaches above 80%, it will start "
+"to melt down. The Control Rods can be raised or lowered to control the power "
+"output of the reactor core. Lowered control rods mean that the reactor is "
+"slowed down and raised mean that the reactor is accelerated.\n"
+"To gather power from the reactor you will need to add a heat exchanger, "
+"water pump, steam turbine and at least 1 bucket of cold coolant as well as "
+"the fluid ducts and fluid transfer pumps to move the fluids and steam "
+"around.\n"
+"This reactor is inspired by the real world pressurized water reactor "
+"design.\n"
+"\n"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:260
+msgid ""
+"This is a getting started guide for Elepower. The first step is to create "
+"your first power generator. The coal-fired generator is a good starting "
+"generator as it will produce power from anything that is burnable.You will "
+"need 3 Steel Ingots, 2 Wound copper coils, 1 Furnace and 1 Machine block to "
+"create a coal-fired generator. To craft all those you will need a Total of: "
+"174 leaves, 17 Copper Ingots, 8 Stone blocks, 9 Steel Ingots, 3 sand, 2 Iron "
+"ingots, 2 Silver Ingots and 2 Mese Crystal Fragments\n"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:273
+#: elepower_tome/i_eletome_additional_info.lua:487
+msgid "Any Leaves"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:277
+#: elepower_tome/i_eletome_additional_info.lua:292
+#: elepower_tome/i_eletome_additional_info.lua:298
+#: elepower_tome/i_eletome_additional_info.lua:313
+#: elepower_tome/i_eletome_additional_info.lua:324
+#: elepower_tome/i_eletome_additional_info.lua:344
+#: elepower_tome/i_eletome_additional_info.lua:359
+#: elepower_tome/i_eletome_additional_info.lua:374
+#: elepower_tome/i_eletome_additional_info.lua:389
+#: elepower_tome/i_eletome_additional_info.lua:426
+#: elepower_tome/i_eletome_additional_info.lua:452
+#: elepower_tome/i_eletome_additional_info.lua:491
+#: elepower_tome/i_eletome_additional_info.lua:509
+#: elepower_tome/i_eletome_additional_info.lua:515
+#: elepower_tome/i_eletome_additional_info.lua:527
+#: elepower_tome/i_eletome_additional_info.lua:591
+#: elepower_tome/i_eletome_additional_info.lua:605
+msgid "Crafting"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:396
+msgid ""
+"Now you have your generator built, place it down and then place the machines "
+"you wish to power next to it.\n"
+" Later on you'll need to join machines to power generators using power "
+"conduit."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:404
+msgid ""
+"More advanced machines require a Printed Circuit Board(PCB) to craft them. "
+"Early on you will need to manually craft your PCB's until you have access to "
+"a Printed Circuit Board Plant.\n"
+"You need two main components to create a PCB, etching acid and Printed "
+"Circuit Board (PCB) Blank. To create these two items you will need: 9 copper "
+"ingots, 3 gold ingots 1 mese crystal, 1 wheat seed and single water source "
+"block placed.\n"
+"Once you have turned the water into etching acid you can use it to turn 10 "
+"PCB blanks into 10 PCBs, you can also pickup the etching acid with a bucket "
+"and store it."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:435
+#: elepower_tome/i_eletome_additional_info.lua:461
+#: elepower_tome/i_eletome_additional_info.lua:763
+msgid "Right Click"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:439
+#: elepower_tome/i_eletome_additional_info.lua:465
+msgid "Turns Into"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:474
+msgid ""
+"Some machines can be upgraded to improve their power storage capacity, "
+"production speed or to make them more power efficient. To upgrade machines "
+"you need to craft a soldering iron so you can fit new parts to the machine.\n"
+" To craft a soldering iron you will need: 126 leaves, 8 silver ingots, 8 tin "
+"ingots, 5 coal lumps, 4 zinc ingots, 2 lead ingots, 2 mese crystal fragments "
+"and 1 steel ingot. Detailed crafting instructions are on the right page.\n"
+"Once you have your Soldering Iron simply hold the the tool and then left "
+"click on any machine and if it is upgradable you will be able to add "
+"components."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:615
+msgid "Burnable Items"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:616
+#: elepower_tome/i_eletome_additional_info.lua:619
+#: elepower_tome/i_eletome_additional_info.lua:622
+#: elepower_tome/i_eletome_additional_info.lua:626
+#: elepower_tome/i_eletome_additional_info.lua:630
+#: elepower_tome/i_eletome_additional_info.lua:634
+msgid "EpU generated"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:616
+#: elepower_tome/i_eletome_additional_info.lua:626
+#: elepower_tome/i_eletome_additional_info.lua:634
+#: elepower_tome/i_eletome_additional_info.lua:640
+#: elepower_tome/i_eletome_additional_info.lua:644
+#: elepower_tome/i_eletome_additional_info.lua:648
+#: elepower_tome/i_eletome_additional_info.lua:652
+#: elepower_tome/i_eletome_additional_info.lua:656
+msgid "per second"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:619
+msgid "per @1 lava/second"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:622
+msgid "per @1 biofuel/second"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:625
+msgid "Sunlight"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:630
+msgid "per @1 steam/second"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:633
+#: elepower_tome/i_eletome_additional_info.lua:739
+msgid "Wind"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:639
+#: elepower_tome/i_eletome_additional_info.lua:643
+#: elepower_tome/i_eletome_additional_info.lua:647
+#: elepower_tome/i_eletome_additional_info.lua:651
+#: elepower_tome/i_eletome_additional_info.lua:655
+msgid "Storage @1 EpUs"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:640
+#: elepower_tome/i_eletome_additional_info.lua:644
+#: elepower_tome/i_eletome_additional_info.lua:648
+#: elepower_tome/i_eletome_additional_info.lua:652
+#: elepower_tome/i_eletome_additional_info.lua:656
+msgid "EpU max output"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:661
+msgid ""
+"@1 Materials\n"
+"to be Alloyed"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:662
+msgid "used per second"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:665
+#: elepower_tome/i_eletome_additional_info.lua:697
+msgid "Fluids"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:666
+msgid ""
+"The Electrolyzer is used to create gases out of certain fluids. The "
+"electrolyzer can accept three fluids/liquids, although not at the same time "
+"- water, heavy water and biomass. The electrolyzer will at the cost of 128 "
+"EpUs a second break each down into different gases, see table below\n"
+" "
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:669
+msgid ""
+"To extract gas from the electrolyzer you will need a fluid pump, bucketeer "
+"and an empty gas canister. The electrolyzer can only output to a single "
+"bucketeer so you will need to empty one gas completely before you will be "
+"able to bottle the second gas (always oxygen)."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:680
+msgid "Seeds or Seedlings"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:681
+msgid ""
+"The automatic planter is used to keep a maximum 9x9 field planted with "
+"crops. The planter needs to be placed 1 node below the ground surface, "
+"however it is waterproof and functions perfectly with a node of water above "
+"it.\n"
+" The planter, plants from the most north westerly 3x3 block of nodes (top "
+"left corner) to the most south easterly 3x3 block of nodes (bottom right "
+"corner)."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:685
+msgid ""
+"The planter has a special interface to allow it to plant. The upper 3x3 grid "
+"represents a maximum area of 9x9 around the planter ie each grid segment "
+"represents a 3x3 area of nodes. The bottom 2 rows of 8 is the planters "
+"available inventory of items. There must be items of the type specified in "
+"the planting grid available in the inventory area for the planter to be able "
+"to plant, so keep the planters inventory well stocked with seeds or "
+"seedlings."
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:699
+msgid ""
+"Water\n"
+" and\n"
+"Lava"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:703
+msgid "Creates PCB's"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:707
+msgid "Sawing"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:709
+msgid ""
+"       Creates\n"
+" Machine Upgrades"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:711
+msgid ""
+"Processes\n"
+" Tree Sap"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:714
+#: elepower_tome/i_eletome_additional_info.lua:716
+#: elepower_tome/i_eletome_additional_info.lua:718
+#: elepower_tome/i_eletome_additional_info.lua:720
+#: elepower_tome/i_eletome_additional_info.lua:722
+#: elepower_tome/i_eletome_additional_info.lua:724
+#: elepower_tome/i_eletome_additional_info.lua:726
+#: elepower_tome/i_eletome_additional_info.lua:728
+#: elepower_tome/i_eletome_additional_info.lua:730
+#: elepower_tome/i_eletome_additional_info.lua:732
+#: elepower_tome/i_eletome_additional_info.lua:734
+msgid "Light"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:741
+msgid ""
+" Epu Max\n"
+"   Potential\n"
+"  Production"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:750
+#: elepower_tome/i_eletome_additional_info.lua:754
+msgid "Fluid"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:793
+#: elepower_tome/i_eletome_additional_info.lua:798
+msgid "Requires"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:803
+msgid ""
+"Produces\n"
+" Metal lumps"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:805
+msgid ""
+"128 EpUs & 500 Water\n"
+" used per drill"
+msgstr ""
+
+#: elepower_tome/i_functions.lua:133 elepower_tome/i_functions.lua:139
+msgid "Page @1"
+msgstr ""
+
+#: elepower_tome/i_functions.lua:136
+msgid "@1 Page"
+msgstr ""
+
+#: elepower_tome/init.lua:34 elepower_tome/i_page_contents.lua:41
+msgid "Elepower Tome"
+msgstr ""
+
+#: elepower_tome/init.lua:83 elepower_tome/init.lua:203
+msgid "Content"
+msgstr ""
+
+#: elepower_tome/init.lua:205 elepower_tome/init.lua:212
+msgid "Back"
+msgstr ""
+
+#: elepower_tome/init.lua:207
+msgid "Prev"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:34
+msgid ""
+"Elepower adds power to a game, Power is referred to in units and these units "
+"are called EpU (Elepower Unit).\n"
+"New crafts are added to the game as well as new machines to enable these new "
+"crafts and make use of EpU/s.\n"
+"\n"
+"Mod created by IcyDiamond and Sirrobzeroone.\n"
+"\n"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:44
+msgid "Getting Started"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:45
+msgid "First PCB Creation"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:46
+msgid "Upgrading Machines"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:50
+msgid "Contents"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:51
+msgid "Crafts"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:76
+msgid "Machines"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:79
+msgid "Simple Generators"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:80
+msgid "Simple Machines"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:82 elepower_tome/i_page_machines.lua:23
+msgid "Fission Reactor"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:83 elepower_tome/i_page_machines.lua:24
+msgid "Fusion Reactor"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:85
+msgid ""
+"Single Node\n"
+"Power Generators"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:86
+msgid ""
+"Single Node\n"
+"Machines"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:89 elepower_tome/i_page_machines.lua:20
+msgid "Powercells"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:90 elepower_tome/i_page_machines.lua:21
+msgid "Lighting"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:91 elepower_tome/i_page_machines.lua:25
+msgid "Fluid Pump"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:92 elepower_tome/i_page_machines.lua:26
+msgid "Evaporation Plant"
+msgstr ""
+
+#: elepower_tome/i_page_contents.lua:94 elepower_tome/i_page_machines.lua:28
+msgid "Transporter"
+msgstr ""
+
+#: elepower_tome/i_page_crafts.lua:58 elepower_tome/i_page_machines.lua:63
+msgid "Overview"
+msgstr ""
+
+#: elepower_tome/i_page_crafts.lua:102
+msgid "Recipes"
+msgstr ""
+
+#: elepower_tome/i_page_help.lua:37
+msgid "Help"
+msgstr ""
+
+#: elepower_tome/i_page_help.lua:41
+msgid "How to use"
+msgstr ""
+
+#: elepower_tome/i_page_instructions.lua:59
+msgid "Instructions"
+msgstr ""
+
+#: elepower_tome/i_page_instructions.lua:128
+#: elepower_tome/i_page_machines.lua:70
+msgid ""
+"Click for detailed\n"
+"instructions"
+msgstr ""
+
+#: elepower_tome/i_page_machines.lua:18
+msgid "Generators"
+msgstr ""
+
+#: elepower_tome/i_page_machines.lua:19
+msgid "Machine"
+msgstr ""
+
+#: elepower_tome/i_page_machines.lua:72
+msgid "Larger Image"
+msgstr ""
+
+#: elepower_tome/i_page_machines.lua:137 elepower_tome/i_page_machines.lua:155
+msgid "EpUs per second"
+msgstr ""
+
+#: elepower_tome/i_page_machines.lua:203
+msgid ""
+"Click for\n"
+"How to use"
+msgstr ""
+
+#: elepower_tools/armor.lua:10
+msgid "Iron Helmet"
+msgstr ""
+
+#: elepower_tools/armor.lua:21
+msgid "Iron Chestplate"
+msgstr ""
+
+#: elepower_tools/armor.lua:32
+msgid "Iron Leggings"
+msgstr ""
+
+#: elepower_tools/armor.lua:43
+msgid "Iron Boots"
+msgstr ""
+
+#: elepower_tools/armor.lua:60
+msgid "Carbon Fiber Helmet"
+msgstr ""
+
+#: elepower_tools/armor.lua:71
+msgid "Carbon Fiber Chestplate"
+msgstr ""
+
+#: elepower_tools/armor.lua:82
+msgid "Carbon Fiber Leggings"
+msgstr ""
+
+#: elepower_tools/armor.lua:93
+msgid "Carbon Fiber Boots"
+msgstr ""
+
+#: elepower_tools/craftitems.lua:4
+msgid "Drill Bit"
+msgstr ""
+
+#: elepower_tools/craftitems.lua:9
+msgid "Chainsaw Chain"
+msgstr ""
+
+#: elepower_tools/craftitems.lua:14
+msgid "Repair Core"
+msgstr ""
+
+#: elepower_tools/ed_reconstructor.lua:54
+msgid "Invalid Input"
+msgstr ""
+
+#: elepower_tools/ed_reconstructor.lua:83
+#: elepower_tools/ed_reconstructor.lua:108
+msgid "Energy Density Reconstructor"
+msgstr ""
+
+#: elepower_tools/ed_reconstructor.lua:109
+msgid "Repairs tools using energy"
+msgstr ""
+
+#: elepower_tools/soldering.lua:21
+msgid "Modifying @1"
+msgstr ""
+
+#: elepower_tools/soldering.lua:44
+msgid "This machine cannot be modified."
+msgstr ""
+
+#: elepower_tools/soldering.lua:139
+msgid "Soldering Iron"
+msgstr ""
+
+#: elepower_tools/soldering.lua:140
+msgid "Used to replace components in machines"
+msgstr ""
+
+#: elepower_tools/tools.lua:4
+msgid "Electric Hand Drill"
+msgstr ""
+
+#: elepower_tools/tools.lua:22
+msgid "Electric Chainsaw"
+msgstr ""
+
+#: elepower_wireless/machines/dialler.lua:51
+msgid "Refresh"
+msgstr ""
+
+#: elepower_wireless/machines/dialler.lua:52
+#: elepower_wireless/machines/matter_transmitter.lua:15
+msgid "Owned by @1"
+msgstr ""
+
+#: elepower_wireless/machines/dialler.lua:132
+#: elepower_wireless/machines/dialler.lua:138
+msgid "Dialler"
+msgstr ""
+
+#: elepower_wireless/machines/matter_receiver.lua:27
+#: elepower_wireless/machines/matter_receiver.lua:58
+#: elepower_wireless/machines/matter_receiver.lua:68
+msgid "Matter Receiver"
+msgstr ""
+
+#: elepower_wireless/machines/matter_transmitter.lua:14
+msgid "Transmitter Name"
+msgstr ""
+
+#: elepower_wireless/machines/matter_transmitter.lua:28
+#: elepower_wireless/machines/matter_transmitter.lua:65
+#: elepower_wireless/machines/matter_transmitter.lua:75
+msgid "Matter Transmitter"
+msgstr ""
+
+#: elepower_wireless/machines/matter_transmitter.lua:46
+msgid "Dialled to @1"
+msgstr ""
+
+#: elepower_wireless/machines/station.lua:78
+#: elepower_wireless/machines/station.lua:95
+#: elepower_wireless/machines/station.lua:167
+msgid "Wireless Control Station"
+msgstr ""
+
+#: elepower_wireless/machines/station.lua:82
+msgid "Monitoring @1 at @2"
+msgstr ""
+
+#: elepower_wireless/machines/station.lua:126
+#: elepower_wireless/machines/station.lua:150
+#: elepower_wireless/machines/station.lua:157
+msgid "Wireless Control Station Card"
+msgstr ""
+
+#: elepower_wireless/machines/station.lua:127
+#: elepower_wireless/machines/station.lua:158
+msgid "Sneak-Right-Click on a node to bind it"
+msgstr ""
+
+#: elepower_wireless/machines/station.lua:135
+msgid "You do not have permission to remotely control this node!"
+msgstr ""
+
+#: elepower_wireless/machines/station.lua:144
+msgid "Bound to @1 at @2"
+msgstr ""
+
+#: elepower_wireless/machines/tesseract.lua:4
+msgid "Tesseract Frame"
+msgstr ""
+
+#: elepower_wireless/machines/tesseract.lua:32
+msgid "Tesseract"
+msgstr ""

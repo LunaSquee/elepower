@@ -1,6 +1,7 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local eps = ele.external.sounds
+local S = ele.translator
 
 -----------------------
 -- Utility Functions --
@@ -14,7 +15,7 @@ end
 
 function ele.helpers.swap_node(pos, noded)
 	local node = minetest.get_node(pos)
-	
+
 	if type(noded) ~= "table" then
 		local n = table.copy(node)
 		n.name = noded
@@ -179,12 +180,12 @@ function ele.helpers.register_liquid(liquid, def)
 		end
 
 		if state == "flowing" then
-			def_base.description = "Flowing " .. def_base.description
+			def_base.description = S("Flowing") .. " " .. def_base.description
 			def_base.paramtype2 = "flowingliquid"
 			def_base.drawtype = "flowingliquid"
 			def_base.groups.not_in_creative_inventory = 1
 		else
-			def_base.description = def_base.description .. " Source"
+			def_base.description = def_base.description .. " " .. S("Source")
 		end
 
 		if def["tiles_"..state] then

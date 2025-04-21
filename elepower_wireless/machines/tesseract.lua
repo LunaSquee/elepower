@@ -1,6 +1,7 @@
+local S = ele.translator
 
 minetest.register_node("elepower_wireless:tesseract_frame", {
-	description = "Tesseract Frame",
+	description = S("Tesseract Frame"),
 	tiles = {
 		"elewireless_tesseract.png",
 	},
@@ -28,7 +29,7 @@ minetest.register_node("elepower_wireless:tesseract_frame", {
 })
 
 minetest.register_node("elepower_wireless:tesseract", {
-	description = "Tesseract",
+	description = S("Tesseract"),
 	tiles = {
 		"elewireless_tesseract.png",
 	},

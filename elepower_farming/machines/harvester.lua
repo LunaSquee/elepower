@@ -1,3 +1,4 @@
+local S = ele.translator
 local mcl = core.get_modpath("mcl_farming")
 
 -- see elepower_compat >> external.lua for explanation
@@ -123,7 +124,7 @@ local function on_timer(pos, elapsed)
 
     local state = meta:get_int("state")
     local is_enabled = ele.helpers.state_enabled(meta, pos, state)
-    local active = "Idle"
+    local active = S("Idle")
 
     local pow_buffer = {capacity = capacity, storage = storage, usage = 0}
 
@@ -149,12 +150,12 @@ local function on_timer(pos, elapsed)
             work = work + 1
         end
 
-        active = "Active"
+        active = S("Active")
         refresh = true
         pow_buffer.usage = usage
         ele.helpers.swap_node(pos, "elepower_farming:harvester_active")
     else
-        if not is_enabled then active = "Off" end
+        if not is_enabled then active = S("Off") end
 
         ele.helpers.swap_node(pos, "elepower_farming:harvester")
     end
@@ -163,7 +164,7 @@ local function on_timer(pos, elapsed)
 
     meta:set_string("formspec",
                     get_formspec(work_percent, pow_buffer, sludge, state))
-    meta:set_string("infotext", ("Harvester %s\n%s"):format(active,
+    meta:set_string("infotext", (S("Automatic Harvester") .. " %s\n%s"):format(active,
                                                             ele.capacity_text(
                                                                 capacity,
                                                                 storage)))
@@ -178,7 +179,7 @@ local function on_timer(pos, elapsed)
 end
 
 ele.register_machine("elepower_farming:harvester", {
-    description = "Automatic Harvester",
+    description = S("Automatic Harvester"),
     ele_capacity = 12000,
     ele_inrush = 288,
     ele_usage = 128,

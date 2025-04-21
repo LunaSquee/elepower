@@ -1,6 +1,7 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local epi = ele.external.ing
+local S = ele.translator
 
 if minetest.get_modpath("basic_materials") == nil then
 
@@ -9,12 +10,12 @@ if minetest.get_modpath("basic_materials") == nil then
 	--------------
 
 	minetest.register_craftitem(":basic_materials:oil_extract", {
-		    description = "Oil Extract",
+		    description = S("Oil Extract"),
 		    inventory_image = "elepower_bm_oil_extract.png",
 	})
 
 	minetest.register_craftitem(":basic_materials:paraffin", {
-		    description = "Unprocessed Paraffin",
+		    description = S("Unprocessed Paraffin"),
 		    inventory_image = "elepower_bm_paraffin.png",
 	})
 
@@ -27,18 +28,18 @@ if minetest.get_modpath("basic_materials") == nil then
 	minetest.register_alias("homedecor:empty_spool",      "basic_materials:empty_spool")
 
 	minetest.register_craftitem(":basic_materials:plastic_sheet", {
-		description = "Plastic Sheet",
+		description = S("Plastic Sheet"),
 		inventory_image = "elepower_bm_plastic_sheet.png",
 	})
 
 	minetest.register_craftitem(":basic_materials:plastic_strip", {
-		description = "Plastic Strips",
+		description = S("Plastic Strips"),
 		groups = { strip = 1 },
 		inventory_image = "elepower_bm_strip.png^[colorize:#ffffff:200",
 	})
 
 	minetest.register_craftitem(":basic_materials:empty_spool", {
-		description = "Empty wire spool",
+		description = S("Empty wire spool"),
 		inventory_image = "elepower_bm_empty_spool.png"
 	})
 
@@ -106,7 +107,7 @@ if minetest.get_modpath("basic_materials") == nil then
 	----------
 
 	minetest.register_craftitem(":basic_materials:copper_wire", {
-		description = "Copper Wire",
+		description = S("Copper Wire"),
 		inventory_image = "elepower_bm_copper_wire.png",
 		groups = {copper = 1, wire = 1, component = 1}
 	})
@@ -122,7 +123,7 @@ if minetest.get_modpath("basic_materials") == nil then
 	})
 
 	minetest.register_craftitem(":basic_materials:silver_wire", {
-		description = "Silver Wire",
+		description = S("Silver Wire"),
 		inventory_image = "elepower_bm_silver_wire.png",
 		groups = {copper = 1, wire = 1, component = 1}
 	})
@@ -141,7 +142,7 @@ if minetest.get_modpath("basic_materials") == nil then
 	-- Heating Element --
 	---------------------
 	minetest.register_craftitem(":basic_materials:heating_element", {
-		description = "Heating element",
+		description = S("Heating element"),
 		inventory_image = "elepower_bm_heating_element.png",
 	})
 
@@ -157,7 +158,7 @@ if minetest.get_modpath("basic_materials") == nil then
 	-----------
 
 	minetest.register_craftitem(":basic_materials:motor", {
-		description = "Motor",
+		description = S("Motor"),
 		inventory_image = "elepower_bm_motor.png",
 		groups = {motor = 1, component = 1}
 	})
@@ -176,7 +177,7 @@ if minetest.get_modpath("basic_materials") == nil then
 	-------------
 
 	minetest.register_craftitem(":basic_materials:silicon", {
-		description = "Silicon",
+		description = S("Silicon"),
 		inventory_image = "elepower_bm_silicon.png",
 		groups = {silicon = 1, lump = 1}
 	})
@@ -186,7 +187,7 @@ if minetest.get_modpath("basic_materials") == nil then
 	-----------
 
 	minetest.register_craftitem(":basic_materials:brass_ingot", {
-		description = "Brass Ingot",
+		description = S("Brass Ingot"),
 		inventory_image = "elepower_brass_ingot.png",
 		groups = {brass = 1, ingot = 1}
 	})
@@ -196,13 +197,13 @@ if minetest.get_modpath("basic_materials") == nil then
 	-----------
 
 	minetest.register_craftitem(":basic_materials:steel_strip", {
-		description = "Steel Strip",
+		description = S("Steel Strip"),
 		groups = { strip = 1 },
 		inventory_image = "elepower_bm_strip.png^[multiply:#ffffff"
 	})
 
 	minetest.register_craftitem(":basic_materials:steel_wire", {
-		description = "Spool of steel wire",
+		description = S("Spool of steel wire"),
 		groups = { wire = 1 },
 		inventory_image = "elepower_bm_steel_wire.png"
 	})

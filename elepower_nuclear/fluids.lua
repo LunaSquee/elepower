@@ -1,3 +1,4 @@
+local S = ele.translator
 
 -------------------
 -- Virtual Nodes --
@@ -7,34 +8,34 @@
 -- They do not actually exist as nodes that should be placed.
 
 minetest.register_node("elepower_nuclear:tritium", {
-	description = "Tritium Gas",
+	description = S("Tritium Gas"),
 	groups      = {not_in_creative_inventory = 1, oddly_breakable_by_hand = 1, gas = 1},
 	tiles       = {"elenuclear_gas.png"},
 })
 
 minetest.register_node("elepower_nuclear:deuterium", {
-	description = "Deuterium Gas",
+	description = S("Deuterium Gas"),
 	groups      = {not_in_creative_inventory = 1, oddly_breakable_by_hand = 1, gas = 1},
 	tiles       = {"elenuclear_gas.png"},
 })
 
 minetest.register_node("elepower_nuclear:helium", {
-	description = "Helium Gas",
+	description = S("Helium Gas"),
 	groups      = {not_in_creative_inventory = 1, oddly_breakable_by_hand = 1, gas = 1},
 	tiles       = {"elenuclear_helium.png"},
 })
 
 minetest.register_node("elepower_nuclear:helium_plasma", {
-	description = "Helium Plasma\nSuperheated",
+	description = S("Helium Plasma") .. "\n" .. S("Superheated"),
 	groups      = {not_in_creative_inventory = 1, oddly_breakable_by_hand = 1, gas = 1},
 	tiles       = {"elenuclear_helium_plasma.png"},
 })
 
-ele.register_gas(nil, "Tritium", "elepower_nuclear:tritium")
-ele.register_gas(nil, "Deuterium", "elepower_nuclear:deuterium")
-ele.register_gas("elepower_nuclear:helium_container", "Helium",
+ele.register_gas(nil, S("Tritium"), "elepower_nuclear:tritium")
+ele.register_gas(nil, S("Deuterium"), "elepower_nuclear:deuterium")
+ele.register_gas("elepower_nuclear:helium_container", S("Helium"),
 	"elepower_nuclear:helium", "elepower_gas_helium.png")
-ele.register_gas(nil, "Helium Plasma", "elepower_nuclear:helium_plasma")
+ele.register_gas(nil, S("Helium Plasma"), "elepower_nuclear:helium_plasma")
 
 -------------
 -- Liquids --
@@ -42,7 +43,7 @@ ele.register_gas(nil, "Helium Plasma", "elepower_nuclear:helium_plasma")
 
 -- Heavy Water
 ele.helpers.register_liquid("heavy_water", {
-	description = "Heavy Water",
+	description = S("Heavy Water"),
 	tiles_source = {
 		{
 			name = "elenuclear_heavy_water_source_animated.png",
@@ -86,7 +87,7 @@ ele.helpers.register_liquid("heavy_water", {
 -- Cold coolant
 
 ele.helpers.register_liquid("coolant", {
-	description       = "Cold Coolant",
+	description       = S("Cold Coolant"),
 	tiles             = {"elenuclear_cold_coolant.png"},
 	special_tiles     = {"elenuclear_cold_coolant.png", "elenuclear_cold_coolant.png"},
 	use_texture_alpha = "blend",
@@ -99,7 +100,7 @@ ele.helpers.register_liquid("coolant", {
 -- Hot coolant
 
 ele.helpers.register_liquid("hot_coolant", {
-	description       = "Hot Coolant",
+	description       = S("Hot Coolant"),
 	tiles             = {"elenuclear_hot_coolant.png"},
 	special_tiles     = {"elenuclear_hot_coolant.png", "elenuclear_hot_coolant.png"},
 	use_texture_alpha = "blend",
@@ -112,7 +113,7 @@ ele.helpers.register_liquid("hot_coolant", {
 -- Corium
 
 ele.helpers.register_liquid("corium", {
-	description       = "Corium",
+	description       = S("Corium"),
 	drawtype          = "liquid",
 	tiles_source      = {
 		{
@@ -156,16 +157,16 @@ ele.helpers.register_liquid("corium", {
 
 if minetest.get_modpath("bucket_compat") ~= nil then
 	fluid_lib.register_liquid("elepower_nuclear:coolant_source", "elepower_nuclear:hot_coolant_flowing",
-		"elepower_nuclear:bucket_coolant", "#2497ff", "Coolant (Cold)")
+		"elepower_nuclear:bucket_coolant", "#2497ff", S("Cold Coolant"))
 
 	fluid_lib.register_liquid("elepower_nuclear:hot_coolant_source", "elepower_nuclear:hot_coolant_flowing",
-		"elepower_nuclear:bucket_hot_coolant", "#88649e", "Coolant (Hot)")
+		"elepower_nuclear:bucket_hot_coolant", "#88649e", S("Hot Coolant"))
 
 	fluid_lib.register_liquid("elepower_nuclear:heavy_water_source", "elepower_nuclear:heavy_water_flowing",
-		"elepower_nuclear:bucket_heavy_water", "#0d4579", "Heavy Water Bucket")
+		"elepower_nuclear:bucket_heavy_water", "#0d4579", S("Heavy Water Bucket"))
 
 	fluid_tanks.register_tank(":elepower_dynamics:portable_tank", {
-		description = "Portable Tank",
+		description = S("Portable Tank"),
 		capacity    = 8000,
 		accepts     = true,
 		tiles       = {

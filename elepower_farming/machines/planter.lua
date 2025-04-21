@@ -1,3 +1,4 @@
+local S = ele.translator
 local mcl = core.get_modpath("mcl_farming")
 
 -- see elepower_compat >> external.lua for explanation
@@ -32,7 +33,7 @@ local function get_formspec(timer, power, state)
     local layout = efs.slot_grid(layout_x, 0.375, 3, 3)
     local start, bx, by, mx = efs.begin(11.75, 12.45)
 
-    local layout_tt = "Item placed here\n  will be planted\nout in a 3x3 area"
+    local layout_tt = S("Item placed here\n  will be planted\nout in a 3x3 area")
     local layout_bi = "elepower_planter_layout.png"
 
     return start .. efs.power_meter(power) ..
@@ -52,7 +53,7 @@ local function get_formspec(timer, power, state)
                ";" .. layout_tt .. ";" .. eletome.tooltip_color .. "]" ..
                efs.list("context", "src", 1, 4.25, 8, 2) .. "tooltip[1,4.25;" ..
                src_w .. "," .. src_h ..
-               ";    Place stacks of items\n     here to keep planter\nsupplied with items to plant;" ..
+               ";    "..S("Place stacks of items\n     here to keep planter\nsupplied with items to plant")..";" ..
                eletome.tooltip_color .. "]" .. epr.gui_player_inv(nil, 7) ..
                "listring[current_player;main]" .. "listring[context;src]" ..
                "listring[current_player;main]"
@@ -234,7 +235,7 @@ local function on_timer(pos, elapsed)
     local is_enabled = ele.helpers.state_enabled(meta, pos, state)
     local pow_buffer = {capacity = capacity, storage = storage, usage = 0}
     local owner = ele.get_machine_owner(pos)
-    local active = "Idle"
+    local active = S("Idle")
 
     if pow_buffer.storage > usage and is_enabled then
         if work == PLANTER_TICK then
@@ -255,17 +256,17 @@ local function on_timer(pos, elapsed)
             work = work + 1
         end
 
-        active = "Active"
+        active = S("Active")
         refresh = true
         pow_buffer.usage = usage
     elseif not is_enabled then
-        active = "Off"
+        active = S("Off")
     end
 
     local work_percent = math.floor((work / PLANTER_TICK) * 100)
 
     meta:set_string("formspec", get_formspec(work_percent, pow_buffer, state))
-    meta:set_string("infotext", ("Planter %s\n%s"):format(active,
+    meta:set_string("infotext", (S("Planter") .. " %s\n%s"):format(active,
                                                           ele.capacity_text(
                                                               capacity, storage)))
 
@@ -276,7 +277,7 @@ local function on_timer(pos, elapsed)
 end
 
 ele.register_base_device("elepower_farming:planter", {
-    description = "Automatic Planter",
+    description = S("Automatic Planter"),
     ele_capacity = 12000,
     ele_inrush = 288,
     ele_usage = 128,

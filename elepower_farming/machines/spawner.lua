@@ -1,3 +1,4 @@
+local S = ele.translator
 
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
@@ -124,8 +125,8 @@ local function on_timer(pos, elapsed)
 
 	local egg_slot = inv:get_stack("src", 1)
 	local egg_name = egg_slot:get_name()
-	local mob_desc = "None"
-	local active   = "Active"
+	local mob_desc = S("None")
+	local active   = S("Active")
 
 	local pow_buffer = {capacity = capacity, storage = storage, usage = 0}
 
@@ -135,7 +136,7 @@ local function on_timer(pos, elapsed)
 
 		if work == SPAWNER_TICK then
 			local spawned = 0
-			
+
 			-- Spawn
 			if spawn(pos, mob_name) then
 				spawned = spawned + 1
@@ -153,13 +154,13 @@ local function on_timer(pos, elapsed)
 		mob_desc = minetest.registered_items[mob_name].description
 		pow_buffer.usage = usage
 	elseif not is_enabled then
-		active = "Off"
+		active = S("Off")
 	else
 		work = 0
-		active = "Inactive"
+		active = S("Inactive")
 	end
 
-	meta:set_string("infotext", ("Powered Mob Spawner %s\nMob: %s\n%s"):format(
+	meta:set_string("infotext", (S("Powered Mob Spawner").. " %s\n"..S("Mob")..": %s\n%s"):format(
 		active, mob_desc, ele.capacity_text(capacity, pow_buffer.storage)))
 
 	local work_percent  = math.floor((work / SPAWNER_TICK)*100)
@@ -172,7 +173,7 @@ local function on_timer(pos, elapsed)
 end
 
 ele.register_machine("elepower_farming:spawner", {
-	description  = "Powered Mob Spawner",
+	description  = S("Powered Mob Spawner"),
 	ele_capacity = 64000,
 	ele_inrush   = 800,
 	ele_usage    = 800,

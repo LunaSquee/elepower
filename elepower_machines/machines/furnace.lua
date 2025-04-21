@@ -1,10 +1,11 @@
+local S = ele.translator
 
 -------------
 -- Furnace --
 -------------
 
 elepm.register_crafter("elepower_machines:furnace", {
-	description = "Powered Furnace",
+	description = S("Powered Furnace"),
 	craft_type = "cooking",
 	ele_active_node = true,
 	ele_usage = 32,

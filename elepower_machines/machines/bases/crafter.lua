@@ -4,6 +4,7 @@
 -- shorten table ref
 local epr = ele.external.ref
 local efs = ele.formspec
+local S = ele.translator
 
 local function strip_description_lines(description)
     if string.find(description, "\n") then
@@ -37,7 +38,7 @@ local function get_crafter_tooltips(x, y, craft_type, machine_name)
 
                         if string.find(reg_name, "group") ~= nil then
                             description =
-                                string.gsub(reg_name, "group:", "All ")
+                                string.gsub(reg_name, "group:", S("All") .. " ")
                         else
                             description =
                                 minetest.registered_items[reg_name].description
@@ -174,7 +175,7 @@ local function crafter_timer(pos, elapsed)
     local speed = ele.helpers.get_node_property(meta, pos, "craft_speed")
     local time = meta:get_int("src_time")
     local state = meta:get_int("state")
-    local status = "Idle"
+    local status = S("Idle")
 
     local is_enabled = ele.helpers.state_enabled(meta, pos, state)
     local res_time = 0
@@ -190,7 +191,7 @@ local function crafter_timer(pos, elapsed)
     while true do
         if not is_enabled then
             time = 0
-            status = "Off"
+            status = S("Off")
             break
         end
 
@@ -210,16 +211,15 @@ local function crafter_timer(pos, elapsed)
 
             if result.time == 0 then
                 time = 0
-                status = "Idle"
             else
-                status = "Out of Power!"
+                status = S("Out of Power!")
             end
 
             break
         end
 
         refresh = true
-        status = "Active"
+        status = S("Active")
 
         -- One step
         pow_buffer.storage = pow_buffer.storage - usage
@@ -258,7 +258,7 @@ local function crafter_timer(pos, elapsed)
         if not room_for_output then
             ele.helpers.swap_node(pos, machine_node)
             time = ele.helpers.round(res_time * 10)
-            status = "Output Full!"
+            status = S("Output Full!")
             break
         end
 

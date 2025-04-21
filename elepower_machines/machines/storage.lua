@@ -1,10 +1,11 @@
+local S = ele.translator
 
 -------------------
 -- Power Storage --
 -------------------
 
 elepm.register_storage("elepower_machines:power_cell", {
-	description = "Power Cell",
+	description = S("Power Cell"),
 	ele_capacity = 16000,
 	ele_inrush = 128,
 	ele_output = 128,
@@ -16,7 +17,7 @@ elepm.register_storage("elepower_machines:power_cell", {
 })
 
 elepm.register_storage("elepower_machines:hardened_power_cell", {
-	description = "Hardened Power Cell",
+	description = S("Hardened Power Cell"),
 	ele_capacity = 64000,
 	ele_inrush = 640,
 	ele_output = 640,
@@ -32,7 +33,7 @@ elepm.register_storage("elepower_machines:hardened_power_cell", {
 })
 
 elepm.register_storage("elepower_machines:reinforced_power_cell", {
-	description = "Reinforced Power Cell",
+	description = S("Reinforced Power Cell"),
 	ele_capacity = 128000,
 	ele_inrush = 1024,
 	ele_output = 1024,
@@ -48,7 +49,7 @@ elepm.register_storage("elepower_machines:reinforced_power_cell", {
 })
 
 elepm.register_storage("elepower_machines:resonant_power_cell", {
-	description = "Resonant Power Cell",
+	description = S("Resonant Power Cell"),
 	ele_capacity = 640000,
 	ele_inrush = 2048,
 	ele_output = 2048,
@@ -64,7 +65,7 @@ elepm.register_storage("elepower_machines:resonant_power_cell", {
 })
 
 elepm.register_storage("elepower_machines:super_power_cell", {
-	description = "Supercapacitor Cell",
+	description = S("Supercapacitor Cell"),
 	ele_capacity = 1280000,
 	ele_inrush = 4096,
 	ele_output = 4096,

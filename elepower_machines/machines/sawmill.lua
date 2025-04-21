@@ -1,13 +1,14 @@
+local S = ele.translator
 
 elepm.register_craft_type("saw", {
-	description = "Sawmilling",
+	description = S("Sawmilling"),
 	inputs      = 1,
 	gui_name    = "elepower_saw",
 	icon        = "elepower_machine_side.png^elepower_sawmill.png",
 })
 
 elepm.register_crafter("elepower_machines:sawmill", {
-	description = "Sawmill",
+	description = S("Sawmill"),
 	craft_type = "saw",
 	ele_usage = 32,
 	tiles = {

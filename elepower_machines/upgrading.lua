@@ -1,10 +1,11 @@
--- Convenience for i18n later on
+local S = ele.translator
+
 elepm.upgrading = {
 	dict = {
-		machine_chip  = "Machine Chip",
-		wireless_chip = "Wireless Chip",
-		capacitor     = "Capacitor",
-		pump_filter   = "Pump Filter",
+		machine_chip  = S("Machine Chip"),
+		wireless_chip = S("Wireless Chip"),
+		capacitor     = S("Capacitor"),
+		pump_filter   = S("Pump Filter"),
 	}
 }
 
@@ -49,11 +50,11 @@ function elepm.handle_machine_upgrades (pos)
 					if compdef and compdef.ele_upgrade and compdef.ele_upgrade[c] then
 						local task  = compdef.ele_upgrade[c]
 						local final = default
-						
+
 						if task.multiplier then
 							final = final + (default * task.multiplier * ulevel)
 						end
-						
+
 						if task.add then
 							final = final + (task.add * ulevel)
 						end

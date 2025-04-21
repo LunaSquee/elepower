@@ -1,3 +1,4 @@
+local S = ele.translator
 
 local materials = {}
 
@@ -6,7 +7,7 @@ if ele.external.armor.enable_iron_armor == true then
 
 	-- Iron Armor
 	armor:register_armor("elepower_tools:helmet_iron", {
-		description = "Iron Helmet",
+		description = S("Iron Helmet"),
 		inventory_image = "elepower_armor_inv_helmet.png",
 		texture = "elepower_armor_helmet.png",
 		preview = "elepower_armor_helmet_preview.png",
@@ -17,7 +18,7 @@ if ele.external.armor.enable_iron_armor == true then
 	})
 
 	armor:register_armor("elepower_tools:chestplate_iron", {
-		description = "Iron Chestplate",
+		description = S("Iron Chestplate"),
 		inventory_image = "elepower_armor_inv_chestplate.png",
 		texture = "elepower_armor_chestplate.png",
 		preview = "elepower_armor_chestplate_preview.png",
@@ -28,7 +29,7 @@ if ele.external.armor.enable_iron_armor == true then
 	})
 
 	armor:register_armor("elepower_tools:leggings_iron", {
-		description = "Iron Leggings",
+		description = S("Iron Leggings"),
 		inventory_image = "elepower_armor_inv_leggings.png",
 		texture = "elepower_armor_leggings.png",
 		preview = "elepower_armor_leggings_preview.png",
@@ -39,7 +40,7 @@ if ele.external.armor.enable_iron_armor == true then
 	})
 
 	armor:register_armor("elepower_tools:boots_iron", {
-		description = "Iron Boots",
+		description = S("Iron Boots"),
 		inventory_image = "elepower_armor_inv_boots.png",
 		texture = "elepower_armor_boots.png",
 		preview = "elepower_armor_boots_preview.png",
@@ -56,7 +57,7 @@ if ele.external.armor.enable_carbon_fiber_armor == true then
 	
 	-- Carbon Fiber Armor
 	armor:register_armor("elepower_tools:helmet_carbon", {
-		description = "Carbon Fiber Helmet",
+		description = S("Carbon Fiber Helmet"),
 		inventory_image = "elepower_armor_inv_helmet_carbon.png",
 		texture = "elepower_armor_helmet_carbon.png",
 		preview = "elepower_armor_helmet_carbon_preview.png",
@@ -67,7 +68,7 @@ if ele.external.armor.enable_carbon_fiber_armor == true then
 	})
 
 	armor:register_armor("elepower_tools:chestplate_carbon", {
-		description = "Carbon Fiber Chestplate",
+		description = S("Carbon Fiber Chestplate"),
 		inventory_image = "elepower_armor_inv_chestplate_carbon.png",
 		texture = "elepower_armor_chestplate_carbon.png",
 		preview = "elepower_armor_chestplate_carbon_preview.png",
@@ -78,7 +79,7 @@ if ele.external.armor.enable_carbon_fiber_armor == true then
 	})
 
 	armor:register_armor("elepower_tools:leggings_carbon", {
-		description = "Carbon Fiber Leggings",
+		description = S("Carbon Fiber Leggings"),
 		inventory_image = "elepower_armor_inv_leggings_carbon.png",
 		texture = "elepower_armor_leggings_carbon.png",
 		preview = "elepower_armor_leggings_carbon_preview.png",
@@ -89,7 +90,7 @@ if ele.external.armor.enable_carbon_fiber_armor == true then
 	})
 
 	armor:register_armor("elepower_tools:boots_carbon", {
-		description = "Carbon Fiber Boots",
+		description = S("Carbon Fiber Boots"),
 		inventory_image = "elepower_armor_inv_boots_carbon.png",
 		texture = "elepower_armor_boots_carbon.png",
 		preview = "elepower_armor_boots_carbon_preview.png",

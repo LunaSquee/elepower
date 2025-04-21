@@ -3,6 +3,7 @@
 -- shorten table ref
 local epr = ele.external.ref
 local efs = ele.formspec
+local S = ele.translator
 
 local recipes = {
 	{
@@ -34,7 +35,7 @@ local function get_formspec(inp, outp, solar, percent)
 	return start..
 		efs.fluid_bar(bx, by, inp) ..
 		efs.progress(center_x, by + 1.25, percent) ..
-		efs.label(center_x, by + 1, "Light: "..solar.."%") ..
+		efs.label(center_x, by + 1, S("Light: @1", solar.."%")) ..
 		efs.fluid_bar(mx - 1, by, outp) ..
 		epr.gui_player_inv() ..
 		"listring[current_player;main]"
@@ -48,7 +49,7 @@ local function on_timer (pos, elapsed)
 	local outp = fluid_lib.get_buffer_data(pos, "output")
 
 	local recipe = get_recipe(inp)
-	local status = "Idle"
+	local status = S("Idle")
 
 	local time     = meta:get_int("src_time")
 	local time_res = meta:get_int("src_time_max")
@@ -65,7 +66,7 @@ local function on_timer (pos, elapsed)
 		local input_t = recipe.input:get_count()
 
 		if result_t + outp.amount > outp.capacity or (outp.fluid ~= recipe.output:get_name() and outp.fluid ~= "") then
-			status = "Output full!"
+			status = S("Output Full!")
 			refresh = false
 			break
 		end
@@ -77,14 +78,14 @@ local function on_timer (pos, elapsed)
 		solarp = light / (minetest.LIGHT_MAX + 1)
 
 		if light >= 12 and time_of_day >= 0.24 and time_of_day <= 0.76 then
-			status = "Active"
+			status = S("Active")
 
 			time = time + 1
 			outp.amount = outp.amount + result_t * solarp
 			inp.amount = inp.amount - input_t * solarp
 			outp.fluid = recipe.output:get_name()
 		else
-			status = "Not enough light!"
+			status = S("Not enough light!")
 		end
 
 		if time >= time_res then
@@ -112,13 +113,13 @@ local function on_timer (pos, elapsed)
 		pcrt = math.floor(100 * time / time_res)
 	end
 
-	meta:set_string("infotext", ("Solar Neutron Activator %s"):format(status))
+	meta:set_string("infotext", S("Solar Neutron Activator") .. " " .. status)
 	meta:set_string("formspec", get_formspec(inp, outp, solarp * 100, pcrt))
 	return refresh
 end
 
 ele.register_base_device("elepower_nuclear:solar_neutron_activator", {
-	description = "Solar Neutron Activator",
+	description = S("Solar Neutron Activator"),
 	drawtype = "mesh",
 	mesh = "elenuclear_solar_activator.obj",
 	tiles = {"elenuclear_solar_activator.png"},

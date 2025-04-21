@@ -1,12 +1,14 @@
 
+local S = ele.translator
+
 elepm.register_craft_type("compress", {
-	description = "Compressing",
+	description = S("Compressing"),
 	icon        = "elepower_machine_side.png^elepower_compressor.png",
 	inputs      = 2,
 })
 
 elepm.register_crafter("elepower_machines:compressor", {
-	description = "Compressor",
+	description = S("Compressor"),
 	craft_type = "compress",
 	ele_usage = 32,
 	tiles = {

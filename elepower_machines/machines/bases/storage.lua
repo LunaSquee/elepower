@@ -3,6 +3,7 @@
 local epr = ele.external.ref
 local epg = ele.external.graphic
 local efs = ele.formspec
+local S = ele.translator
 
 local function get_formspec_default(power)
 	local start, bx, by, mx = efs.begin(11.75, 10.45)
@@ -66,7 +67,7 @@ function elepm.register_storage(nodename, nodedef)
 
 		ele.helpers.swap_node(pos, nodename .. "_" .. level)
 		meta:set_string("formspec", get_formspec({capacity = capacity, storage = storage, usage = 0}))
-		meta:set_string("infotext", ("%s Active"):format(nodedef.description) .. "\n" ..
+		meta:set_string("infotext", ("%s " .. S("Active")):format(nodedef.description) .. "\n" ..
 			ele.capacity_text(capacity, storage))
 
 		local inv = meta:get_inventory()

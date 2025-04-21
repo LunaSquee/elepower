@@ -5,6 +5,7 @@ local epr = ele.external.ref
 local epi = ele.external.ing
 local epg = ele.external.graphic
 local efs = ele.formspec
+local S = ele.translator
 
 local function get_formspec(heat, cold, water, steam)
 	local start, bx, by, mx, _, center_x = efs.begin(11.75, 10.45)
@@ -106,7 +107,7 @@ local function heat_exchanger_timer(pos)
 end
 
 ele.register_machine("elepower_nuclear:heat_exchanger", {
-	description = "Shielded Heat Exchanger\nFor use in nuclear power plants",
+	description = S("Shielded Heat Exchanger") .. "\n" .. S("For use in nuclear power plants"),
 	tiles = {
 		"elenuclear_machine_top.png",  "elepower_lead_block.png",  "elenuclear_machine_side.png",
 		"elenuclear_machine_side.png", "elenuclear_machine_side.png", "elenuclear_heat_exchanger.png",

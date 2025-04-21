@@ -12,71 +12,73 @@
 --                   Craft Items                    --
 ------------------------------------------------------
 
+local S = ele.translator
+
 minetest.register_craftitem("elepower_lighting:bulb_glass", {
-	description = "Bulb Glass",
+	description = S("Bulb Glass"),
 	inventory_image = "elepower_lighting_incandescent_bulb_glass.png",
 	groups = {oddly_breakable_by_hand = 1}
 })
 
 minetest.register_craftitem("elepower_lighting:incandescent_bulb_element", {
-	description = "Incandescent Bulb Element",
+	description = S("Incandescent Bulb Element"),
 	inventory_image = "elepower_lighting_incandescent_bulb_element.png",
 	groups = {oddly_breakable_by_hand = 1}
 })
 
 minetest.register_craftitem("elepower_lighting:cf_bulb_glass", {
-	description = "CF Bulb Glass",
+	description = S("CF Bulb Glass"),
 	inventory_image = "elepower_lighting_cf_bulb_glass.png",
 	groups = {oddly_breakable_by_hand = 1}
 })
 
 minetest.register_craftitem("elepower_lighting:magnifying_lens", {
-	description = "Magnifying Lens",
+	description = S("Magnifying Lens"),
 	inventory_image = "elepower_lighting_magnifying_lens.png",
 	groups = {oddly_breakable_by_hand = 1}
 })
 
 minetest.register_craftitem("elepower_lighting:fluro_tube_glass", {
-	description = "Fluro Tube Glass",
+	description = S("Fluro Tube Glass"),
 	inventory_image = "elepower_lighting_fluro_tube_glass.png",
 	groups = {oddly_breakable_by_hand = 1}
 })
 
 minetest.register_craftitem("elepower_lighting:electrum_strip", {
-	description = "Electrum Strip",
+	description = S("Electrum Strip"),
 	inventory_image = "elepower_bm_strip.png^[multiply:#ebeb90",
 	groups = {strip = 1}
 })
 
 minetest.register_craftitem("elepower_lighting:led_red", {
-	description = "Red Light Emitting Diode",
+	description = S("Red Light Emitting Diode"),
 	inventory_image = "elepower_lighting_light_emitting_diode_single.png^[multiply:#FF0000"..
 	                  "^[lowpart:31:elepower_lighting_light_emitting_diode_single.png",
 	groups = {oddly_breakable_by_hand = 1, led = 1}
 })
 
 minetest.register_craftitem("elepower_lighting:led_green", {
-	description = "Green Light Emitting Diode",
+	description = S("Green Light Emitting Diode"),
 	inventory_image = "elepower_lighting_light_emitting_diode_single.png^[multiply:#00FF00"..
 	                  "^[lowpart:31:elepower_lighting_light_emitting_diode_single.png",
 	groups = {oddly_breakable_by_hand = 1, led = 1}
 })
 
 minetest.register_craftitem("elepower_lighting:led_blue", {
-	description = "Blue Light Emitting Diode",
+	description = S("Blue Light Emitting Diode"),
 	inventory_image = "elepower_lighting_light_emitting_diode_single.png^[multiply:#0000FF"..
 	                  "^[lowpart:31:elepower_lighting_light_emitting_diode_single.png",
 	groups = {oddly_breakable_by_hand = 1, led = 1}
 })
 
 minetest.register_craftitem("elepower_lighting:led_cluster", {
-	description = "Light Emitting Diode Cluster",
+	description = S("Light Emitting Diode Cluster"),
 	inventory_image = "elepower_lighting_light_emitting_diode_cluster.png",
 	groups = {oddly_breakable_by_hand = 1, led = 1}
 })
 
 minetest.register_craftitem("elepower_lighting:led_driver", {
-	description = "LED Driver Board",
+	description = S("LED Driver Board"),
 	inventory_image = "elepower_lighting_light_emitting_diode_driver.png",
 	groups = {oddly_breakable_by_hand = 1}
 })

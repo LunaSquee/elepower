@@ -2,6 +2,7 @@
 -- shorten table ref
 local epr = ele.external.ref
 local efs = ele.formspec
+local S = ele.translator
 
 local function get_formspec(timer, biomass_buffer, output_buffer)
 	local start, bx, by, mx = efs.begin(11.75, 10.45)
@@ -132,7 +133,7 @@ local function on_timer(pos, elapsed)
 end
 
 ele.register_base_device("elepower_farming:composter", {
-    description = "Composter\nConvert organic matter to Biofuel",
+    description = S("Composter") .. "\n" .. S("Convert organic matter to Biofuel"),
     groups = {
         oddly_breakable_by_hand = 1,
         cracky = 3,

@@ -1,3 +1,4 @@
+local S = ele.translator
 
 ---------------------------
 -- Fission-related items --
@@ -6,37 +7,37 @@
 -- Uranium
 
 minetest.register_craftitem("elepower_nuclear:uranium_lump", {
-	description = "Uranium Lump",
+	description = S("Uranium Lump"),
 	inventory_image = "elenuclear_uranium_lump.png"
 })
 
 -- Dusts
 
 minetest.register_craftitem("elepower_nuclear:uranium_dust", {
-	description = "Enriched Uranium Dust\n(Ready to be used as fuel)",
+	description = S("Enriched Uranium Dust\n(Ready to be used as fuel)"),
 	inventory_image = "elepower_dust.png^[colorize:#3eff2788^[multiply:#3eff27A0"
 })
 
 minetest.register_craftitem("elepower_nuclear:depleted_uranium_dust", {
-	description = "Depleted Uranium Dust\n(Requires enrichment)",
+	description = S("Depleted Uranium Dust\n(Requires enrichment)"),
 	inventory_image = "elepower_dust.png^[multiply:#18df00"
 })
 
 minetest.register_craftitem("elepower_nuclear:nuclear_waste", {
-	description = "Nuclear Waste\n(Mostly unusable for nuclear fission)",
+	description = S("Nuclear Waste\n(Mostly unusable for nuclear fission)"),
 	inventory_image = "elenuclear_uranium_waste.png"
 })
 
 -- Fuel rods
 
 minetest.register_craftitem("elepower_nuclear:fuel_rod_empty", {
-	description = "Empty Fuel Rod",
+	description = S("Empty Fuel Rod"),
 	inventory_image = "elenuclear_fuel_rod_empty.png",
 	stack_max = 1,
 })
 
 minetest.register_craftitem("elepower_nuclear:fuel_rod_fissile", {
-	description = "Fissile Fuel Rod\nLasts 2 hours (7200 seconds)",
+	description = S("Fissile Fuel Rod\nLasts @1 hours (@2 seconds)", "2", "7200"),
 	inventory_image = "elenuclear_fuel_rod_fissile.png",
 	groups = { fissile_fuel = 1 },
 	fissile_count = 7200,
@@ -44,7 +45,7 @@ minetest.register_craftitem("elepower_nuclear:fuel_rod_fissile", {
 })
 
 minetest.register_craftitem("elepower_nuclear:fuel_rod_depleted", {
-	description = "Depleted Fuel Rod\nCan not be used in a reactor anymore",
+	description = S("Depleted Fuel Rod\nCan not be used in a reactor anymore"),
 	inventory_image = "elenuclear_fuel_rod_depleted.png",
 	stack_max = 1,
 })
@@ -52,19 +53,19 @@ minetest.register_craftitem("elepower_nuclear:fuel_rod_depleted", {
 -- Control rods
 
 minetest.register_craftitem("elepower_nuclear:control_rod", {
-	description = "Control Rod",
+	description = S("Control Rod"),
 	inventory_image = "elenuclear_control_rod.png",
 	stack_max = 4,
 })
 
 minetest.register_craftitem("elepower_nuclear:control_rod_assembly", {
-	description = "Control Rod Assembly",
+	description = S("Control Rod Assembly"),
 	inventory_image = "elenuclear_control_rod_assembly.png",
 	stack_max = 1,
 })
 
 minetest.register_craftitem("elepower_nuclear:control_plate", {
-	description = "Perforated Control Plate",
+	description = S("Perforated Control Plate"),
 	inventory_image = "elenuclear_control_plate.png",
 	stack_max = 1,
 })
@@ -72,7 +73,7 @@ minetest.register_craftitem("elepower_nuclear:control_plate", {
 -- Pressure vessel
 
 minetest.register_craftitem("elepower_nuclear:pressure_vessel", {
-	description = "Reactor Pressure Vessel",
+	description = S("Reactor Pressure Vessel"),
 	inventory_image = "elenuclear_pressure_vessel.png",
 	stack_max = 1,
 })

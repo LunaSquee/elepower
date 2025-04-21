@@ -2,6 +2,7 @@
 -- shorten table ref
 local epg = ele.external.graphic
 local epr = ele.external.ref
+local S = ele.translator
 
 -- Formspec helpers
 
@@ -129,7 +130,8 @@ function ele.formspec.tooltip(x, y, w, h, text, bgcolor, fgcolor)
     h = h or 1
     text = text or ""
     -- bgcolor and fgcolor are optional
-    local color = bgcolor ~= nil and (";" .. bgcolor .. ";" .. (fgcolor or "")) or ""
+    local color =
+        bgcolor ~= nil and (";" .. bgcolor .. ";" .. (fgcolor or "")) or ""
     return "tooltip[" .. x .. "," .. y .. ";" .. w .. "," .. h .. ";" .. text ..
                color .. "]"
 end
@@ -176,7 +178,7 @@ function ele.formspec.state_switcher(x, y, state)
     else
         statedesc = ""
     end
-    statedesc = statedesc .. "\nPress to toggle"
+    statedesc = statedesc .. "\n" .. S("Press to toggle")
 
     return "image_button[" .. x .. "," .. y .. ";1,1;" .. icon ..
                ";cyclestate;]" .. "tooltip[cyclestate;" .. statedesc .. "]"
@@ -210,11 +212,12 @@ function ele.formspec.power_meter(capacitor)
     local usage = capacitor.usage
     if not usage then usage = 0 end
 
-    local tooltip = core.colorize("#c60303", "Energy Storage\n") ..
+    local tooltip = core.colorize("#c60303", S("Energy Storage") .. "\n") ..
                         core.colorize("#0399c6", ele.capacity_text(
                                           capacitor.capacity, capacitor.storage)) ..
-                        core.colorize("#565656", "\nPower Used / Generated: " ..
-                                          usage .. " " .. ele.unit)
+                        core.colorize("#565656",
+                                      "\n" .. S("Power Used / Generated") ..
+                                          ": " .. usage .. " " .. ele.unit)
 
     return ele.formspec.create_bar(0.375, 0.375, pw_percent, "#00a1ff") ..
                ele.formspec
@@ -227,7 +230,7 @@ end
 function ele.formspec.fluid_bar(x, y, fluid_buffer)
     local texture = epg.water
     local metric = 0
-    local tooltip = ele.formspec.tooltip(x, y, 1, 2.8, "Empty Buffer")
+    local tooltip = ele.formspec.tooltip(x, y, 1, 2.8, S("Empty Buffer"))
 
     if fluid_buffer and fluid_buffer.fluid and fluid_buffer.fluid ~= "" and
         core.registered_nodes[fluid_buffer.fluid] ~= nil then

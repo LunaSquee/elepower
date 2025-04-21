@@ -1,10 +1,11 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
 local eps = ele.external.sounds
+local S = ele.translator
 
 if ele.external.ing.iron_ingot == "" and ele.external.tools.enable_iron_tools == true then
     minetest.register_tool("elepower_dynamics:pick_iron", {
-        description = "Iron Pickaxe",
+        description = S("Iron Pickaxe"),
         inventory_image = "elepower_tool_ironpick.png",
         tool_capabilities = {
             full_punch_interval = 1.0,
@@ -27,7 +28,7 @@ if ele.external.ing.iron_ingot == "" and ele.external.tools.enable_iron_tools ==
     })
 
     minetest.register_tool("elepower_dynamics:shovel_iron", {
-        description = "Iron Shovel",
+        description = S("Iron Shovel"),
         inventory_image = "elepower_tool_ironshovel.png",
         wield_image = "elepower_tool_ironshovel.png^[transformR90",
         tool_capabilities = {
@@ -51,7 +52,7 @@ if ele.external.ing.iron_ingot == "" and ele.external.tools.enable_iron_tools ==
     })
 
     minetest.register_tool("elepower_dynamics:axe_iron", {
-        description = "Iron Axe",
+        description = S("Iron Axe"),
         inventory_image = "elepower_tool_ironaxe.png",
         tool_capabilities = {
             full_punch_interval = 1.0,
@@ -74,7 +75,7 @@ if ele.external.ing.iron_ingot == "" and ele.external.tools.enable_iron_tools ==
     })
 
     minetest.register_tool("elepower_dynamics:sword_iron", {
-        description = "Iron Sword",
+        description = S("Iron Sword"),
         inventory_image = "elepower_tool_ironsword.png",
         tool_capabilities = {
             full_punch_interval = 0.8,
@@ -100,7 +101,7 @@ end
 
 if ele.external.tools.enable_lead_tools == true then
     minetest.register_tool("elepower_dynamics:axe_lead", {
-        description = "Lead Axe",
+        description = S("Lead Axe"),
         inventory_image = "elepower_tool_leadaxe.png",
         tool_capabilities = {
             full_punch_interval = 0.9,
@@ -123,7 +124,7 @@ if ele.external.tools.enable_lead_tools == true then
     })
 
     minetest.register_tool("elepower_dynamics:pick_lead", {
-        description = "Lead Pickaxe",
+        description = S("Lead Pickaxe"),
         inventory_image = "elepower_tool_leadpick.png",
         tool_capabilities = {
             full_punch_interval = 0.8,
@@ -146,7 +147,7 @@ if ele.external.tools.enable_lead_tools == true then
     })
 
     minetest.register_tool("elepower_dynamics:shovel_lead", {
-        description = "Lead Shovel",
+        description = S("Lead Shovel"),
         inventory_image = "elepower_tool_leadshovel.png",
         wield_image = "elepower_tool_leadshovel.png^[transformR90",
         tool_capabilities = {
@@ -169,7 +170,7 @@ if ele.external.tools.enable_lead_tools == true then
         },
     })
     minetest.register_tool("elepower_dynamics:sword_lead", {
-        description = "Lead Sword",
+        description = S("Lead Sword"),
         inventory_image = "elepower_tool_leadsword.png",
         tool_capabilities = {
             full_punch_interval = 0.7,
