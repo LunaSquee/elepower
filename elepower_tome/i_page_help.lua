@@ -54,12 +54,13 @@ function eletome.how_use_page(name_value)
 	local sty_h4e  = eletome.common_styles.style_h4e
 
 	-- Additional Info Table
-	local add_info = eletome.ai.nodes
+	local page_info = eletome.ai.nodes[name_value]
+	local page_title = page_info.title or pg_heading
 
 	---------------
 	-- left page --
 	---------------
-	local left_image  = add_info[name_value].hu_img_1 or "elepower_tome_empty.png"
+	local left_image  = page_info.hu_img_1 or "elepower_tome_empty.png"
 	local lp_offset   = 0
 
 	if left_image == "elepower_tome_empty.png" then
@@ -67,20 +68,20 @@ function eletome.how_use_page(name_value)
 	end
 
 	if type(left_image) == "table" then
-		left_image = add_info[name_value].hu_img_1[1]
+		left_image = page_info.hu_img_1[1]
 	else
 		left_image = "image[2.25,6.6;5,3.75;"..left_image.."]"
 	end
 
-	local lp_heading  = "hypertext[0.5,0.7;8.5,0.95;lp_heading;"..sty_h0s..pg_heading..sty_h0e.."]"
+	local lp_heading  = "hypertext[0.5,0.7;8.5,0.95;lp_heading;"..sty_h0s..page_title..sty_h0e.."]"
 	local lp_sub_head = "hypertext[0.5,1.4;8.5,0.9;lp_sub_heading;"..sty_h1s..pg_subhead..sty_h1e.."]"
 	local lp_image    = left_image
-	local lp_text     = "hypertext[0.75,2.1;8.0,"..(4.5+lp_offset)..";use_txt;"..sty_h4s..(add_info[name_value].how_use_1 or "")..sty_h4e.."]"
+	local lp_text     = "hypertext[0.75,2.1;8.0,"..(4.5+lp_offset)..";use_txt;"..sty_h4s..(page_info.how_use_1 or "")..sty_h4e.."]"
 	----------------
 	-- Right page --
 	----------------
-	local right_image = add_info[name_value].hu_img_2 or "elepower_tome_empty.png"
-	local right_txt = add_info[name_value].how_use_2 or ""
+	local right_image = page_info.hu_img_2 or "elepower_tome_empty.png"
+	local right_txt = page_info.how_use_2 or ""
 	local rp_txt_offset   = 0
 	local rp_img_offset   = 0
 
@@ -93,7 +94,7 @@ function eletome.how_use_page(name_value)
 	end
 
 	if type(right_image) == "table" then
-		right_image = "container[9.25,"..(6.6+rp_img_offset).."]"..add_info[name_value].hu_img_2[1].."container_end[]"
+		right_image = "container[9.25,"..(6.6+rp_img_offset).."]"..page_info.hu_img_2[1].."container_end[]"
 	else
 		right_image = "image[10.75,"..(6.6+rp_img_offset)..";5,3.75;"..right_image.."]"
 	end

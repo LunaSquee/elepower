@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-21 20:19+0300\n"
-"PO-Revision-Date: 2025-04-21 20:21+0300\n"
+"POT-Creation-Date: 2025-04-21 23:01+0300\n"
+"PO-Revision-Date: 2025-04-21 22:58+0300\n"
 "Last-Translator: evert@lunasqu.ee\n"
 "Language-Team: Estonian <linux-ee@lists.eenet.ee>\n"
 "Language: et\n"
@@ -445,7 +445,7 @@ msgid "Liquid Lithium Bucket"
 msgstr "Vedela liitiumiga ämber"
 
 #: elepower_dynamics/fluids.lua:48 elepower_dynamics/gas_container.lua:37
-#: elepower_tome/i_eletome_additional_info.lua:629
+#: elepower_tome/i_eletome_additional_info.lua:635
 msgid "Steam"
 msgstr "Aur"
 
@@ -481,8 +481,8 @@ msgid "Empty Gas Container"
 msgstr "Tühi gaasimahuti"
 
 #: elepower_dynamics/gas_container.lua:48
-#: elepower_tome/i_eletome_additional_info.lua:772
-#: elepower_tome/i_eletome_additional_info.lua:782
+#: elepower_tome/i_eletome_additional_info.lua:778
+#: elepower_tome/i_eletome_additional_info.lua:788
 msgid "Lithium"
 msgstr "Liitium"
 
@@ -706,11 +706,11 @@ msgstr "Pane seemned siia istutamiseks"
 
 #: elepower_farming/machines/planter.lua:269
 msgid "Planter"
-msgstr "Viljaistutaja"
+msgstr "Külvik"
 
 #: elepower_farming/machines/planter.lua:280
 msgid "Automatic Planter"
-msgstr "Automaatne viljaistutaja"
+msgstr "Automaatne külvik"
 
 #: elepower_farming/machines/spawner.lua:128
 msgid "None"
@@ -1001,12 +1001,12 @@ msgid "Wind Turbine Blade (Wooden)"
 msgstr "Tuulikulaba (puidust)"
 
 #: elepower_machines/craft.lua:234
-#: elepower_tome/i_eletome_additional_info.lua:281
-#: elepower_tome/i_eletome_additional_info.lua:285
-#: elepower_tome/i_eletome_additional_info.lua:333
-#: elepower_tome/i_eletome_additional_info.lua:495
-#: elepower_tome/i_eletome_additional_info.lua:499
-#: elepower_tome/i_eletome_additional_info.lua:701
+#: elepower_tome/i_eletome_additional_info.lua:283
+#: elepower_tome/i_eletome_additional_info.lua:287
+#: elepower_tome/i_eletome_additional_info.lua:335
+#: elepower_tome/i_eletome_additional_info.lua:501
+#: elepower_tome/i_eletome_additional_info.lua:505
+#: elepower_tome/i_eletome_additional_info.lua:707
 msgid "Cooking"
 msgstr "Küpsetamine"
 
@@ -1027,13 +1027,13 @@ msgstr "Veekoguja"
 #: elepower_machines/machines/accumulator.lua:33
 #: elepower_machines/machines/electrolyzer.lua:42
 #: elepower_nuclear/fluids.lua:46
-#: elepower_tome/i_eletome_additional_info.lua:762
+#: elepower_tome/i_eletome_additional_info.lua:768
 msgid "Heavy Water"
 msgstr "Raske vesi"
 
 #: elepower_machines/machines/alloy_furnace.lua:5
-#: elepower_tome/i_eletome_additional_info.lua:355
-#: elepower_tome/i_eletome_additional_info.lua:543
+#: elepower_tome/i_eletome_additional_info.lua:357
+#: elepower_tome/i_eletome_additional_info.lua:549
 msgid "Alloying"
 msgstr "Sulamite valmistamine"
 
@@ -1072,7 +1072,7 @@ msgid "Bucketer"
 msgstr "Ämbristaja"
 
 #: elepower_machines/machines/canning_machine.lua:5
-#: elepower_tome/i_eletome_additional_info.lua:693
+#: elepower_tome/i_eletome_additional_info.lua:699
 msgid "Canning"
 msgstr "Purgistamine"
 
@@ -1085,8 +1085,8 @@ msgid "Coal-fired Alloy Furnace"
 msgstr "Kivisöel töötav sulamiahi"
 
 #: elepower_machines/machines/compressor.lua:5
-#: elepower_tome/i_eletome_additional_info.lua:557
-#: elepower_tome/i_eletome_additional_info.lua:695
+#: elepower_tome/i_eletome_additional_info.lua:563
+#: elepower_tome/i_eletome_additional_info.lua:701
 msgid "Compressing"
 msgstr "Kompressimine"
 
@@ -1095,11 +1095,11 @@ msgid "Compressor"
 msgstr "Kompressor"
 
 #: elepower_machines/machines/electrolyzer.lua:41
-#: elepower_tome/i_eletome_additional_info.lua:758
-#: elepower_tome/i_eletome_additional_info.lua:772
-#: elepower_tome/i_eletome_additional_info.lua:777
-#: elepower_tome/i_eletome_additional_info.lua:793
-#: elepower_tome/i_eletome_additional_info.lua:798
+#: elepower_tome/i_eletome_additional_info.lua:764
+#: elepower_tome/i_eletome_additional_info.lua:778
+#: elepower_tome/i_eletome_additional_info.lua:783
+#: elepower_tome/i_eletome_additional_info.lua:799
+#: elepower_tome/i_eletome_additional_info.lua:804
 msgid "Water"
 msgstr "Vesi"
 
@@ -1171,12 +1171,12 @@ msgid "Printed Circuit Board Plant"
 msgstr "Trükkplaadivabrik"
 
 #: elepower_machines/machines/pulverizer.lua:4
-#: elepower_tome/i_eletome_additional_info.lua:420
-#: elepower_tome/i_eletome_additional_info.lua:537
-#: elepower_tome/i_eletome_additional_info.lua:547
-#: elepower_tome/i_eletome_additional_info.lua:567
+#: elepower_tome/i_eletome_additional_info.lua:424
+#: elepower_tome/i_eletome_additional_info.lua:543
+#: elepower_tome/i_eletome_additional_info.lua:553
 #: elepower_tome/i_eletome_additional_info.lua:573
-#: elepower_tome/i_eletome_additional_info.lua:705
+#: elepower_tome/i_eletome_additional_info.lua:579
+#: elepower_tome/i_eletome_additional_info.lua:711
 msgid "Grinding"
 msgstr "Pulbristamine"
 
@@ -1212,7 +1212,7 @@ msgstr "pumpab"
 
 #: elepower_machines/machines/pump.lua:217
 msgid "Pickup Pump Tank"
-msgstr "Pump"
+msgstr "Kogumispump"
 
 #: elepower_machines/machines/sawmill.lua:4
 msgid "Sawmilling"
@@ -1260,7 +1260,7 @@ msgstr "pole tuult"
 
 #: elepower_machines/machines/wind_turbine.lua:104
 #: elepower_machines/machines/wind_turbine.lua:139
-#: elepower_tome/i_page_contents.lua:81 elepower_tome/i_page_machines.lua:22
+#: elepower_tome/i_functions.lua:22 elepower_tome/i_page_contents.lua:81
 msgid "Wind Turbine"
 msgstr "Tuulik"
 
@@ -1282,7 +1282,7 @@ msgstr "Masinaraam"
 
 #: elepower_machines/nodes.lua:17
 msgid "Heat Casing"
-msgstr "Soojust hoidev raam"
+msgstr "Soojusümbris"
 
 #: elepower_machines/nodes.lua:18
 msgid "Used for the Thermal Evaporation Plant"
@@ -1324,8 +1324,8 @@ msgstr "on vesi otsas!"
 msgid "Inventory full!"
 msgstr "on väljund täis!"
 
-#: elepower_mining/miner.lua:182 elepower_tome/i_page_contents.lua:93
-#: elepower_tome/i_page_machines.lua:27
+#: elepower_mining/miner.lua:182 elepower_tome/i_functions.lua:27
+#: elepower_tome/i_page_contents.lua:93
 msgid "Miner"
 msgstr "Kaevandaja"
 
@@ -1501,7 +1501,7 @@ msgstr "Võimsus: @1"
 msgid "Heat: @1"
 msgstr "Soojus: @1"
 
-#: elepower_nuclear/machines/fission_reactor.lua:184 elepower_tome/init.lua:209
+#: elepower_nuclear/machines/fission_reactor.lua:184 elepower_tome/init.lua:206
 #: elepower_wireless/machines/station/fission_reactor.lua:57
 msgid "Next"
 msgstr "Järgmine"
@@ -1709,9 +1709,9 @@ msgid "Solar Generator"
 msgstr "Päikesegeneraator"
 
 #: elepower_thermal/fluids.lua:6
-#: elepower_tome/i_eletome_additional_info.lua:772
-#: elepower_tome/i_eletome_additional_info.lua:777
-#: elepower_tome/i_eletome_additional_info.lua:782
+#: elepower_tome/i_eletome_additional_info.lua:778
+#: elepower_tome/i_eletome_additional_info.lua:783
+#: elepower_tome/i_eletome_additional_info.lua:788
 msgid "Brine"
 msgstr "Soolvesi"
 
@@ -1772,6 +1772,19 @@ msgid ""
 "connected in one single un-broken group two examples of simple valid power "
 "networks is pictured below."
 msgstr ""
+"Generaatorid toodavad EpU/s, võttes midagi looduskeskkonnast ja muutes selle "
+"võimsuseks, mida saavad kasutada masinad. Energia tootmiseks on nii madal- "
+"kui ka kõrgtehnoloogilisi lahendusi, seega valige energiatootmismeetod, mis "
+"sobib kõige paremini teie praeguste vajaduste ja olemasolevate "
+"ressurssidega.\n"
+"\n"
+"Generaatorid toodavad võimsust (EpU/s) iga sekund, seejärel jaotavad nad "
+"selle võimsuse üle oma võrgu kõikidele ühendatud masinatele, mis vajavad "
+"voolu.\n"
+"\n"
+"Üks elektrivõrk on rühm masinaid ja torusid, mis on ühendatud üheks "
+"katkematuks rühmaks. Allpool on kujutatud kaks näidet lihtsatest kehtivatest "
+"elektrivõrkudest."
 
 #: elepower_tome/i_eletome_additional_info.lua:68
 msgid ""
@@ -1784,6 +1797,14 @@ msgid ""
 "Sawmill can accept upto 64 EpUs of power until fully charged. Powercell(s) "
 "will only provide the Sawmill with 32 EpUs of power if the Sawmill is active."
 msgstr ""
+"Akumulaatorid laadivad võrgust, kui toide on saadaval. Kui võrgu "
+"toiteallikas on 0, st generaatorid ei tooda enam EpU-sid. Toiteelement(id) "
+"annavad toite ainult võrgus olevatele aktiivsetele masinatele. Akumulaatorid "
+"annavad masinale minimaalsed EpU-d, st kasutuskogused, mitte maksimaalne "
+"kogus, mida masin saab vastu võtta.\n"
+"Näiteks kasutab Saeveski aktiivsena (kasutamisel) 32 EpU-d, kuid Saeveski "
+"suudab vastu võtta kuni 64 EpU-d kuni täieliku laadimiseni. Akumulaator(id) "
+"annavad saeveskile 32 EpU võimsust ainult siis, kui saeveski on aktiivne."
 
 #: elepower_tome/i_eletome_additional_info.lua:80
 msgid ""
@@ -1795,6 +1816,13 @@ msgid ""
 "there is a subpage with additional information for that machine. for example "
 "the Automatic Planter at the bottom of the opposite page."
 msgstr ""
+"Need on kõige lihtsamad masinad, mis koosnevad ühest plokist, mis täidab "
+"ühte/lihtsat funktsiooni.\n"
+"Masinad saavad sageli liidestada teiste masinatega, mis kasutavad "
+"vedelikukanaleid, et aidata automatiseerida teatud masinate sisendeid/"
+"väljundeid. Kui masin võib olla keerulisem, kuvatakse suurel pildil väike "
+"\"I\", mis näitab, et selle masina kohta on alamleht täiendava teabega. "
+"näiteks automaatne viljaistutusmasin, mis asub vastaslehe allosas."
 
 #: elepower_tome/i_eletome_additional_info.lua:91
 msgid ""
@@ -1809,6 +1837,15 @@ msgid ""
 "Black, Silver and Gold conduit to allow the creation of lamps and hanging "
 "lights"
 msgstr ""
+"Elepoweris on mitmesuguseid elektrilisi valgustusi, mis suurenevad "
+"tehnilises keerukuses, kompenseerides selle väiksema energiatarbimisega. "
+"Valgustuse tüübid hõlmavad järgmist:\n"
+"Hõõglambid\n"
+"Kompaktluminofoorlambid ja luminofoorlambid\n"
+"LED pirnid ja valguspaneelid\n"
+"Prožektorid iga tüüpi pirni jaoks\n"
+"Väike arv dekoratiivpaneele lampide ümber paigutamiseks\n"
+"Must, hõbedane ja kuldne toru, mis võimaldab luua lampe ja rippvalgusteid"
 
 #: elepower_tome/i_eletome_additional_info.lua:108
 msgid ""
@@ -1820,6 +1857,12 @@ msgid ""
 "Once completed fluid ducting can then be used to run fluid to machines that "
 "require fluid - For example water to the Electrolyzer."
 msgstr ""
+"Lihtsaim vedelikupump on kokku pandud kahest komponendist: kogumispumbast ja "
+"vedeliku ülekandepumbast\n"
+"Kogumispump tuleb asetada vedelikukeha kohale ja varustada toiteallikaga. "
+"Vedeliku ülekandepumba must ots tuleb asetada vastu kogumispumpa.\n"
+"Kui see on tehtud, saab seda kasutada vedeliku juhtimiseks masinatesse, mis "
+"vajavad vedelikku – näiteks vett elektrolüsaatorisse."
 
 #: elepower_tome/i_eletome_additional_info.lua:124
 msgid ""
@@ -1836,6 +1879,16 @@ msgid ""
 "controller. Supply power and water to the miner and it will start "
 "functioning."
 msgstr ""
+"Kaevandaja kasutab ümbritsevast elektromolekulaarsest keskkonnast metallide "
+"väljasõelumiseks märkimisväärses koguses energiat ja vett. Seejärel kogub "
+"kaevandaja molekule kokku, kuni koguneb piisavalt metallitüki tekkimiseks.\n"
+"Kokkupanek nõuab sissetulevat veevarustust vedelikupumbast, mille "
+"toiteallikas on vähemalt 128 EpU võimsust. 1-9 kaevanduspuuri, 1 "
+"kesksüdamik, 1 kaevandusjuhtplokk ja teatud pikkused vedelikukanalit. "
+"Asetage 1–9 kaevanduspuur 1x1 kuni 3x3 ruudustikuna, asetage kesksüdamik "
+"keskmise puuri peale ja juhtplokk kesksüdamiku peale. Ühendage need kõik "
+"vedelikukanaliga kokku, et üks vedelikukanal läheks juhtploki küljele. "
+"Varustage kaevandajat toite ja veega ning see hakkab tööle."
 
 #: elepower_tome/i_eletome_additional_info.lua:146
 msgid ""
@@ -1854,6 +1907,19 @@ msgid ""
 "Note: If the controller fails to verify your structure (PUNCH the "
 "controller) or try placing it on a different side."
 msgstr ""
+"Termiline aurustusjaam on masin, mis muudab vee soolveeks ja soolvee "
+"vedelaks liitiumiks. Selle toiteallikaks on ülemise serva ümber olevad "
+"päikesepaneelid.\n"
+"Jaam koosneb termilise aurustusjaama kontrollerist, soojusümbristest, "
+"termilise aurustusjaama sisenditest ja termilise aurustusjaama väljunditest. "
+"See on 4x4 struktuur, mida saab ehitada 3–18 sõlme kõrgusele. Esimene kiht "
+"on tahke 4x4 soojusümbristest. Juhtplokk tuleb asetada selle kihi peale ja "
+"välisservale. Keskosa tuleb jätta õõnsaks. Soojuskesta pealmise kihi peale "
+"asetate päikesegeneraatorid, et suurendada soojust jaama sees. Rohkem "
+"soojust suurendab jaama tootmiskiirust sekundis. Tehase maksimaalne "
+"temperatuur on 1000 kelvinit.\n"
+"Märkus. Kui juhtplokk ei suuda teie struktuuri tuvastada siis TOKSI "
+"juhtplokki või proovige see teisele küljele asetada."
 
 #: elepower_tome/i_eletome_additional_info.lua:166
 msgid ""
@@ -1865,6 +1931,13 @@ msgid ""
 "suggested you place a sending and recieving pad at both ends so you can "
 "teleport back and forth easily."
 msgstr ""
+"Pärast seadistamist võimaldab teleporteerija koheselt liikuda saateplokilt "
+"vastuvõtuplokile.\n"
+"Teleporteerija ehitamiseks asetage lihtsalt edastusplokk kohale, kust "
+"soovite reisida, ja vastuvõtja plokk, kuhu soovite reisida. Mõlemad otsad "
+"peavad olema varustatud energiaga, et töötada. Soovitatav on asetada "
+"mõlemasse otsa saatmis- ja vastuvõtuplokk, et saaksite hõlpsalt edasi-tagasi "
+"liikuda."
 
 #: elepower_tome/i_eletome_additional_info.lua:180
 msgid ""
@@ -1875,6 +1948,11 @@ msgid ""
 "The higher the wind turbine is placed the more power it will produce to a "
 "maximum output of 100 EpUs."
 msgstr ""
+"Tuulik toodab tuulest elektrit. Tuuliku minimaalne energiatootmise kõrgus on "
+"y 10. Tuulik toodab vähesel määral võimsust ilma labadeta, kuid labadega "
+"toodab tuulik 4 korda rohkem võimsust.\n"
+"Mida kõrgemale tuulik on paigutatud, seda rohkem võimsust see toodab kuni "
+"100 EpU-ni."
 
 #: elepower_tome/i_eletome_additional_info.lua:198
 msgid ""
@@ -1900,8 +1978,31 @@ msgid ""
 "design.\n"
 "\n"
 msgstr ""
+"Tuumareaktor (lõhustumine) on elektrienergia tootmiseks kasutatav Elepoweri "
+"tuumareaktor. Reaktor ise koosneb kolmest sõlmest:\n"
+"Tuumalõhustumise juhtimismoodul – kasutatakse reaktori võimsuse juhtimiseks "
+"(ülemine plokk)\n"
+"Tuumalõhustumisreaktori tuum – reaktori südamik (keskmine plokk)\n"
+"Reaktori vedeliku sisendi- ja väljundimoodul – kasutatakse külma "
+"jahutusvedeliku muutmiseks kuumaks jahutusvedelikuks (alumine plokk)\n"
+"Reaktori tuum võtab tuumlõhustuvad kütusevardad ja muudab need 2 tunni (7200 "
+"sekundi) pärast ammendatud kütusevardadeks. Reaktorikoostu peab ümbritsema "
+"veeallika ala, et hoida reaktorit jahedana (9x9x9 veeplokk). Kui reaktori "
+"soojus jõuab üle 80%, hakkab see sulama. Juhtvardaid saab tõsta või "
+"langetada, et juhtida reaktori tuuma väljundvõimsust. Madalamad juhtvardad "
+"tähendavad, et reaktor on aeglustunud ja üles tõstetud, et reaktorit "
+"kiirendatakse.\n"
+"Reaktorist võimsuse kogumiseks peate lisama soojusvaheti, veepumba, "
+"auruturbiini ja vähemalt 1 ämbri külma jahutusvedelikku, samuti "
+"vedelikukanalid ja vedeliku ülekandepumbad vedelike ja auru liigutamiseks.\n"
+"See reaktor on inspireeritud reaalsest surveveereaktori disainist.\n"
 
-#: elepower_tome/i_eletome_additional_info.lua:260
+#: elepower_tome/i_eletome_additional_info.lua:261
+#: elepower_tome/i_page_contents.lua:44
+msgid "Getting Started"
+msgstr "Alustamiseks"
+
+#: elepower_tome/i_eletome_additional_info.lua:262
 msgid ""
 "This is a getting started guide for Elepower. The first step is to create "
 "your first power generator. The coal-fired generator is a good starting "
@@ -1911,41 +2012,56 @@ msgid ""
 "174 leaves, 17 Copper Ingots, 8 Stone blocks, 9 Steel Ingots, 3 sand, 2 Iron "
 "ingots, 2 Silver Ingots and 2 Mese Crystal Fragments\n"
 msgstr ""
+"See on Elepoweri alustamise juhend. Esimene samm on luua oma esimene "
+"elektrigeneraator. Söeküttel töötav generaator on hea generaator, millest "
+"alustada, kuna see toodab energiat kõigest, mis on põletatav. Söeküttel "
+"töötava generaatori loomiseks vajate 3 teraskangi, 2 vaskpooli, 1 ahju ja 1 "
+"masinaplokki. Kõigi nende meisterdamiseks vajate kokku: 174 lehte, 17 "
+"vaskplokki, 8 kiviplokki, 9 teraskangi, 3 liiva, 2 raudkangi, 2 hõbekangi ja "
+"2 mese kristalli fragmenti\n"
 
-#: elepower_tome/i_eletome_additional_info.lua:273
-#: elepower_tome/i_eletome_additional_info.lua:487
+#: elepower_tome/i_eletome_additional_info.lua:275
+#: elepower_tome/i_eletome_additional_info.lua:493
 msgid "Any Leaves"
 msgstr "Üks kõik millised puulehed"
 
-#: elepower_tome/i_eletome_additional_info.lua:277
-#: elepower_tome/i_eletome_additional_info.lua:292
-#: elepower_tome/i_eletome_additional_info.lua:298
-#: elepower_tome/i_eletome_additional_info.lua:313
-#: elepower_tome/i_eletome_additional_info.lua:324
-#: elepower_tome/i_eletome_additional_info.lua:344
-#: elepower_tome/i_eletome_additional_info.lua:359
-#: elepower_tome/i_eletome_additional_info.lua:374
-#: elepower_tome/i_eletome_additional_info.lua:389
-#: elepower_tome/i_eletome_additional_info.lua:426
-#: elepower_tome/i_eletome_additional_info.lua:452
-#: elepower_tome/i_eletome_additional_info.lua:491
-#: elepower_tome/i_eletome_additional_info.lua:509
+#: elepower_tome/i_eletome_additional_info.lua:279
+#: elepower_tome/i_eletome_additional_info.lua:294
+#: elepower_tome/i_eletome_additional_info.lua:300
+#: elepower_tome/i_eletome_additional_info.lua:315
+#: elepower_tome/i_eletome_additional_info.lua:326
+#: elepower_tome/i_eletome_additional_info.lua:346
+#: elepower_tome/i_eletome_additional_info.lua:361
+#: elepower_tome/i_eletome_additional_info.lua:376
+#: elepower_tome/i_eletome_additional_info.lua:391
+#: elepower_tome/i_eletome_additional_info.lua:430
+#: elepower_tome/i_eletome_additional_info.lua:456
+#: elepower_tome/i_eletome_additional_info.lua:497
 #: elepower_tome/i_eletome_additional_info.lua:515
-#: elepower_tome/i_eletome_additional_info.lua:527
-#: elepower_tome/i_eletome_additional_info.lua:591
-#: elepower_tome/i_eletome_additional_info.lua:605
+#: elepower_tome/i_eletome_additional_info.lua:521
+#: elepower_tome/i_eletome_additional_info.lua:533
+#: elepower_tome/i_eletome_additional_info.lua:597
+#: elepower_tome/i_eletome_additional_info.lua:611
 msgid "Crafting"
 msgstr "Meisterdamine"
 
-#: elepower_tome/i_eletome_additional_info.lua:396
+#: elepower_tome/i_eletome_additional_info.lua:398
 msgid ""
 "Now you have your generator built, place it down and then place the machines "
 "you wish to power next to it.\n"
 " Later on you'll need to join machines to power generators using power "
 "conduit."
 msgstr ""
+"Nüüd on teil generaator ehitatud, asetage see alla ja seejärel asetage selle "
+"kõrvale masinad, mida soovite toita.\n"
+"Hiljem peate ühendama masinad toitejuhtme abil elektrigeneraatoritega."
 
-#: elepower_tome/i_eletome_additional_info.lua:404
+#: elepower_tome/i_eletome_additional_info.lua:407
+#: elepower_tome/i_page_contents.lua:45
+msgid "First PCB Creation"
+msgstr "Esimese trükkplaadi loomine"
+
+#: elepower_tome/i_eletome_additional_info.lua:408
 msgid ""
 "More advanced machines require a Printed Circuit Board(PCB) to craft them. "
 "Early on you will need to manually craft your PCB's until you have access to "
@@ -1958,19 +2074,32 @@ msgid ""
 "PCB blanks into 10 PCBs, you can also pickup the etching acid with a bucket "
 "and store it."
 msgstr ""
-
-#: elepower_tome/i_eletome_additional_info.lua:435
-#: elepower_tome/i_eletome_additional_info.lua:461
-#: elepower_tome/i_eletome_additional_info.lua:763
-msgid "Right Click"
-msgstr "Paremklõps"
+"Täiustatud masinad vajavad nende valmistamiseks trükkplaati (PCB). Alguses "
+"peate oma PCB-d käsitsi meisterdama, kuni teil on juurdepääs "
+"trükkplaaditehasele.\n"
+"PCB loomiseks vajate kahte põhikomponenti, söövitavat hapet ja trükkplaadi "
+"(PCB) toorikut. Nende kahe eseme loomiseks vajate: 9 vasekangi, 3 "
+"kullakangi, 1 mese kristalli, 1 nisuseemnet ja ühte veeallika plokki.\n"
+"Kui olete vee söövitushappeks muutnud, saate sellega muuta 10 PCB toorikut "
+"10 PCB-ks, samuti saate söövitushappe ämbriga korjata ja hoiustada."
 
 #: elepower_tome/i_eletome_additional_info.lua:439
 #: elepower_tome/i_eletome_additional_info.lua:465
+#: elepower_tome/i_eletome_additional_info.lua:769
+msgid "Right Click"
+msgstr "Paremklõps"
+
+#: elepower_tome/i_eletome_additional_info.lua:443
+#: elepower_tome/i_eletome_additional_info.lua:469
 msgid "Turns Into"
 msgstr "Muutub"
 
-#: elepower_tome/i_eletome_additional_info.lua:474
+#: elepower_tome/i_eletome_additional_info.lua:479
+#: elepower_tome/i_page_contents.lua:46
+msgid "Upgrading Machines"
+msgstr "Masinate uuendamine"
+
+#: elepower_tome/i_eletome_additional_info.lua:480
 msgid ""
 "Some machines can be upgraded to improve their power storage capacity, "
 "production speed or to make them more power efficient. To upgrade machines "
@@ -1982,69 +2111,77 @@ msgid ""
 "click on any machine and if it is upgradable you will be able to add "
 "components."
 msgstr ""
+"Mõnda masinat saab uuendada, et parandada nende energiasalvestusmahtu, "
+"tootmiskiirust või muuta need energiatõhusamaks. Masinate uuendamiseks peate "
+"valmistama jootekolbi, et saaksite masinale uusi osi paigaldada.\n"
+" Jootekolvi meisterdamiseks läheb vaja: 126 lehte, 8 hõbekangi, 8 tinakangi, "
+"5 kivisütt, 4 tsingikangi, 2 pliikangi, 2 mesekristalli fragmenti ja 1 "
+"teraskangi. Täpsemad meisterdamisjuhised on paremal lehel.\n"
+"Kui teil on jootekolb, hoidke lihtsalt tööriista ja seejärel vasakklõpsake "
+"mis tahes masinal ja kui see on uuendatav, saate komponente lisada."
 
-#: elepower_tome/i_eletome_additional_info.lua:615
+#: elepower_tome/i_eletome_additional_info.lua:621
 msgid "Burnable Items"
 msgstr "Põletatavad esemed"
 
-#: elepower_tome/i_eletome_additional_info.lua:616
-#: elepower_tome/i_eletome_additional_info.lua:619
 #: elepower_tome/i_eletome_additional_info.lua:622
-#: elepower_tome/i_eletome_additional_info.lua:626
-#: elepower_tome/i_eletome_additional_info.lua:630
-#: elepower_tome/i_eletome_additional_info.lua:634
+#: elepower_tome/i_eletome_additional_info.lua:625
+#: elepower_tome/i_eletome_additional_info.lua:628
+#: elepower_tome/i_eletome_additional_info.lua:632
+#: elepower_tome/i_eletome_additional_info.lua:636
+#: elepower_tome/i_eletome_additional_info.lua:640
 msgid "EpU generated"
 msgstr "EpU toodetud"
 
-#: elepower_tome/i_eletome_additional_info.lua:616
-#: elepower_tome/i_eletome_additional_info.lua:626
-#: elepower_tome/i_eletome_additional_info.lua:634
+#: elepower_tome/i_eletome_additional_info.lua:622
+#: elepower_tome/i_eletome_additional_info.lua:632
 #: elepower_tome/i_eletome_additional_info.lua:640
-#: elepower_tome/i_eletome_additional_info.lua:644
-#: elepower_tome/i_eletome_additional_info.lua:648
-#: elepower_tome/i_eletome_additional_info.lua:652
-#: elepower_tome/i_eletome_additional_info.lua:656
+#: elepower_tome/i_eletome_additional_info.lua:646
+#: elepower_tome/i_eletome_additional_info.lua:650
+#: elepower_tome/i_eletome_additional_info.lua:654
+#: elepower_tome/i_eletome_additional_info.lua:658
+#: elepower_tome/i_eletome_additional_info.lua:662
 msgid "per second"
 msgstr "sekundis"
 
-#: elepower_tome/i_eletome_additional_info.lua:619
+#: elepower_tome/i_eletome_additional_info.lua:625
 msgid "per @1 lava/second"
 msgstr "iga @1 laava/sekundis kohta"
 
-#: elepower_tome/i_eletome_additional_info.lua:622
+#: elepower_tome/i_eletome_additional_info.lua:628
 msgid "per @1 biofuel/second"
 msgstr "iga @1 biokütus/sekundis kohta"
 
-#: elepower_tome/i_eletome_additional_info.lua:625
+#: elepower_tome/i_eletome_additional_info.lua:631
 msgid "Sunlight"
 msgstr "Päiksevalgus"
 
-#: elepower_tome/i_eletome_additional_info.lua:630
+#: elepower_tome/i_eletome_additional_info.lua:636
 msgid "per @1 steam/second"
 msgstr "iga @1 auru/sekundis kohta"
 
-#: elepower_tome/i_eletome_additional_info.lua:633
-#: elepower_tome/i_eletome_additional_info.lua:739
+#: elepower_tome/i_eletome_additional_info.lua:639
+#: elepower_tome/i_eletome_additional_info.lua:745
 msgid "Wind"
 msgstr "Tuul"
 
-#: elepower_tome/i_eletome_additional_info.lua:639
-#: elepower_tome/i_eletome_additional_info.lua:643
-#: elepower_tome/i_eletome_additional_info.lua:647
-#: elepower_tome/i_eletome_additional_info.lua:651
-#: elepower_tome/i_eletome_additional_info.lua:655
+#: elepower_tome/i_eletome_additional_info.lua:645
+#: elepower_tome/i_eletome_additional_info.lua:649
+#: elepower_tome/i_eletome_additional_info.lua:653
+#: elepower_tome/i_eletome_additional_info.lua:657
+#: elepower_tome/i_eletome_additional_info.lua:661
 msgid "Storage @1 EpUs"
 msgstr "Ladustab @1 EpU-d"
 
-#: elepower_tome/i_eletome_additional_info.lua:640
-#: elepower_tome/i_eletome_additional_info.lua:644
-#: elepower_tome/i_eletome_additional_info.lua:648
-#: elepower_tome/i_eletome_additional_info.lua:652
-#: elepower_tome/i_eletome_additional_info.lua:656
+#: elepower_tome/i_eletome_additional_info.lua:646
+#: elepower_tome/i_eletome_additional_info.lua:650
+#: elepower_tome/i_eletome_additional_info.lua:654
+#: elepower_tome/i_eletome_additional_info.lua:658
+#: elepower_tome/i_eletome_additional_info.lua:662
 msgid "EpU max output"
 msgstr "EpU maksimaalne väljund"
 
-#: elepower_tome/i_eletome_additional_info.lua:661
+#: elepower_tome/i_eletome_additional_info.lua:667
 msgid ""
 "@1 Materials\n"
 "to be Alloyed"
@@ -2052,16 +2189,16 @@ msgstr ""
 "@1 materjali\n"
 "sulamiks teha"
 
-#: elepower_tome/i_eletome_additional_info.lua:662
+#: elepower_tome/i_eletome_additional_info.lua:668
 msgid "used per second"
 msgstr "kasutatud sekundis"
 
-#: elepower_tome/i_eletome_additional_info.lua:665
-#: elepower_tome/i_eletome_additional_info.lua:697
+#: elepower_tome/i_eletome_additional_info.lua:671
+#: elepower_tome/i_eletome_additional_info.lua:703
 msgid "Fluids"
 msgstr "Vedelikud"
 
-#: elepower_tome/i_eletome_additional_info.lua:666
+#: elepower_tome/i_eletome_additional_info.lua:672
 msgid ""
 "The Electrolyzer is used to create gases out of certain fluids. The "
 "electrolyzer can accept three fluids/liquids, although not at the same time "
@@ -2069,20 +2206,28 @@ msgid ""
 "EpUs a second break each down into different gases, see table below\n"
 " "
 msgstr ""
+"Elektrolüsaatorit kasutatakse teatud vedelikest gaaside tekitamiseks. "
+"Elektrolüsaator suudab vastu võtta kolme vedelikku, kuigi mitte korraga – "
+"vett, rasket vett ja biomassi. Elektrolüsaator lagundab vedeliku 128 EpU/"
+"sekundis eest erinevateks gaasideks, vt allolevat tabelit"
 
-#: elepower_tome/i_eletome_additional_info.lua:669
+#: elepower_tome/i_eletome_additional_info.lua:675
 msgid ""
 "To extract gas from the electrolyzer you will need a fluid pump, bucketeer "
 "and an empty gas canister. The electrolyzer can only output to a single "
 "bucketeer so you will need to empty one gas completely before you will be "
 "able to bottle the second gas (always oxygen)."
 msgstr ""
+"Gaasi eemaldamiseks elektrolüsaatorist vajate vedelikupumpa, ämbristajat ja "
+"tühja gaasikanistrit. Elektrolüsaator suudab väljastada ainult ühte "
+"ämbrisse, nii et peate ühe gaasi täielikult tühjendama, enne kui saate teise "
+"gaasi (alati hapnikku) eemaldada."
 
-#: elepower_tome/i_eletome_additional_info.lua:680
+#: elepower_tome/i_eletome_additional_info.lua:686
 msgid "Seeds or Seedlings"
 msgstr "Seemned või seemikud"
 
-#: elepower_tome/i_eletome_additional_info.lua:681
+#: elepower_tome/i_eletome_additional_info.lua:687
 msgid ""
 "The automatic planter is used to keep a maximum 9x9 field planted with "
 "crops. The planter needs to be placed 1 node below the ground surface, "
@@ -2092,8 +2237,13 @@ msgid ""
 "left corner) to the most south easterly 3x3 block of nodes (bottom right "
 "corner)."
 msgstr ""
+"Automaatset külvikut kasutatakse maksimaalselt 9x9 põllu istutamiseks "
+"põllukultuuridega. Külvik tuleb asetada 1 plokk maapinnast allapoole, kuid "
+"see on veekindel ja töötab suurepäraselt koos veesõlmega selle kohal.\n"
+" Taimed istutatakse kõige põhjapoolsemast 3x3 plokist (vasak ülanurk) kuni "
+"lõunapoolseima 3x3 plokini (parem alumine nurk)."
 
-#: elepower_tome/i_eletome_additional_info.lua:685
+#: elepower_tome/i_eletome_additional_info.lua:691
 msgid ""
 "The planter has a special interface to allow it to plant. The upper 3x3 grid "
 "represents a maximum area of 9x9 around the planter ie each grid segment "
@@ -2103,8 +2253,14 @@ msgid ""
 "to plant, so keep the planters inventory well stocked with seeds or "
 "seedlings."
 msgstr ""
+"Külvikul on spetsiaalne liides, mis võimaldab istutada. Ülemine 3x3 "
+"ruudustik tähistab maksimaalset pindala 9x9 külviku ümber, st iga ruudustiku "
+"segment tähistab 3x3 plokkide pindala. Alumised 2 x 8 rida on "
+"istutusmasinate saadaolev kaubavaru. Laopiirkonnas peavad olema "
+"istutusruudus nimetatud tüüpi esemed, et külvik saaks istutada, seega hoidke "
+"külviku inventar seemnete või seemikutega hästi varustatud."
 
-#: elepower_tome/i_eletome_additional_info.lua:699
+#: elepower_tome/i_eletome_additional_info.lua:705
 msgid ""
 "Water\n"
 " and\n"
@@ -2114,15 +2270,15 @@ msgstr ""
 "   ja\n"
 "laava"
 
-#: elepower_tome/i_eletome_additional_info.lua:703
+#: elepower_tome/i_eletome_additional_info.lua:709
 msgid "Creates PCB's"
 msgstr "Loob trükkplaate"
 
-#: elepower_tome/i_eletome_additional_info.lua:707
+#: elepower_tome/i_eletome_additional_info.lua:713
 msgid "Sawing"
 msgstr "Saagimine"
 
-#: elepower_tome/i_eletome_additional_info.lua:709
+#: elepower_tome/i_eletome_additional_info.lua:715
 msgid ""
 "       Creates\n"
 " Machine Upgrades"
@@ -2130,7 +2286,7 @@ msgstr ""
 "           Loob\n"
 " masinauuendusi"
 
-#: elepower_tome/i_eletome_additional_info.lua:711
+#: elepower_tome/i_eletome_additional_info.lua:717
 msgid ""
 "Processes\n"
 " Tree Sap"
@@ -2138,9 +2294,6 @@ msgstr ""
 "   Töötleb\n"
 " piimmahla"
 
-#: elepower_tome/i_eletome_additional_info.lua:714
-#: elepower_tome/i_eletome_additional_info.lua:716
-#: elepower_tome/i_eletome_additional_info.lua:718
 #: elepower_tome/i_eletome_additional_info.lua:720
 #: elepower_tome/i_eletome_additional_info.lua:722
 #: elepower_tome/i_eletome_additional_info.lua:724
@@ -2149,10 +2302,13 @@ msgstr ""
 #: elepower_tome/i_eletome_additional_info.lua:730
 #: elepower_tome/i_eletome_additional_info.lua:732
 #: elepower_tome/i_eletome_additional_info.lua:734
+#: elepower_tome/i_eletome_additional_info.lua:736
+#: elepower_tome/i_eletome_additional_info.lua:738
+#: elepower_tome/i_eletome_additional_info.lua:740
 msgid "Light"
 msgstr "Valgus"
 
-#: elepower_tome/i_eletome_additional_info.lua:741
+#: elepower_tome/i_eletome_additional_info.lua:747
 msgid ""
 " Epu Max\n"
 "   Potential\n"
@@ -2162,17 +2318,17 @@ msgstr ""
 "   potentsiaalne\n"
 "  tootmine"
 
-#: elepower_tome/i_eletome_additional_info.lua:750
-#: elepower_tome/i_eletome_additional_info.lua:754
+#: elepower_tome/i_eletome_additional_info.lua:756
+#: elepower_tome/i_eletome_additional_info.lua:760
 msgid "Fluid"
 msgstr "Vedelik"
 
-#: elepower_tome/i_eletome_additional_info.lua:793
-#: elepower_tome/i_eletome_additional_info.lua:798
+#: elepower_tome/i_eletome_additional_info.lua:799
+#: elepower_tome/i_eletome_additional_info.lua:804
 msgid "Requires"
 msgstr "Nõuab"
 
-#: elepower_tome/i_eletome_additional_info.lua:803
+#: elepower_tome/i_eletome_additional_info.lua:809
 msgid ""
 "Produces\n"
 " Metal lumps"
@@ -2180,7 +2336,7 @@ msgstr ""
 "Toodab\n"
 " metallmaake"
 
-#: elepower_tome/i_eletome_additional_info.lua:805
+#: elepower_tome/i_eletome_additional_info.lua:811
 msgid ""
 "128 EpUs & 500 Water\n"
 " used per drill"
@@ -2188,11 +2344,47 @@ msgstr ""
 " kasutab puuri kohta\n"
 "128 EpU'd & 500 vett"
 
-#: elepower_tome/i_functions.lua:133 elepower_tome/i_functions.lua:139
+#: elepower_tome/i_functions.lua:18
+msgid "Generators"
+msgstr "Generaatorid"
+
+#: elepower_tome/i_functions.lua:19
+msgid "Machine"
+msgstr "Masin"
+
+#: elepower_tome/i_functions.lua:20 elepower_tome/i_page_contents.lua:89
+msgid "Powercells"
+msgstr "Akumulaatorid"
+
+#: elepower_tome/i_functions.lua:21 elepower_tome/i_page_contents.lua:90
+msgid "Lighting"
+msgstr "Valgustus"
+
+#: elepower_tome/i_functions.lua:23 elepower_tome/i_page_contents.lua:82
+msgid "Fission Reactor"
+msgstr "Tuumalõhustusreaktor"
+
+#: elepower_tome/i_functions.lua:24 elepower_tome/i_page_contents.lua:83
+msgid "Fusion Reactor"
+msgstr "Termotuumasünteesi reaktor"
+
+#: elepower_tome/i_functions.lua:25 elepower_tome/i_page_contents.lua:91
+msgid "Fluid Pump"
+msgstr "Vedelikupump"
+
+#: elepower_tome/i_functions.lua:26 elepower_tome/i_page_contents.lua:92
+msgid "Evaporation Plant"
+msgstr "Termoaurustusjaam"
+
+#: elepower_tome/i_functions.lua:28 elepower_tome/i_page_contents.lua:94
+msgid "Transporter"
+msgstr "Transporteerija"
+
+#: elepower_tome/i_functions.lua:147 elepower_tome/i_functions.lua:153
 msgid "Page @1"
 msgstr "Lehekülg @1"
 
-#: elepower_tome/i_functions.lua:136
+#: elepower_tome/i_functions.lua:150
 msgid "@1 Page"
 msgstr "@1 Lehekülg"
 
@@ -2200,15 +2392,15 @@ msgstr "@1 Lehekülg"
 msgid "Elepower Tome"
 msgstr "Elepoweri õpetus"
 
-#: elepower_tome/init.lua:83 elepower_tome/init.lua:203
+#: elepower_tome/init.lua:80 elepower_tome/init.lua:200
 msgid "Content"
 msgstr "Sisu"
 
-#: elepower_tome/init.lua:205 elepower_tome/init.lua:212
+#: elepower_tome/init.lua:202 elepower_tome/init.lua:209
 msgid "Back"
 msgstr "Tagasi"
 
-#: elepower_tome/init.lua:207
+#: elepower_tome/init.lua:204
 msgid "Prev"
 msgstr "Eelmine"
 
@@ -2230,18 +2422,6 @@ msgstr ""
 "Mod on loodud IcyDiamond ja Sirrobzeroone poolt.\n"
 "\n"
 
-#: elepower_tome/i_page_contents.lua:44
-msgid "Getting Started"
-msgstr "Alustamiseks"
-
-#: elepower_tome/i_page_contents.lua:45
-msgid "First PCB Creation"
-msgstr "Esimese trükkplaadi loomine"
-
-#: elepower_tome/i_page_contents.lua:46
-msgid "Upgrading Machines"
-msgstr "Masinate uuendamine"
-
 #: elepower_tome/i_page_contents.lua:50
 msgid "Contents"
 msgstr "Sisu"
@@ -2262,14 +2442,6 @@ msgstr "Lihtsad generaatorid"
 msgid "Simple Machines"
 msgstr "Lihtsad masinad"
 
-#: elepower_tome/i_page_contents.lua:82 elepower_tome/i_page_machines.lua:23
-msgid "Fission Reactor"
-msgstr "Tuumalõhustusreaktor"
-
-#: elepower_tome/i_page_contents.lua:83 elepower_tome/i_page_machines.lua:24
-msgid "Fusion Reactor"
-msgstr "Termotuumasünteesi reaktor"
-
 #: elepower_tome/i_page_contents.lua:85
 msgid ""
 "Single Node\n"
@@ -2286,27 +2458,7 @@ msgstr ""
 "Ühe-ploki\n"
 "masinad"
 
-#: elepower_tome/i_page_contents.lua:89 elepower_tome/i_page_machines.lua:20
-msgid "Powercells"
-msgstr "Akumulaatorid"
-
-#: elepower_tome/i_page_contents.lua:90 elepower_tome/i_page_machines.lua:21
-msgid "Lighting"
-msgstr "Valgustus"
-
-#: elepower_tome/i_page_contents.lua:91 elepower_tome/i_page_machines.lua:25
-msgid "Fluid Pump"
-msgstr "Vedelikupump"
-
-#: elepower_tome/i_page_contents.lua:92 elepower_tome/i_page_machines.lua:26
-msgid "Evaporation Plant"
-msgstr "Termoaurustusjaam"
-
-#: elepower_tome/i_page_contents.lua:94 elepower_tome/i_page_machines.lua:28
-msgid "Transporter"
-msgstr "Transporteerija"
-
-#: elepower_tome/i_page_crafts.lua:58 elepower_tome/i_page_machines.lua:63
+#: elepower_tome/i_page_crafts.lua:58 elepower_tome/i_page_machines.lua:49
 msgid "Overview"
 msgstr "Ülevaade"
 
@@ -2322,12 +2474,12 @@ msgstr "Abi"
 msgid "How to use"
 msgstr "Kuidas kasutada"
 
-#: elepower_tome/i_page_instructions.lua:59
+#: elepower_tome/i_page_instructions.lua:60
 msgid "Instructions"
 msgstr "Juhendid"
 
-#: elepower_tome/i_page_instructions.lua:128
-#: elepower_tome/i_page_machines.lua:70
+#: elepower_tome/i_page_instructions.lua:129
+#: elepower_tome/i_page_machines.lua:56
 msgid ""
 "Click for detailed\n"
 "instructions"
@@ -2335,23 +2487,15 @@ msgstr ""
 "Kliki, et näha detail-\n"
 "semalt õpetust"
 
-#: elepower_tome/i_page_machines.lua:18
-msgid "Generators"
-msgstr "Generaatorid"
-
-#: elepower_tome/i_page_machines.lua:19
-msgid "Machine"
-msgstr "Masin"
-
-#: elepower_tome/i_page_machines.lua:72
+#: elepower_tome/i_page_machines.lua:58
 msgid "Larger Image"
 msgstr "Suurem pilt"
 
-#: elepower_tome/i_page_machines.lua:137 elepower_tome/i_page_machines.lua:155
+#: elepower_tome/i_page_machines.lua:123 elepower_tome/i_page_machines.lua:141
 msgid "EpUs per second"
 msgstr "EpU'd sekundis"
 
-#: elepower_tome/i_page_machines.lua:203
+#: elepower_tome/i_page_machines.lua:189
 msgid ""
 "Click for\n"
 "How to use"

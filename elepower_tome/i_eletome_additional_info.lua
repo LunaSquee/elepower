@@ -257,7 +257,9 @@ eletome.ai.fusion_reactor.over     = ""
 eletome.ai.nodes = {}
 
 -- Help Pages
-eletome.ai.nodes["getting_started"]    = {how_use_1 = S("This is a getting started guide for Elepower. "..
+eletome.ai.nodes["getting_started"]    = {
+										title = S("Getting Started"),
+										how_use_1 = S("This is a getting started guide for Elepower. "..
 													"The first step is to create your first power generator. "..
 													"The coal-fired generator is a good starting generator "..
 													"as it will produce power from anything that is burnable."..
@@ -401,7 +403,9 @@ eletome.ai.nodes["getting_started"]    = {how_use_1 = S("This is a getting start
 													}
 										  }
 
-eletome.ai.nodes["first_pcb_creation"] = {how_use_1 = S("More advanced machines require a Printed Circuit Board(PCB) to craft them. "..
+eletome.ai.nodes["first_pcb_creation"] = {
+												title = S("First PCB Creation"),
+												how_use_1 = S("More advanced machines require a Printed Circuit Board(PCB) to craft them. "..
 														   "Early on you will need to manually craft your PCB's until you have access to a "..
 														   "Printed Circuit Board Plant.\n"..
 														   "You need two main components to create a PCB, etching acid and "..
@@ -471,7 +475,9 @@ eletome.ai.nodes["first_pcb_creation"] = {how_use_1 = S("More advanced machines 
 											               }
 											  }
 
-eletome.ai.nodes["upgrading_machines"] = { how_use_1 = S("Some machines can be upgraded to improve their power storage capacity, "..
+eletome.ai.nodes["upgrading_machines"] = {
+											title = S("Upgrading Machines"),
+											how_use_1 = S("Some machines can be upgraded to improve their power storage capacity, "..
 													   "production speed or to make them more power efficient. To upgrade machines "..
 													   "you need to craft a soldering iron so you can fit new parts to the machine.\n "..
 													   "To craft a soldering iron you will need: 126 leaves, 8 silver ingots, 8 tin ingots, "..

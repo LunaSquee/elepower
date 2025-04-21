@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-21 20:19+0300\n"
+"POT-Creation-Date: 2025-04-21 23:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -443,7 +443,7 @@ msgid "Liquid Lithium Bucket"
 msgstr ""
 
 #: elepower_dynamics/fluids.lua:48 elepower_dynamics/gas_container.lua:37
-#: elepower_tome/i_eletome_additional_info.lua:629
+#: elepower_tome/i_eletome_additional_info.lua:635
 msgid "Steam"
 msgstr ""
 
@@ -479,8 +479,8 @@ msgid "Empty Gas Container"
 msgstr ""
 
 #: elepower_dynamics/gas_container.lua:48
-#: elepower_tome/i_eletome_additional_info.lua:772
-#: elepower_tome/i_eletome_additional_info.lua:782
+#: elepower_tome/i_eletome_additional_info.lua:778
+#: elepower_tome/i_eletome_additional_info.lua:788
 msgid "Lithium"
 msgstr ""
 
@@ -997,12 +997,12 @@ msgid "Wind Turbine Blade (Wooden)"
 msgstr ""
 
 #: elepower_machines/craft.lua:234
-#: elepower_tome/i_eletome_additional_info.lua:281
-#: elepower_tome/i_eletome_additional_info.lua:285
-#: elepower_tome/i_eletome_additional_info.lua:333
-#: elepower_tome/i_eletome_additional_info.lua:495
-#: elepower_tome/i_eletome_additional_info.lua:499
-#: elepower_tome/i_eletome_additional_info.lua:701
+#: elepower_tome/i_eletome_additional_info.lua:283
+#: elepower_tome/i_eletome_additional_info.lua:287
+#: elepower_tome/i_eletome_additional_info.lua:335
+#: elepower_tome/i_eletome_additional_info.lua:501
+#: elepower_tome/i_eletome_additional_info.lua:505
+#: elepower_tome/i_eletome_additional_info.lua:707
 msgid "Cooking"
 msgstr ""
 
@@ -1020,13 +1020,13 @@ msgstr ""
 #: elepower_machines/machines/accumulator.lua:33
 #: elepower_machines/machines/electrolyzer.lua:42
 #: elepower_nuclear/fluids.lua:46
-#: elepower_tome/i_eletome_additional_info.lua:762
+#: elepower_tome/i_eletome_additional_info.lua:768
 msgid "Heavy Water"
 msgstr ""
 
 #: elepower_machines/machines/alloy_furnace.lua:5
-#: elepower_tome/i_eletome_additional_info.lua:355
-#: elepower_tome/i_eletome_additional_info.lua:543
+#: elepower_tome/i_eletome_additional_info.lua:357
+#: elepower_tome/i_eletome_additional_info.lua:549
 msgid "Alloying"
 msgstr ""
 
@@ -1062,7 +1062,7 @@ msgid "Bucketer"
 msgstr ""
 
 #: elepower_machines/machines/canning_machine.lua:5
-#: elepower_tome/i_eletome_additional_info.lua:693
+#: elepower_tome/i_eletome_additional_info.lua:699
 msgid "Canning"
 msgstr ""
 
@@ -1075,8 +1075,8 @@ msgid "Coal-fired Alloy Furnace"
 msgstr ""
 
 #: elepower_machines/machines/compressor.lua:5
-#: elepower_tome/i_eletome_additional_info.lua:557
-#: elepower_tome/i_eletome_additional_info.lua:695
+#: elepower_tome/i_eletome_additional_info.lua:563
+#: elepower_tome/i_eletome_additional_info.lua:701
 msgid "Compressing"
 msgstr ""
 
@@ -1085,11 +1085,11 @@ msgid "Compressor"
 msgstr ""
 
 #: elepower_machines/machines/electrolyzer.lua:41
-#: elepower_tome/i_eletome_additional_info.lua:758
-#: elepower_tome/i_eletome_additional_info.lua:772
-#: elepower_tome/i_eletome_additional_info.lua:777
-#: elepower_tome/i_eletome_additional_info.lua:793
-#: elepower_tome/i_eletome_additional_info.lua:798
+#: elepower_tome/i_eletome_additional_info.lua:764
+#: elepower_tome/i_eletome_additional_info.lua:778
+#: elepower_tome/i_eletome_additional_info.lua:783
+#: elepower_tome/i_eletome_additional_info.lua:799
+#: elepower_tome/i_eletome_additional_info.lua:804
 msgid "Water"
 msgstr ""
 
@@ -1159,12 +1159,12 @@ msgid "Printed Circuit Board Plant"
 msgstr ""
 
 #: elepower_machines/machines/pulverizer.lua:4
-#: elepower_tome/i_eletome_additional_info.lua:420
-#: elepower_tome/i_eletome_additional_info.lua:537
-#: elepower_tome/i_eletome_additional_info.lua:547
-#: elepower_tome/i_eletome_additional_info.lua:567
+#: elepower_tome/i_eletome_additional_info.lua:424
+#: elepower_tome/i_eletome_additional_info.lua:543
+#: elepower_tome/i_eletome_additional_info.lua:553
 #: elepower_tome/i_eletome_additional_info.lua:573
-#: elepower_tome/i_eletome_additional_info.lua:705
+#: elepower_tome/i_eletome_additional_info.lua:579
+#: elepower_tome/i_eletome_additional_info.lua:711
 msgid "Grinding"
 msgstr ""
 
@@ -1245,7 +1245,7 @@ msgstr ""
 
 #: elepower_machines/machines/wind_turbine.lua:104
 #: elepower_machines/machines/wind_turbine.lua:139
-#: elepower_tome/i_page_contents.lua:81 elepower_tome/i_page_machines.lua:22
+#: elepower_tome/i_functions.lua:22 elepower_tome/i_page_contents.lua:81
 msgid "Wind Turbine"
 msgstr ""
 
@@ -1309,8 +1309,8 @@ msgstr ""
 msgid "Inventory full!"
 msgstr ""
 
-#: elepower_mining/miner.lua:182 elepower_tome/i_page_contents.lua:93
-#: elepower_tome/i_page_machines.lua:27
+#: elepower_mining/miner.lua:182 elepower_tome/i_functions.lua:27
+#: elepower_tome/i_page_contents.lua:93
 msgid "Miner"
 msgstr ""
 
@@ -1476,7 +1476,7 @@ msgstr ""
 msgid "Heat: @1"
 msgstr ""
 
-#: elepower_nuclear/machines/fission_reactor.lua:184 elepower_tome/init.lua:209
+#: elepower_nuclear/machines/fission_reactor.lua:184 elepower_tome/init.lua:206
 #: elepower_wireless/machines/station/fission_reactor.lua:57
 msgid "Next"
 msgstr ""
@@ -1680,9 +1680,9 @@ msgid "Solar Generator"
 msgstr ""
 
 #: elepower_thermal/fluids.lua:6
-#: elepower_tome/i_eletome_additional_info.lua:772
-#: elepower_tome/i_eletome_additional_info.lua:777
-#: elepower_tome/i_eletome_additional_info.lua:782
+#: elepower_tome/i_eletome_additional_info.lua:778
+#: elepower_tome/i_eletome_additional_info.lua:783
+#: elepower_tome/i_eletome_additional_info.lua:788
 msgid "Brine"
 msgstr ""
 
@@ -1872,7 +1872,12 @@ msgid ""
 "\n"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:260
+#: elepower_tome/i_eletome_additional_info.lua:261
+#: elepower_tome/i_page_contents.lua:44
+msgid "Getting Started"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:262
 msgid ""
 "This is a getting started guide for Elepower. The first step is to create "
 "your first power generator. The coal-fired generator is a good starting "
@@ -1883,32 +1888,32 @@ msgid ""
 "ingots, 2 Silver Ingots and 2 Mese Crystal Fragments\n"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:273
-#: elepower_tome/i_eletome_additional_info.lua:487
+#: elepower_tome/i_eletome_additional_info.lua:275
+#: elepower_tome/i_eletome_additional_info.lua:493
 msgid "Any Leaves"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:277
-#: elepower_tome/i_eletome_additional_info.lua:292
-#: elepower_tome/i_eletome_additional_info.lua:298
-#: elepower_tome/i_eletome_additional_info.lua:313
-#: elepower_tome/i_eletome_additional_info.lua:324
-#: elepower_tome/i_eletome_additional_info.lua:344
-#: elepower_tome/i_eletome_additional_info.lua:359
-#: elepower_tome/i_eletome_additional_info.lua:374
-#: elepower_tome/i_eletome_additional_info.lua:389
-#: elepower_tome/i_eletome_additional_info.lua:426
-#: elepower_tome/i_eletome_additional_info.lua:452
-#: elepower_tome/i_eletome_additional_info.lua:491
-#: elepower_tome/i_eletome_additional_info.lua:509
+#: elepower_tome/i_eletome_additional_info.lua:279
+#: elepower_tome/i_eletome_additional_info.lua:294
+#: elepower_tome/i_eletome_additional_info.lua:300
+#: elepower_tome/i_eletome_additional_info.lua:315
+#: elepower_tome/i_eletome_additional_info.lua:326
+#: elepower_tome/i_eletome_additional_info.lua:346
+#: elepower_tome/i_eletome_additional_info.lua:361
+#: elepower_tome/i_eletome_additional_info.lua:376
+#: elepower_tome/i_eletome_additional_info.lua:391
+#: elepower_tome/i_eletome_additional_info.lua:430
+#: elepower_tome/i_eletome_additional_info.lua:456
+#: elepower_tome/i_eletome_additional_info.lua:497
 #: elepower_tome/i_eletome_additional_info.lua:515
-#: elepower_tome/i_eletome_additional_info.lua:527
-#: elepower_tome/i_eletome_additional_info.lua:591
-#: elepower_tome/i_eletome_additional_info.lua:605
+#: elepower_tome/i_eletome_additional_info.lua:521
+#: elepower_tome/i_eletome_additional_info.lua:533
+#: elepower_tome/i_eletome_additional_info.lua:597
+#: elepower_tome/i_eletome_additional_info.lua:611
 msgid "Crafting"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:396
+#: elepower_tome/i_eletome_additional_info.lua:398
 msgid ""
 "Now you have your generator built, place it down and then place the machines "
 "you wish to power next to it.\n"
@@ -1916,7 +1921,12 @@ msgid ""
 "conduit."
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:404
+#: elepower_tome/i_eletome_additional_info.lua:407
+#: elepower_tome/i_page_contents.lua:45
+msgid "First PCB Creation"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:408
 msgid ""
 "More advanced machines require a Printed Circuit Board(PCB) to craft them. "
 "Early on you will need to manually craft your PCB's until you have access to "
@@ -1930,18 +1940,23 @@ msgid ""
 "and store it."
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:435
-#: elepower_tome/i_eletome_additional_info.lua:461
-#: elepower_tome/i_eletome_additional_info.lua:763
+#: elepower_tome/i_eletome_additional_info.lua:439
+#: elepower_tome/i_eletome_additional_info.lua:465
+#: elepower_tome/i_eletome_additional_info.lua:769
 msgid "Right Click"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:439
-#: elepower_tome/i_eletome_additional_info.lua:465
+#: elepower_tome/i_eletome_additional_info.lua:443
+#: elepower_tome/i_eletome_additional_info.lua:469
 msgid "Turns Into"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:474
+#: elepower_tome/i_eletome_additional_info.lua:479
+#: elepower_tome/i_page_contents.lua:46
+msgid "Upgrading Machines"
+msgstr ""
+
+#: elepower_tome/i_eletome_additional_info.lua:480
 msgid ""
 "Some machines can be upgraded to improve their power storage capacity, "
 "production speed or to make them more power efficient. To upgrade machines "
@@ -1954,83 +1969,83 @@ msgid ""
 "components."
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:615
+#: elepower_tome/i_eletome_additional_info.lua:621
 msgid "Burnable Items"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:616
-#: elepower_tome/i_eletome_additional_info.lua:619
 #: elepower_tome/i_eletome_additional_info.lua:622
-#: elepower_tome/i_eletome_additional_info.lua:626
-#: elepower_tome/i_eletome_additional_info.lua:630
-#: elepower_tome/i_eletome_additional_info.lua:634
+#: elepower_tome/i_eletome_additional_info.lua:625
+#: elepower_tome/i_eletome_additional_info.lua:628
+#: elepower_tome/i_eletome_additional_info.lua:632
+#: elepower_tome/i_eletome_additional_info.lua:636
+#: elepower_tome/i_eletome_additional_info.lua:640
 msgid "EpU generated"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:616
-#: elepower_tome/i_eletome_additional_info.lua:626
-#: elepower_tome/i_eletome_additional_info.lua:634
+#: elepower_tome/i_eletome_additional_info.lua:622
+#: elepower_tome/i_eletome_additional_info.lua:632
 #: elepower_tome/i_eletome_additional_info.lua:640
-#: elepower_tome/i_eletome_additional_info.lua:644
-#: elepower_tome/i_eletome_additional_info.lua:648
-#: elepower_tome/i_eletome_additional_info.lua:652
-#: elepower_tome/i_eletome_additional_info.lua:656
+#: elepower_tome/i_eletome_additional_info.lua:646
+#: elepower_tome/i_eletome_additional_info.lua:650
+#: elepower_tome/i_eletome_additional_info.lua:654
+#: elepower_tome/i_eletome_additional_info.lua:658
+#: elepower_tome/i_eletome_additional_info.lua:662
 msgid "per second"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:619
+#: elepower_tome/i_eletome_additional_info.lua:625
 msgid "per @1 lava/second"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:622
+#: elepower_tome/i_eletome_additional_info.lua:628
 msgid "per @1 biofuel/second"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:625
+#: elepower_tome/i_eletome_additional_info.lua:631
 msgid "Sunlight"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:630
+#: elepower_tome/i_eletome_additional_info.lua:636
 msgid "per @1 steam/second"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:633
-#: elepower_tome/i_eletome_additional_info.lua:739
+#: elepower_tome/i_eletome_additional_info.lua:639
+#: elepower_tome/i_eletome_additional_info.lua:745
 msgid "Wind"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:639
-#: elepower_tome/i_eletome_additional_info.lua:643
-#: elepower_tome/i_eletome_additional_info.lua:647
-#: elepower_tome/i_eletome_additional_info.lua:651
-#: elepower_tome/i_eletome_additional_info.lua:655
+#: elepower_tome/i_eletome_additional_info.lua:645
+#: elepower_tome/i_eletome_additional_info.lua:649
+#: elepower_tome/i_eletome_additional_info.lua:653
+#: elepower_tome/i_eletome_additional_info.lua:657
+#: elepower_tome/i_eletome_additional_info.lua:661
 msgid "Storage @1 EpUs"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:640
-#: elepower_tome/i_eletome_additional_info.lua:644
-#: elepower_tome/i_eletome_additional_info.lua:648
-#: elepower_tome/i_eletome_additional_info.lua:652
-#: elepower_tome/i_eletome_additional_info.lua:656
+#: elepower_tome/i_eletome_additional_info.lua:646
+#: elepower_tome/i_eletome_additional_info.lua:650
+#: elepower_tome/i_eletome_additional_info.lua:654
+#: elepower_tome/i_eletome_additional_info.lua:658
+#: elepower_tome/i_eletome_additional_info.lua:662
 msgid "EpU max output"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:661
+#: elepower_tome/i_eletome_additional_info.lua:667
 msgid ""
 "@1 Materials\n"
 "to be Alloyed"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:662
+#: elepower_tome/i_eletome_additional_info.lua:668
 msgid "used per second"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:665
-#: elepower_tome/i_eletome_additional_info.lua:697
+#: elepower_tome/i_eletome_additional_info.lua:671
+#: elepower_tome/i_eletome_additional_info.lua:703
 msgid "Fluids"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:666
+#: elepower_tome/i_eletome_additional_info.lua:672
 msgid ""
 "The Electrolyzer is used to create gases out of certain fluids. The "
 "electrolyzer can accept three fluids/liquids, although not at the same time "
@@ -2039,7 +2054,7 @@ msgid ""
 " "
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:669
+#: elepower_tome/i_eletome_additional_info.lua:675
 msgid ""
 "To extract gas from the electrolyzer you will need a fluid pump, bucketeer "
 "and an empty gas canister. The electrolyzer can only output to a single "
@@ -2047,11 +2062,11 @@ msgid ""
 "able to bottle the second gas (always oxygen)."
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:680
+#: elepower_tome/i_eletome_additional_info.lua:686
 msgid "Seeds or Seedlings"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:681
+#: elepower_tome/i_eletome_additional_info.lua:687
 msgid ""
 "The automatic planter is used to keep a maximum 9x9 field planted with "
 "crops. The planter needs to be placed 1 node below the ground surface, "
@@ -2062,7 +2077,7 @@ msgid ""
 "corner)."
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:685
+#: elepower_tome/i_eletome_additional_info.lua:691
 msgid ""
 "The planter has a special interface to allow it to plant. The upper 3x3 grid "
 "represents a maximum area of 9x9 around the planter ie each grid segment "
@@ -2073,36 +2088,33 @@ msgid ""
 "seedlings."
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:699
+#: elepower_tome/i_eletome_additional_info.lua:705
 msgid ""
 "Water\n"
 " and\n"
 "Lava"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:703
+#: elepower_tome/i_eletome_additional_info.lua:709
 msgid "Creates PCB's"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:707
+#: elepower_tome/i_eletome_additional_info.lua:713
 msgid "Sawing"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:709
+#: elepower_tome/i_eletome_additional_info.lua:715
 msgid ""
 "       Creates\n"
 " Machine Upgrades"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:711
+#: elepower_tome/i_eletome_additional_info.lua:717
 msgid ""
 "Processes\n"
 " Tree Sap"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:714
-#: elepower_tome/i_eletome_additional_info.lua:716
-#: elepower_tome/i_eletome_additional_info.lua:718
 #: elepower_tome/i_eletome_additional_info.lua:720
 #: elepower_tome/i_eletome_additional_info.lua:722
 #: elepower_tome/i_eletome_additional_info.lua:724
@@ -2111,43 +2123,82 @@ msgstr ""
 #: elepower_tome/i_eletome_additional_info.lua:730
 #: elepower_tome/i_eletome_additional_info.lua:732
 #: elepower_tome/i_eletome_additional_info.lua:734
+#: elepower_tome/i_eletome_additional_info.lua:736
+#: elepower_tome/i_eletome_additional_info.lua:738
+#: elepower_tome/i_eletome_additional_info.lua:740
 msgid "Light"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:741
+#: elepower_tome/i_eletome_additional_info.lua:747
 msgid ""
 " Epu Max\n"
 "   Potential\n"
 "  Production"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:750
-#: elepower_tome/i_eletome_additional_info.lua:754
+#: elepower_tome/i_eletome_additional_info.lua:756
+#: elepower_tome/i_eletome_additional_info.lua:760
 msgid "Fluid"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:793
-#: elepower_tome/i_eletome_additional_info.lua:798
+#: elepower_tome/i_eletome_additional_info.lua:799
+#: elepower_tome/i_eletome_additional_info.lua:804
 msgid "Requires"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:803
+#: elepower_tome/i_eletome_additional_info.lua:809
 msgid ""
 "Produces\n"
 " Metal lumps"
 msgstr ""
 
-#: elepower_tome/i_eletome_additional_info.lua:805
+#: elepower_tome/i_eletome_additional_info.lua:811
 msgid ""
 "128 EpUs & 500 Water\n"
 " used per drill"
 msgstr ""
 
-#: elepower_tome/i_functions.lua:133 elepower_tome/i_functions.lua:139
+#: elepower_tome/i_functions.lua:18
+msgid "Generators"
+msgstr ""
+
+#: elepower_tome/i_functions.lua:19
+msgid "Machine"
+msgstr ""
+
+#: elepower_tome/i_functions.lua:20 elepower_tome/i_page_contents.lua:89
+msgid "Powercells"
+msgstr ""
+
+#: elepower_tome/i_functions.lua:21 elepower_tome/i_page_contents.lua:90
+msgid "Lighting"
+msgstr ""
+
+#: elepower_tome/i_functions.lua:23 elepower_tome/i_page_contents.lua:82
+msgid "Fission Reactor"
+msgstr ""
+
+#: elepower_tome/i_functions.lua:24 elepower_tome/i_page_contents.lua:83
+msgid "Fusion Reactor"
+msgstr ""
+
+#: elepower_tome/i_functions.lua:25 elepower_tome/i_page_contents.lua:91
+msgid "Fluid Pump"
+msgstr ""
+
+#: elepower_tome/i_functions.lua:26 elepower_tome/i_page_contents.lua:92
+msgid "Evaporation Plant"
+msgstr ""
+
+#: elepower_tome/i_functions.lua:28 elepower_tome/i_page_contents.lua:94
+msgid "Transporter"
+msgstr ""
+
+#: elepower_tome/i_functions.lua:147 elepower_tome/i_functions.lua:153
 msgid "Page @1"
 msgstr ""
 
-#: elepower_tome/i_functions.lua:136
+#: elepower_tome/i_functions.lua:150
 msgid "@1 Page"
 msgstr ""
 
@@ -2155,15 +2206,15 @@ msgstr ""
 msgid "Elepower Tome"
 msgstr ""
 
-#: elepower_tome/init.lua:83 elepower_tome/init.lua:203
+#: elepower_tome/init.lua:80 elepower_tome/init.lua:200
 msgid "Content"
 msgstr ""
 
-#: elepower_tome/init.lua:205 elepower_tome/init.lua:212
+#: elepower_tome/init.lua:202 elepower_tome/init.lua:209
 msgid "Back"
 msgstr ""
 
-#: elepower_tome/init.lua:207
+#: elepower_tome/init.lua:204
 msgid "Prev"
 msgstr ""
 
@@ -2176,18 +2227,6 @@ msgid ""
 "\n"
 "Mod created by IcyDiamond and Sirrobzeroone.\n"
 "\n"
-msgstr ""
-
-#: elepower_tome/i_page_contents.lua:44
-msgid "Getting Started"
-msgstr ""
-
-#: elepower_tome/i_page_contents.lua:45
-msgid "First PCB Creation"
-msgstr ""
-
-#: elepower_tome/i_page_contents.lua:46
-msgid "Upgrading Machines"
 msgstr ""
 
 #: elepower_tome/i_page_contents.lua:50
@@ -2210,14 +2249,6 @@ msgstr ""
 msgid "Simple Machines"
 msgstr ""
 
-#: elepower_tome/i_page_contents.lua:82 elepower_tome/i_page_machines.lua:23
-msgid "Fission Reactor"
-msgstr ""
-
-#: elepower_tome/i_page_contents.lua:83 elepower_tome/i_page_machines.lua:24
-msgid "Fusion Reactor"
-msgstr ""
-
 #: elepower_tome/i_page_contents.lua:85
 msgid ""
 "Single Node\n"
@@ -2230,27 +2261,7 @@ msgid ""
 "Machines"
 msgstr ""
 
-#: elepower_tome/i_page_contents.lua:89 elepower_tome/i_page_machines.lua:20
-msgid "Powercells"
-msgstr ""
-
-#: elepower_tome/i_page_contents.lua:90 elepower_tome/i_page_machines.lua:21
-msgid "Lighting"
-msgstr ""
-
-#: elepower_tome/i_page_contents.lua:91 elepower_tome/i_page_machines.lua:25
-msgid "Fluid Pump"
-msgstr ""
-
-#: elepower_tome/i_page_contents.lua:92 elepower_tome/i_page_machines.lua:26
-msgid "Evaporation Plant"
-msgstr ""
-
-#: elepower_tome/i_page_contents.lua:94 elepower_tome/i_page_machines.lua:28
-msgid "Transporter"
-msgstr ""
-
-#: elepower_tome/i_page_crafts.lua:58 elepower_tome/i_page_machines.lua:63
+#: elepower_tome/i_page_crafts.lua:58 elepower_tome/i_page_machines.lua:49
 msgid "Overview"
 msgstr ""
 
@@ -2266,34 +2277,26 @@ msgstr ""
 msgid "How to use"
 msgstr ""
 
-#: elepower_tome/i_page_instructions.lua:59
+#: elepower_tome/i_page_instructions.lua:60
 msgid "Instructions"
 msgstr ""
 
-#: elepower_tome/i_page_instructions.lua:128
-#: elepower_tome/i_page_machines.lua:70
+#: elepower_tome/i_page_instructions.lua:129
+#: elepower_tome/i_page_machines.lua:56
 msgid ""
 "Click for detailed\n"
 "instructions"
 msgstr ""
 
-#: elepower_tome/i_page_machines.lua:18
-msgid "Generators"
-msgstr ""
-
-#: elepower_tome/i_page_machines.lua:19
-msgid "Machine"
-msgstr ""
-
-#: elepower_tome/i_page_machines.lua:72
+#: elepower_tome/i_page_machines.lua:58
 msgid "Larger Image"
 msgstr ""
 
-#: elepower_tome/i_page_machines.lua:137 elepower_tome/i_page_machines.lua:155
+#: elepower_tome/i_page_machines.lua:123 elepower_tome/i_page_machines.lua:141
 msgid "EpUs per second"
 msgstr ""
 
-#: elepower_tome/i_page_machines.lua:203
+#: elepower_tome/i_page_machines.lua:189
 msgid ""
 "Click for\n"
 "How to use"
