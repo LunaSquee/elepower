@@ -24,9 +24,10 @@ function eletome.instructions_page(machine)
 
 		-- remove "description = action:machine-" from string
 	local machine_name = string.match(machine, "-(.*)")
+	local machine_info = eletome.machines_map[machine_name]
 
 		-- remove "_"
-	local mach_name = string.gsub(machine_name,"_", " ")
+	local mach_name = machine_info.name
 
 
 	-- Assign Common styles to local vars
@@ -63,14 +64,14 @@ function eletome.instructions_page(machine)
 	local ri = 4
 
 	while li <= 3 do
-		local img_path = modpath.."/textures/eletome_instructions_"..machine_name:lower().."_".. li ..".png"
+		local img_path = modpath.."/textures/eletome_instructions_"..machine_name.."_".. li ..".png"
 		local file_check = file_exists(img_path)
 
 		if file_check then
 			if (li % 2 == 0) then -- even
-				lp_content = lp_content.."image[4.5,"..(2.0+(2.5*(li-1)))..";4,3;eletome_instructions_"..machine_name:lower().."_".. li ..".png]"
+				lp_content = lp_content.."image[4.5,"..(2.0+(2.5*(li-1)))..";4,3;eletome_instructions_"..machine_name.."_".. li ..".png]"
 			else
-				lp_content = lp_content.."image[1.00,"..(2.0+(2.5*(li-1)))..";4,3;eletome_instructions_"..machine_name:lower().."_".. li ..".png]"
+				lp_content = lp_content.."image[1.00,"..(2.0+(2.5*(li-1)))..";4,3;eletome_instructions_"..machine_name.."_".. li ..".png]"
 			end
 		else
 			break
@@ -83,14 +84,14 @@ function eletome.instructions_page(machine)
 	-- right page --
 	----------------
 	while ri <= 7 do
-		local img_path = modpath.."/textures/eletome_instructions_"..machine_name:lower().."_".. ri ..".png"
+		local img_path = modpath.."/textures/eletome_instructions_"..machine_name.."_".. ri ..".png"
 		local file_check = file_exists(img_path)
 
 		if file_check then
 			if (ri % 2 ~= 0) then -- odd
-				rp_content = rp_content.."image[13,"..(0.26+(2.4*(ri-4)))..";4,3;eletome_instructions_"..machine_name:lower().."_".. ri ..".png]"
+				rp_content = rp_content.."image[13,"..(0.26+(2.4*(ri-4)))..";4,3;eletome_instructions_"..machine_name.."_".. ri ..".png]"
 			else
-				rp_content = rp_content.."image[9.5,"..(0.26+(2.4*(ri-4)))..";4,3;eletome_instructions_"..machine_name:lower().."_".. ri ..".png]"
+				rp_content = rp_content.."image[9.5,"..(0.26+(2.4*(ri-4)))..";4,3;eletome_instructions_"..machine_name.."_".. ri ..".png]"
 			end
 		else
 			break
@@ -124,7 +125,7 @@ function eletome.large_image_page(machine)
 
 	local heading  = "hypertext[0.5,0.7;17.5,1.1;lp_heading;"..sty_h0s..mach_name..sty_h0e.."]"
 	local image    ="style_type[image_button;bgimg=elepower_tome_bgimg_1.png]"..
-							"image_button[2.33,0.5;13.33,10;"..eletome.ai[machine_name:lower()].img..";instructions;]"..
+							"image_button[2.33,0.5;13.33,10;"..eletome.ai[machine_name].img..";instructions;]"..
 					        "tooltip[2.33,0.5;13.33,10;".. S("Click for detailed\ninstructions") .. ";"..eletome.tooltip_color.."]"
 
 

@@ -14,20 +14,6 @@
 
 local S = ele.translator
 
-local machines_map = {
-	ele_provider      = { name = S("Generators"), group = "ele_provider" },
-	ele_user          = { name = S("Machine"),    group = "ele_user" },
-	ele_storage       = { name = S("Powercells"), group = "ele_storage" },
-	ele_lighting      = { name = S("Lighting"),   group = "ele_lighting" },
-	wind_turbine      = { name = S("Wind Turbine") },
-	fission_reactor   = { name = S("Fission Reactor") },
-	fusion_reactor    = { name = S("Fusion Reactor") },
-	fluid_pump        = { name = S("Fluid Pump") },
-	evaporation_plant = { name = S("Evaporation Plant") },
-	miner             = { name = S("Miner") },
-	transporter       = { name = S("Transporter") },
-}
-
 function eletome.machines(machine,page_num)
 	-- remove "action:" from string
 	local raw_mach_input = string.match(machine, ":(.*)")
@@ -35,8 +21,8 @@ function eletome.machines(machine,page_num)
 	-- split on "-" to remove "machine"
 	local machine_split = string.split(raw_mach_input,"-")
 	local machine_name = machine_split[2]
-	local readable_name = machines_map[machine_name].name
-	local mach_group = machines_map[machine_name].group
+	local readable_name = eletome.machines_map[machine_name].name
+	local mach_group = eletome.machines_map[machine_name].group
 
 
 	-- Assign Common styles to local vars
