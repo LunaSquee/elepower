@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-22 10:10+0300\n"
+"POT-Creation-Date: 2025-04-22 16:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -186,15 +186,15 @@ msgid "Sawdust"
 msgstr ""
 
 #: elepower_dynamics/components.lua:36
-msgid "@1 Plate"
+msgid "Plate"
 msgstr ""
 
 #: elepower_dynamics/components.lua:64
-msgid "Pulverized @1"
+msgid "Pulverized"
 msgstr ""
 
 #: elepower_dynamics/components.lua:87
-msgid "@1 Gear"
+msgid "Gear"
 msgstr ""
 
 #: elepower_dynamics/conduits.lua:10
@@ -629,7 +629,7 @@ msgstr ""
 #: elepower_farming/machines/harvester.lua:127
 #: elepower_farming/machines/planter.lua:238
 #: elepower_farming/machines/tree_processor.lua:64
-#: elepower_machines/machines/bases/crafter.lua:178
+#: elepower_machines/machines/bases/crafter.lua:179
 #: elepower_machines/machines/bases/fluid_generator.lua:66
 #: elepower_machines/machines/bases/fluid_generator.lua:115
 #: elepower_machines/machines/bases/generator.lua:57
@@ -649,7 +649,7 @@ msgstr ""
 #: elepower_farming/machines/planter.lua:259
 #: elepower_farming/machines/spawner.lua:129
 #: elepower_farming/machines/tree_processor.lua:93
-#: elepower_machines/machines/bases/crafter.lua:222
+#: elepower_machines/machines/bases/crafter.lua:223
 #: elepower_machines/machines/bases/fluid_generator.lua:89
 #: elepower_machines/machines/bases/generator.lua:82
 #: elepower_machines/machines/bases/storage.lua:70
@@ -668,7 +668,7 @@ msgstr ""
 #: elepower_farming/machines/planter.lua:263
 #: elepower_farming/machines/spawner.lua:157
 #: elepower_farming/machines/tree_processor.lua:68
-#: elepower_machines/machines/bases/crafter.lua:194
+#: elepower_machines/machines/bases/crafter.lua:195
 #: elepower_machines/machines/bases/fluid_generator.lua:70
 #: elepower_machines/machines/bases/generator.lua:63
 #: elepower_machines/machines/electrolyzer.lua:106
@@ -735,7 +735,7 @@ msgid "Place me in front of a tree!"
 msgstr ""
 
 #: elepower_farming/machines/tree_processor.lua:116
-#: elepower_machines/machines/bases/crafter.lua:261
+#: elepower_machines/machines/bases/crafter.lua:262
 #: elepower_machines/machines/electrolyzer.lua:128
 #: elepower_machines/machines/pcb_plant.lua:84
 #: elepower_nuclear/machines/solar_neutron_activator.lua:69
@@ -1047,7 +1047,7 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: elepower_machines/machines/bases/crafter.lua:215
+#: elepower_machines/machines/bases/crafter.lua:216
 #: elepower_machines/machines/electrolyzer.lua:115
 #: elepower_machines/machines/evaporator.lua:43
 #: elepower_machines/machines/pcb_plant.lua:53
@@ -1360,15 +1360,19 @@ msgid "Empty Fuel Rod"
 msgstr ""
 
 #: elepower_nuclear/craftitems.lua:40
-msgid ""
-"Fissile Fuel Rod\n"
-"Lasts @1 hours (@2 seconds)"
+msgid "Fissile Fuel Rod"
+msgstr ""
+
+#: elepower_nuclear/craftitems.lua:40
+msgid "Lasts @1 hours (@2 seconds)"
 msgstr ""
 
 #: elepower_nuclear/craftitems.lua:48
-msgid ""
-"Depleted Fuel Rod\n"
-"Can not be used in a reactor anymore"
+msgid "Depleted Fuel Rod"
+msgstr ""
+
+#: elepower_nuclear/craftitems.lua:48
+msgid "Can not be used in a reactor anymore"
 msgstr ""
 
 #: elepower_nuclear/craftitems.lua:56

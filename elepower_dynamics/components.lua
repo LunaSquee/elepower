@@ -33,7 +33,7 @@ function elepd.register_plate(mat, data)
 	elepd.registered_plates[mat] = data
 
 	-- Make descriptions overridable
-	local description = S("@1 Plate", data.description)
+	local description = data.description .. " " .. S("Plate")
 	if data.force_description then
 		description = data.description
 	end
@@ -61,7 +61,7 @@ function elepd.register_dust(mat, data)
 	elepd.registered_dusts[mat] = data
 
 	-- Make descriptions overridable
-	local description = S("Pulverized @1", data.description)
+	local description = S("Pulverized") .. " " .. data.description
 	if data.force_description then
 		description = data.description
 	end
@@ -84,7 +84,7 @@ function elepd.register_gear(mat, data)
 	elepd.registered_gears[mat] = data
 
 	-- Make descriptions overridable
-	local description = S("@1 Gear", data.description)
+	local description = data.description .. " " .. S("Gear")
 	if data.force_description then
 		description = data.description
 	end
