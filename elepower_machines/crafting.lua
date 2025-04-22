@@ -865,7 +865,7 @@ minetest.register_craft({
             "elepower_dynamics:integrated_circuit",
             "elepower_dynamics:zinc_plate"
         }, {
-            "bucket:bucket_empty", "elepower_machines:machine_block",
+            fluid_lib.get_empty_bucket(), "elepower_machines:machine_block",
             "elepower_dynamics:gas_container"
         }, {
             "elepower_dynamics:servo_valve",
