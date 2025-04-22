@@ -90,7 +90,7 @@ end
 -- Bucket
 if epi.iron_ingot == "" then
 	minetest.register_craft({
-			output = 'bucket:bucket_empty',
+			output = fluid_lib.get_empty_bucket(),
 			recipe = {
 					{'elepower_dynamics:iron_ingot', '', 'elepower_dynamics:iron_ingot'},
 					{'', 'elepower_dynamics:iron_ingot', ''}

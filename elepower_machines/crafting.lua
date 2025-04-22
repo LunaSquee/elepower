@@ -720,8 +720,8 @@ minetest.register_craft({
     output = "elepower_machines:lava_cooler",
     recipe = {
         {
-            "bucket:bucket_water", "elepower_dynamics:control_circuit",
-            "bucket:bucket_lava"
+            fluid_lib.get_bucket_for_source(epi.water_source), "elepower_dynamics:control_circuit",
+            fluid_lib.get_bucket_for_source(epi.lava_source)
         }, {
             "fluid_transfer:fluid_duct", "elepower_machines:machine_block",
             "fluid_transfer:fluid_duct"
@@ -731,8 +731,8 @@ minetest.register_craft({
         }
     },
     replacements = {
-        {"bucket:bucket_water", "bucket:bucket_empty"},
-        {"bucket:bucket_lava", "bucket:bucket_empty"}
+        {fluid_lib.get_bucket_for_source(epi.water_source), fluid_lib.get_empty_bucket()},
+        {fluid_lib.get_bucket_for_source(epi.lava_source), fluid_lib.get_empty_bucket()}
     }
 })
 
@@ -903,8 +903,8 @@ minetest.register_craft({
             "elepower_dynamics:integrated_circuit",
             "elepower_dynamics:lead_gear"
         }, {
-            "bucket:bucket_empty", "elepower_machines:machine_block",
-            "bucket:bucket_empty"
+            fluid_lib.get_empty_bucket(), "elepower_machines:machine_block",
+            fluid_lib.get_empty_bucket()
         }, {
             "elepower_dynamics:electrum_plate",
             "elepower_machines:opaque_duct_roll",

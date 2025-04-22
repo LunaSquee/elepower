@@ -41,7 +41,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "elepower_farming:tree_extractor",
 	recipe = {
-		{"basic_materials:motor", "bucket:bucket_empty", "basic_materials:motor"},
+		{"basic_materials:motor", fluid_lib.get_empty_bucket(), "basic_materials:motor"},
 		{"elepower_dynamics:tree_tap", "elepower_farming:device_frame", "elepower_dynamics:tree_tap"},
 		{"elepower_dynamics:copper_gear", "elepower_dynamics:servo_valve", "elepower_dynamics:copper_gear"},
 	}
@@ -51,7 +51,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "elepower_farming:composter",
 	recipe = {
-		{"basic_materials:motor", "bucket:bucket_empty", "basic_materials:motor"},
+		{"basic_materials:motor", fluid_lib.get_empty_bucket(), "basic_materials:motor"},
 		{"elepower_dynamics:electrum_gear", "elepower_farming:device_frame", "elepower_dynamics:electrum_gear"},
 		{"elepower_dynamics:copper_gear", "elepower_dynamics:servo_valve", "elepower_dynamics:copper_gear"},
 	}
@@ -61,7 +61,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "elepower_farming:tree_processor",
 	recipe = {
-		{"basic_materials:motor", "bucket:bucket_empty", "basic_materials:motor"},
+		{"basic_materials:motor", fluid_lib.get_empty_bucket(), "basic_materials:motor"},
 		{"elepower_dynamics:copper_plate", "elepower_farming:device_frame", "elepower_dynamics:zinc_plate"},
 		{"elepower_dynamics:copper_gear", "elepower_dynamics:servo_valve", "elepower_dynamics:copper_gear"},
 	}

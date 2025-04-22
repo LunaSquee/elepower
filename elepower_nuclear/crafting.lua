@@ -88,14 +88,14 @@ minetest.register_craft({
 	output = "elepower_nuclear:bucket_coolant",
 	recipe = {
 		{"elepower_dynamics:nitrogen_container", "elepower_dynamics:nitrogen_container", "elepower_dynamics:nitrogen_container"},
-		{"",  "bucket:bucket_water", ""},
+		{"",  fluid_lib.get_bucket_for_source(epi.water_source), ""},
 		{"", "elepower_dynamics:acidic_compound", ""},
 	},
 	replacements = {
 		{'elepower_dynamics:nitrogen_container', "elepower_dynamics:gas_container"},
 		{'elepower_dynamics:nitrogen_container', "elepower_dynamics:gas_container"},
 		{'elepower_dynamics:nitrogen_container', "elepower_dynamics:gas_container"},
-		{'bucket:bucket_water', "bucket:bucket_empty"}
+		{fluid_lib.get_bucket_for_source(epi.water_source), fluid_lib.get_empty_bucket()}
 	}
 })
 
