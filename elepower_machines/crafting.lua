@@ -75,9 +75,9 @@ for mat, data in pairs(elepd.registered_dusts) do
     for keyword, count in pairs(keywords) do
         local found = ele.helpers.scan_item_list(mat, keyword)
         if found then
-            if keyword == "_ingot" and not kwfound then
+            if keyword == "ingot" and not kwfound then
                 kwfound = found
-            elseif keyword == "_block" or keyword == "block" and
+            elseif keyword == "block" and
                 not block_map[mat] then
                 block_map[mat] = found
             end
