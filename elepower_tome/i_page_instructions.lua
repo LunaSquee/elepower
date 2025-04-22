@@ -24,10 +24,8 @@ function eletome.instructions_page(machine)
 
 		-- remove "description = action:machine-" from string
 	local machine_name = string.match(machine, "-(.*)")
-	local machine_info = eletome.machines_map[machine_name]
 
 		-- remove "_"
-	local mach_name = machine_info.name
 
 
 	-- Assign Common styles to local vars
@@ -41,6 +39,10 @@ function eletome.instructions_page(machine)
 	local sty_h3e  = eletome.common_styles.style_h3e
 	local sty_h4s  = eletome.common_styles.style_h4s
 	local sty_h4e  = eletome.common_styles.style_h4e
+
+	-- Additional Info Table
+	local mach_info = eletome.ai[machine_name]
+	local mach_name = mach_info.title
 
 	local file_exists
 	function file_exists(img_name)

@@ -33,6 +33,10 @@ eletome.ai = {}
 -- note must be setup as
 -- eletome.ai.<page_heading_name>
 -- Values
+   -- eletome.ai.<page_heading_name>.title - <required> Page title
+
+   -- eletome.ai.<page_heading_name>.group - <optional> Machine group
+
    -- eletome.ai.<page_heading_name>.img - <optional> Image sized 800/1000 x 600 sized image
                                          --works best, appears at the bottom of the left page if set
 
@@ -49,9 +53,11 @@ eletome.ai = {}
 											-- using "no_sort" will prevent any sorting from occuring
 
 -- info for Generators page
-eletome.ai.ele_provider      = {}
-eletome.ai.ele_provider.img  = "power_network_simple_examples.png"
-eletome.ai.ele_provider.over = S("Generators produce EpU/s by taking something from the natural "..
+eletome.ai.ele_provider       = {}
+eletome.ai.ele_provider.title = S("Generators")
+eletome.ai.ele_provider.group = "ele_provider"
+eletome.ai.ele_provider.img   = "power_network_simple_examples.png"
+eletome.ai.ele_provider.over  = S("Generators produce EpU/s by taking something from the natural "..
 						     "environment and converting it to power that can be used by machines. "..
 						     "There are both low and high tech solutions for producing power so choose "..
 						     "a power generation method that best fits with what your current needs are "..
@@ -64,6 +70,8 @@ eletome.ai.ele_provider.over = S("Generators produce EpU/s by taking something f
 
 -- info for Powercells page
 eletome.ai.ele_storage         = {}
+eletome.ai.ele_storage.title   = S("Powercells")
+eletome.ai.ele_storage.group   = "ele_storage"
 eletome.ai.ele_storage.sort_by = "ele_output"
 eletome.ai.ele_storage.over    = S("Powercells will charge from the network when power is available."..
 						        "Once power supply on a network is 0 ie generators no longer "..
@@ -77,6 +85,8 @@ eletome.ai.ele_storage.over    = S("Powercells will charge from the network when
 
 -- info for (Simple/Single node) Machine page
 eletome.ai.ele_user         = {}
+eletome.ai.ele_user.title   = S("Machine")
+eletome.ai.ele_user.group   = "ele_user"
 eletome.ai.ele_user.over    = S("These are the simpliest machines in elepower consisting of single node "..
 						     "that performs a single/simple function.\n"..
 							 "The machines can often interface with other machines using fluid ducts to "..
@@ -87,6 +97,8 @@ eletome.ai.ele_user.over    = S("These are the simpliest machines in elepower co
 
 -- info for Lighting
 eletome.ai.ele_lighting         = {}
+eletome.ai.ele_lighting.title   = S("Lighting")
+eletome.ai.ele_lighting.group   = "ele_lighting"
 --eletome.ai.ele_lighting.sort_by = "ele_capacity"
 eletome.ai.ele_lighting.over    = S("There is an array of lighting in elepower which increase in technical complexity "..
 							  "while off setting this with a lower power usage. Lighting types include:\n"..
@@ -99,6 +111,7 @@ eletome.ai.ele_lighting.over    = S("There is an array of lighting in elepower w
 
 -- info for Fluid Pump page
 eletome.ai.fluid_pump         = {}
+eletome.ai.fluid_pump.title   = S("Fluid Pump")
 eletome.ai.fluid_pump.sort_by = "no_sort"
 eletome.ai.fluid_pump.img     = "elepower_tome_complex_water_pump.png"
 eletome.ai.fluid_pump.part    = {"elepower_machines:pump",
@@ -115,6 +128,7 @@ eletome.ai.fluid_pump.over    = S("The simplest fluid Pump is assembled from two
 
 -- info for Miner page
 eletome.ai.miner          = {}
+eletome.ai.miner.title    = S("Miner")
 eletome.ai.miner.sort_by  = "no_sort"
 eletome.ai.miner.instruct = "y"
 eletome.ai.miner.img      = "elepower_tome_complex_miner.png"
@@ -135,6 +149,7 @@ eletome.ai.miner.over     = S("The miner uses significant volumes of power and w
 
 -- info for Evaporation Plant page
 eletome.ai.evaporation_plant          = {}
+eletome.ai.evaporation_plant.title    = S("Evaporation Plant")
 eletome.ai.evaporation_plant.sort_by  = "no_sort"
 eletome.ai.evaporation_plant.instruct = "y"
 eletome.ai.evaporation_plant.img      = "elepower_tome_complex_thermal_evap.png"
@@ -159,6 +174,7 @@ eletome.ai.evaporation_plant.over     = S("The Thermal Evaporation Plant is a ma
 
 -- info for Transporter page
 eletome.ai.transporter         = {}
+eletome.ai.transporter.title   = S("Transporter")
 eletome.ai.transporter.sort_by = "no_sort"
 eletome.ai.transporter.part    = {"elepower_wireless:dialler",
 							      "elepower_wireless:matter_transmitter",
@@ -172,6 +188,7 @@ eletome.ai.transporter.over    = S("Once setup the Teleporter allows for instana
 
 -- info for Wind Turbine page
 eletome.ai.wind_turbine         = {}
+eletome.ai.wind_turbine.title   = S("Wind Turbine")
 eletome.ai.wind_turbine.sort_by = "no_sort"
 eletome.ai.wind_turbine.part    = {"elepower_machines:wind_turbine",
 								   "elepower_machines:wind_turbine_blade",
@@ -185,6 +202,7 @@ eletome.ai.wind_turbine.img  = "elepower_tome_complex_wind_turbine.png"
 
 -- info for Fission page
 eletome.ai.fission_reactor         = {}
+eletome.ai.fission_reactor.title   = S("Fission Reactor")
 eletome.ai.fission_reactor.sort_by = "no_sort"
 eletome.ai.fission_reactor.instruct= "y"
 eletome.ai.fission_reactor.img     = "elepower_tome_complex_fission_reactor.png"
@@ -211,6 +229,7 @@ eletome.ai.fission_reactor.over     = S("The Nuclear (Fission) Reactor is a type
 
 -- info for Fusion page
 eletome.ai.fusion_reactor         = {}
+eletome.ai.fusion_reactor.title   = S("Fusion Reactor")
 eletome.ai.fusion_reactor.sort_by = "no_sort"
 eletome.ai.fusion_reactor.part    = {"elepower_nuclear:fusion_coil",
 									 "elepower_nuclear:reactor_controller",

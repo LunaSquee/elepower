@@ -21,9 +21,6 @@ function eletome.machines(machine,page_num)
 	-- split on "-" to remove "machine"
 	local machine_split = string.split(raw_mach_input,"-")
 	local machine_name = machine_split[2]
-	local readable_name = eletome.machines_map[machine_name].name
-	local mach_group = eletome.machines_map[machine_name].group
-
 
 	-- Assign Common styles to local vars
 	local sty_h0s  = eletome.common_styles.style_h0s
@@ -39,31 +36,35 @@ function eletome.machines(machine,page_num)
 
 	-- Additional Info Table
 	local add_info = eletome.ai
+	local mach_info = add_info[machine_name]
 
-	local sort_by         = add_info[machine_name].sort_by or nil
-	local instructions    = add_info[machine_name].instruct or nil
+	local readable_name = mach_info.title
+	local mach_group = mach_info.group
+
+	local sort_by         = mach_info.sort_by or nil
+	local instructions    = mach_info.instruct or nil
 	-----------------------
 	-- Machine left page --
 	-----------------------
 	local heading_lp      = "hypertext[0.5,0.70;8.5,1.1;ass_mach_lp_h;"..sty_h0s..readable_name..sty_h0e.."]"
 	local head_sub_lp_ov  = "hypertext[0.5,1.4;8.5,1.0;mach_lp_sh_ov;"..sty_h1s..S("Overview")..sty_h1e.."]"
 	local lp_txt_space    = 0
-	local ov_lp_img       = add_info[machine_name].img or ""
+	local ov_lp_img       = mach_info.img or ""
 		if ov_lp_img ~= "" then
 			if instructions then
 				ov_lp_img = "style_type[image_button;bgimg=elepower_tome_bgimg_1.png]"..
-							"image_button[2.25,6.6;5,3.75;"..add_info[machine_name].img..";instructions;]"..
+							"image_button[2.25,6.6;5,3.75;"..mach_info.img..";instructions;]"..
 					        "tooltip[2.25,6.6;5,3.75;".. S("Click for detailed\ninstructions") .. ";"..eletome.tooltip_color.."]"..
 							"hypertext[0.5,10.1;8,0.5;large_image;"..sty_h4s..
 							 "<action name=machine-"..machine_name..">" .. S("Larger Image") .. "</action>"..
 							 sty_h4e.."]"
 			else
-				ov_lp_img = "image[2.25,6.6;5,3.75;"..add_info[machine_name].img.."]"
+				ov_lp_img = "image[2.25,6.6;5,3.75;"..mach_info.img.."]"
 			end
 		else
 			lp_txt_space    = 3.75
 		end
-	local ov_lp_txt       = "hypertext[0.75,2.1;8.0,"..(4.5+lp_txt_space)..";mach_lp_ov_text;"..sty_h4s..(add_info[machine_name].over or "")..sty_h4e.."]"
+	local ov_lp_txt       = "hypertext[0.75,2.1;8.0,"..(4.5+lp_txt_space)..";mach_lp_ov_text;"..sty_h4s..(mach_info.over or "")..sty_h4e.."]"
 
 	------------------------
 	-- Machine right page --
@@ -78,7 +79,7 @@ function eletome.machines(machine,page_num)
 		mach_key, mach_sort = eletome.get_nodes_in_group(mach_group)
 
 	else
-		local mach_nodes = add_info[machine_name].part or {}
+		local mach_nodes = mach_info.part or {}
 
 		for k,node_name in pairs(mach_nodes) do
 			table.insert(mach_sort,minetest.registered_items[node_name].description)

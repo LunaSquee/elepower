@@ -13,21 +13,6 @@
 ---------------------------------------------------
 local S = ele.translator
 
-
-eletome.machines_map = {
-	ele_provider      = { name = S("Generators"), group = "ele_provider" },
-	ele_user          = { name = S("Machine"),    group = "ele_user" },
-	ele_storage       = { name = S("Powercells"), group = "ele_storage" },
-	ele_lighting      = { name = S("Lighting"),   group = "ele_lighting" },
-	wind_turbine      = { name = S("Wind Turbine") },
-	fission_reactor   = { name = S("Fission Reactor") },
-	fusion_reactor    = { name = S("Fusion Reactor") },
-	fluid_pump        = { name = S("Fluid Pump") },
-	evaporation_plant = { name = S("Evaporation Plant") },
-	miner             = { name = S("Miner") },
-	transporter       = { name = S("Transporter") },
-}
-
 ----------------------------------
 --  Determine if a text string  --
 --   is for an image or not     --
