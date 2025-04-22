@@ -179,6 +179,9 @@ function ele.helpers.register_liquid(liquid, def)
 			def_base.groups = {liquid = 3}
 		end
 
+		def_base._liquid_name = def_base.description
+		def_base._doc_items_entry_name = def_base.description
+
 		if state == "flowing" then
 			def_base.description = S("Flowing") .. " " .. def_base.description
 			def_base.paramtype2 = "flowingliquid"
