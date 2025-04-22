@@ -1,7 +1,7 @@
 # Elepower
 ![](screenshot.png)
 
-A new *powerful* modpack for [Minetest](http://minetest.net) 5.0.0+!
+A new *powerful* modpack for [Luanti](https://www.luanti.org/) 5.6.0+!
 
 **I do not recommend using this modpack with technic, as this modpack aims to become an all new technology mod. However, compatibility might be added at a later date.**
 
