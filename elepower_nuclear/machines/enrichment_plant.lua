@@ -38,7 +38,7 @@ elepm.register_crafter("elepower_nuclear:enrichment_plant", {
     },
     groups = {ele_user = 1, cracky = 2, pickaxey = 2},
     ele_capacity = 8000,
-    ele_usage = 1000,
+    ele_usage = 512,
     ele_inrush = 8000,
     get_formspec = get_formspec
 })
