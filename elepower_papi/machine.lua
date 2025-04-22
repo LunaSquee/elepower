@@ -257,6 +257,10 @@ function ele.register_base_device(nodename, nodedef)
     if mcl then
         nodedef._mcl_blast_resistance = nodedef._mcl_blast_resistance or 4
         nodedef._mcl_hardness = nodedef._mcl_hardness or 3
+
+        if not nodedef.groups or not nodedef.groups.pickaxey then
+            nodedef.groups.pickaxey = 1
+        end
     end
 
     -- Override construct callback
