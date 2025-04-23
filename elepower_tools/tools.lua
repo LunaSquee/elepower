@@ -9,7 +9,7 @@ ele.register_tool("elepower_tools:hand_drill", {
         max_drop_level = 4,
         groupcaps = {
             cracky = {times = {[1] = 5, [2] = 2, [3] = 1}, maxlevel = 4},
-            pickaxey = {times = {[1] = 5, [2] = 2, [3] = 1}, maxlevel = 4}
+            pickaxey = {times = {[1] = 1, [2] = 2, [3] = 3, [4] = 5}, maxlevel = 4}
         },
         damage_groups = {fleshy = 4}
     },

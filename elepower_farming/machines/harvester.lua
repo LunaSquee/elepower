@@ -40,7 +40,7 @@ local function is_plant(node)
         for _, info in pairs(mcl_farming.plant_lists) do
             if node.name == info.full_grown then return true end
         end
-				return false
+        return false
     end
     return (not nodedef['next_plant'] or
                not minetest.registered_nodes[nodedef.next_plant]) and

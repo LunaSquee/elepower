@@ -287,7 +287,7 @@ eletome.ai.nodes["getting_started"]    = {
 													"To craft all those you will need a Total of: "..
 													"174 leaves, 17 Copper Ingots, 8 Stone blocks, 9 Steel Ingots, "..
 													"3 sand, 2 Iron ingots, 2 Silver Ingots and 2 Mese Crystal Fragments\n"),
-										 hu_img_1 = {"container[1.0,6.6]"..
+										hu_img_1 = {"container[1.0,6.6]"..
 													-- line 1
 													"style_type[item_image_button;bgimg=elepower_tome_bgimg_2.png]"..
 													"item_image_button[0.375,0.25;1,1;"..epi.blueberry_bush_leaves..";leaves;]"..
@@ -335,7 +335,7 @@ eletome.ai.nodes["getting_started"]    = {
 													"item_image_button[6.75,2.75;1,1;basic_materials:motor;basic_materials:motor;]"..
 													"hypertext[6.75,3.4;1,1;num;<style size=12><right><b>02</b></right></style>]"..
 													"container_end[]"},
-										 hu_img_2 = {"container[0,0]"..
+										hu_img_2 = {"container[0,0]"..
 											        "style_type[item_image_button;bgimg=elepower_tome_bgimg_2.png]"..
 													--line 1
 													"container[2.5,0]"..
@@ -433,7 +433,7 @@ eletome.ai.nodes["first_pcb_creation"] = {
 														   "single water source block placed.\nOnce you have turned the water "..
 														   "into etching acid you can use it to turn 10 PCB blanks into 10 PCBs, you can also "..
 														   "pickup the etching acid with a bucket and store it."),
-											  hu_img_2 =   {"container[0,0]"..
+											    hu_img_2 =   {"container[0,0]"..
 															"style_type[item_image_button;bgimg=elepower_tome_bgimg_2.png]"..
 															--line 1
 															"container[0.5,0]"..
@@ -492,7 +492,7 @@ eletome.ai.nodes["first_pcb_creation"] = {
 															"container_end[]"
 
 											               }
-											  }
+											}
 
 eletome.ai.nodes["upgrading_machines"] = {
 											title = S("Upgrading Machines"),
@@ -636,149 +636,250 @@ eletome.ai.nodes["upgrading_machines"] = {
 									     }
 
 -- Generators Page
-eletome.ai.nodes["elepower_machines:generator"]      = {lb_top_img = epi.coal_lump,
-														lb_top_tt = S("Burnable Items"),
-														lb_btm_tt = " " .. S("EpU generated") .. "\n" .. S("per second")
-													   }
-eletome.ai.nodes["elepower_machines:lava_generator"] = {lb_top_img = epi.lava_source,
-														lb_btm_tt = " " .. S("EpU generated") .. "\n" .. S("per @1 lava/second", "125")
-													   }
-eletome.ai.nodes["elepower_machines:fuel_burner"]    = {lb_top_img = "elepower_farming:biofuel_source",
-														lb_btm_tt = " " .. S("EpU generated") .. "\n" .. S("per @1 biofuel/second", "12.5")
-													   }
-eletome.ai.nodes["elepower_solar:solar_generator"]   = {lb_top_img = "elepower_tome_sunlight.png",
-														lb_top_tt = S("Sunlight"),
-														lb_btm_tt = " " .. S("EpU generated") .. "\n" .. S("per second")
-													   }
-eletome.ai.nodes["elepower_machines:steam_turbine"]  = {lb_top_img = "elepower_tome_steam.png",
-														 lb_top_tt = S("Steam"),
-														 lb_btm_tt = " " .. S("EpU generated") .. "\n" .. S("per @1 steam/second", "500")
-														 }
-eletome.ai.nodes["elepower_machines:wind_turbine"]   = {lb_top_img = "elepower_tome_wind.png",
-														lb_top_tt = S("Wind"),
-														lb_btm_tt = " " .. S("EpU generated") .. "\n" .. S("per second")
-														}
+eletome.ai.nodes["elepower_machines:generator"] = {
+	lb_top_img = epi.coal_lump,
+	lb_top_tt = S("Burnable Items"),
+	lb_btm_tt = " " .. S("EpU generated") .. "\n" .. S("per second")
+}
+
+eletome.ai.nodes["elepower_machines:lava_generator"] = {
+	lb_top_img = epi.lava_source,
+	lb_btm_tt = " " .. S("EpU generated") .. "\n" .. S("per @1 lava/second", "125")
+}
+
+eletome.ai.nodes["elepower_machines:fuel_burner"] = {
+	lb_top_img = "elepower_farming:biofuel_source",
+	lb_btm_tt = " " .. S("EpU generated") .. "\n" .. S("per @1 biofuel/second", "12.5")
+}
+
+eletome.ai.nodes["elepower_solar:solar_generator"] = {
+	lb_top_img = "elepower_tome_sunlight.png",
+	lb_top_tt = S("Sunlight"),
+	lb_btm_tt = " " .. S("EpU generated") .. "\n" .. S("per second")
+}
+
+eletome.ai.nodes["elepower_machines:steam_turbine"] = {
+	lb_top_img = "elepower_tome_steam.png",
+	lb_top_tt = S("Steam"),
+	lb_btm_tt = " " .. S("EpU generated") .. "\n" .. S("per @1 steam/second", "500")
+}
+
+eletome.ai.nodes["elepower_machines:wind_turbine"] = {
+	lb_top_img = "elepower_tome_wind.png",
+	lb_top_tt = S("Wind"),
+	lb_btm_tt = " " .. S("EpU generated") .. "\n" .. S("per second")
+}
 
 -- Powercells
-eletome.ai.nodes["elepower_machines:power_cell_0"]            = {lb_top_img = "elepower_gui_icon_power_stored.png",
-																 lb_top_tt = S("Storage @1 EpUs", minetest.registered_nodes["elepower_machines:power_cell_0"].ele_capacity),
-																 lb_btm_tt = " " .. S("EpU max output") .. "\n" .. S("per second")
-																}
-eletome.ai.nodes["elepower_machines:hardened_power_cell_0"]   = {lb_top_img = "elepower_gui_icon_power_stored.png",
-																 lb_top_tt = S("Storage @1 EpUs", minetest.registered_nodes["elepower_machines:hardened_power_cell_0"].ele_capacity),
-																 lb_btm_tt = " " .. S("EpU max output") .. "\n" .. S("per second")
-																}
-eletome.ai.nodes["elepower_machines:reinforced_power_cell_0"] = {lb_top_img = "elepower_gui_icon_power_stored.png",
-																 lb_top_tt = S("Storage @1 EpUs", minetest.registered_nodes["elepower_machines:reinforced_power_cell_0"].ele_capacity),
-																 lb_btm_tt = " " .. S("EpU max output") .. "\n" .. S("per second")
-																 }
-eletome.ai.nodes["elepower_machines:resonant_power_cell_0"]   = {lb_top_img = "elepower_gui_icon_power_stored.png",
-																 lb_top_tt = S("Storage @1 EpUs", minetest.registered_nodes["elepower_machines:resonant_power_cell_0"].ele_capacity),
-																 lb_btm_tt = " " .. S("EpU max output") .. "\n" .. S("per second")
-																 }
-eletome.ai.nodes["elepower_machines:super_power_cell_0"]      = {lb_top_img = "elepower_gui_icon_power_stored.png",
-																 lb_top_tt = S("Storage @1 EpUs", minetest.registered_nodes["elepower_machines:super_power_cell_0"].ele_capacity),
-																 lb_btm_tt = " " .. S("EpU max output") .. "\n" .. S("per second")
-																}
+eletome.ai.nodes["elepower_machines:power_cell_0"] = {
+	lb_top_img = "elepower_gui_icon_power_stored.png",
+	lb_top_tt = S("Storage @1 EpUs", minetest.registered_nodes["elepower_machines:power_cell_0"].ele_capacity),
+	lb_btm_tt = " " .. S("EpU max output") .. "\n" .. S("per second")
+}
+
+eletome.ai.nodes["elepower_machines:hardened_power_cell_0"] = {
+	lb_top_img = "elepower_gui_icon_power_stored.png",
+	lb_top_tt = S("Storage @1 EpUs", minetest.registered_nodes["elepower_machines:hardened_power_cell_0"].ele_capacity),
+	lb_btm_tt = " " .. S("EpU max output") .. "\n" .. S("per second")
+}
+
+eletome.ai.nodes["elepower_machines:reinforced_power_cell_0"] = {
+	lb_top_img = "elepower_gui_icon_power_stored.png",
+	lb_top_tt = S("Storage @1 EpUs", minetest.registered_nodes["elepower_machines:reinforced_power_cell_0"].ele_capacity),
+	lb_btm_tt = " " .. S("EpU max output") .. "\n" .. S("per second")
+}
+
+eletome.ai.nodes["elepower_machines:resonant_power_cell_0"] = {
+	lb_top_img = "elepower_gui_icon_power_stored.png",
+	lb_top_tt = S("Storage @1 EpUs", minetest.registered_nodes["elepower_machines:resonant_power_cell_0"].ele_capacity),
+	lb_btm_tt = " " .. S("EpU max output") .. "\n" .. S("per second")
+}
+
+eletome.ai.nodes["elepower_machines:super_power_cell_0"] = {
+	lb_top_img = "elepower_gui_icon_power_stored.png",
+	lb_top_tt = S("Storage @1 EpUs", minetest.registered_nodes["elepower_machines:super_power_cell_0"].ele_capacity),
+	lb_btm_tt = " " .. S("EpU max output") .. "\n" .. S("per second")
+}
 
 -- (Simple) Machines Page
-eletome.ai.nodes["elepower_machines:alloy_furnace"]      = {lb_top_img = "elepower_iron_ingot.png^[multiply:#c1c1c1",
-															lb_top_tt =S("@1 Materials\nto be Alloyed", "2"),
-															lb_btm_tt = " " .. S("used per second"),
-															}
+eletome.ai.nodes["elepower_machines:alloy_furnace"] = {
+	lb_top_img = "elepower_iron_ingot.png^[multiply:#c1c1c1",
+	lb_top_tt = S("@1 Materials\nto be Alloyed", "2"),
+	lb_btm_tt = " " .. S("used per second"),
+}
 
-eletome.ai.nodes["elepower_machines:electrolyzer"]      = {lb_top_img = "elepower_gui_icon_fluid_electrolyzer_in.png", lb_top_tt  = S("Fluids"),
-														   how_use_1 = S("The Electrolyzer is used to create gases out of certain fluids. The electrolyzer can accept three "..
-																	 "fluids/liquids, although not at the same time - water, heavy water and biomass. The electrolyzer will "..
-																	 "at the cost of 128 EpUs a second break each down into different gases, see table below\n "),
-														   how_use_2 = S("To extract gas from the electrolyzer you will need a fluid pump, bucketeer and an empty gas canister. "..
-																	 "The electrolyzer can only output to a single bucketeer so you will need to empty one gas completely before "..
-																	 "you will be able to bottle the second gas (always oxygen)."),
-														   hu_img_1   = "elepower_tome_electrolyzer_outputs.png",
-														   hu_img_2   = "elepower_tome_electrolyzer_assemble.png"
-														  }
+eletome.ai.nodes["elepower_machines:electrolyzer"] = {
+	lb_top_img = "elepower_gui_icon_fluid_electrolyzer_in.png",
+	lb_top_tt  = S("Fluids"),
+	how_use_1  = S("The Electrolyzer is used to create gases out of certain fluids. The electrolyzer can accept three "..
+				"fluids/liquids, although not at the same time - water, heavy water and biomass. The electrolyzer will "..
+				"at the cost of 128 EpUs a second break each down into different gases, see table below\n "),
+	how_use_2  = S("To extract gas from the electrolyzer you will need a fluid pump, bucketeer and an empty gas canister. "..
+				"The electrolyzer can only output to a single bucketeer so you will need to empty one gas completely before "..
+				"you will be able to bottle the second gas (always oxygen)."),
+	hu_img_1   = "elepower_tome_electrolyzer_outputs.png",
+	hu_img_2   = "elepower_tome_electrolyzer_assemble.png"
+}
 
-eletome.ai.nodes["elepower_farming:harvester"]      = {lb_top_img = epg.farming_wheat,lb_top_tt  = "Crops\n   or\nTrees"}
+eletome.ai.nodes["elepower_farming:harvester"] = {
+	lb_top_img = epg.farming_wheat,
+	lb_top_tt  = "Crops\n   or\nTrees"
+}
 
+eletome.ai.nodes["elepower_farming:planter"] = {
+	lb_top_img = epg.farming_wheat_seed,
+	lb_top_tt  = S("Seeds or Seedlings"),
+	how_use_1  = S("The automatic planter is used to keep a maximum 9x9 field planted with crops. The planter needs to be placed 1 node "..
+				"below the ground surface, however it is waterproof and functions perfectly with a node of water above it.\n "..
+				"The planter, plants from the most north westerly 3x3 block of nodes (top left corner) to the most south easterly "..
+				"3x3 block of nodes (bottom right corner)."),
+	how_use_2  = S("The planter has a special interface to allow it to plant. The upper 3x3 grid represents a maximum area of 9x9 around the "..
+				"planter ie each grid segment represents a 3x3 area of nodes. The bottom 2 rows of 8 is the planters available inventory of "..
+				"items. There must be items of the type specified in the planting grid available in the inventory area for the planter to be "..
+				"able to plant, so keep the planters inventory well stocked with seeds or seedlings."),
+	hu_img_1   = "elepower_tome_complex_auto_planter.png",
+	hu_img_2   = "elepower_tome_complex_auto_planter_2.png"
+}
 
-eletome.ai.nodes["elepower_farming:planter"]      = {lb_top_img = epg.farming_wheat_seed,
-													 lb_top_tt  = S("Seeds or Seedlings"),
-													 how_use_1  = S("The automatic planter is used to keep a maximum 9x9 field planted with crops. The planter needs to be placed 1 node "..
-															      "below the ground surface, however it is waterproof and functions perfectly with a node of water above it.\n "..
-																  "The planter, plants from the most north westerly 3x3 block of nodes (top left corner) to the most south easterly "..
-																  "3x3 block of nodes (bottom right corner)."),
-													 how_use_2  = S("The planter has a special interface to allow it to plant. The upper 3x3 grid represents a maximum area of 9x9 around the "..
-																  "planter ie each grid segment represents a 3x3 area of nodes. The bottom 2 rows of 8 is the planters available inventory of "..
-																  "items. There must be items of the type specified in the planting grid available in the inventory area for the planter to be "..
-																  "able to plant, so keep the planters inventory well stocked with seeds or seedlings."),
-													 hu_img_1   = "elepower_tome_complex_auto_planter.png",
-													 hu_img_2   = "elepower_tome_complex_auto_planter_2.png"
-													}
+eletome.ai.nodes["elepower_machines:canning_machine"] = {
+	lb_top_img = "elepower_tome_icon_canning.png",
+	lb_top_tt  = S("Canning")
+}
 
-eletome.ai.nodes["elepower_machines:canning_machine"] = {lb_top_img = "elepower_tome_icon_canning.png",lb_top_tt  = S("Canning")}
+eletome.ai.nodes["elepower_machines:compressor"] = {
+	lb_top_img = "elepower_tome_icon_compressing.png",
+	lb_top_tt  = S("Compressing")
+}
 
-eletome.ai.nodes["elepower_machines:compressor"]      = {lb_top_img = "elepower_tome_icon_compressing.png",lb_top_tt  = S("Compressing")}
+eletome.ai.nodes["elepower_machines:evaporator"] = {
+	lb_top_img = "elepower_gui_icon_fluid_water.png",
+	lb_top_tt  = S("Fluids")
+}
 
-eletome.ai.nodes["elepower_machines:evaporator"]      = {lb_top_img = "elepower_gui_icon_fluid_water.png",lb_top_tt  = S("Fluids")}
+eletome.ai.nodes["elepower_machines:lava_cooler"] = {
+	lb_top_img = "elepower_gui_icon_fluid_water_lava.png",
+	lb_top_tt  = S("Water\n and\nLava")
+}
 
-eletome.ai.nodes["elepower_machines:lava_cooler"]     = {lb_top_img = "elepower_gui_icon_fluid_water_lava.png",lb_top_tt  = S("Water\n and\nLava")}
+eletome.ai.nodes["elepower_machines:furnace"] = {
+	lb_top_img = "elepower_tome_icon_cooking.png",
+	lb_top_tt  = S("Cooking")
+}
 
-eletome.ai.nodes["elepower_machines:furnace"]         = {lb_top_img = "elepower_tome_icon_cooking.png",lb_top_tt  = S("Cooking")}
+eletome.ai.nodes["elepower_machines:pcb_plant"] = {
+	lb_top_img = "elepower_pcb.png",
+	lb_top_tt  = S("Creates PCB's")
+}
 
-eletome.ai.nodes["elepower_machines:pcb_plant"]       = {lb_top_img = "elepower_pcb.png",lb_top_tt  = S("Creates PCB's")}
+eletome.ai.nodes["elepower_machines:pulverizer"] = {
+	lb_top_img = "elepower_tome_icon_grinding.png",
+	lb_top_tt  = S("Grinding")
+}
 
-eletome.ai.nodes["elepower_machines:pulverizer"]      = {lb_top_img = "elepower_tome_icon_grinding.png",lb_top_tt  = S("Grinding")}
+eletome.ai.nodes["elepower_machines:sawmill"] = {
+	lb_top_img = "elepower_sawmill.png",
+	lb_top_tt  = S("Sawing")
+}
 
-eletome.ai.nodes["elepower_machines:sawmill"]         = {lb_top_img = "elepower_sawmill.png",lb_top_tt  = S("Sawing")}
+eletome.ai.nodes["elepower_machines:solderer"] = {
+	lb_top_img = "elepower_upgrade_efficiency_2.png",
+	lb_top_tt  = S("       Creates\n Machine Upgrades")
+}
 
-eletome.ai.nodes["elepower_machines:solderer"]        = {lb_top_img = "elepower_upgrade_efficiency_2.png",lb_top_tt  = S("       Creates\n Machine Upgrades")}
-
-eletome.ai.nodes["elepower_farming:tree_processor"]   = {lb_top_img = "elepower_gui_icon_fluid_water.png",lb_top_tt  = S("Processes\n Tree Sap")}
+eletome.ai.nodes["elepower_farming:tree_processor"] = {
+	lb_top_img = "elepower_gui_icon_fluid_water.png",
+	lb_top_tt  = S("Processes\n Tree Sap")
+}
 
 -- Lighting
-eletome.ai.nodes["elepower_lighting:bulb_incandescent"] = {lb_top_img = "elepower_lighting_gui_icon_light.png",lb_top_tt  = S("Light")}
+eletome.ai.nodes["elepower_lighting:bulb_incandescent"] = {
+	lb_top_img = "elepower_lighting_gui_icon_light.png",
+	lb_top_tt  = S("Light")
+}
 
-eletome.ai.nodes["elepower_lighting:bulb_cf"] = {lb_top_img = "elepower_lighting_gui_icon_light.png",lb_top_tt  = S("Light")}
+eletome.ai.nodes["elepower_lighting:bulb_cf"] = {
+	lb_top_img = "elepower_lighting_gui_icon_light.png",
+	lb_top_tt  = S("Light")
+}
 
-eletome.ai.nodes["elepower_lighting:bulb_led"] = {lb_top_img = "elepower_lighting_gui_icon_light.png",lb_top_tt  = S("Light")}
+eletome.ai.nodes["elepower_lighting:bulb_led"] = {
+	lb_top_img = "elepower_lighting_gui_icon_light.png",
+	lb_top_tt  = S("Light")
+}
 
-eletome.ai.nodes["elepower_lighting:fluro_light_bank"] = {lb_top_img = "elepower_lighting_gui_icon_light.png",lb_top_tt  = S("Light")}
+eletome.ai.nodes["elepower_lighting:fluro_light_bank"] = {
+	lb_top_img = "elepower_lighting_gui_icon_light.png",
+	lb_top_tt  = S("Light")
+}
 
-eletome.ai.nodes["elepower_lighting:led_light_panel"] = {lb_top_img = "elepower_lighting_gui_icon_light.png",lb_top_tt  = S("Light")}
+eletome.ai.nodes["elepower_lighting:led_light_panel"] = {
+	lb_top_img = "elepower_lighting_gui_icon_light.png",
+	lb_top_tt  = S("Light")
+}
 
-eletome.ai.nodes["elepower_lighting:led_light_panel_colored"] = {lb_top_img = "elepower_lighting_gui_icon_light.png",lb_top_tt  = S("Light")}
+eletome.ai.nodes["elepower_lighting:led_light_panel_colored"] = {
+	lb_top_img = "elepower_lighting_gui_icon_light.png",
+	lb_top_tt  = S("Light")
+}
 
-eletome.ai.nodes["elepower_lighting:led_1x3_light_panel"] = {lb_top_img = "elepower_lighting_gui_icon_light.png",lb_top_tt  = S("Light")}
+eletome.ai.nodes["elepower_lighting:led_1x3_light_panel"] = {
+	lb_top_img = "elepower_lighting_gui_icon_light.png",
+	lb_top_tt  = S("Light")
+}
 
-eletome.ai.nodes["elepower_lighting:led_2x3_light_panel"] = {lb_top_img = "elepower_lighting_gui_icon_light.png",lb_top_tt  = S("Light")}
+eletome.ai.nodes["elepower_lighting:led_2x3_light_panel"] = {
+	lb_top_img = "elepower_lighting_gui_icon_light.png",
+	lb_top_tt  = S("Light")
+}
 
-eletome.ai.nodes["elepower_lighting:incandescent_floodlight_xp0_yp0"] = {lb_top_img = "elepower_lighting_gui_icon_light.png",lb_top_tt  = S("Light")}
+eletome.ai.nodes["elepower_lighting:incandescent_floodlight_xp0_yp0"] = {
+	lb_top_img = "elepower_lighting_gui_icon_light.png",
+	lb_top_tt  = S("Light")
+}
 
-eletome.ai.nodes["elepower_lighting:cf_floodlight_xp0_yp0"] = {lb_top_img = "elepower_lighting_gui_icon_light.png",lb_top_tt  = S("Light")}
+eletome.ai.nodes["elepower_lighting:cf_floodlight_xp0_yp0"] = {
+	lb_top_img = "elepower_lighting_gui_icon_light.png",
+	lb_top_tt  = S("Light")
+}
 
-eletome.ai.nodes["elepower_lighting:led_floodlight_xp0_yp0"] = {lb_top_img = "elepower_lighting_gui_icon_light.png",lb_top_tt  = S("Light")}
-
+eletome.ai.nodes["elepower_lighting:led_floodlight_xp0_yp0"] = {
+	lb_top_img = "elepower_lighting_gui_icon_light.png",
+	lb_top_tt  = S("Light")
+}
 
 -- Wind Turbine
-eletome.ai.nodes["elepower_machines:wind_turbine"]    = {lb_top_img = "elepower_tome_wind.png",
-														   lb_top_tt = S("Wind"),
-														   lb_btm_img = "100",
-														   lb_btm_tt = S(" Epu Max\n   Potential\n  Production")}
+eletome.ai.nodes["elepower_machines:wind_turbine"] = {
+	lb_top_img = "elepower_tome_wind.png",
+	lb_top_tt = S("Wind"),
+	lb_btm_img = "100",
+	lb_btm_tt = S(" Epu Max\n   Potential\n  Production")
+}
 
-eletome.ai.nodes["elepower_machines:wind_turbine_blade"]  = {lb_top_img = "", lb_top_tt = "", lb_btm_img = "", lb_btm_tt =""}
-eletome.ai.nodes["elepower_machines:wind_turbine_blades"] = {lb_top_img = "", lb_top_tt = "", lb_btm_img = "", lb_btm_tt =""}
+eletome.ai.nodes["elepower_machines:wind_turbine_blade"] = {
+	lb_top_img = "",
+	lb_top_tt = "",
+	lb_btm_img = "",
+	lb_btm_tt =""
+}
+
+eletome.ai.nodes["elepower_machines:wind_turbine_blades"] = {
+	lb_top_img = "",
+	lb_top_tt = "",
+	lb_btm_img = "",
+	lb_btm_tt =""
+}
 
 
 -- Fluid Pump Page
-eletome.ai.nodes["elepower_machines:pump"]              = {
+eletome.ai.nodes["elepower_machines:pump"] = {
 	lb_top_img = "elepower_gui_icon_fluid_electrolyzer_in.png",
 	lb_top_tt = S("Fluid")
 }
-eletome.ai.nodes["fluid_transfer:fluid_transfer_pump"]  = {
+eletome.ai.nodes["fluid_transfer:fluid_transfer_pump"] = {
 	lb_top_img = "elepower_gui_icon_fluid_electrolyzer_in.png",
 	lb_top_tt = S("Fluid")
 }
-eletome.ai.nodes["elepower_machines:accumulator"]       = {
+eletome.ai.nodes["elepower_machines:accumulator"] = {
 	lb_top_img = "elepower_gui_icon_fluid_water.png",
 	lb_top_tt = S("Water")
 }
@@ -786,9 +887,11 @@ eletome.ai.nodes["elepower_machines:accumulator_heavy"] = {
 	lb_top_img = "elepower_gui_icon_fluid_water.png",
 	lb_top_tt = S("Heavy Water"),
 	mb_title_txt = S("Right Click"),
-	mb_recipe_items = {[4] = "elepower_machines:heavy_filter",
-							[5] = "elepower_tome_mouse_rght_click.png",
-						[6] = "elepower_machines:accumulator"}
+	mb_recipe_items = {
+		[4] = "elepower_machines:heavy_filter",
+		[5] = "elepower_tome_mouse_rght_click.png",
+		[6] = "elepower_machines:accumulator"
+	}
 }
 
 -- Evaporation Plant page
@@ -797,33 +900,32 @@ eletome.ai.nodes["elepower_thermal:evaporator_controller"] = {
 	lb_top_tt = " "..S("Water") .. "\n "..S("Brine") .. "\n"..S("Lithium")
 }
 
-eletome.ai.nodes["elepower_thermal:evaporator_input"]      = {
+eletome.ai.nodes["elepower_thermal:evaporator_input"] = {
 	lb_top_img = "elepower_gui_icon_fluid_water_brine.png",
 	lb_top_tt = S("Water") .. "\n"..S("Brine")
 }
 
-eletome.ai.nodes["elepower_thermal:evaporator_output"]     = {
+eletome.ai.nodes["elepower_thermal:evaporator_output"] = {
 	lb_top_img = "elepower_gui_icon_fluid_brine_lithium.png",
 	lb_top_tt = " "..S("Brine") .. "\n"..S("Lithium")
 }
 
-eletome.ai.nodes["elepower_machines:heat_casing"]          = {
+eletome.ai.nodes["elepower_machines:heat_casing"] = {
 	lb_top_img = "elepower_machines:heat_casing"
 }
 
-
 -- Miner Page
-eletome.ai.nodes["elepower_mining:miner_controller"]    = {
+eletome.ai.nodes["elepower_mining:miner_controller"] = {
 	lb_top_img ="elepower_gui_icon_fluid_water.png",
 	lb_top_tt =S("Requires") .. "\n"..S("Water")
 }
 
-eletome.ai.nodes["elepower_mining:miner_core"]          = {
+eletome.ai.nodes["elepower_mining:miner_core"] = {
 	lb_top_img ="elepower_gui_icon_fluid_water.png",
 	lb_top_tt =S("Requires") .. "\n"..S("Water")
 }
 
-eletome.ai.nodes["elepower_mining:miner_drill"]         = {
+eletome.ai.nodes["elepower_mining:miner_drill"] = {
 	lb_top_img ="elepower_tome_icon_metal_lump.png",
 	lb_top_tt =S("Produces\n Metal lumps"),
 	lb_btm_img = "elepower_gui_icon_power_water.png",
