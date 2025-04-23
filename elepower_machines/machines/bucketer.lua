@@ -18,7 +18,7 @@ local function get_formspec(mode, buffer, state)
             efs.list("context", "src", 4, 1, 1, 1) ..
             efs.list("context", "dst", 4, 2.25, 1, 1) ..
             "image_button["..btn_x..",1;1,1;gui_furnace_arrow_bg.png" .. rot ..
-            ";flip;]" .. "tooltip[flip;Toggle Extract/Insert]" ..
+            ";flip;]" .. "tooltip[flip;".. S("Toggle Extract/Insert") .. "]" ..
             epr.gui_player_inv() ..
             "listring[current_player;main]" .. "listring[context;src]" ..
             "listring[current_player;main]" .. "listring[context;dst]" ..
