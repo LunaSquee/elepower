@@ -125,7 +125,7 @@ if minetest.get_modpath("basic_materials") == nil then
 	minetest.register_craftitem(":basic_materials:silver_wire", {
 		description = S("Silver Wire"),
 		inventory_image = "elepower_bm_silver_wire.png",
-		groups = {copper = 1, wire = 1, component = 1}
+		groups = {silver = 1, wire = 1, component = 1}
 	})
 
 	minetest.register_craft( {
