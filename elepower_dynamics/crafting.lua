@@ -8,7 +8,7 @@ local ept = ele.external.tools
 ---------------
 
 -- Remove iron_lump -> steel_ingot, because dynamics adds iron ingot
--- minetest.clear_craft({type = "cooking", output = epi.steel_ingot})
+minetest.clear_craft({type = "cooking", output = epi.steel_ingot})
 
 -----------
 -- Tools --
