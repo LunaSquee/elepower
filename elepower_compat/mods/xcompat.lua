@@ -16,10 +16,6 @@ if minetest.get_modpath("xcompat") ~= nil then
     gold_ingot = xmat.gold_ingot,
     tin_ingot = xmat.tin_ingot,
     bronze_ingot = xmat.bronze_ingot,
-    iron_ingot = xmat.iron_ingot,
-    iron_block = xmat.iron_block,
-    steel_ingot = xmat.steel_ingot,
-    steel_block = xmat.steel_block,
     diamond_block = xmat.diamond_block,
     mese = xmat.mese,
     mese_crystal = xmat.mese_crystal,
@@ -83,5 +79,23 @@ if minetest.get_modpath("xcompat") ~= nil then
     if xcs ~= nil and xcs ~= "" then
       ele.external.sounds[elea] = xcs()
     end
+  end
+
+  -- Iron/steel variants are weird
+
+  if xmat.iron_ingot ~= nil and xmat.iron_ingot ~= "" and string.match(xmat.iron_ingot, "iron") ~= nil then
+    ele.external.ing.iron_ingot = xmat.iron_ingot
+  end
+
+  if xmat.iron_block ~= nil and xmat.iron_block ~= "" and string.match(xmat.iron_block, "iron") ~= nil then
+    ele.external.ing.iron_block = xmat.iron_block
+  end
+
+  if xmat.steel_ingot ~= nil and xmat.steel_ingot ~= "" and string.match(xmat.steel_ingot, "steel") ~= nil then
+    ele.external.ing.steel_ingot = xmat.steel_ingot
+  end
+
+  if xmat.steel_block ~= nil and xmat.steel_block ~= "" and string.match(xmat.steel_block, "steel") ~= nil then
+    ele.external.ing.steel_block = xmat.steel_block
   end
 end
