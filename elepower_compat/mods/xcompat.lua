@@ -82,20 +82,38 @@ if minetest.get_modpath("xcompat") ~= nil then
   end
 
   -- Iron/steel variants are weird
+  -- If iron is actually steel, set it as steel
+  -- If steel is actually iron, set it as iron
 
-  if xmat.iron_ingot ~= nil and xmat.iron_ingot ~= "" and string.match(xmat.iron_ingot, "iron") ~= nil then
-    ele.external.ing.iron_ingot = xmat.iron_ingot
+  if xmat.iron_ingot ~= nil and xmat.iron_ingot ~= "" then
+    if string.match(xmat.iron_ingot, "iron") ~= nil then
+      ele.external.ing.iron_ingot = xmat.iron_ingot
+    elseif string.match(xmat.iron_ingot, "steel") ~= nil then
+      ele.external.ing.steel_ingot = xmat.iron_ingot
+    end
   end
 
-  if xmat.iron_block ~= nil and xmat.iron_block ~= "" and string.match(xmat.iron_block, "iron") ~= nil then
-    ele.external.ing.iron_block = xmat.iron_block
+  if xmat.iron_block ~= nil and xmat.iron_block ~= "" then
+    if string.match(xmat.iron_block, "iron") ~= nil then
+      ele.external.ing.iron_block = xmat.iron_block
+    elseif string.match(xmat.iron_block, "steel") ~= nil then
+      ele.external.ing.steel_block = xmat.iron_block
+    end
   end
 
-  if xmat.steel_ingot ~= nil and xmat.steel_ingot ~= "" and string.match(xmat.steel_ingot, "steel") ~= nil then
-    ele.external.ing.steel_ingot = xmat.steel_ingot
+  if xmat.steel_ingot ~= nil and xmat.steel_ingot ~= "" then
+    if string.match(xmat.steel_ingot, "steel") ~= nil then
+      ele.external.ing.steel_ingot = xmat.steel_ingot
+    elseif string.match(xmat.steel_ingot, "iron") ~= nil then
+      ele.external.ing.iron_ingot = xmat.steel_ingot
+    end
   end
 
-  if xmat.steel_block ~= nil and xmat.steel_block ~= "" and string.match(xmat.steel_block, "steel") ~= nil then
-    ele.external.ing.steel_block = xmat.steel_block
+  if xmat.steel_block ~= nil and xmat.steel_block ~= "" then
+    if string.match(xmat.steel_block, "steel") ~= nil then
+      ele.external.ing.steel_block = xmat.steel_block
+    elseif string.match(xmat.steel_block, "iron") ~= nil then
+      ele.external.ing.iron_block = xmat.steel_block
+    end
   end
 end
