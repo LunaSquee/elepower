@@ -45,6 +45,12 @@ local function dig_node_leveled_radius(pos, radius, node)
     return dug
 end
 
+local function is_flowing_liquid(node)
+    if not node then return false end
+    local ndef = core.registered_nodes[node.name]
+    return ndef.drawtype == "flowingliquid"
+end
+
 local function timer(pos, elapsed)
     local refresh = false
     local meta = minetest.get_meta(pos)
@@ -102,9 +108,7 @@ local function timer(pos, elapsed)
         if pliquid == "" then
             local liquid_list = fluid_lib.get_liquid_list()
             local node = minetest.get_node_or_nil(ppos)
-            if not node or node.name == "air" or
-                (liquid_list[node.name] and
-                    fluid_lib.get_flowing_for_source(node.name) == node.name) then
+            if not node or node.name == "air" or is_flowing_liquid(node) then
                 plevel = plevel - 1
                 status = S("Seeking")
                 spawn_pipes = true
