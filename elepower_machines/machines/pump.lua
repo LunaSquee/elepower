@@ -104,8 +104,7 @@ local function timer(pos, elapsed)
             local node = minetest.get_node_or_nil(ppos)
             if not node or node.name == "air" or
                 (liquid_list[node.name] and
-                    fluid_lib.get_flowing_for_source(node.name).flowing ==
-                    node.name) then
+                    fluid_lib.get_flowing_for_source(node.name) == node.name) then
                 plevel = plevel - 1
                 status = S("Seeking")
                 spawn_pipes = true
