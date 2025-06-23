@@ -39,12 +39,15 @@ local function get_crafter_tooltips(x, y, craft_type, machine_name)
                         if string.find(reg_name, "group") ~= nil then
                             description =
                                 string.gsub(reg_name, "group:", S("All") .. " ")
-                        else
+                        elseif minetest.registered_items[reg_name] ~= nil then
                             description =
                                 minetest.registered_items[reg_name].description
                         end
-                        material_inputs[strip_description_lines(description)] =
-                            1
+
+                        if description ~= nil then
+                            material_inputs[strip_description_lines(description)] =
+                                1
+                        end
                     end
                 end
             end
