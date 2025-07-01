@@ -5,24 +5,22 @@ local efs = ele.formspec
 local S = ele.translator
 
 local function get_formspec(mode, buffer, state)
-	local start, bx, by, mx = efs.begin(11.75, 10.45)
-	local btn_x = mx - 4.25
+    local start, bx, by, mx = efs.begin(11.75, 10.45)
+    local btn_x = mx - 4.25
     local rot = "^\\[transformR90"
 
     if not mode then mode = 0 end
     if mode == 1 then rot = "^\\[transformR270" end
 
-    return start ..
-            efs.state_switcher(bx, by, state) ..
-            efs.fluid_bar(mx - 1, 1, buffer) ..
-            efs.list("context", "src", 4, 1, 1, 1) ..
-            efs.list("context", "dst", 4, 2.25, 1, 1) ..
-            "image_button["..btn_x..",1;1,1;gui_furnace_arrow_bg.png" .. rot ..
-            ";flip;]" .. "tooltip[flip;".. S("Toggle Extract/Insert") .. "]" ..
-            epr.gui_player_inv() ..
-            "listring[current_player;main]" .. "listring[context;src]" ..
-            "listring[current_player;main]" .. "listring[context;dst]" ..
-            "listring[current_player;main]"
+    return start .. efs.state_switcher(bx, by, state) ..
+               efs.fluid_bar(mx - 1, 1, buffer) ..
+               efs.list("context", "src", 4, 1, 1, 1) ..
+               efs.list("context", "dst", 4, 2.25, 1, 1) .. "image_button[" ..
+               btn_x .. ",1;1,1;gui_furnace_arrow_bg.png" .. rot .. ";flip;]" ..
+               "tooltip[flip;" .. S("Toggle Extract/Insert") .. "]" ..
+               epr.gui_player_inv() .. "listring[current_player;main]" ..
+               "listring[context;src]" .. "listring[current_player;main]" ..
+               "listring[context;dst]" .. "listring[current_player;main]"
 end
 
 local function on_timer(pos, elapsed)
@@ -58,17 +56,21 @@ local function on_timer(pos, elapsed)
                 end
             end
 
-            local bucket_item = fluid_lib.get_bucket_for_source(buffer.fluid)
-            if bitem and bucket_item then
-                local bstack = ItemStack(bucket_item)
-                if inv:room_for_item("dst", bstack) then
-                    inv:add_item("dst", bstack)
-                    buffer.amount = buffer.amount - 1000
+            if bitem then
+                local bucket_item =
+                    fluid_lib.get_bucket_for_source(buffer.fluid) or
+                        bitem.itemname
+                if bucket_item then
+                    local bstack = ItemStack(bucket_item)
+                    if inv:room_for_item("dst", bstack) then
+                        inv:add_item("dst", bstack)
+                        buffer.amount = buffer.amount - 1000
 
-                    bucket_slot:take_item()
-                    inv:set_stack("src", 1, bucket_slot)
+                        bucket_slot:take_item()
+                        inv:set_stack("src", 1, bucket_slot)
 
-                    refresh = true
+                        refresh = true
+                    end
                 end
             end
         elseif mode == 1 and (fluid_lib.get_source_for_bucket(bucket_name) or
