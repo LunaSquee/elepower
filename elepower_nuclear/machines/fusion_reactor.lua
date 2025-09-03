@@ -406,7 +406,26 @@ minetest.register_node("elepower_nuclear:reactor_fluid", {
     fluid_buffers = {},
     on_timer = port_timer,
     on_destruct = port_destruct,
-    node_io_can_put_liquid = function(pos, node, side) return true end,
+    node_io_can_put_liquid = function(pos, node, side, liquid, millibuckets)
+        if liquid == nil and not millibuckets then
+            return true
+        end
+
+        local ctrl = get_port_controller(pos)
+        if not ctrl then return 0 end
+
+        local buffers = fluid_lib.get_node_buffers(ctrl)
+        local insertable = 0
+        for buffer, data in pairs(buffers) do
+            local insert = fluid_lib.can_insert_into_buffer(ctrl, buffer,
+                                                            liquid, millibuckets)
+            if insert > 0 then
+                insertable = insert
+                break
+            end
+        end
+        return insertable
+    end,
     node_io_can_take_liquid = function(pos, node, side) return false end,
     node_io_get_liquid_size = function(pos, node, side) return 2 end,
     node_io_get_liquid_name = function(pos, node, side, index)
@@ -439,6 +458,7 @@ minetest.register_node("elepower_nuclear:reactor_fluid", {
         end
         return leftovers
     end,
+    -- TODO: remove this after updates have propagated
     node_io_room_for_liquid = function(pos, node, side, liquid, millibuckets)
         local ctrl, ctrl_meta = get_port_controller(pos)
         if not ctrl then return 0 end
@@ -470,7 +490,12 @@ minetest.register_node("elepower_nuclear:reactor_output", {
     fluid_buffers = {},
     on_timer = port_timer,
     on_destruct = port_destruct,
-    node_io_can_put_liquid = function(pos, node, side) return false end,
+    node_io_can_put_liquid = function(pos, node, side, liquid, millibuckets)
+        if liquid or millibuckets then
+            return 0
+        end
+        return false
+    end,
     node_io_can_take_liquid = function(pos, node, side) return true end,
     node_io_accepts_millibuckets = function(pos, node, side) return true end,
     node_io_take_liquid = function(pos, node, side, taker, want_liquid,
