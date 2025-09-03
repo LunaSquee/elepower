@@ -347,9 +347,17 @@ function ele.register_base_device(nodename, nodedef)
 
     -- Node IO Support
     if nodedef.groups["tubedevice"] or nodedef.groups["tube"] then
-        nodedef.node_io_can_put_item = function(pos, node, side)
-            return true
+        nodedef.node_io_can_put_item = function(pos, node, side, itemstack, count)
+            if itemstack == nil and not count then
+                return true
+            end
+            local meta = minetest.get_meta(pos)
+            local inv = meta:get_inventory()
+            local istack_real = ItemStack(itemstack)
+            istack_real:set_count(count)
+            return inv:room_for_item("src", istack_real)
         end
+        -- TODO: remove this after updates have propagated
         nodedef.node_io_room_for_item = function(pos, node, side, itemstack,
                                                  count)
             local meta = minetest.get_meta(pos)
