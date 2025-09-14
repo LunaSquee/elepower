@@ -2,59 +2,23 @@ local S = ele.translator
 
 -- Machine definitions
 
-local pw = minetest.get_modpath("pipeworks") ~= nil
-local mc = minetest.get_modpath("mesecons") ~= nil
-local tl = minetest.get_modpath("tubelib") ~= nil
-local mcl = minetest.get_modpath("mcl_core") ~= nil
-
---[[
-	Groups:
-		ele_machine			Any machine that does something with power
-			ele_provider	Any machine that can provide power (generator, storage, etc)
-			ele_user		Any machine that uses power
-			ele_storage		Any machine that stores power
-		ele_conductor		A node that is used to connect ele_machine nodes together
-
-	Custom nodedef variables:
-		ele_capacity = 12000
-			Static capacitor for nodes.
-			** Can be overridden by metadata: `capacity`
-
-		ele_inrush = 32
-			Decides how much power can be inserted into this machine's internal capacitor.
-			** Can be overridden by metadata: `inrush`
-
-		ele_output = 64
-			Decides how much power a `ele_provider` node can output.
-			** SHOULD be overridden by metadata: `output`
-
-		ele_sides = nil
-			All sides of providers currently output power. All sides of other nodes accept power.
-			** SHOULD be overridden by metadata: `sides`
-
-		ele_usage = 16
-			How much power this machine uses or generates.
-			** Can be overridden by metadata: `usage`
-
-		ele_active_node = nil
-			Set to true or a string to also register an active variant of this node.
-			If the parameter is a boolean, "_active" will be appended to the `node_name`
-
-		ele_active_nodedef = nil
-			If set, the `ele_active_node` will have this table in its nodedef.
-			Intended use: to set textures or light output.
-]]
+local pw = core.get_modpath("pipeworks") ~= nil
+local mc = core.get_modpath("mesecons") ~= nil
+local tl = core.get_modpath("tubelib") ~= nil
+local mcl = core.get_modpath("mcl_core") ~= nil
+local flib = core.get_modpath("fluid_lib") ~= nil
 
 local function can_dig(pos, player)
-    local meta = minetest.get_meta(pos)
+    local meta = core.get_meta(pos)
     local inv = meta:get_inventory()
     return inv:is_empty("dst") and inv:is_empty("src")
 end
 
 ele.default = {}
+
 function ele.default.allow_metadata_inventory_put(pos, listname, index, stack,
                                                   player)
-    if minetest.is_protected(pos, player:get_player_name()) then return 0 end
+    if core.is_protected(pos, player:get_player_name()) then return 0 end
 
     if listname == "dst" then return 0 end
 
@@ -64,7 +28,7 @@ end
 function ele.default.allow_metadata_inventory_move(pos, from_list, from_index,
                                                    to_list, to_index, count,
                                                    player)
-    local meta = minetest.get_meta(pos)
+    local meta = core.get_meta(pos)
     local inv = meta:get_inventory()
     local stack = inv:get_stack(from_list, from_index)
     return ele.default.allow_metadata_inventory_put(pos, to_list, to_index,
@@ -73,7 +37,7 @@ end
 
 function ele.default.allow_metadata_inventory_take(pos, listname, index, stack,
                                                    player)
-    if minetest.is_protected(pos, player:get_player_name()) then return 0 end
+    if core.is_protected(pos, player:get_player_name()) then return 0 end
 
     return stack:get_count()
 end
@@ -90,11 +54,11 @@ ele.default.states = {
 
 -- Preserve power storage in the item stack dropped
 local function preserve_metadata(pos, oldnode, oldmeta, drops)
-    local meta = minetest.get_meta(pos)
+    local meta = core.get_meta(pos)
     local storage = ele.helpers.get_node_property(meta, pos, "storage")
     local capacity = ele.helpers.get_node_property(meta, pos, "capacity")
 
-    local nodedesc = minetest.registered_nodes[oldnode.name].description
+    local nodedesc = core.registered_nodes[oldnode.name].description
     local partsstr = meta:get_string("components")
 
     if storage == 0 and partsstr == "" then return drops end
@@ -108,7 +72,7 @@ local function preserve_metadata(pos, oldnode, oldmeta, drops)
         if partsstr ~= "" then
             stack_meta:set_string("components", partsstr)
             desc = desc .. "\n" ..
-                       minetest.colorize("#9647ff", S("Modified Device"))
+                       core.colorize("#9647ff", S("Modified Device"))
         end
 
         stack_meta:set_string("description", nodedesc .. "\n" .. desc)
@@ -124,7 +88,7 @@ local function retrieve_metadata(pos, placer, itemstack, pointed_thing)
     local storage = item_meta:get_int("storage")
     local partsstr = item_meta:get_string("components")
 
-    local meta = minetest.get_meta(pos)
+    local meta = core.get_meta(pos)
     if storage > 0 or partsstr ~= "" then
         meta:set_int("storage", storage)
 
@@ -167,13 +131,13 @@ end
 -- API support
 local tube = {
     insert_object = function(pos, node, stack, direction)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         local inv = meta:get_inventory()
         ele.helpers.start_timer(pos)
         return inv:add_item("src", stack)
     end,
     can_insert = function(pos, node, stack, direction)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         local inv = meta:get_inventory()
         if meta:get_int("splitstacks") == 1 then
             stack = stack:peek_item(1)
@@ -187,17 +151,17 @@ local tube = {
 
 local tubelib_tube = {
     on_pull_item = function(pos, side, player_name)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         ele.helpers.start_timer(pos)
         return tubelib.get_item(meta, "dst")
     end,
     on_push_item = function(pos, side, item, player_name)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         ele.helpers.start_timer(pos)
         return tubelib.put_item(meta, "src", item)
     end,
     on_unpull_item = function(pos, side, item, player_name)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         ele.helpers.start_timer(pos)
         return tubelib.put_item(meta, "dst", item)
     end
@@ -206,11 +170,11 @@ local tubelib_tube = {
 local mesecons_def = {
     effector = {
         action_on = function(pos, node)
-            local meta = minetest.get_meta(pos)
+            local meta = core.get_meta(pos)
             meta:set_int("signal_interrupt", 1)
         end,
         action_off = function(pos, node)
-            local meta = minetest.get_meta(pos)
+            local meta = core.get_meta(pos)
             meta:set_int("signal_interrupt", 0)
         end,
         action_change = ele.helpers.start_timer
@@ -220,7 +184,7 @@ local mesecons_def = {
 -- Functions
 
 local function switch_state(pos, state_def)
-    local meta = minetest.get_meta(pos)
+    local meta = core.get_meta(pos)
     local state = meta:get_int("state")
     local states = {}
     for id, state in pairs(ele.default.states) do
@@ -267,7 +231,7 @@ function ele.register_base_device(nodename, nodedef)
     local original_on_construct = nodedef.on_construct
     nodedef.on_construct = function(pos)
         if nodedef.groups and nodedef.groups["ele_machine"] then
-            local meta = minetest.get_meta(pos)
+            local meta = core.get_meta(pos)
             meta:set_int("storage", 0)
         end
 
@@ -351,23 +315,14 @@ function ele.register_base_device(nodename, nodedef)
             if itemstack == nil and not count then
                 return true
             end
-            local meta = minetest.get_meta(pos)
-            local inv = meta:get_inventory()
-            local istack_real = ItemStack(itemstack)
-            istack_real:set_count(count)
-            return inv:room_for_item("src", istack_real)
-        end
-        -- TODO: remove this after updates have propagated
-        nodedef.node_io_room_for_item = function(pos, node, side, itemstack,
-                                                 count)
-            local meta = minetest.get_meta(pos)
+            local meta = core.get_meta(pos)
             local inv = meta:get_inventory()
             local istack_real = ItemStack(itemstack)
             istack_real:set_count(count)
             return inv:room_for_item("src", istack_real)
         end
         nodedef.node_io_put_item = function(pos, node, side, putter, itemstack)
-            local meta = minetest.get_meta(pos)
+            local meta = core.get_meta(pos)
             local inv = meta:get_inventory()
             ele.helpers.start_timer(pos)
             return inv:add_item("src", itemstack)
@@ -376,24 +331,24 @@ function ele.register_base_device(nodename, nodedef)
             return true
         end
         nodedef.node_io_get_item_size = function(pos, node, side)
-            local meta = minetest.get_meta(pos)
+            local meta = core.get_meta(pos)
             local inv = meta:get_inventory()
             return inv:get_size("dst")
         end
         nodedef.node_io_get_item_name = function(pos, node, side, index)
-            local meta = minetest.get_meta(pos)
+            local meta = core.get_meta(pos)
             local inv = meta:get_inventory()
             return inv:get_stack("dst", index):get_name()
         end
         nodedef.node_io_get_item_stack =
             function(pos, node, side, index)
-                local meta = minetest.get_meta(pos)
+                local meta = core.get_meta(pos)
                 local inv = meta:get_inventory()
                 return inv:get_stack("dst", index)
             end
         nodedef.node_io_take_item = function(pos, node, side, taker, want_item,
                                              want_count)
-            local meta = minetest.get_meta(pos)
+            local meta = core.get_meta(pos)
             local inv = meta:get_inventory()
             local stack = ItemStack(want_item)
             stack:set_count(want_count)
@@ -414,7 +369,7 @@ function ele.register_base_device(nodename, nodedef)
     local original_on_receive_fields = nodedef.on_receive_fields
     nodedef.on_receive_fields = function(pos, formname, fields, sender)
         if sender and sender ~= "" and
-            minetest.is_protected(pos, sender:get_player_name()) then
+            core.is_protected(pos, sender:get_player_name()) then
             return
         end
 
@@ -430,7 +385,7 @@ function ele.register_base_device(nodename, nodedef)
     end
 
     -- Finally, register the damn thing already
-    minetest.register_node(nodename, nodedef)
+    core.register_node(nodename, nodedef)
     local active_name = nil
 
     -- Register an active variant if configured.
@@ -460,7 +415,7 @@ function ele.register_base_device(nodename, nodedef)
         active_nodedef.groups["not_in_creative_inventory"] = 1
         active_nodedef.drop = nodename
 
-        minetest.register_node(active_name, active_nodedef)
+        core.register_node(active_name, active_nodedef)
     end
 
     -- tubelib support
@@ -473,7 +428,7 @@ function ele.register_base_device(nodename, nodedef)
     end
 
     -- nodeio fluids
-    if nodedef.groups and nodedef.groups['fluid_container'] then
+    if nodedef.groups and nodedef.groups['fluid_container'] and flib then
         fluid_lib.register_node(nodename)
         if active_name then fluid_lib.register_node(active_name) end
     end

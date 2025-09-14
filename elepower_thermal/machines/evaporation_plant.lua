@@ -411,12 +411,6 @@ minetest.register_node("elepower_thermal:evaporator_input", {
 		ele.helpers.start_timer(ctrl)
 		return didnt_fit
 	end,
-	-- TODO: remove this after updates have propagated
-	node_io_room_for_liquid = function(pos, node, side, liquid, millibuckets)
-		local ctrl, ctrl_meta = get_port_controller(pos)
-		if not ctrl then return 0 end
-		return fluid_lib.can_insert_into_buffer(ctrl, "input", liquid, millibuckets)
-	end,
 	on_destruct = break_structure,
 })
 

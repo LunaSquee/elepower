@@ -109,6 +109,7 @@ globals = {
                     "conduit_stone_block_desert",
                 }
             },
+            "api_standalone",
             "translator",
             "worldgen",
             "graphcache",

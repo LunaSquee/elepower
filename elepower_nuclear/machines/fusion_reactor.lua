@@ -458,23 +458,6 @@ minetest.register_node("elepower_nuclear:reactor_fluid", {
         end
         return leftovers
     end,
-    -- TODO: remove this after updates have propagated
-    node_io_room_for_liquid = function(pos, node, side, liquid, millibuckets)
-        local ctrl, ctrl_meta = get_port_controller(pos)
-        if not ctrl then return 0 end
-
-        local buffers = fluid_lib.get_node_buffers(ctrl)
-        local insertable = 0
-        for buffer, data in pairs(buffers) do
-            local insert = fluid_lib.can_insert_into_buffer(ctrl, buffer,
-                                                            liquid, millibuckets)
-            if insert > 0 then
-                insertable = insert
-                break
-            end
-        end
-        return insertable
-    end
 })
 
 minetest.register_node("elepower_nuclear:reactor_output", {

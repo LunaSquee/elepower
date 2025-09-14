@@ -1,0 +1,68 @@
+# Estonian translations for PACKAGE package.
+# Copyright (C) 2025 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#  <evert@lunasqu.ee>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-06 09:38+0300\n"
+"PO-Revision-Date: 2025-09-14 21:02+0300\n"
+"Last-Translator: <evert@lunasqu.ee>\n"
+"Language-Team: Estonian <linux-ee@lists.eenet.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 3.6\n"
+
+#: formspec.lua:181
+msgid "Press to toggle"
+msgstr "Vajuta lülitamiseks"
+
+#: formspec.lua:215
+msgid "Energy Storage"
+msgstr "Akumulaatori seis"
+
+#: formspec.lua:219
+msgid "Power Used / Generated"
+msgstr "Voolukasutus või -tootmine"
+
+#: formspec.lua:233
+msgid "Empty Buffer"
+msgstr "Tühi puhver"
+
+#: helpers.lua:186
+msgid "Flowing"
+msgstr "Voolav"
+
+#: helpers.lua:191
+msgid "Source"
+msgstr "allikas"
+
+#: machine.lua:85
+msgid "Always on"
+msgstr "Alati sisselülitatud"
+
+#: machine.lua:86
+msgid "Always off"
+msgstr "Alati väljalülitatud"
+
+#: machine.lua:87
+msgid "Enable by Mesecons signal"
+msgstr "Lülita sisse Meseconsi signaali peale"
+
+#: machine.lua:88
+msgid "Disable by Mesecons signal"
+msgstr "Lülita välja Meseconsi signaali peale"
+
+#: machine.lua:111
+msgid "Modified Device"
+msgstr "Modifitseeritud seade"
+
+#: machine.lua:149
+msgid "Charge: @1 / @2 @3"
+msgstr "Laeng: @1 / @2 @3"
