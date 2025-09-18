@@ -66,11 +66,12 @@ if cset:has(prefix .. "itemslot_bg") then
 end
 
 -- Sounds
-
-for sound in pairs(ele.external.sounds) do
-    local key = prefix .. "sound_" .. sound
-    if cset:has(key) then ele.external.sounds[key] = cset:get(key) end
-end
+-- TODO: this does not actually work, as the sound needs to be a table
+-- need to look into an alternative solution
+-- for sound in pairs(ele.external.sounds) do
+--     local key = prefix .. "sound_" .. sound
+--     if cset:has(key) then ele.external.sounds[key] = cset:get(key) end
+-- end
 
 -- Ingredients
 

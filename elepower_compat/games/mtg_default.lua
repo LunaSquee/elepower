@@ -94,7 +94,6 @@ if minetest.get_modpath("default") ~= nil then
   ------------
   ele.external.sounds.node_sound_stone = default.node_sound_stone_defaults()
   ele.external.sounds.node_sound_water = default.node_sound_water_defaults()
-  ele.external.sounds.node_sound_stone = default.node_sound_stone_defaults()
   ele.external.sounds.node_sound_wood  = default.node_sound_wood_defaults()
   ele.external.sounds.node_sound_glass = default.node_sound_glass_defaults()
   ele.external.sounds.node_sound_metal = default.node_sound_metal_defaults()

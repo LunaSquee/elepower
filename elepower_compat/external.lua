@@ -166,15 +166,14 @@ ele.external.ing.slab_desert_stone_block = "" -- only used by conduit_stone_bloc
 
 -- All of these can be configured with setting "elepower_resource_sound_" + last table key
 -- e.g. elepower_resource_sound_tool_breaks = default_tool_breaks
-ele.external.sounds.node_sound_stone  = ""
-ele.external.sounds.node_sound_water  = ""
-ele.external.sounds.node_sound_stone  = ""
-ele.external.sounds.node_sound_wood   = ""
-ele.external.sounds.node_sound_glass  = ""
-ele.external.sounds.node_sound_metal  = ""
-ele.external.sounds.tool_breaks       = ""
-ele.external.sounds.dig_crumbly       = ""
-ele.external.sounds.node_sound_dirt_c = ""
+ele.external.sounds.node_sound_stone  = {}
+ele.external.sounds.node_sound_water  = {}
+ele.external.sounds.node_sound_wood   = {}
+ele.external.sounds.node_sound_glass  = {}
+ele.external.sounds.node_sound_metal  = {}
+ele.external.sounds.tool_breaks       = {}
+ele.external.sounds.dig_crumbly       = {}
+ele.external.sounds.node_sound_dirt_c = {}
 
 ---------------------
 -- Graphics/Images --
