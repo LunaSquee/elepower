@@ -1,5 +1,9 @@
 
-ele.worldgen = {}
+ele.worldgen = {
+  miner_ore_y_min = -30912,
+  miner_ore_y_max = 0,
+  miner_ore_rarity = 1.16,
+}
 ele.worldgen.ore = {}
 ele.worldgen.ore.lead = {
   high = {

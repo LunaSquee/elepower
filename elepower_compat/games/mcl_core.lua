@@ -155,4 +155,9 @@ if minetest.get_modpath("mcl_core") ~= nil then
 
   ele.worldgen.ore._uranium.normal.y_max = -30
   ele.worldgen.ore._uranium.normal.y_min = -128
+
+  -- Adjust miner for overworld ores
+
+  ele.worldgen.miner_ore_rarity = 1.16
+  ele.worldgen.miner_ore_y_min = mcl_worlds.layer_to_y(0)
 end

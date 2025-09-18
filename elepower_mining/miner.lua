@@ -16,7 +16,7 @@ local function determine_structure(controller, player)
     local miners = 0
     local nodes = {}
 
-    local cpos = minetest.pos_to_string(controller)
+    local cpos = core.pos_to_string(controller)
 
     if ele.helpers.node_compare(below1, "elepower_mining:miner_core") and
         ele.helpers.node_compare(below2, "elepower_mining:miner_drill") then
@@ -48,12 +48,12 @@ local function determine_structure(controller, player)
     structures[cpos] = {miners = miners, nodes = nodes}
 
     if player then
-        minetest.chat_send_player(player, S(
-                                      "Miner structure complete (detected @1 drills)!",
-                                      tostring(miners)))
+        core.chat_send_player(player, S(
+                                  "Miner structure complete (detected @1 drills)!",
+                                  tostring(miners)))
     end
 
-    local t = minetest.get_node_timer(controller)
+    local t = core.get_node_timer(controller)
     if not t:is_started() then t:start(1.0) end
 
     return true, miners, nodes
@@ -107,7 +107,7 @@ end
 
 local function on_timer(pos, elapsed)
     local refresh = false
-    local meta = minetest.get_meta(pos)
+    local meta = core.get_meta(pos)
     local inv = meta:get_inventory()
 
     local buffer = fluid_lib.get_buffer_data(pos, "water")
@@ -121,14 +121,16 @@ local function on_timer(pos, elapsed)
 
     local pow_buffer = {capacity = capacity, storage = storage, usage = 0}
     local active = S("with Invalid structure - Punch to redetect")
-    local miners = 0
 
-    local pts = minetest.pos_to_string(pos)
+    local pts = core.pos_to_string(pos)
     while true do
         if not structures[pts] then break end
+        if not is_enabled then
+            active = S("Off")
+            break
+        end
 
-        active = S("Idle")
-        miners = structures[pts].miners
+        local miners = structures[pts].miners
 
         usage = usage * miners
 
@@ -194,7 +196,7 @@ end
 
 local function recalc_on_break(pos)
     for core, data in pairs(structures) do
-        local cp = minetest.string_to_pos(core)
+        local cp = core.string_to_pos(core)
         local match = false
         for _, ipos in pairs(data.nodes) do
             if vector.equals(pos, ipos) then
@@ -238,7 +240,7 @@ ele.register_machine("elepower_mining:miner_controller", {
         ele_user = 1
     },
     on_construct = function(pos)
-        local meta = minetest.get_meta(pos)
+        local meta = core.get_meta(pos)
         local inv = meta:get_inventory()
 
         inv:set_size("dst", 5 * 3)
@@ -248,11 +250,11 @@ ele.register_machine("elepower_mining:miner_controller", {
     on_timer = on_timer,
     on_punch = function(pos, node, puncher, pointed_thing)
         determine_structure(pos, puncher:get_player_name())
-        minetest.node_punch(pos, node, puncher, pointed_thing)
+        core.node_punch(pos, node, puncher, pointed_thing)
     end
 })
 
-minetest.register_node("elepower_mining:miner_core", {
+core.register_node("elepower_mining:miner_core", {
     description = S("Miner Core") .. "\n" .. S("Machine Component"),
     tiles = {
         "elepower_mining_core.png^elepower_power_port.png",
@@ -271,7 +273,7 @@ minetest.register_node("elepower_mining:miner_core", {
     after_dig_node = recalc_on_break
 })
 
-minetest.register_node("elepower_mining:miner_drill", {
+core.register_node("elepower_mining:miner_drill", {
     description = S("Miner Drill") .. "\n" .. S("Machine Component"),
     tiles = {
         "elepower_machine_top.png^elepower_power_port.png",
@@ -290,7 +292,7 @@ minetest.register_node("elepower_mining:miner_drill", {
     after_dig_node = recalc_on_break
 })
 
-minetest.register_lbm({
+core.register_lbm({
     label = "Enable Miners on load",
     name = "elepower_mining:load_miner_controllers",
     nodenames = {"elepower_mining:miner_controller"},
@@ -298,13 +300,13 @@ minetest.register_lbm({
     action = function(pos) determine_structure(pos) end
 })
 
--- The following code is borrowed from the gravelsieve mod by Joachim Stolberg, licensed under LGPLv2.1+
+-- Some of the following code is borrowed from the gravelsieve mod by Joachim Stolberg, licensed under LGPLv2.1+
 -- https://github.com/joe7575/techpack/blob/master/gravelsieve/
 
 local PROBABILITY_FACTOR = 3
-local ore_rarity = 1.16
-local ore_max_elevation = 0
-local ore_min_elevation = -30912
+local ore_rarity = ele.worldgen.miner_ore_rarity
+local ore_max_elevation = ele.worldgen.miner_ore_y_max
+local ore_min_elevation = ele.worldgen.miner_ore_y_min
 local y_spread = math.max(1 + ore_max_elevation - ore_min_elevation, 1)
 
 local function harmonic_sum(a, b) return 1 / ((1 / a) + (1 / b)) end
@@ -316,15 +318,55 @@ local function calculate_probability(item)
                (item.clust_num_ores * ((ymax - ymin) / y_spread))
 end
 
+local function choose_drop_item(drops_table)
+    if drops_table.items == nil then return nil end
+
+    local last_entry = nil
+
+    for _, subtable in pairs(drops_table.items) do
+        if type(subtable) == "string" then return subtable end
+
+        if type(subtable) == "table" and subtable.groups == nil and
+            subtable.tools == nil and subtable.items ~= nil then
+            if subtable.rarity == nil then return subtable.items[1] end
+
+            last_entry = subtable.items[1]
+        end
+    end
+
+    return last_entry
+end
+
+-- TODO: support more stone types in different games
+local function supported_media(wherein)
+    if type(wherein) == "table" then
+        for _,v in ipairs(wherein) do
+            if v == epi.stone then
+                return true
+            end
+        end
+
+        return false
+    end
+
+    return wherein == epi.stone
+end
+
 local function add_ores()
-    for _, item in pairs(minetest.registered_ores) do
-        if minetest.registered_nodes[item.ore] then
-            local drop = minetest.registered_nodes[item.ore].drop
+    for _, item in pairs(core.registered_ores) do
+        if core.registered_nodes[item.ore] then
+            local drop = core.registered_nodes[item.ore].drop
+
+            if type(drop) == "table" and drop ~= nil then
+                drop = choose_drop_item(drop)
+            end
+
             if type(drop) == "string" and drop ~= item.ore and drop ~= "" and
-                item.ore_type == "scatter" and item.wherein == epi.stone and
+                item.ore_type == "scatter" and supported_media(item.wherein) and
                 item.clust_scarcity ~= nil and item.clust_scarcity > 0 and
                 item.clust_num_ores ~= nil and item.clust_num_ores > 0 and
-                item.y_max ~= nil and item.y_min ~= nil then
+                item.y_max ~= nil and
+                item.y_min ~= nil then
                 local probability = calculate_probability(item)
                 if probability > 0 then
                     local cur_probability = ores[drop]
@@ -339,12 +381,12 @@ local function add_ores()
     end
     local overall_probability = 0.0
     for name, probability in pairs(ores) do
-        minetest.log("info", ("[elepower_mining] %-32s %.02f"):format(name,
-                                                                      probability))
+        core.log("info",
+                 ("[elepower_mining] %-32s %.02f"):format(name, probability))
         overall_probability = overall_probability + 1.0 / probability
     end
-    minetest.log("info", ("[elepower_mining] Overall probability %f"):format(
-                     overall_probability))
+    core.log("info", ("[elepower_mining] Overall probability %f"):format(
+                 overall_probability))
 end
 
-minetest.after(1, add_ores)
+core.after(1, add_ores)
