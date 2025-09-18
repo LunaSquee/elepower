@@ -179,7 +179,7 @@ local function plant(pos, range, stack, inv, owner)
                                 -- Determine soil name
                                 -- Make sure we don't replace wet soil
                                 if soil then
-                                    wet_soil = soil.wet or epi_farming_soil_wet
+                                    wet_soil = soil.wet or epi.farming_soil_wet
                                     soil = soil.dry
                                 else
                                     soil = epi.farming_soil
