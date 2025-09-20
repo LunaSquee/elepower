@@ -16,13 +16,13 @@
 ------------
 -- Tables --
 ------------
-ele.external = {}
-ele.external.ref = {}
-ele.external.ing = {}
-ele.external.tools = {}
-ele.external.armor = {}
-ele.external.sounds = {}
-ele.external.graphic = {}
+ele:put_in_new("external", {})
+ele.put_in_new(ele.external, "ref", {})
+ele.put_in_new(ele.external, "ing", {})
+ele.put_in_new(ele.external, "tools", {})
+ele.put_in_new(ele.external, "armor", {})
+ele.put_in_new(ele.external, "sounds", {})
+ele.put_in_new(ele.external, "graphic", {})
 
 -----------
 -- Index --
@@ -57,24 +57,24 @@ ele.external.graphic = {}
 
 -- All of these can be configured with setting "elepower_resource_" + last table key
 -- e.g. elepower_resource_enable_iron_tools = false
-ele.external.tools.enable_iron_tools         = true
-ele.external.tools.enable_lead_tools         = true
-ele.external.armor.enable_iron_armor         = false
-ele.external.armor.enable_carbon_fiber_armor = false
+ele.put_in_new(ele.external.tools, "enable_iron_tools",         true)
+ele.put_in_new(ele.external.tools, "enable_lead_tools",         true)
+ele.put_in_new(ele.external.armor, "enable_iron_armor",         false)
+ele.put_in_new(ele.external.armor, "enable_carbon_fiber_armor", false)
 
-ele.external.conduit_dirt_with_grass      = false
-ele.external.conduit_dirt_with_dry_grass  = false
-ele.external.conduit_stone_block          = false
-ele.external.conduit_stone_block_desert   = false
+ele.put_in_new(ele.external, "conduit_dirt_with_grass",     false)
+ele.put_in_new(ele.external, "conduit_dirt_with_dry_grass", false)
+ele.put_in_new(ele.external, "conduit_stone_block",         false)
+ele.put_in_new(ele.external, "conduit_stone_block_desert",  false)
 
 ----------------
 -- References --
 ----------------
-ele.external.ref.player_inv_width = 8
+ele.put_in_new(ele.external.ref, "player_inv_width", 8)
 
 -- Item slot background can be configured with setting "elepower_resource_itemslot_bg"
-ele.external.ref.get_itemslot_bg  = function() return "" end
-ele.external.ref.gui_player_inv   = function(center_on, y)
+ele.put_in_new(ele.external.ref, "get_itemslot_bg", function() return "" end)
+ele.put_in_new(ele.external.ref, "gui_player_inv", function(center_on, y)
 	local width = ele.external.ref.player_inv_width
 	y = y or 5
 	center_on = center_on or 11.75
@@ -83,7 +83,7 @@ ele.external.ref.gui_player_inv   = function(center_on, y)
 		   "list[current_player;main;"..x..","..y..";"..width..",1;]" ..
 		   ele.external.ref.get_itemslot_bg(x, y + 1.375, width, 3) ..
 		   "list[current_player;main;"..x..","..(y + 1.375)..";"..width..",3;"..width.."]"
-end
+end)
 
 -------------------------------------------------
 -- Ingredients or node item references in code --
@@ -91,74 +91,74 @@ end
 
 -- All of the ingredients can be configured with setting "elepower_resource_" + last table key
 -- e.g. elepower_resource_group_stick = group:sticks
-ele.external.ing.group_stick        = "group:stick"
-ele.external.ing.group_stone        = "group:stone"
-ele.external.ing.group_color_red    = "group:color_red"
-ele.external.ing.group_color_green  = "group:color_green"
-ele.external.ing.group_color_blue   = "group:color_blue"
-ele.external.ing.group_color_black  = "group:color_black"
-ele.external.ing.group_color_violet = "group:color_violet"
-ele.external.ing.group_wood         = "group:wood"
+ele.put_in_new(ele.external.ing, "group_stick",        "group:stick")
+ele.put_in_new(ele.external.ing, "group_stone",        "group:stone")
+ele.put_in_new(ele.external.ing, "group_color_red",    "group:color_red")
+ele.put_in_new(ele.external.ing, "group_color_green",  "group:color_green")
+ele.put_in_new(ele.external.ing, "group_color_blue",   "group:color_blue")
+ele.put_in_new(ele.external.ing, "group_color_black",  "group:color_black")
+ele.put_in_new(ele.external.ing, "group_color_violet", "group:color_violet")
+ele.put_in_new(ele.external.ing, "group_wood",         "group:wood")
 
-ele.external.ing.water_source            = ""
-ele.external.ing.stone                   = ""
-ele.external.ing.dirt                    = "" -- only used by conduit_dirt_with_grass/dry_grass
-ele.external.ing.wheat                   = "" -- only used by conduit_dirt_with_dry_grass
-ele.external.ing.glass                   = ""
-ele.external.ing.seed_wheat              = "" -- essential to acidic compound
-ele.external.ing.iron_lump               = "" -- optional, will be registered by elepower_dynamic
-ele.external.ing.coal_lump               = ""
-ele.external.ing.copper_ingot            = ""
-ele.external.ing.silver_ingot            = "" -- optional, will be registered by elepower_compat
-ele.external.ing.gold_ingot              = ""
-ele.external.ing.tin_ingot               = "" -- optional, will be registered by elepower_compat
-ele.external.ing.bronze_ingot            = "" -- optional, will be registered by elepower_compat
-ele.external.ing.iron_ingot              = "" -- optional, will be registered by elepower_dynamic
-ele.external.ing.iron_block              = "" -- optional, will be registered by elepower_dynamic
-ele.external.ing.steel_ingot             = "" -- optional, will be registered by elepower_dynamic
-ele.external.ing.steel_block             = "" -- optional, will be registered by elepower_dynamic
-ele.external.ing.diamond_block           = ""
-ele.external.ing.mese                    = ""
-ele.external.ing.mese_crystal            = ""
-ele.external.ing.mese_crystal_fragment   = "" -- may be equal to mese_crystal if there is no distinct item
-ele.external.ing.mese_lamp               = ""
-ele.external.ing.flour                   = ""
-ele.external.ing.sand                    = ""
-ele.external.ing.desert_sand             = ""
-ele.external.ing.cobble                  = ""
-ele.external.ing.gravel                  = ""
-ele.external.ing.brick                   = ""
-ele.external.ing.flint                   = ""
-ele.external.ing.clay_brick              = ""
-ele.external.ing.obsidian                = ""
-ele.external.ing.lava_source             = ""
-ele.external.ing.hoe_steel               = ""
-ele.external.ing.axe_steel               = ""
-ele.external.ing.tree                    = ""
-ele.external.ing.leaves                  = ""
-ele.external.ing.apple                   = "" -- used by treecutter, needs better solution
-ele.external.ing.jungle_tree             = "" -- used by treecutter, needs better solution
-ele.external.ing.jungle_leaves           = "" -- used by treecutter, needs better solution
-ele.external.ing.pine_tree               = "" -- used by treecutter, needs better solution
-ele.external.ing.pine_needles            = "" -- used by treecutter, needs better solution
-ele.external.ing.acacia_tree             = "" -- used by treecutter, needs better solution
-ele.external.ing.acacia_leaves           = "" -- used by treecutter, needs better solution
-ele.external.ing.aspen_tree              = "" -- used by treecutter, needs better solution
-ele.external.ing.aspen_leaves            = "" -- used by treecutter, needs better solution
-ele.external.ing.slab_wood               = ""
-ele.external.ing.stick                   = ""
-ele.external.ing.paper                   = "" -- elepower_lighting decorative shades only
-ele.external.ing.farming_soil            = ""
-ele.external.ing.farming_soil_wet        = ""
-ele.external.ing.slab_glass              = ""
-ele.external.ing.dye_red                 = ""
-ele.external.ing.dye_green               = ""
-ele.external.ing.dye_blue                = ""
-ele.external.ing.furnace                 = ""
-ele.external.ing.obsidian_glass          = ""
-ele.external.ing.slab_stone_block        = "" -- only used by conduit_stone_block
-ele.external.ing.blueberry_bush_leaves   = "" -- tome only, could be any leaves
-ele.external.ing.slab_desert_stone_block = "" -- only used by conduit_stone_block_desert
+ele.put_in_new(ele.external.ing, "water_source",            "")
+ele.put_in_new(ele.external.ing, "stone",                   "")
+ele.put_in_new(ele.external.ing, "dirt",                    "") -- only used by conduit_dirt_with_grass/dry_grass
+ele.put_in_new(ele.external.ing, "wheat",                   "") -- only used by conduit_dirt_with_dry_grass
+ele.put_in_new(ele.external.ing, "glass",                   "")
+ele.put_in_new(ele.external.ing, "seed_wheat",              "") -- essential to acidic compound
+ele.put_in_new(ele.external.ing, "iron_lump",               "") -- optional, will be registered by elepower_dynamic
+ele.put_in_new(ele.external.ing, "coal_lump",               "")
+ele.put_in_new(ele.external.ing, "copper_ingot",            "")
+ele.put_in_new(ele.external.ing, "silver_ingot",            "") -- optional, will be registered by elepower_compat
+ele.put_in_new(ele.external.ing, "gold_ingot",              "")
+ele.put_in_new(ele.external.ing, "tin_ingot",               "") -- optional, will be registered by elepower_compat
+ele.put_in_new(ele.external.ing, "bronze_ingot",            "") -- optional, will be registered by elepower_compat
+ele.put_in_new(ele.external.ing, "iron_ingot",              "") -- optional, will be registered by elepower_dynamic
+ele.put_in_new(ele.external.ing, "iron_block",              "") -- optional, will be registered by elepower_dynamic
+ele.put_in_new(ele.external.ing, "steel_ingot",             "") -- optional, will be registered by elepower_dynamic
+ele.put_in_new(ele.external.ing, "steel_block",             "") -- optional, will be registered by elepower_dynamic
+ele.put_in_new(ele.external.ing, "diamond_block",           "")
+ele.put_in_new(ele.external.ing, "mese",                    "")
+ele.put_in_new(ele.external.ing, "mese_crystal",            "")
+ele.put_in_new(ele.external.ing, "mese_crystal_fragment",   "") -- may be equal to mese_crystal if there is no distinct item
+ele.put_in_new(ele.external.ing, "mese_lamp",               "")
+ele.put_in_new(ele.external.ing, "flour",                   "")
+ele.put_in_new(ele.external.ing, "sand",                    "")
+ele.put_in_new(ele.external.ing, "desert_sand",             "")
+ele.put_in_new(ele.external.ing, "cobble",                  "")
+ele.put_in_new(ele.external.ing, "gravel",                  "")
+ele.put_in_new(ele.external.ing, "brick",                   "")
+ele.put_in_new(ele.external.ing, "flint",                   "")
+ele.put_in_new(ele.external.ing, "clay_brick",              "")
+ele.put_in_new(ele.external.ing, "obsidian",                "")
+ele.put_in_new(ele.external.ing, "lava_source",             "")
+ele.put_in_new(ele.external.ing, "hoe_steel",               "")
+ele.put_in_new(ele.external.ing, "axe_steel",               "")
+ele.put_in_new(ele.external.ing, "tree",                    "")
+ele.put_in_new(ele.external.ing, "leaves",                  "")
+ele.put_in_new(ele.external.ing, "apple",                   "") -- used by treecutter, needs better solution
+ele.put_in_new(ele.external.ing, "jungle_tree",             "") -- used by treecutter, needs better solution
+ele.put_in_new(ele.external.ing, "jungle_leaves",           "") -- used by treecutter, needs better solution
+ele.put_in_new(ele.external.ing, "pine_tree",               "") -- used by treecutter, needs better solution
+ele.put_in_new(ele.external.ing, "pine_needles",            "") -- used by treecutter, needs better solution
+ele.put_in_new(ele.external.ing, "acacia_tree",             "") -- used by treecutter, needs better solution
+ele.put_in_new(ele.external.ing, "acacia_leaves",           "") -- used by treecutter, needs better solution
+ele.put_in_new(ele.external.ing, "aspen_tree",              "") -- used by treecutter, needs better solution
+ele.put_in_new(ele.external.ing, "aspen_leaves",            "") -- used by treecutter, needs better solution
+ele.put_in_new(ele.external.ing, "slab_wood",               "")
+ele.put_in_new(ele.external.ing, "stick",                   "")
+ele.put_in_new(ele.external.ing, "paper",                   "") -- elepower_lighting decorative shades only
+ele.put_in_new(ele.external.ing, "farming_soil",            "")
+ele.put_in_new(ele.external.ing, "farming_soil_wet",        "")
+ele.put_in_new(ele.external.ing, "slab_glass",              "")
+ele.put_in_new(ele.external.ing, "dye_red",                 "")
+ele.put_in_new(ele.external.ing, "dye_green",               "")
+ele.put_in_new(ele.external.ing, "dye_blue",                "")
+ele.put_in_new(ele.external.ing, "furnace",                 "")
+ele.put_in_new(ele.external.ing, "obsidian_glass",          "")
+ele.put_in_new(ele.external.ing, "slab_stone_block",        "") -- only used by conduit_stone_block
+ele.put_in_new(ele.external.ing, "blueberry_bush_leaves",   "") -- tome only, could be any leaves
+ele.put_in_new(ele.external.ing, "slab_desert_stone_block", "") -- only used by conduit_stone_block_desert
 
 ------------
 -- Sounds --
@@ -166,14 +166,14 @@ ele.external.ing.slab_desert_stone_block = "" -- only used by conduit_stone_bloc
 
 -- All of these can be configured with setting "elepower_resource_sound_" + last table key
 -- e.g. elepower_resource_sound_tool_breaks = default_tool_breaks
-ele.external.sounds.node_sound_stone  = {}
-ele.external.sounds.node_sound_water  = {}
-ele.external.sounds.node_sound_wood   = {}
-ele.external.sounds.node_sound_glass  = {}
-ele.external.sounds.node_sound_metal  = {}
-ele.external.sounds.tool_breaks       = {}
-ele.external.sounds.dig_crumbly       = {}
-ele.external.sounds.node_sound_dirt_c = {}
+ele.put_in_new(ele.external.sounds, "node_sound_stone",  {})
+ele.put_in_new(ele.external.sounds, "node_sound_water",  {})
+ele.put_in_new(ele.external.sounds, "node_sound_wood",   {})
+ele.put_in_new(ele.external.sounds, "node_sound_glass",  {})
+ele.put_in_new(ele.external.sounds, "node_sound_metal",  {})
+ele.put_in_new(ele.external.sounds, "tool_breaks",       {})
+ele.put_in_new(ele.external.sounds, "dig_crumbly",       {})
+ele.put_in_new(ele.external.sounds, "node_sound_dirt_c", {})
 
 ---------------------
 -- Graphics/Images --
@@ -181,25 +181,25 @@ ele.external.sounds.node_sound_dirt_c = {}
 
 -- All of these can be configured with setting "elepower_resource_graphic_" + last table key
 -- e.g. elepower_resource_graphic_water = default_water.png
-ele.external.graphic.water                = ""
-ele.external.graphic.grass                = ""
-ele.external.graphic.dirt                 = ""
-ele.external.graphic.grass_side           = ""
-ele.external.graphic.grass_dry            = ""
-ele.external.graphic.grass_side_dry       = ""
-ele.external.graphic.stone_block          = ""
-ele.external.graphic.desert_stone_block   = ""
-ele.external.graphic.stone                = ""
-ele.external.graphic.wood                 = ""
-ele.external.graphic.obsidian_glass       = ""
-ele.external.graphic.furnace_fire_bg      = ""
-ele.external.graphic.furnace_fire_fg      = ""
-ele.external.graphic.gui_furnace_arrow_bg = ""
-ele.external.graphic.gui_furnace_arrow_fg = ""
-ele.external.graphic.gui_mesecons_on      = ""
-ele.external.graphic.gui_mesecons_off     = ""
-ele.external.graphic.farming_wheat        = ""
-ele.external.graphic.farming_wheat_seed   = ""
+ele.put_in_new(ele.external.graphic, "water",                "")
+ele.put_in_new(ele.external.graphic, "grass",                "")
+ele.put_in_new(ele.external.graphic, "dirt",                 "")
+ele.put_in_new(ele.external.graphic, "grass_side",           "")
+ele.put_in_new(ele.external.graphic, "grass_dry",            "")
+ele.put_in_new(ele.external.graphic, "grass_side_dry",       "")
+ele.put_in_new(ele.external.graphic, "stone_block",          "")
+ele.put_in_new(ele.external.graphic, "desert_stone_block",   "")
+ele.put_in_new(ele.external.graphic, "stone",                "")
+ele.put_in_new(ele.external.graphic, "wood",                 "")
+ele.put_in_new(ele.external.graphic, "obsidian_glass",       "")
+ele.put_in_new(ele.external.graphic, "furnace_fire_bg",      "")
+ele.put_in_new(ele.external.graphic, "furnace_fire_fg",      "")
+ele.put_in_new(ele.external.graphic, "gui_furnace_arrow_bg", "")
+ele.put_in_new(ele.external.graphic, "gui_furnace_arrow_fg", "")
+ele.put_in_new(ele.external.graphic, "gui_mesecons_on",      "")
+ele.put_in_new(ele.external.graphic, "gui_mesecons_off",     "")
+ele.put_in_new(ele.external.graphic, "farming_wheat",        "")
+ele.put_in_new(ele.external.graphic, "farming_wheat_seed",   "")
 
 ------------------------------------------------------------
 --  ___ _                                ___           _  --
