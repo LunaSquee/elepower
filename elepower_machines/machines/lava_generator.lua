@@ -1,6 +1,6 @@
 -- see elepower_compat >> external.lua for explanation
 -- shorten table ref
-local epi = ele.external.ref
+local epi = ele.external.ing
 local S = ele.translator
 
 ele.register_fluid_generator("elepower_machines:lava_generator", {
