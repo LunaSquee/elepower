@@ -309,6 +309,13 @@ function ele.register_base_device(nodename, nodedef)
         end
     end
 
+    -- Basic Mineclonia hopper support.
+    -- Set a container value in groups for alternate logic or nil for none.
+    -- See https://codeberg.org/mineclonia/mineclonia/src/branch/main/GROUPS.md#declarative-groups
+    if mcl and not nodedef.groups["container"] then
+        nodedef.groups["container"] = 4
+    end
+
     -- Node IO Support
     if nodedef.groups["tubedevice"] or nodedef.groups["tube"] then
         nodedef.node_io_can_put_item = function(pos, node, side, itemstack, count)
